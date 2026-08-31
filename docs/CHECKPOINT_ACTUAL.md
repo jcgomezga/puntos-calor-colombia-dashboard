@@ -14,4 +14,5 @@
 - Workflow de despliegue verificado: `33439648814`.
 - Política temporal aprobada: histórico acumulativo desde `2026-07-01 00:00:00`, hora de Colombia; no se almacenan registros anteriores.
 - Checkpoint de implementación de la política temporal: `094db47`.
+- Checkpoint remoto de la política temporal: `a7ae1e0`.
 - Próxima fase: ingesta y normalización de CSV diarios IDEAM.
