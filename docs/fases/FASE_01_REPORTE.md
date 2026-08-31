@@ -39,3 +39,11 @@ La interfaz señala estas limitaciones para impedir una interpretación sustanti
 ## Próxima fase
 
 Construir la ingesta diaria IDEAM con manifiesto, hash, normalización, deduplicación, escenarios A/B y pruebas con archivos reales.
+
+## Publicación del checkpoint
+
+- Repositorio: `jcgomezga/puntos-calor-colombia-dashboard`.
+- Inventario remoto: 107 archivos versionados.
+- Durante la primera transferencia se truncó `package-lock.json`; el control de `npm ci` detectó el problema.
+- El archivo fue retransmitido completo y aislado en el commit remoto `bf3bb55`.
+- La validación final de GitHub Pages queda sujeta al resultado del segundo workflow.
