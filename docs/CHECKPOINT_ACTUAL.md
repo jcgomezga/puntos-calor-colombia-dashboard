@@ -9,5 +9,7 @@
 - Repositorio remoto: `https://github.com/jcgomezga/puntos-calor-colombia-dashboard`.
 - Commit remoto del prototipo: `ef5b1ab850f47f7a693b9ce6b5b32cc3f7fb8e2a`.
 - Corrección de transferencia del lockfile: `bf3bb5506c1c353be1bf5239924132ad1bc1ab02`.
-- Estado de publicación: segundo workflow de GitHub Pages en verificación.
+- Estado de publicación: GitHub Pages habilitado y workflow aprobado en el intento 2.
+- URL pública verificada: `https://jcgomezga.github.io/puntos-calor-colombia-dashboard/`.
+- Workflow de despliegue verificado: `33439648814`.
 - Próxima fase: ingesta y normalización de CSV diarios IDEAM.

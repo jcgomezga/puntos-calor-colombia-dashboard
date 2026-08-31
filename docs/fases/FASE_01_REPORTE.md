@@ -46,4 +46,6 @@ Construir la ingesta diaria IDEAM con manifiesto, hash, normalización, deduplic
 - Inventario remoto: 107 archivos versionados.
 - Durante la primera transferencia se truncó `package-lock.json`; el control de `npm ci` detectó el problema.
 - El archivo fue retransmitido completo y aislado en el commit remoto `bf3bb55`.
-- La validación final de GitHub Pages queda sujeta al resultado del segundo workflow.
+- La fuente de Pages se configuró como GitHub Actions y HTTPS quedó activo.
+- El workflow `33439648814`, intento 2, terminó correctamente.
+- URL pública verificada: `https://jcgomezga.github.io/puntos-calor-colombia-dashboard/`.
