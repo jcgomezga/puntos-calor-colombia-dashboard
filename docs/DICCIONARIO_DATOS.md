@@ -21,6 +21,11 @@ Los nombres definitivos se congelarán al finalizar la Fase 2.
 | `mpio_cnmbr` | texto | Municipio oficial | Derivado de MGN 2025 |
 | `fuente_archivo` | texto | Archivo de procedencia | Obligatorio |
 | `fecha_descarga_utc` | fecha-hora | Momento de adquisición | Obligatorio |
+| `cumple_corte_historico` | booleano | Indica si la observación pertenece al histórico admitido | Verdadero solo para fechas locales desde `2026-07-01`; las filas falsas no se almacenan |
+
+## Regla temporal transversal
+
+La fecha de observación se evalúa en `America/Bogota`. El límite inferior es inclusivo: `2026-07-01 00:00:00`. La ingesta de la Fase 2 deberá aplicar este control antes de deduplicar, territorializar, resumir o publicar.
 
 ## Datos demostrativos
 

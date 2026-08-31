@@ -24,6 +24,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { HISTORY_START_LABEL } from "@/lib/data-policy";
 
 type Scenario = "A" | "B";
 
@@ -124,6 +125,7 @@ export default function Home() {
         </div>
         <div className="status-cluster">
           <span className="demo-badge">PROTOTIPO · DATOS DEMOSTRATIVOS</span>
+          <span className="status-chip"><CalendarDays size={14} /> Histórico desde {HISTORY_START_LABEL}</span>
           <span className="status-chip"><span className="pulse" /> Última carga simulada: 30 ago 2026</span>
         </div>
       </header>
@@ -239,7 +241,7 @@ export default function Home() {
 
       <section className="audit-strip">
         <div><Database size={18} /><span><strong>Fuente prevista</strong> IDEAM · CSV diario</span></div>
-        <div><CalendarDays size={18} /><span><strong>Frecuencia prevista</strong> actualización diaria automatizada</span></div>
+        <div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL} · hora Colombia</span></div>
         <div><ShieldCheck size={18} /><span><strong>Control</strong> deduplicación, integridad y cierre territorial</span></div>
       </section>
 

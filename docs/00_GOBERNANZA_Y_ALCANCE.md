@@ -12,6 +12,7 @@ Construir un dashboard nacional de detecciones térmicas que funcione sin ArcGIS
 4. **No causalidad.** Coincidencia espacial o detección térmica no equivale a incendio confirmado, causa ni actividad efectiva.
 5. **Reproducibilidad.** Código, parámetros, fecha de corte, fuente y pruebas deben quedar versionados.
 6. **Continuidad.** Cada fase termina con reporte y actualización de la matriz acumulativa.
+7. **Corte histórico único.** La ingesta, el almacenamiento, las estadísticas y los filtros comienzan de forma inclusiva el 1 de julio de 2026, en hora de Colombia. Los datos anteriores se descartan y no se conservan como archivos brutos.
 
 ## Fases
 

@@ -10,10 +10,15 @@ Dashboard nacional, abierto y reproducible para explorar detecciones térmicas p
 - Escenario A: todos los sensores disponibles.
 - Escenario B: análisis de sensibilidad sin Suomi-NPP.
 - Estadísticas temporales, territoriales y por sensor.
+- Histórico acumulativo únicamente desde el 1 de julio de 2026.
 - Actualización programada mediante GitHub Actions una vez validado el flujo.
 - Publicación prevista mediante GitHub Pages, sin ArcGIS Online.
 
 Una detección térmica no confirma por sí sola un incendio, su causa ni una actividad específica.
+
+## Política temporal
+
+El corte histórico es inclusivo: `2026-07-01 00:00:00`, hora de Colombia (`America/Bogota`). El flujo de ingesta no conservará archivos ni detecciones anteriores y todas las estadísticas y filtros respetarán el mismo límite. Desde ese día, los registros válidos se conservarán de forma acumulativa.
 
 ## Ejecución local
 

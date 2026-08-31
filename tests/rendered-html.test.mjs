@@ -29,5 +29,8 @@ test("renders development preview metadata", async () => {
     response.headers.get("content-type") ?? "",
     /^text\/html\b/i,
   );
-  assert.match(await response.text(), developmentPreviewMeta);
+  const html = await response.text();
+  assert.match(html, developmentPreviewMeta);
+  assert.match(html, /Histórico desde/);
+  assert.match(html, /1(?: de)? jul(?: de)? 2026/);
 });
