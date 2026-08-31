@@ -1,0 +1,9 @@
+node_modules/
+dist/
+out/
+.next/
+.wrangler/
+.sites-runtime/
+.env*
+*.log
+.DS_Store
