@@ -50,7 +50,7 @@ jobs:
             echo "value=refresh" >> "$GITHUB_OUTPUT"
           fi
       - name: Descargar y procesar
-        run: python scripts/update_ideam_data.py --mode "${{ steps.mode.outputs.value }}" --workers 4 --timeout 30 --attempts 2
+        run: python scripts/update_ideam_data.py --mode "${{ steps.mode.outputs.value }}" --workers 4 --timeout 30 --attempts 2 --transport curl
       - name: Guardar resultados versionados
         shell: bash
         run: |

@@ -26,6 +26,8 @@ El límite inferior es inclusivo: `2026-07-01 00:00`, `America/Bogota`. La regla
 
 El backfill utiliza hasta cuatro descargas concurrentes con reintentos limitados. La concurrencia reduce el tiempo de recuperación inicial sin cambiar el orden determinista de las salidas.
 
+En GitHub Actions la transferencia utiliza `curl` con verificación TLS activa y el almacén de certificados del sistema. No se permite desactivar la validación del certificado de la fuente.
+
 ## Identificador y duplicados
 
 `hotspot_id` es un hash estable de fecha-hora local, coordenadas, fuente y dimensiones del píxel. No utiliza el número de fila ni un `OBJECTID`. Si el IDEAM corrige atributos variables de la misma observación —por ejemplo FRP o confianza— prevalece la versión más reciente sin crear un duplicado.

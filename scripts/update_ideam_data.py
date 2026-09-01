@@ -14,6 +14,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 import tempfile
 import time
@@ -170,7 +171,47 @@ def atomic_write_text(path: Path, content: str) -> None:
     atomic_write_bytes(path, content.encode("utf-8"))
 
 
-def download_file(url: str, timeout: int = 60, attempts: int = 3) -> tuple[bytes, dict[str, str]]:
+def download_file_curl(url: str, timeout: int = 60, attempts: int = 3) -> tuple[bytes, dict[str, str]]:
+    marker = b"\n__HTTP_STATUS__:"
+    command = [
+        "curl",
+        "--location",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        str(min(timeout, 15)),
+        "--max-time",
+        str(timeout),
+        "--retry",
+        str(max(0, attempts - 1)),
+        "--retry-all-errors",
+        "--user-agent",
+        "puntos-calor-colombia-dashboard/0.2 (+https://github.com/jcgomezga/puntos-calor-colombia-dashboard)",
+        "--write-out",
+        "\n__HTTP_STATUS__:%{http_code}",
+        url,
+    ]
+    completed = subprocess.run(command, capture_output=True, check=False)
+    content, separator, status_bytes = completed.stdout.rpartition(marker)
+    status = int(status_bytes.decode("ascii")) if separator and status_bytes.isdigit() else 0
+    if status == 404:
+        raise HTTPError(url, 404, "Not Found", {}, None)
+    if completed.returncode != 0 or status < 200 or status >= 300:
+        detail = completed.stderr.decode("utf-8", errors="replace").strip()
+        raise URLError(f"curl={completed.returncode}, HTTP={status}: {detail}")
+    if not content:
+        raise ValueError("respuesta vacía")
+    return content, {}
+
+
+def download_file(
+    url: str,
+    timeout: int = 60,
+    attempts: int = 3,
+    transport: str = "auto",
+) -> tuple[bytes, dict[str, str]]:
+    if transport == "curl":
+        return download_file_curl(url, timeout=timeout, attempts=attempts)
     last_error: Exception | None = None
     for attempt in range(1, attempts + 1):
         request = Request(
@@ -194,6 +235,8 @@ def download_file(url: str, timeout: int = 60, attempts: int = 3) -> tuple[bytes
             last_error = exc
         if attempt < attempts:
             time.sleep(attempt * 2)
+    if transport == "auto" and isinstance(last_error, URLError) and "CERTIFICATE_VERIFY_FAILED" in str(last_error):
+        return download_file_curl(url, timeout=timeout, attempts=attempts)
     if last_error is None:
         raise RuntimeError("descarga fallida sin detalle")
     raise last_error
@@ -497,7 +540,12 @@ def run(args: argparse.Namespace) -> int:
     def fetch_day(day: date) -> tuple[date, str, bytes | None, dict[str, str], str | None]:
         url = daily_url(args.base_url, day)
         try:
-            content, headers = download_file(url, timeout=args.timeout, attempts=args.attempts)
+            content, headers = download_file(
+                url,
+                timeout=args.timeout,
+                attempts=args.attempts,
+                transport=args.transport,
+            )
         except HTTPError as exc:
             if exc.code == 404:
                 return day, url, None, {}, "missing"
@@ -585,6 +633,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--timeout", type=int, default=30)
     parser.add_argument("--attempts", type=int, default=2)
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--transport", choices=("auto", "urllib", "curl"), default="auto")
     return parser
 
 
