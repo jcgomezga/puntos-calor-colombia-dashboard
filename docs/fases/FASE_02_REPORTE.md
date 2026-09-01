@@ -98,6 +98,7 @@ El servidor presentó solamente el certificado `*.ideam.gov.co`, emitido por `Se
 - Reparación TLS verificada: `13f359b07475551dc37ed757219d313e10c06f64`.
 - Detección de archivos nuevos: `f97a3828fa749eb3f272a52bc280741686d6dceb`.
 - Primer histórico oficial: `730e232665d5fdb9ce9b0850725cdc58375aec5d`.
+- Cierre documental: `7ffb0451c9d403e987210555513591db1fbdd24e`.
 
 ## Límite de la fase
 
