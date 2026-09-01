@@ -20,6 +20,8 @@
 | DM-016 | Verificar contra la geometría oficial completa los vacíos del caché simplificado | Resolver artefactos de simplificación sin descargar toda la capa nuevamente | Implementada |
 | DM-017 | Excluir de totales territoriales los puntos sin intersección y mostrarlos en el cierre | Mantener el total nacional auditable | Implementada |
 | DM-018 | Mostrar por defecto todo el histórico disponible desde julio de 2026 | Hacer visible el carácter acumulativo y permitir reducción mediante filtros | Implementada |
+| DM-019 | Clasificar dentro/fuera de RUNAP sin buffers | Separar una relación espacial verificable de cualquier inferencia de afectación | Implementada en Fase 4A |
+| DM-020 | Contar hotspots únicos y conservar todas las coincidencias RUNAP | Evitar inflar indicadores cuando existen polígonos superpuestos | Implementada en Fase 4A |
 
 ## Aplicación de DM-009
 
@@ -33,3 +35,4 @@
 ## Decisiones pendientes
 
 - Estrategia de compresión o almacenamiento cuando aumente el tamaño del histórico acumulativo.
+- Fuente, vigencia y leyenda nacional para la cobertura del suelo de la Fase 4B.
