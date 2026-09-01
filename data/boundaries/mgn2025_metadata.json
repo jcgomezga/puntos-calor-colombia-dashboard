@@ -1,0 +1,27 @@
+{
+  "archive": {
+    "compressed_bytes": 11223464,
+    "path": "boundaries/mgn2025_municipios_join.geojson.gz",
+    "sha256": "067bd5fc04913b4bb82fe7125f254bab0580b784bda4064d1de907d40079bc68",
+    "uncompressed_bytes": 35505822
+  },
+  "departments": {
+    "feature_count": 33,
+    "layer": 319,
+    "max_allowable_offset_degrees": 0.003,
+    "name": "Departamento",
+    "output_spatial_reference": 4326,
+    "service_item_id": "9f7e5cf1e09b4679b7ae4a23d8d74ac7",
+    "url": "https://geoportal.dane.gov.co/mparcgis/rest/services/MGN2025/Serv_CapasMGN_2025/FeatureServer/319"
+  },
+  "downloaded_at_utc": "2026-09-01T15:11:12Z",
+  "municipalities": {
+    "feature_count": 1122,
+    "layer": 317,
+    "max_allowable_offset_degrees": 5e-05,
+    "name": "Municipio",
+    "output_spatial_reference": 4326,
+    "service_item_id": "9f7e5cf1e09b4679b7ae4a23d8d74ac7",
+    "url": "https://geoportal.dane.gov.co/mparcgis/rest/services/MGN2025/Serv_CapasMGN_2025/FeatureServer/317"
+  }
+}
