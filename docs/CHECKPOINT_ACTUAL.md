@@ -1,10 +1,13 @@
 # Checkpoint actual
 
 - Fecha: 1 de septiembre de 2026.
-- Versión: 0.2.0.
+- Versión publicada: 0.2.0.
+- Versión de trabajo preservada: 0.3.0-dev.
 - Fases cerradas: 0, 1 y 2.
-- Estado técnico: lint correcto, build Vinext correcto, exportación estática correcta, 6/6 pruebas Python y 6/6 pruebas de interfaz aprobadas.
-- Estado de datos: histórico oficial IDEAM ingerido y normalizado; todavía no territorializado ni conectado a la interfaz.
+- Fase 3: pausada después de auditar el MGN 2025, implementar el motor territorial y guardar el caché íntegro de 1.122 municipios.
+- Estado técnico publicado: lint correcto, build Vinext correcto, exportación estática correcta, 6/6 pruebas Python y 6/6 pruebas de interfaz aprobadas.
+- Estado técnico del checkpoint: 10/10 pruebas Python aprobadas; caché DANE gzip/JSON válido.
+- Estado de datos: histórico oficial IDEAM ingerido y normalizado; la asignación territorial real todavía no se ha completado ni conectado a la interfaz.
 - Periodo almacenado: `2026-07-01` a `2026-08-31`, hora de Colombia.
 - Volumen: 62 archivos diarios y 30.890 detecciones únicas.
 - Escenarios: A = 30.890; B sin Suomi-NPP = 21.606.
@@ -15,4 +18,7 @@
 - Cierre documental de la Fase 2: `7ffb0451c9d403e987210555513591db1fbdd24e`.
 - Automatización: `refresh` cada tres horas; reconsulta el día actual y los dos anteriores.
 - Seguridad de fuente: verificación TLS estricta; el intermedio faltante se obtiene desde AIA y se valida contra las raíces del sistema.
-- Próxima fase: unión espacial DANE, controles territoriales e integración de datos oficiales en el dashboard.
+- Rama pública estable: `main` en `19dffd8f7e7216c106aa2204bc6869cb25c2839d`.
+- Rama de recuperación de trabajo: `phase3-checkpoint`.
+- Garantía de pausa: no se publicaron estadísticas territoriales parciales y la interfaz continúa marcada como demostrativa.
+- Reanudación: seguir `docs/fases/FASE_03_CHECKPOINT_EN_PROGRESO.md` y completar los cierres antes de integrar en `main`.
