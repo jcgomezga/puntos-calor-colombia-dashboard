@@ -19,6 +19,7 @@
 | DM-015 | No asignar por cercanía puntos fuera de las geometrías DANE | Evitar una precisión territorial falsa | Implementada |
 | DM-016 | Verificar contra la geometría oficial completa los vacíos del caché simplificado | Resolver artefactos de simplificación sin descargar toda la capa nuevamente | Implementada |
 | DM-017 | Excluir de totales territoriales los puntos sin intersección y mostrarlos en el cierre | Mantener el total nacional auditable | Implementada |
+| DM-018 | Mostrar por defecto todo el histórico disponible desde julio de 2026 | Hacer visible el carácter acumulativo y permitir reducción mediante filtros | Implementada |
 
 ## Aplicación de DM-009
 
@@ -31,5 +32,4 @@
 
 ## Decisiones pendientes
 
-- Ventana temporal predeterminada.
 - Estrategia de compresión o almacenamiento cuando aumente el tamaño del histórico acumulativo.

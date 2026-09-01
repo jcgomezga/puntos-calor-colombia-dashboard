@@ -1,13 +1,15 @@
 # Checkpoint actual
 
 - Fecha: 1 de septiembre de 2026.
-- Versión: 0.2.0.
-- Fases cerradas: 0, 1 y 2.
-- Estado técnico: lint correcto, build Vinext correcto, exportación estática correcta, 6/6 pruebas Python y 6/6 pruebas de interfaz aprobadas.
-- Estado de datos: histórico oficial IDEAM ingerido y normalizado; todavía no territorializado ni conectado a la interfaz.
+- Versión: 0.3.0.
+- Fases cerradas: 0, 1, 2 y 3.
+- Estado técnico: lint correcto; build Vinext y GitHub Pages correctos; 13/13 pruebas Python y 9/9 pruebas web aprobadas.
+- Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
 - Periodo almacenado: `2026-07-01` a `2026-08-31`, hora de Colombia.
-- Volumen: 62 archivos diarios y 30.890 detecciones únicas.
-- Escenarios: A = 30.890; B sin Suomi-NPP = 21.606.
+- Volumen al checkpoint: 30.910 detecciones únicas; el total seguirá creciendo automáticamente.
+- Escenarios al checkpoint: A = 30.910; B sin Suomi-NPP = 21.618.
+- Cierre territorial: 30.883 asignadas y 27 sin intersección DANE; 0 pendientes por límite o solapamiento.
+- Catálogos: 33 departamentos y 1.122 municipios del MGN 2025.
 - Repositorio remoto: `https://github.com/jcgomezga/puntos-calor-colombia-dashboard`.
 - URL pública: `https://jcgomezga.github.io/puntos-calor-colombia-dashboard/`.
 - Workflow de ingesta verificado: `33459561062`.
@@ -15,4 +17,10 @@
 - Cierre documental de la Fase 2: `7ffb0451c9d403e987210555513591db1fbdd24e`.
 - Automatización: `refresh` cada tres horas; reconsulta el día actual y los dos anteriores.
 - Seguridad de fuente: verificación TLS estricta; el intermedio faltante se obtiene desde AIA y se valida contra las raíces del sistema.
-- Próxima fase: unión espacial DANE, controles territoriales e integración de datos oficiales en el dashboard.
+- Motor territorial remoto: `96cdbfa5410c3ffc8405e50efe2d0d2201dae1b1`.
+- Datos territoriales remotos: `369013b0e651a77dcfb66211ad9d1c30584f0c11`.
+- Interfaz conectada: `8355e4d24886cb08cc9f1e30362fbaa38469b9c5`.
+- Estabilización de gráficos: `789320496eec8e8e95a496b68b652baf5c8572fe`.
+- Workflow territorial verificado: `33524144257`.
+- Despliegue final verificado: `33542445532`.
+- Próxima fase sugerida: coberturas del suelo y áreas protegidas con carga progresiva por escala.
