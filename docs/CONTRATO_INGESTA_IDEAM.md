@@ -24,6 +24,8 @@ El límite inferior es inclusivo: `2026-07-01 00:00`, `America/Bogota`. La regla
 - `refresh`: vuelve a consultar el día actual y los dos anteriores para incorporar observaciones tardías o correcciones.
 - `offline`: reconstruye las salidas únicamente con archivos brutos ya almacenados.
 
+El backfill utiliza hasta cuatro descargas concurrentes con reintentos limitados. La concurrencia reduce el tiempo de recuperación inicial sin cambiar el orden determinista de las salidas.
+
 ## Identificador y duplicados
 
 `hotspot_id` es un hash estable de fecha-hora local, coordenadas, fuente y dimensiones del píxel. No utiliza el número de fila ni un `OBJECTID`. Si el IDEAM corrige atributos variables de la misma observación —por ejemplo FRP o confianza— prevalece la versión más reciente sin crear un duplicado.

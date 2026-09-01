@@ -26,7 +26,7 @@ permissions:
 
 concurrency:
   group: ideam-data-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   ingest:
@@ -50,7 +50,7 @@ jobs:
             echo "value=refresh" >> "$GITHUB_OUTPUT"
           fi
       - name: Descargar y procesar
-        run: python scripts/update_ideam_data.py --mode "${{ steps.mode.outputs.value }}"
+        run: python scripts/update_ideam_data.py --mode "${{ steps.mode.outputs.value }}" --workers 4 --timeout 30 --attempts 2
       - name: Guardar resultados versionados
         shell: bash
         run: |

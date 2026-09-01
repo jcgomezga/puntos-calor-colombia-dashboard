@@ -19,6 +19,7 @@ import tempfile
 import time
 import unicodedata
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta, timezone
 from decimal import Decimal, InvalidOperation
@@ -493,20 +494,37 @@ def run(args: argparse.Namespace) -> int:
     downloaded = 0
     missing: list[str] = []
     failed: list[dict[str, str]] = []
-    for day in requested:
+    def fetch_day(day: date) -> tuple[date, str, bytes | None, dict[str, str], str | None]:
         url = daily_url(args.base_url, day)
         try:
             content, headers = download_file(url, timeout=args.timeout, attempts=args.attempts)
         except HTTPError as exc:
             if exc.code == 404:
-                missing.append(day.isoformat())
-                continue
-            failed.append({"date": day.isoformat(), "error": f"HTTP {exc.code}"})
-            continue
+                return day, url, None, {}, "missing"
+            return day, url, None, {}, f"HTTP {exc.code}"
         except Exception as exc:  # noqa: BLE001 - the run must record source failures
-            failed.append({"date": day.isoformat(), "error": f"{type(exc).__name__}: {exc}"})
-            continue
+            return day, url, None, {}, f"{type(exc).__name__}: {exc}"
+        return day, url, content, headers, None
 
+    results: dict[date, tuple[str, bytes | None, dict[str, str], str | None]] = {}
+    if requested:
+        with ThreadPoolExecutor(max_workers=min(args.workers, len(requested))) as executor:
+            futures = {executor.submit(fetch_day, day): day for day in requested}
+            for future in as_completed(futures):
+                day, url, content, headers, error = future.result()
+                results[day] = (url, content, headers, error)
+
+    for day in requested:
+        url, content, headers, error = results[day]
+        if error == "missing":
+            missing.append(day.isoformat())
+            continue
+        if error:
+            failed.append({"date": day.isoformat(), "error": error})
+            continue
+        if content is None:
+            failed.append({"date": day.isoformat(), "error": "respuesta sin contenido"})
+            continue
         path = raw_path(data_dir, day)
         atomic_write_bytes(path, content)
         downloaded += 1
@@ -564,8 +582,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--data-dir", default=str(DEFAULT_DATA_DIR))
     parser.add_argument("--config", default=str(DEFAULT_CONFIG))
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
-    parser.add_argument("--timeout", type=int, default=60)
-    parser.add_argument("--attempts", type=int, default=3)
+    parser.add_argument("--timeout", type=int, default=30)
+    parser.add_argument("--attempts", type=int, default=2)
+    parser.add_argument("--workers", type=int, default=4)
     return parser
 
 
