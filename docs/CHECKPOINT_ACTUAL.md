@@ -1,8 +1,8 @@
 # Checkpoint actual
 
 - Fecha: 1 de septiembre de 2026.
-- Versión: 0.4.0-rc1.
-- Fases cerradas: 0, 1, 2 y 3. Fase 4A implementada, pendiente de ejecución nacional remota.
+- Versión: 0.4.0.
+- Fases cerradas: 0, 1, 2, 3 y 4A.
 - Estado técnico: lint correcto; build GitHub Pages correcto; 16/16 pruebas Python aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
 - Periodo almacenado: `2026-07-01` a `2026-08-31`, hora de Colombia.
@@ -23,7 +23,9 @@
 - Estabilización de gráficos: `789320496eec8e8e95a496b68b652baf5c8572fe`.
 - Workflow territorial verificado: `33524144257`.
 - Despliegue final verificado: `33542445532`.
-- Fase activa: relación `dentro/fuera` con áreas protegidas RUNAP.
-- Bloqueo controlado: la fuente RUNAP agotó el tiempo de espera local; no se publicaron cifras parciales.
-- Próximo paso: ejecutar y verificar el cierre nacional en GitHub Actions; luego cerrar la Fase 4A.
-- Fase posterior: 4B, cobertura del suelo con fuente y leyenda nacional auditadas.
+- RUNAP: 1.909 áreas protegidas consultadas; 2.028 hotspots dentro, 28.882 fuera y 4 con solapamiento.
+- Cierre RUNAP: 30.910/30.910 detecciones clasificadas; los solapamientos son un subconjunto de `dentro`.
+- Commit remoto de datos RUNAP: `6e1519ae6ac1c7dc92ff904ff2351ce25b850ca8`.
+- Workflow RUNAP verificado: `33545663965`.
+- Despliegue GitHub Pages verificado: `33546192024`.
+- Próxima fase: 4B, cobertura del suelo con fuente y leyenda nacional auditadas.
