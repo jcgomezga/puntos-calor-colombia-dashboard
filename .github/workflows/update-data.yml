@@ -49,6 +49,11 @@ jobs:
           else
             echo "value=refresh" >> "$GITHUB_OUTPUT"
           fi
+      - name: Validar cadena TLS del IDEAM
+        shell: bash
+        run: |
+          python scripts/prepare_ideam_ca.py --output "$RUNNER_TEMP/ideam-ca-bundle.pem"
+          echo "CURL_CA_BUNDLE=$RUNNER_TEMP/ideam-ca-bundle.pem" >> "$GITHUB_ENV"
       - name: Descargar y procesar
         run: python scripts/update_ideam_data.py --mode "${{ steps.mode.outputs.value }}" --workers 4 --timeout 30 --attempts 2 --transport curl
       - name: Guardar resultados versionados

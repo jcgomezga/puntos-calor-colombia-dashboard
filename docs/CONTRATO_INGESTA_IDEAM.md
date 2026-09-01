@@ -26,7 +26,9 @@ El límite inferior es inclusivo: `2026-07-01 00:00`, `America/Bogota`. La regla
 
 El backfill utiliza hasta cuatro descargas concurrentes con reintentos limitados. La concurrencia reduce el tiempo de recuperación inicial sin cambiar el orden determinista de las salidas.
 
-En GitHub Actions la transferencia utiliza `curl` con verificación TLS activa y el almacén de certificados del sistema. No se permite desactivar la validación del certificado de la fuente.
+En GitHub Actions la transferencia utiliza `curl` con verificación TLS activa y el almacén de certificados del sistema. El 1 de septiembre de 2026 se comprobó que el servidor del IDEAM no entregaba una cadena completa a los clientes de línea de comandos. Antes de cada descarga, el workflow obtiene únicamente los certificados emisores declarados en la extensión `CA Issuers` del certificado del sitio y exige que OpenSSL valide la cadena completa, el uso de servidor y el nombre `puntosdecalor.ideam.gov.co` contra una raíz confiable del sistema. Solo después crea un bundle temporal para `curl`.
+
+No se permite `curl -k`, `verify=False` ni ninguna otra desactivación de la validación. Si no puede demostrarse la cadena de confianza, la ejecución falla y conserva el último histórico válido.
 
 ## Identificador y duplicados
 
