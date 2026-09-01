@@ -34,7 +34,20 @@ npm run lint
 npm run build
 npm run build:pages
 npm test
+python -m unittest discover -s tests_py -p "test_*.py" -v
 ```
+
+## Actualización de datos
+
+La Fase 2 incorpora un flujo reproducible con tres modalidades:
+
+```bash
+python scripts/update_ideam_data.py --mode backfill
+python scripts/update_ideam_data.py --mode refresh
+python scripts/update_ideam_data.py --mode offline
+```
+
+GitHub Actions ejecuta `refresh` cada tres horas. La primera publicación del flujo utiliza `backfill` para recuperar el periodo completo desde el 1 de julio de 2026. Véase el [contrato de ingesta](docs/CONTRATO_INGESTA_IDEAM.md).
 
 ## Trazabilidad
 

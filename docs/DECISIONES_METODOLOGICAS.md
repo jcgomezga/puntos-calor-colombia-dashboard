@@ -11,6 +11,9 @@
 | DM-007 | Rotular el prototipo como demostrativo | Evitar confundir cifras ficticias con resultados | Aprobada |
 | DM-008 | No inferir incendios ni causalidad | La anomalía térmica no es confirmación causal | Aprobada |
 | DM-009 | Conservar histórico acumulativo desde 2026-07-01 | Limitar el proyecto al periodo solicitado y mantener un corte reproducible | Aprobada |
+| DM-010 | Revisar nuevamente los últimos tres días | Incorporar detecciones tardías o correcciones sin rehacer todo el histórico | Aprobada |
+| DM-011 | Particionar la salida normalizada por mes | Mantener archivos auditables y evitar un único CSV creciente | Aprobada |
+| DM-012 | Construir un `hotspot_id` estable | Deduplicar y actualizar sin depender de filas u OBJECTID | Aprobada |
 
 ## Aplicación de DM-009
 

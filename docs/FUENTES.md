@@ -4,6 +4,7 @@
 
 - Portal: https://puntosdecalor.ideam.gov.co/
 - Índice de archivos CSV diarios: https://puntosdecalor.ideam.gov.co/archivos-csv/
+- Patrón diario: `Puntos_de_calor_Colombia_YYYY-MM-DD.csv`.
 - Código público del portal: https://github.com/SMByC/puntosdecalor.ideam.gov.co
 
 Aspectos comprobados en el código público del portal:

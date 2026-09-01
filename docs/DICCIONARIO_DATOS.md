@@ -23,6 +23,12 @@ Los nombres definitivos se congelarán al finalizar la Fase 2.
 | `fecha_descarga_utc` | fecha-hora | Momento de adquisición | Obligatorio |
 | `cumple_corte_historico` | booleano | Indica si la observación pertenece al histórico admitido | Verdadero solo para fechas locales desde `2026-07-01`; las filas falsas no se almacenan |
 
+## Campos congelados por la Fase 2
+
+Las salidas mensuales contienen, en este orden: `hotspot_id`, `fecha_hora_col`, `fecha_hora_utc`, `fecha_local`, `latitud`, `longitud`, `fuente`, `satelite`, `sensor`, `temperatura_c`, `temperatura_alt_c`, `frp_mw`, `confianza`, `captura`, `scan_km`, `track_km`, `escenario_a`, `escenario_b`, `fuente_archivo` y `fecha_descarga_utc`.
+
+`cumple_corte_historico` funciona como regla de admisión y no se escribe en las filas publicadas: toda fila almacenada debe cumplirla.
+
 ## Regla temporal transversal
 
 La fecha de observación se evalúa en `America/Bogota`. El límite inferior es inclusivo: `2026-07-01 00:00:00`. La ingesta de la Fase 2 deberá aplicar este control antes de deduplicar, territorializar, resumir o publicar.
