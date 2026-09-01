@@ -1,3 +1,4 @@
 run_id,started_at_utc,finished_at_utc,mode,as_of,requested_files,downloaded_files,missing_files,failed_files,raw_files_processed,rows_read,rows_valid_before_dedup,rows_unique,rows_rejected_cutoff,rows_rejected_invalid,status
 20260901T013914Z,2026-09-01T01:39:14Z,2026-09-01T01:39:25Z,backfill,2026-08-31,62,62,0,0,62,30890,30890,30890,0,0,completed
 20260901T084320Z,2026-09-01T08:43:20Z,2026-09-01T08:43:22Z,refresh,2026-09-01,3,2,1,0,62,30891,30891,30891,0,0,completed
+20260901T141031Z,2026-09-01T14:10:31Z,2026-09-01T14:10:33Z,refresh,2026-09-01,3,3,0,0,63,30910,30910,30910,0,0,completed
