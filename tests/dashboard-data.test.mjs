@@ -26,6 +26,7 @@ test("keeps territorial and temporal catalogs valid", () => {
     assert.ok(point[4] >= 0 && point[4] < dashboard.dates.length);
     assert.ok(point[2] === -1 || point[2] < dashboard.departments.length);
     assert.ok(point[3] === -1 || point[3] < dashboard.municipalities.length);
+    if (dashboard.metadata.protectedAreas) assert.ok(point[11] === 0 || point[11] === 1);
   }
 });
 
