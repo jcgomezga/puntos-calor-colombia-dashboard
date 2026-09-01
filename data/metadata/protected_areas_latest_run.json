@@ -1,0 +1,19 @@
+{
+  "dashboardRows": 30910,
+  "finishedAtUtc": "2026-09-01T18:52:07Z",
+  "relations": {
+    "dentro": 2028,
+    "fuera": 28882,
+    "solapamiento": 4
+  },
+  "source": {
+    "authority": "Parques Nacionales Naturales de Colombia",
+    "downloadedAtUtc": "2026-09-01T18:50:51Z",
+    "featureCount": 1909,
+    "layerName": "Registro Unico Nacional AP",
+    "source": "Registro Único Nacional de Áreas Protegidas (RUNAP)",
+    "spatialReference": 4326,
+    "url": "https://mapas.parquesnacionales.gov.co/arcgis/rest/services/pnn/runap/FeatureServer/0"
+  },
+  "status": "completed"
+}

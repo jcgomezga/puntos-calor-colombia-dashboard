@@ -12,7 +12,7 @@
   },
   "duplicates_removed": 0,
   "first_observation_local": "2026-07-01T01:33-05:00",
-  "generated_at_utc": "2026-09-01T18:35:22Z",
+  "generated_at_utc": "2026-09-01T18:48:12Z",
   "last_observation_local": "2026-09-01T01:57-05:00",
   "policy": {
     "history_mode": "cumulative",
@@ -26,21 +26,21 @@
       "month": "2026-07",
       "path": "processed/hotspots_2026-07.csv",
       "rows": 11582,
-      "sha256": "8d4753f4363c6d266db99063fc036ed7329823e39bc6a2be0977f0646b523f4a",
+      "sha256": "9359c1fd5a585c4bd21093f79bb0cbaa24453fd9cb8143b5683688e08083af38",
       "size_bytes": 2685492
     },
     {
       "month": "2026-08",
       "path": "processed/hotspots_2026-08.csv",
       "rows": 19309,
-      "sha256": "e1c1dc2283a9b3ffc117779eda9dcd89b13e37de454270c274345d8ad78bab77",
+      "sha256": "7c8688905aebdd6fc6794ea68d327f512f98a1f9b135f7b0e1122c13fa76f06b",
       "size_bytes": 4477713
     },
     {
       "month": "2026-09",
       "path": "processed/hotspots_2026-09.csv",
       "rows": 19,
-      "sha256": "1a49a6abb374c6da17f30649d520c5b635aa165247a6c9df5b1c4dcef5ca973d",
+      "sha256": "00296675466eda60976511ed017313a320cefac4b7c6952a645634b7d68a43c7",
       "size_bytes": 4622
     }
   ],
