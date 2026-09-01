@@ -59,7 +59,7 @@ jobs:
       - name: Guardar resultados versionados
         shell: bash
         run: |
-          if git diff --quiet -- data; then
+          if [[ -z "$(git status --porcelain -- data)" ]]; then
             echo "No hay cambios de datos para publicar."
             exit 0
           fi
