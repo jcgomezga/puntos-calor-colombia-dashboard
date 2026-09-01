@@ -1,6 +1,6 @@
-# Diccionario de datos — versión 0.2.0
+# Diccionario de datos — versión 0.3.0
 
-Los campos de ingesta quedaron congelados al finalizar la Fase 2. Los campos territoriales permanecen sujetos a la validación del esquema DANE en la Fase 3.
+Los campos de ingesta quedaron congelados al finalizar la Fase 2 y los territoriales al finalizar la Fase 3.
 
 | Campo normalizado | Tipo | Descripción | Regla inicial |
 |---|---|---|---|
@@ -15,10 +15,12 @@ Los campos de ingesta quedaron congelados al finalizar la Fase 2. Los campos ter
 | `confianza` | texto/decimal | Confianza reportada | No homogeneizar sin regla |
 | `escenario_a` | booleano | Incluido con todos los sensores | Verdadero para filas válidas |
 | `escenario_b` | booleano | Incluido sin Suomi-NPP | Falso para plataforma SNPP |
-| `dpto_ccdgo` | texto | Código DANE departamental | Unión espacial MGN 2025 |
-| `dpto_cnmbr` | texto | Departamento oficial | Derivado de MGN 2025 |
-| `mpio_ccdgo` | texto | Código DANE municipal | Unión espacial MGN 2025 |
-| `mpio_cnmbr` | texto | Municipio oficial | Derivado de MGN 2025 |
+| `dpto_codigo` | texto | Código DANE departamental | Unión espacial MGN 2025 |
+| `departamento` | texto | Departamento oficial | Derivado de MGN 2025 |
+| `mpio_codigo` | texto | Código DANE municipal | Unión espacial MGN 2025 |
+| `municipio` | texto | Municipio oficial | Derivado de MGN 2025 |
+| `asignacion_territorial` | texto | Estado del cruce espacial | `asignado`, `sin_asignacion` o estado de revisión |
+| `metodo_asignacion_territorial` | texto | Procedimiento que resolvió el cruce | Caché geométrico o consulta exacta DANE |
 | `fuente_archivo` | texto | Archivo de procedencia | Obligatorio |
 | `fecha_descarga_utc` | fecha-hora | Momento de adquisición | Obligatorio |
 | `cumple_corte_historico` | booleano | Indica si la observación pertenece al histórico admitido | Verdadero solo para fechas locales desde `2026-07-01`; las filas falsas no se almacenan |
@@ -33,6 +35,11 @@ Las salidas mensuales contienen, en este orden: `hotspot_id`, `fecha_hora_col`, 
 
 La fecha de observación se evalúa en `America/Bogota`. El límite inferior es inclusivo: `2026-07-01 00:00:00`. La ingesta de la Fase 2 deberá aplicar este control antes de deduplicar, territorializar, resumir o publicar.
 
-## Datos demostrativos
+## Productos territoriales
 
-Las cifras incrustadas actualmente en `app/page.tsx` son datos de interfaz. No deben exportarse, citarse ni interpretarse como observaciones del IDEAM.
+- `data/territorial/hotspots_YYYY-MM.csv`: histórico mensual enriquecido.
+- `public/data/dashboard.json`: índices, catálogos, puntos compactos y metadatos para la interfaz.
+- `public/data/departments.json`: límites departamentales para visualización.
+- `public/data/municipalities.json`: límites municipales simplificados para visualización.
+
+El arreglo compacto de puntos usa el esquema declarado en `pointSchema`. Los índices territoriales `-1` identifican observaciones sin intersección oficial; no se fuerzan al polígono más cercano.

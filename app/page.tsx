@@ -1,254 +1,129 @@
 "use client";
 
-import {
-  Activity,
-  CalendarDays,
-  ChevronDown,
-  CircleAlert,
-  Database,
-  Flame,
-  MapPinned,
-  Radio,
-  RefreshCw,
-  ShieldCheck,
-} from "lucide-react";
+import { Activity, CalendarDays, ChevronDown, CircleAlert, Database, Flame, MapPinned, Radio, RefreshCw, ShieldCheck } from "lucide-react";
 import { useMemo, useState } from "react";
-import {
-  Area,
-  AreaChart,
-  Bar,
-  BarChart,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { DashboardMap, type FeatureCollection, type PointRow } from "@/components/dashboard-map";
 import { HISTORY_START_LABEL } from "@/lib/data-policy";
+import dashboardJson from "@/public/data/dashboard.json";
+import departmentGeoJson from "@/public/data/departments.json";
+import municipalityGeoJson from "@/public/data/municipalities.json";
 
 type Scenario = "A" | "B";
-
-const departments = [
-  { name: "Todos los departamentos", code: "00" },
-  { name: "Tolima", code: "73" },
-  { name: "Meta", code: "50" },
-  { name: "Caquetá", code: "18" },
-  { name: "Antioquia", code: "05" },
-  { name: "Guaviare", code: "95" },
-  { name: "Vichada", code: "99" },
-];
-
-const municipalities: Record<string, string[]> = {
-  "00": ["Todos los municipios"],
-  "73": ["Todos los municipios", "Armero (Guayabal)", "Ibagué", "San Luis"],
-  "50": ["Todos los municipios", "Puerto Gaitán", "La Macarena", "Villavicencio"],
-  "18": ["Todos los municipios", "San Vicente del Caguán", "Cartagena del Chairá"],
-  "05": ["Todos los municipios", "Caucasia", "Turbo", "Yondó"],
-  "95": ["Todos los municipios", "San José del Guaviare", "Calamar"],
-  "99": ["Todos los municipios", "Cumaribo", "Puerto Carreño"],
+type Territory = { code: string; name: string; countA: number; countB: number };
+type Municipality = Territory & { departmentCode: string; areaKm2: number | null };
+type DashboardData = {
+  metadata: { generatedAtUtc: string; historyStartDate: string; lastObservationDate: string; totalRows: number; scenarioARows: number; scenarioBRows: number; territorialStatus: Record<string, number> };
+  dates: string[]; sources: string[]; departments: Territory[]; municipalities: Municipality[]; points: PointRow[];
 };
 
-const rankings = [
-  { name: "Tolima", valueA: 632, valueB: 486 },
-  { name: "Meta", valueA: 548, valueB: 374 },
-  { name: "Caquetá", valueA: 443, valueB: 318 },
-  { name: "Antioquia", valueA: 391, valueB: 282 },
-  { name: "Guaviare", valueA: 337, valueB: 248 },
-  { name: "Vichada", valueA: 284, valueB: 196 },
-];
+const dashboard = dashboardJson as unknown as DashboardData;
+const departmentsGeo = departmentGeoJson as unknown as FeatureCollection;
+const municipalitiesGeo = municipalityGeoJson as unknown as FeatureCollection;
+const numberFormat = new Intl.NumberFormat("es-CO");
+const dateFormat = new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
-const trend = [
-  { day: "01 ago", valueA: 126, valueB: 83 },
-  { day: "05 ago", valueA: 178, valueB: 112 },
-  { day: "09 ago", valueA: 246, valueB: 169 },
-  { day: "13 ago", valueA: 371, valueB: 258 },
-  { day: "17 ago", valueA: 214, valueB: 151 },
-  { day: "21 ago", valueA: 284, valueB: 197 },
-  { day: "26 ago", valueA: 165, valueB: 109 },
-];
+function MetricCard({ icon: Icon, label, value, detail }: { icon: typeof Flame; label: string; value: string; detail: string }) {
+  return <article className="metric-card"><div className="metric-icon"><Icon size={18} /></div><div><p>{label}</p><strong>{value}</strong><span>{detail}</span></div></article>;
+}
 
-const demoPoints = [
-  [46, 30, 6], [51, 34, 4], [55, 39, 5], [58, 45, 7], [54, 50, 4],
-  [48, 56, 5], [43, 60, 7], [49, 65, 4], [57, 69, 5], [61, 74, 7],
-  [55, 80, 4], [47, 75, 6], [39, 66, 4], [36, 57, 5], [41, 48, 4],
-  [44, 41, 3], [64, 59, 4], [68, 64, 5], [63, 83, 4], [31, 45, 3],
-];
-
-function MetricCard({
-  icon: Icon,
-  label,
-  value,
-  detail,
-}: {
-  icon: typeof Flame;
-  label: string;
-  value: string;
-  detail: string;
-}) {
-  return (
-    <article className="metric-card">
-      <div className="metric-icon"><Icon size={18} /></div>
-      <div>
-        <p>{label}</p>
-        <strong>{value}</strong>
-        <span>{detail}</span>
-      </div>
-    </article>
-  );
+function labelDate(value: string) {
+  return dateFormat.format(new Date(`${value}T12:00:00Z`)).replace(" de ", " ");
 }
 
 export default function Home() {
   const [scenario, setScenario] = useState<Scenario>("B");
-  const [department, setDepartment] = useState("00");
-  const [municipality, setMunicipality] = useState("Todos los municipios");
+  const [departmentCode, setDepartmentCode] = useState("00");
+  const [municipalityCode, setMunicipalityCode] = useState("00000");
+  const [startDate, setStartDate] = useState(dashboard.metadata.historyStartDate);
+  const [endDate, setEndDate] = useState(dashboard.metadata.lastObservationDate);
 
-  const rankData = useMemo(
-    () => rankings.map((item) => ({ name: item.name, value: scenario === "A" ? item.valueA : item.valueB })),
-    [scenario],
-  );
-  const trendData = useMemo(
-    () => trend.map((item) => ({ day: item.day, value: scenario === "A" ? item.valueA : item.valueB })),
-    [scenario],
-  );
-  const multiplier = scenario === "A" ? 1 : 0.71;
-  const selectedDepartment = departments.find((item) => item.code === department)?.name ?? "Colombia";
+  const departmentIndex = useMemo(() => new Map(dashboard.departments.map((item, index) => [item.code, index])), []);
+  const municipalityIndex = useMemo(() => new Map(dashboard.municipalities.map((item, index) => [item.code, index])), []);
+  const startIndex = Math.max(0, dashboard.dates.indexOf(startDate));
+  const rawEndIndex = dashboard.dates.indexOf(endDate);
+  const endIndex = rawEndIndex < 0 ? dashboard.dates.length - 1 : rawEndIndex;
+  const selectedDepartmentIndex = departmentIndex.get(departmentCode);
+  const selectedMunicipalityIndex = municipalityIndex.get(municipalityCode);
 
-  return (
-    <main className="dashboard-shell">
-      <header className="topbar">
-        <div className="brand-block">
-          <div className="brand-mark"><Flame size={21} /></div>
-          <div>
-            <p className="eyebrow">MONITOREO TERRITORIAL · COLOMBIA</p>
-            <h1>Detecciones de calor</h1>
-          </div>
-        </div>
-        <div className="status-cluster">
-          <span className="demo-badge">PROTOTIPO · DATOS DEMOSTRATIVOS</span>
-          <span className="status-chip"><CalendarDays size={14} /> Histórico desde {HISTORY_START_LABEL}</span>
-          <span className="status-chip"><span className="pulse" /> Última carga simulada: 30 ago 2026</span>
-        </div>
-      </header>
+  const municipalityOptions = useMemo(() => dashboard.municipalities.filter((item) => item.departmentCode === departmentCode), [departmentCode]);
+  const visiblePoints = useMemo(() => dashboard.points.filter((point) => {
+    if (scenario === "B" && point[7] !== 1) return false;
+    if (point[4] < startIndex || point[4] > endIndex) return false;
+    if (selectedDepartmentIndex !== undefined && point[2] !== selectedDepartmentIndex) return false;
+    if (selectedMunicipalityIndex !== undefined && point[3] !== selectedMunicipalityIndex) return false;
+    return true;
+  }), [scenario, startIndex, endIndex, selectedDepartmentIndex, selectedMunicipalityIndex]);
 
-      <section className="notice" aria-label="Advertencia metodológica">
-        <CircleAlert size={18} />
-        <p><strong>Lectura responsable:</strong> una detección térmica no confirma por sí sola un incendio ni su causa. Las cifras de esta fase son demostrativas y sirven para validar la interfaz.</p>
-      </section>
+  const metrics = useMemo(() => {
+    const departments = new Set<number>(), municipalities = new Set<number>(), sources = new Set<number>();
+    for (const point of visiblePoints) {
+      if (point[2] >= 0) departments.add(point[2]);
+      if (point[3] >= 0) municipalities.add(point[3]);
+      sources.add(point[6]);
+    }
+    return { departments: departments.size, municipalities: municipalities.size, sources: sources.size };
+  }, [visiblePoints]);
 
-      <section className="filterbar" aria-label="Filtros territoriales y metodológicos">
-        <label>
-          <span>Departamento</span>
-          <div className="select-wrap">
-            <select value={department} onChange={(event) => { setDepartment(event.target.value); setMunicipality("Todos los municipios"); }}>
-              {departments.map((item) => <option key={item.code} value={item.code}>{item.name}</option>)}
-            </select>
-            <ChevronDown size={16} />
-          </div>
-        </label>
-        <label>
-          <span>Municipio</span>
-          <div className="select-wrap">
-            <select value={municipality} onChange={(event) => setMunicipality(event.target.value)}>
-              {(municipalities[department] ?? municipalities["00"]).map((name) => <option key={name}>{name}</option>)}
-            </select>
-            <ChevronDown size={16} />
-          </div>
-        </label>
-        <div className="scenario-field">
-          <span>Escenario de sensores</span>
-          <div className="segmented" role="group" aria-label="Escenario de sensores">
-            <button className={scenario === "A" ? "active" : ""} onClick={() => setScenario("A")}>A · todos</button>
-            <button className={scenario === "B" ? "active" : ""} onClick={() => setScenario("B")}>B · sin SNPP</button>
-          </div>
-        </div>
-        <button className="reset-button" onClick={() => { setDepartment("00"); setMunicipality("Todos los municipios"); setScenario("B"); }}>
-          <RefreshCw size={16} /> Restablecer
-        </button>
-      </section>
+  const ranking = useMemo(() => {
+    const byMunicipality = departmentCode !== "00";
+    const counts = new Map<number, number>();
+    for (const point of visiblePoints) {
+      const index = byMunicipality ? point[3] : point[2];
+      if (index >= 0) counts.set(index, (counts.get(index) ?? 0) + 1);
+    }
+    const catalog = byMunicipality ? dashboard.municipalities : dashboard.departments;
+    return [...counts.entries()].map(([index, value]) => ({ name: catalog[index].name, value })).sort((a, b) => b.value - a.value).slice(0, 7);
+  }, [visiblePoints, departmentCode]);
 
-      <section className="metrics-grid">
-        <MetricCard icon={Flame} label="Hotspots visibles" value={Math.round(2564 * multiplier).toLocaleString("es-CO")} detail={`Escenario ${scenario} · periodo activo`} />
-        <MetricCard icon={MapPinned} label="Departamentos" value={scenario === "A" ? "31" : "29"} detail="Con al menos una detección" />
-        <MetricCard icon={Activity} label="Municipios" value={Math.round(384 * multiplier).toLocaleString("es-CO")} detail="Asignación DANE proyectada" />
-        <MetricCard icon={Radio} label="Sensores" value={scenario === "A" ? "4" : "3"} detail={scenario === "A" ? "MODIS + VIIRS" : "SNPP excluido"} />
-      </section>
+  const trend = useMemo(() => {
+    const counts = new Array(dashboard.dates.length).fill(0) as number[];
+    for (const point of visiblePoints) counts[point[4]] += 1;
+    return dashboard.dates.map((date, index) => ({ date, day: labelDate(date).replace(/ 2026$/, ""), value: counts[index] })).filter((_, index) => index >= startIndex && index <= endIndex);
+  }, [visiblePoints, startIndex, endIndex]);
 
-      <section className="workspace-grid">
-        <article className="panel map-panel">
-          <div className="panel-heading">
-            <div><p className="panel-kicker">DISTRIBUCIÓN ESPACIAL</p><h2>{municipality !== "Todos los municipios" ? municipality : selectedDepartment}</h2></div>
-            <span className="method-chip">Escenario {scenario}</span>
-          </div>
-          <div className="map-surface" role="img" aria-label="Vista demostrativa de detecciones térmicas en Colombia">
-            <svg viewBox="0 0 100 112" aria-hidden="true">
-              <defs>
-                <linearGradient id="countryFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#dce9dd" />
-                  <stop offset="1" stopColor="#c5dccb" />
-                </linearGradient>
-                <filter id="glow"><feGaussianBlur stdDeviation="1.4" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
-              </defs>
-              <path className="country" d="M39 5 L50 9 58 18 63 25 69 28 66 37 71 44 66 50 70 61 66 70 67 81 61 91 57 106 50 101 46 90 39 83 37 72 30 62 32 53 27 44 31 35 27 25 34 18 Z" />
-              <path className="dept-line" d="M34 18 L58 18 M30 34 L66 37 M31 52 L68 54 M37 72 L66 70 M45 90 L62 89 M49 9 L45 101 M34 36 L57 106 M61 26 L38 83" />
-              {demoPoints.slice(0, scenario === "A" ? 20 : 15).map(([x, y, r], index) => (
-                <g key={`${x}-${y}`} filter="url(#glow)">
-                  <circle cx={x} cy={y} r={r / 2.2} fill="#df3f25" opacity="0.22" />
-                  <circle cx={x} cy={y} r={Math.max(0.8, r / 5)} fill={index % 3 === 0 ? "#a92319" : "#f15a24"} stroke="#fff6ed" strokeWidth="0.35" />
-                </g>
-              ))}
-            </svg>
-            <div className="map-legend">
-              <span><i className="dot-high" /> Detección demostrativa</span>
-              <span><i className="area-swatch" /> Límite de referencia</span>
-            </div>
-            <div className="map-caption">La cartografía DANE y los datos oficiales IDEAM se incorporan en las fases 2 y 3.</div>
-          </div>
-        </article>
+  const selectedDepartment = dashboard.departments.find((item) => item.code === departmentCode);
+  const selectedMunicipality = dashboard.municipalities.find((item) => item.code === municipalityCode);
+  const title = selectedMunicipality?.name ?? selectedDepartment?.name ?? "Colombia";
+  const generated = new Date(dashboard.metadata.generatedAtUtc).toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "medium", timeStyle: "short" });
+  const reset = () => { setScenario("B"); setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); };
 
-        <div className="side-stack">
-          <article className="panel chart-panel">
-            <div className="panel-heading compact"><div><p className="panel-kicker">CONCENTRACIÓN</p><h2>Departamentos con más detecciones</h2></div></div>
-            <div className="chart-wrap">
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
-                <BarChart data={rankData} layout="vertical" margin={{ left: 8, right: 26 }}>
-                  <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e8ece8" />
-                  <XAxis type="number" hide />
-                  <YAxis type="category" dataKey="name" width={72} tick={{ fontSize: 11, fill: "#46534a" }} axisLine={false} tickLine={false} />
-                  <Tooltip cursor={{ fill: "#f4f7f4" }} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} />
-                  <Bar dataKey="value" fill="#d9462e" radius={[0, 5, 5, 0]} barSize={16} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </article>
+  return <main className="dashboard-shell">
+    <header className="topbar">
+      <div className="brand-block"><div className="brand-mark"><Flame size={21} /></div><div><p className="eyebrow">MONITOREO TERRITORIAL · COLOMBIA</p><h1>Detecciones de calor</h1></div></div>
+      <div className="status-cluster"><span className="official-badge">DATOS OFICIALES PROCESADOS</span><span className="status-chip"><CalendarDays size={14} /> Histórico desde {HISTORY_START_LABEL}</span><span className="status-chip"><span className="pulse" /> Actualizado: {generated}</span></div>
+    </header>
 
-          <article className="panel chart-panel trend-panel">
-            <div className="panel-heading compact"><div><p className="panel-kicker">EVOLUCIÓN TEMPORAL</p><h2>Detecciones por fecha</h2></div></div>
-            <div className="trend-wrap">
-              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}>
-                <AreaChart data={trendData} margin={{ left: -22, right: 12, top: 8 }}>
-                  <defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f06432" stopOpacity="0.45" /><stop offset="1" stopColor="#f06432" stopOpacity="0.03" /></linearGradient></defs>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e8ece8" />
-                  <XAxis dataKey="day" tick={{ fontSize: 10, fill: "#647068" }} axisLine={false} tickLine={false} interval={1} />
-                  <YAxis tick={{ fontSize: 10, fill: "#647068" }} axisLine={false} tickLine={false} />
-                  <Tooltip contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} />
-                  <Area type="monotone" dataKey="value" stroke="#c73524" strokeWidth={2.5} fill="url(#trendFill)" />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-          </article>
-        </div>
-      </section>
+    <section className="notice" aria-label="Advertencia metodológica"><CircleAlert size={18} /><p><strong>Lectura responsable:</strong> una detección térmica satelital no confirma por sí sola un incendio, su extensión ni su causa. Fuente de puntos: IDEAM; asignación territorial: MGN 2025 del DANE.</p></section>
 
-      <section className="audit-strip">
-        <div><Database size={18} /><span><strong>Fuente prevista</strong> IDEAM · CSV diario</span></div>
-        <div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL} · hora Colombia</span></div>
-        <div><ShieldCheck size={18} /><span><strong>Control</strong> deduplicación, integridad y cierre territorial</span></div>
-      </section>
+    <section className="filterbar" aria-label="Filtros territoriales y metodológicos">
+      <label><span>Desde</span><input type="date" min={dashboard.metadata.historyStartDate} max={endDate} value={startDate} onChange={(event) => setStartDate(event.target.value)} /></label>
+      <label><span>Hasta</span><input type="date" min={startDate} max={dashboard.metadata.lastObservationDate} value={endDate} onChange={(event) => setEndDate(event.target.value)} /></label>
+      <label><span>Departamento</span><div className="select-wrap"><select value={departmentCode} onChange={(event) => { setDepartmentCode(event.target.value); setMunicipalityCode("00000"); }}><option value="00">Todos los departamentos</option>{dashboard.departments.map((item) => <option key={item.code} value={item.code}>{item.name}</option>)}</select><ChevronDown size={16} /></div></label>
+      <label><span>Municipio</span><div className="select-wrap"><select value={municipalityCode} disabled={departmentCode === "00"} onChange={(event) => setMunicipalityCode(event.target.value)}><option value="00000">Todos los municipios</option>{municipalityOptions.map((item) => <option key={item.code} value={item.code}>{item.name}</option>)}</select><ChevronDown size={16} /></div></label>
+      <div className="scenario-field"><span>Escenario de sensores</span><div className="segmented" role="group" aria-label="Escenario de sensores"><button className={scenario === "A" ? "active" : ""} onClick={() => setScenario("A")}>A · todos</button><button className={scenario === "B" ? "active" : ""} onClick={() => setScenario("B")}>B · sin SNPP</button></div></div>
+      <button className="reset-button" onClick={reset}><RefreshCw size={16} /> Restablecer</button>
+    </section>
 
-      <footer>
-        <p>Prototipo técnico nacional · Las cifras visibles no son resultados oficiales.</p>
-        <p>Metodología, fuentes y trazabilidad disponibles en <code>/docs</code>.</p>
-      </footer>
-    </main>
-  );
+    <section className="metrics-grid">
+      <MetricCard icon={Flame} label="Detecciones visibles" value={numberFormat.format(visiblePoints.length)} detail={`Escenario ${scenario} · ${labelDate(startDate)}–${labelDate(endDate)}`} />
+      <MetricCard icon={MapPinned} label="Departamentos" value={numberFormat.format(metrics.departments)} detail="Con al menos una detección asignada" />
+      <MetricCard icon={Activity} label="Municipios" value={numberFormat.format(metrics.municipalities)} detail="Asignación oficial DANE 2025" />
+      <MetricCard icon={Radio} label="Fuentes satelitales" value={numberFormat.format(metrics.sources)} detail={scenario === "A" ? "MODIS y VIIRS disponibles" : "Suomi-NPP excluido"} />
+    </section>
+
+    <section className="workspace-grid">
+      <article className="panel map-panel"><div className="panel-heading"><div><p className="panel-kicker">DISTRIBUCIÓN ESPACIAL</p><h2>{title}</h2></div><span className="method-chip">Escenario {scenario}</span></div><div className="map-surface">
+        <DashboardMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={visiblePoints} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); }} onMunicipality={setMunicipalityCode} />
+        <div className="map-legend"><span><i className="dot-high" /> Detección IDEAM</span><span><i className="area-swatch" /> Límite DANE 2025</span></div><div className="map-caption">Haz clic en un territorio para filtrarlo. Los indicadores y gráficos se recalculan con el periodo y escenario seleccionados.</div>
+      </div></article>
+      <div className="side-stack">
+        <article className="panel chart-panel"><div className="panel-heading compact"><div><p className="panel-kicker">CONCENTRACIÓN</p><h2>{departmentCode === "00" ? "Departamentos" : "Municipios"} con más detecciones</h2></div></div><div className="chart-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><BarChart data={ranking} layout="vertical" margin={{ left: 8, right: 26 }}><CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e8ece8" /><XAxis type="number" hide /><YAxis type="category" dataKey="name" width={92} tick={{ fontSize: 10, fill: "#46534a" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} cursor={{ fill: "#f4f7f4" }} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Bar dataKey="value" name="Detecciones" fill="#d9462e" radius={[0, 5, 5, 0]} barSize={15} /></BarChart></ResponsiveContainer></div></article>
+        <article className="panel chart-panel trend-panel"><div className="panel-heading compact"><div><p className="panel-kicker">EVOLUCIÓN TEMPORAL</p><h2>Detecciones por fecha</h2></div></div><div className="trend-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><AreaChart data={trend} margin={{ left: -18, right: 12, top: 8 }}><defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f06432" stopOpacity="0.45" /><stop offset="1" stopColor="#f06432" stopOpacity="0.03" /></linearGradient></defs><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e8ece8" /><XAxis dataKey="day" tick={{ fontSize: 9, fill: "#647068" }} axisLine={false} tickLine={false} minTickGap={28} /><YAxis tick={{ fontSize: 10, fill: "#647068" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} labelFormatter={(_, payload) => payload?.[0]?.payload?.date ? labelDate(payload[0].payload.date) : ""} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Area type="monotone" dataKey="value" name="Detecciones" stroke="#c73524" strokeWidth={2.5} fill="url(#trendFill)" /></AreaChart></ResponsiveContainer></div></article>
+      </div>
+    </section>
+
+    <section className="audit-strip"><div><Database size={18} /><span><strong>Fuente</strong> IDEAM · CSV diario nacional</span></div><div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL} · hora Colombia</span></div><div><ShieldCheck size={18} /><span><strong>Cierre territorial</strong> {numberFormat.format(dashboard.metadata.territorialStatus.asignado ?? 0)} asignadas · {numberFormat.format(dashboard.metadata.territorialStatus.sin_asignacion ?? 0)} sin intersección</span></div></section>
+    <footer><p>Dashboard nacional en desarrollo · Datos actualizados automáticamente.</p><p>Metodología, fuentes y trazabilidad disponibles en <code>/docs</code>.</p></footer>
+  </main>;
 }
