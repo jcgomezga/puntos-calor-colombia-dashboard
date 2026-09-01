@@ -1,14 +1,14 @@
 # Checkpoint actual
 
 - Fecha: 1 de septiembre de 2026.
-- Versión: 0.4.0.
-- Fases cerradas: 0, 1, 2, 3 y 4A.
-- Estado técnico: lint correcto; build GitHub Pages correcto; 16/16 pruebas Python aprobadas.
+- Versión: 0.4.1.
+- Fases cerradas: 0, 1, 2, 3, 4A y 4B.
+- Estado técnico: lint correcto; build GitHub Pages correcto; 20/20 pruebas Python y 9/9 pruebas web aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
-- Periodo almacenado: `2026-07-01` a `2026-08-31`, hora de Colombia.
-- Volumen al checkpoint: 30.910 detecciones únicas; el total seguirá creciendo automáticamente.
-- Escenarios al checkpoint: A = 30.910; B sin Suomi-NPP = 21.618.
-- Cierre territorial: 30.883 asignadas y 27 sin intersección DANE; 0 pendientes por límite o solapamiento.
+- Periodo almacenado: `2026-07-01` a `2026-09-01`, hora de Colombia.
+- Volumen al checkpoint: 31.322 detecciones únicas; el total seguirá creciendo automáticamente.
+- Escenarios al checkpoint: A = 31.322; B sin Suomi-NPP = 21.919.
+- Cierre territorial: 31.295 asignadas y 27 sin intersección DANE; 0 pendientes por límite o solapamiento.
 - Catálogos: 33 departamentos y 1.122 municipios del MGN 2025.
 - Repositorio remoto: `https://github.com/jcgomezga/puntos-calor-colombia-dashboard`.
 - URL pública: `https://jcgomezga.github.io/puntos-calor-colombia-dashboard/`.
@@ -23,9 +23,12 @@
 - Estabilización de gráficos: `789320496eec8e8e95a496b68b652baf5c8572fe`.
 - Workflow territorial verificado: `33524144257`.
 - Despliegue final verificado: `33542445532`.
-- RUNAP: 1.909 áreas protegidas consultadas; 2.028 hotspots dentro, 28.882 fuera y 4 con solapamiento.
-- Cierre RUNAP: 30.910/30.910 detecciones clasificadas; los solapamientos son un subconjunto de `dentro`.
+- RUNAP: 1.909 áreas protegidas consultadas; 2.039 hotspots dentro, 29.283 fuera y 4 con solapamiento.
+- Cierre RUNAP: 31.322/31.322 detecciones clasificadas; los solapamientos son un subconjunto de `dentro`.
 - Commit remoto de datos RUNAP: `6e1519ae6ac1c7dc92ff904ff2351ce25b850ca8`.
 - Workflow RUNAP verificado: `33545663965`.
 - Despliegue GitHub Pages verificado: `33546192024`.
-- Próxima fase: 4B, cobertura del suelo con fuente y leyenda nacional auditadas.
+- Cobertura IDEAM 2024: 31.289 asignaciones simples, 3 solapamientos y 30 sin cobertura; cierre 31.322/31.322.
+- Catálogo de cobertura: 86 clases detalladas presentes en el histórico.
+- Workflow de cobertura verificado: `33566847202`; commit remoto de datos `856aa5b`.
+- Próxima fase: definir el alcance de 4C antes de incorporar una nueva capa temática.

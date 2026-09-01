@@ -22,6 +22,10 @@
 | DM-018 | Mostrar por defecto todo el histórico disponible desde julio de 2026 | Hacer visible el carácter acumulativo y permitir reducción mediante filtros | Implementada |
 | DM-019 | Clasificar dentro/fuera de RUNAP sin buffers | Separar una relación espacial verificable de cualquier inferencia de afectación | Implementada en Fase 4A |
 | DM-020 | Contar hotspots únicos y conservar todas las coincidencias RUNAP | Evitar inflar indicadores cuando existen polígonos superpuestos | Implementada en Fase 4A |
+| DM-021 | Usar la cobertura IDEAM 2024 a escala 1:100.000 | Es el producto nacional oficial más reciente disponible para el cruce | Implementada en Fase 4B |
+| DM-022 | Asignar cobertura por intersección puntual y no por cercanía | Evitar atribuir una clase inexistente cuando el punto queda fuera de los polígonos | Implementada en Fase 4B |
+| DM-023 | Persistir la cobertura por `hotspot_id` y consultar solo identificadores nuevos | Hacer sostenibles las actualizaciones cada tres horas sin reprocesar el histórico completo | Implementada en Fase 4B |
+| DM-024 | Filtrar la interfaz por nivel 1 y conservar la leyenda detallada en los datos | Mantener un selector legible sin perder trazabilidad CORINE | Implementada en Fase 4B |
 
 ## Aplicación de DM-009
 
@@ -35,4 +39,4 @@
 ## Decisiones pendientes
 
 - Estrategia de compresión o almacenamiento cuando aumente el tamaño del histórico acumulativo.
-- Fuente, vigencia y leyenda nacional para la cobertura del suelo de la Fase 4B.
+- Siguiente capa temática nacional y orden de implementación después de la Fase 4B.
