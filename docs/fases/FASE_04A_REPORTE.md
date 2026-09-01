@@ -3,8 +3,8 @@
 ## Estado del checkpoint
 
 - Fecha: 1 de septiembre de 2026.
-- Versión objetivo: 0.4.0.
-- Estado: motor e interfaz implementados y validados localmente; ejecución nacional remota pendiente de cierre.
+- Versión: 0.4.0.
+- Estado: cerrada y publicada.
 - Histórico: se conserva exclusivamente desde `2026-07-01`.
 
 ## Alcance ejecutado
@@ -25,12 +25,27 @@
 | ESLint | Correcto |
 | Compilación estática GitHub Pages | Correcta |
 | Corte histórico | Se mantiene desde 2026-07-01 |
-| Publicación de cifras RUNAP | Bloqueada hasta cierre remoto |
+| Ejecución nacional | 30.910/30.910 detecciones clasificadas |
+| Workflow de datos | `33545663965`, correcto |
+| Despliegue GitHub Pages | `33546192024`, correcto |
 
-## Riesgo y tratamiento
+## Resultado nacional
 
-El servicio RUNAP no respondió dentro del tiempo disponible desde el entorno de trabajo. No se generaron cifras locales parciales. El código queda preparado para ejecutarse en GitHub Actions. El cierre solo podrá marcarse completo cuando `dentro + fuera` coincida con el total de hotspots, todos los puntos contengan el indicador binario y el workflow finalice correctamente.
+| Resultado | Cantidad |
+|---|---:|
+| Áreas protegidas RUNAP consultadas | 1.909 |
+| Hotspots dentro de RUNAP | 2.028 |
+| Hotspots fuera de RUNAP | 28.882 |
+| Hotspots con más de una coincidencia | 4 |
+| Total cerrado | 30.910 |
 
-## Próximo paso exacto
+La suma `dentro + fuera` coincide exactamente con el histórico. Los cuatro solapamientos son un subconjunto de los 2.028 hotspots dentro; no se suman nuevamente al indicador.
 
-Publicar el motor, observar la ejecución automática y completar este informe con el número de áreas RUNAP, hotspots dentro/fuera, solapamientos, commit de datos y ejecución verificada. La cobertura del suelo queda como Fase 4B independiente.
+El servicio RUNAP agotó el tiempo de espera desde el entorno local, pero respondió correctamente en GitHub Actions. El incidente queda cerrado sin haber desactivado validaciones ni fabricado cifras parciales.
+
+## Publicación y continuidad
+
+- Commit remoto de datos RUNAP: `6e1519ae6ac1c7dc92ff904ff2351ce25b850ca8`.
+- El filtro permite mostrar todas las detecciones, únicamente las que intersectan RUNAP o únicamente las que quedan fuera.
+- La actualización automática recalcula RUNAP después de cada territorialización DANE.
+- La cobertura del suelo queda como Fase 4B independiente.
