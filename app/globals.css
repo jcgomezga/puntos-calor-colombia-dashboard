@@ -45,7 +45,7 @@ h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 28px;
 .pulse { width: 7px; height: 7px; border-radius: 50%; background: #37945e; box-shadow: 0 0 0 4px #37945e1d; }
 .notice { margin-top: 18px; min-height: 44px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; border-left: 4px solid #dc6b2f; border-radius: 6px; background: #fff8ed; color: #6f4b2f; font-size: 12px; }
 .notice p { margin: 0; }
-.filterbar { margin-top: 14px; padding: 14px; display: grid; grid-template-columns: .8fr .8fr 1.05fr 1.05fr 1.05fr 1.25fr auto; align-items: end; gap: 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: 0 5px 20px #26382b0a; }
+.filterbar { margin-top: 14px; padding: 14px; display: grid; grid-template-columns: repeat(4, minmax(150px, 1fr)); align-items: end; gap: 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: 0 5px 20px #26382b0a; }
 .filterbar label > span, .scenario-field > span { display: block; margin-bottom: 6px; color: #59665e; font-size: 11px; font-weight: 750; }
 .select-wrap { position: relative; }
 .select-wrap select, .filterbar input { width: 100%; height: 37px; appearance: none; padding: 0 34px 0 11px; border: 1px solid #ced8d0; border-radius: 7px; background: #fbfcfb; color: #263129; font-size: 12px; outline: none; }
@@ -56,7 +56,7 @@ h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 28px;
 .segmented button { border: 0; border-radius: 6px; background: transparent; color: #5a665f; font-size: 11px; font-weight: 700; }
 .segmented button.active { background: white; color: var(--forest); box-shadow: 0 1px 5px #1c2f2130; }
 .reset-button { height: 37px; padding: 0 13px; display: flex; align-items: center; gap: 7px; border: 1px solid #bfcac1; border-radius: 7px; background: white; color: #34443a; font-size: 11px; font-weight: 750; }
-.metrics-grid { margin-top: 14px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.metrics-grid { margin-top: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
 .metric-card { min-height: 112px; display: flex; align-items: flex-start; gap: 12px; padding: 17px; border: 1px solid var(--line); border-radius: 11px; background: var(--paper); box-shadow: 0 5px 20px #26382b0a; }
 .metric-icon { width: 34px; height: 34px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 8px; background: #fff0e7; color: #c83d29; }
 .metric-card p { margin: 0; color: #647168; font-size: 11px; font-weight: 700; }

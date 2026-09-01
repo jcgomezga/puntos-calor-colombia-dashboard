@@ -19,6 +19,7 @@ on:
       - "scripts/update_ideam_data.py"
       - "scripts/territorialize_hotspots.py"
       - "scripts/enrich_protected_areas.py"
+      - "scripts/enrich_land_cover.py"
       - "config/data-policy.json"
       - "tests_py/**"
       - ".github/workflows/update-data.yml"
@@ -62,6 +63,8 @@ jobs:
         run: python scripts/territorialize_hotspots.py --workers 4 --batch-size 25
       - name: Relacionar con áreas protegidas RUNAP
         run: python scripts/enrich_protected_areas.py --workers 4 --batch-size 100
+      - name: Asignar cobertura de la tierra IDEAM 2024
+        run: python scripts/enrich_land_cover.py --workers 6 --batch-size 100
       - name: Guardar resultados versionados
         shell: bash
         run: |

@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Leaf, MapPinned, Radio, RefreshCw, ShieldCheck } from "lucide-react";
+import { Activity, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Layers3, Leaf, MapPinned, Radio, RefreshCw, ShieldCheck } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { DashboardMap, type FeatureCollection, type PointRow } from "@/components/dashboard-map";
@@ -13,9 +13,10 @@ type Scenario = "A" | "B";
 type ProtectedRelation = "all" | "inside" | "outside";
 type Territory = { code: string; name: string; countA: number; countB: number };
 type Municipality = Territory & { departmentCode: string; areaKm2: number | null };
+type LandCover = { code: string; label: string; level1: string; level1Code: string; level2: string; level3: string };
 type DashboardData = {
-  metadata: { generatedAtUtc: string; historyStartDate: string; lastObservationDate: string; totalRows: number; scenarioARows: number; scenarioBRows: number; territorialStatus: Record<string, number>; protectedAreas?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number } };
-  dates: string[]; sources: string[]; departments: Territory[]; municipalities: Municipality[]; points: PointRow[];
+  metadata: { generatedAtUtc: string; historyStartDate: string; lastObservationDate: string; totalRows: number; scenarioARows: number; scenarioBRows: number; territorialStatus: Record<string, number>; protectedAreas?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number }; landCover?: { year: number; assignedRows: number; unassignedRows: number; catalogSize: number } };
+  dates: string[]; sources: string[]; departments: Territory[]; municipalities: Municipality[]; landCovers?: LandCover[]; points: PointRow[];
 };
 
 const dashboard = dashboardJson as unknown as DashboardData;
@@ -39,6 +40,9 @@ export default function Home() {
   const [startDate, setStartDate] = useState(dashboard.metadata.historyStartDate);
   const [endDate, setEndDate] = useState(dashboard.metadata.lastObservationDate);
   const [protectedRelation, setProtectedRelation] = useState<ProtectedRelation>("all");
+  const [landCoverLevel, setLandCoverLevel] = useState("all");
+  const landCovers = useMemo(() => dashboard.landCovers ?? [], []);
+  const landCoverLevels = useMemo(() => [...new Map(landCovers.map((item) => [item.level1Code, item.level1])).entries()].sort(), [landCovers]);
 
   const departmentIndex = useMemo(() => new Map(dashboard.departments.map((item, index) => [item.code, index])), []);
   const municipalityIndex = useMemo(() => new Map(dashboard.municipalities.map((item, index) => [item.code, index])), []);
@@ -56,8 +60,9 @@ export default function Home() {
     if (selectedMunicipalityIndex !== undefined && point[3] !== selectedMunicipalityIndex) return false;
     if (protectedRelation === "inside" && point[11] !== 1) return false;
     if (protectedRelation === "outside" && point[11] === 1) return false;
+    if (landCoverLevel !== "all" && (point[12] === undefined || point[12] < 0 || landCovers[point[12]]?.level1Code !== landCoverLevel)) return false;
     return true;
-  }), [scenario, startIndex, endIndex, selectedDepartmentIndex, selectedMunicipalityIndex, protectedRelation]);
+  }), [scenario, startIndex, endIndex, selectedDepartmentIndex, selectedMunicipalityIndex, protectedRelation, landCoverLevel, landCovers]);
 
   const metrics = useMemo(() => {
     const departments = new Set<number>(), municipalities = new Set<number>(), sources = new Set<number>();
@@ -66,7 +71,8 @@ export default function Home() {
       if (point[3] >= 0) municipalities.add(point[3]);
       sources.add(point[6]);
     }
-    return { departments: departments.size, municipalities: municipalities.size, sources: sources.size, protected: visiblePoints.filter((point) => point[11] === 1).length };
+    const covers = new Set(visiblePoints.map((point) => point[12]).filter((index) => index !== undefined && index >= 0));
+    return { departments: departments.size, municipalities: municipalities.size, sources: sources.size, protected: visiblePoints.filter((point) => point[11] === 1).length, covers: covers.size };
   }, [visiblePoints]);
 
   const ranking = useMemo(() => {
@@ -90,7 +96,7 @@ export default function Home() {
   const selectedMunicipality = dashboard.municipalities.find((item) => item.code === municipalityCode);
   const title = selectedMunicipality?.name ?? selectedDepartment?.name ?? "Colombia";
   const generated = new Date(dashboard.metadata.generatedAtUtc).toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "medium", timeStyle: "short" });
-  const reset = () => { setScenario("B"); setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); setProtectedRelation("all"); };
+  const reset = () => { setScenario("B"); setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); setProtectedRelation("all"); setLandCoverLevel("all"); };
 
   return <main className="dashboard-shell">
     <header className="topbar">
@@ -106,6 +112,7 @@ export default function Home() {
       <label><span>Departamento</span><div className="select-wrap"><select value={departmentCode} onChange={(event) => { setDepartmentCode(event.target.value); setMunicipalityCode("00000"); }}><option value="00">Todos los departamentos</option>{dashboard.departments.map((item) => <option key={item.code} value={item.code}>{item.name}</option>)}</select><ChevronDown size={16} /></div></label>
       <label><span>Municipio</span><div className="select-wrap"><select value={municipalityCode} disabled={departmentCode === "00"} onChange={(event) => setMunicipalityCode(event.target.value)}><option value="00000">Todos los municipios</option>{municipalityOptions.map((item) => <option key={item.code} value={item.code}>{item.name}</option>)}</select><ChevronDown size={16} /></div></label>
       <label><span>Área protegida</span><div className="select-wrap"><select value={protectedRelation} onChange={(event) => setProtectedRelation(event.target.value as ProtectedRelation)}><option value="all">Todas las detecciones</option><option value="inside">Dentro de RUNAP</option><option value="outside">Fuera de RUNAP</option></select><ChevronDown size={16} /></div></label>
+      <label><span>Cobertura 2024</span><div className="select-wrap"><select value={landCoverLevel} disabled={!landCovers.length} onChange={(event) => setLandCoverLevel(event.target.value)}><option value="all">Todas las coberturas</option>{landCoverLevels.map(([code, label]) => <option key={code} value={code}>{label}</option>)}</select><ChevronDown size={16} /></div></label>
       <div className="scenario-field"><span>Escenario de sensores</span><div className="segmented" role="group" aria-label="Escenario de sensores"><button className={scenario === "A" ? "active" : ""} onClick={() => setScenario("A")}>A · todos</button><button className={scenario === "B" ? "active" : ""} onClick={() => setScenario("B")}>B · sin SNPP</button></div></div>
       <button className="reset-button" onClick={reset}><RefreshCw size={16} /> Restablecer</button>
     </section>
@@ -116,6 +123,7 @@ export default function Home() {
       <MetricCard icon={Activity} label="Municipios" value={numberFormat.format(metrics.municipalities)} detail="Asignación oficial DANE 2025" />
       <MetricCard icon={Radio} label="Fuentes satelitales" value={numberFormat.format(metrics.sources)} detail={scenario === "A" ? "MODIS y VIIRS disponibles" : "Suomi-NPP excluido"} />
       <MetricCard icon={Leaf} label="Dentro de áreas protegidas" value={numberFormat.format(metrics.protected)} detail="Intersección espacial con RUNAP" />
+      <MetricCard icon={Layers3} label="Coberturas detalladas" value={numberFormat.format(metrics.covers)} detail="IDEAM 2024 · escala 1:100.000" />
     </section>
 
     <section className="workspace-grid">
@@ -129,7 +137,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="audit-strip"><div><Database size={18} /><span><strong>Fuentes</strong> IDEAM · DANE · RUNAP</span></div><div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL} · hora Colombia</span></div><div><ShieldCheck size={18} /><span><strong>Cierre espacial</strong> {numberFormat.format(dashboard.metadata.territorialStatus.asignado ?? 0)} asignadas · {numberFormat.format(dashboard.metadata.protectedAreas?.insideRows ?? 0)} dentro de RUNAP</span></div></section>
+    <section className="audit-strip"><div><Database size={18} /><span><strong>Fuentes</strong> IDEAM · DANE · RUNAP</span></div><div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL} · cobertura de contexto {dashboard.metadata.landCover?.year ?? 2024}</span></div><div><ShieldCheck size={18} /><span><strong>Cierre espacial</strong> {numberFormat.format(dashboard.metadata.protectedAreas?.insideRows ?? 0)} dentro de RUNAP · {numberFormat.format(dashboard.metadata.landCover?.assignedRows ?? 0)} con cobertura</span></div></section>
     <footer><p>Dashboard nacional en desarrollo · Datos actualizados automáticamente.</p><p>Metodología, fuentes y trazabilidad disponibles en <code>/docs</code>.</p></footer>
   </main>;
 }
