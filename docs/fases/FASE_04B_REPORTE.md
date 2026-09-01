@@ -29,7 +29,7 @@
 | Corte histórico | Se mantiene desde 2026-07-01 |
 | Ejecución nacional | 31.322/31.322 detecciones clasificadas |
 | Workflow de datos | `33566847202`, correcto |
-| Despliegue GitHub Pages | Pendiente de registrar tras el cierre documental |
+| Despliegue GitHub Pages | `33568569681`, correcto |
 
 ## Resultado nacional
 
@@ -59,5 +59,6 @@ La clase asignada describe el contexto cartográfico IDEAM de 2024 en el punto d
 
 - Commit de implementación: `812299d2b0c04505c3e3c6657f003b2ba3367aa1`.
 - Commit remoto de datos: `856aa5b`.
+- Despliegue validado de interfaz y datos: `33568569681`.
 - La vigencia, escala, metodología y URL oficial quedan expuestas en los metadatos del dashboard.
 - La siguiente subfase debe definirse antes de incorporar otra capa temática nacional.

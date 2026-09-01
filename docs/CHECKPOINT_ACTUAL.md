@@ -31,4 +31,5 @@
 - Cobertura IDEAM 2024: 31.289 asignaciones simples, 3 solapamientos y 30 sin cobertura; cierre 31.322/31.322.
 - Catálogo de cobertura: 86 clases detalladas presentes en el histórico.
 - Workflow de cobertura verificado: `33566847202`; commit remoto de datos `856aa5b`.
+- Despliegue de la Fase 4B verificado: `33568569681`.
 - Próxima fase: definir el alcance de 4C antes de incorporar una nueva capa temática.
