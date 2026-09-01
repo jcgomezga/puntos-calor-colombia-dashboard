@@ -1,9 +1,9 @@
 # Checkpoint actual
 
 - Fecha: 1 de septiembre de 2026.
-- Versión: 0.3.0.
-- Fases cerradas: 0, 1, 2 y 3.
-- Estado técnico: lint correcto; build Vinext y GitHub Pages correctos; 13/13 pruebas Python y 9/9 pruebas web aprobadas.
+- Versión: 0.4.0-rc1.
+- Fases cerradas: 0, 1, 2 y 3. Fase 4A implementada, pendiente de ejecución nacional remota.
+- Estado técnico: lint correcto; build GitHub Pages correcto; 16/16 pruebas Python aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
 - Periodo almacenado: `2026-07-01` a `2026-08-31`, hora de Colombia.
 - Volumen al checkpoint: 30.910 detecciones únicas; el total seguirá creciendo automáticamente.
@@ -23,4 +23,7 @@
 - Estabilización de gráficos: `789320496eec8e8e95a496b68b652baf5c8572fe`.
 - Workflow territorial verificado: `33524144257`.
 - Despliegue final verificado: `33542445532`.
-- Próxima fase sugerida: coberturas del suelo y áreas protegidas con carga progresiva por escala.
+- Fase activa: relación `dentro/fuera` con áreas protegidas RUNAP.
+- Bloqueo controlado: la fuente RUNAP agotó el tiempo de espera local; no se publicaron cifras parciales.
+- Próximo paso: ejecutar y verificar el cierre nacional en GitHub Actions; luego cerrar la Fase 4A.
+- Fase posterior: 4B, cobertura del suelo con fuente y leyenda nacional auditadas.
