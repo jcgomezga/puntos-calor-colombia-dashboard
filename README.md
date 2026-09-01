@@ -2,7 +2,7 @@
 
 Dashboard nacional, abierto y reproducible para explorar detecciones térmicas publicadas por el IDEAM, diferenciadas por departamento y municipio.
 
-> Estado actual: **prototipo de interfaz con datos demostrativos**. Las cifras visibles todavía no son resultados oficiales. La conexión automatizada con IDEAM y la asignación territorial DANE corresponden a las fases 2 y 3.
+> Estado actual: **ingesta IDEAM automatizada y verificada; interfaz todavía demostrativa**. El histórico oficial está almacenado desde el 1 de julio de 2026, pero las cifras visibles no se sustituirán hasta completar la asignación territorial DANE de la Fase 3.
 
 ## Alcance
 
@@ -11,8 +11,8 @@ Dashboard nacional, abierto y reproducible para explorar detecciones térmicas p
 - Escenario B: análisis de sensibilidad sin Suomi-NPP.
 - Estadísticas temporales, territoriales y por sensor.
 - Histórico acumulativo únicamente desde el 1 de julio de 2026.
-- Actualización programada mediante GitHub Actions una vez validado el flujo.
-- Publicación prevista mediante GitHub Pages, sin ArcGIS Online.
+- Actualización programada cada tres horas mediante GitHub Actions.
+- Publicación mediante GitHub Pages, sin ArcGIS Online.
 
 Una detección térmica no confirma por sí sola un incendio, su causa ni una actividad específica.
 
@@ -39,7 +39,7 @@ python -m unittest discover -s tests_py -p "test_*.py" -v
 
 ## Actualización de datos
 
-La Fase 2 incorpora un flujo reproducible con tres modalidades:
+La Fase 2 incorporó un flujo reproducible con tres modalidades:
 
 ```bash
 python scripts/update_ideam_data.py --mode backfill
@@ -47,7 +47,7 @@ python scripts/update_ideam_data.py --mode refresh
 python scripts/update_ideam_data.py --mode offline
 ```
 
-GitHub Actions ejecuta `refresh` cada tres horas. La primera publicación del flujo utiliza `backfill` para recuperar el periodo completo desde el 1 de julio de 2026. Véase el [contrato de ingesta](docs/CONTRATO_INGESTA_IDEAM.md).
+GitHub Actions ejecuta `refresh` cada tres horas. El primer `backfill` recuperó correctamente los 62 archivos disponibles entre el 1 de julio y el 31 de agosto de 2026. Véanse el [contrato de ingesta](docs/CONTRATO_INGESTA_IDEAM.md) y el [reporte de la Fase 2](docs/fases/FASE_02_REPORTE.md).
 
 ## Trazabilidad
 

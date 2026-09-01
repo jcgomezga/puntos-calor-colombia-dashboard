@@ -4,7 +4,7 @@
 |---|---|---|---|
 | DM-001 | Crear repositorio nacional independiente | Evitar mezclar datos y versiones con Tolima | Aprobada |
 | DM-002 | Publicar sin ArcGIS Online | Restricción tecnológica del usuario | Aprobada |
-| DM-003 | Usar GitHub Pages | Alojamiento abierto y automatizable | Aprobada, pendiente de publicación |
+| DM-003 | Usar GitHub Pages | Alojamiento abierto y automatizable | Implementada |
 | DM-004 | Priorizar CSV diario IDEAM | Contiene más atributos que el JSON compacto | Aprobada |
 | DM-005 | Usar MGN 2025 del DANE | Referencia oficial territorial | Aprobada, pendiente de integración |
 | DM-006 | Mantener escenarios A y B | No trasladar sin prueba la decisión de Tolima | Aprobada |
@@ -14,6 +14,8 @@
 | DM-010 | Revisar nuevamente los últimos tres días | Incorporar detecciones tardías o correcciones sin rehacer todo el histórico | Aprobada |
 | DM-011 | Particionar la salida normalizada por mes | Mantener archivos auditables y evitar un único CSV creciente | Aprobada |
 | DM-012 | Construir un `hotspot_id` estable | Deduplicar y actualizar sin depender de filas u OBJECTID | Aprobada |
+| DM-013 | Validar el intermedio TLS obtenido desde AIA | La fuente omite su certificado intermedio para clientes no navegador | Implementada; nunca desactiva TLS |
+| DM-014 | Actualizar cada tres horas | Equilibrar oportunidad y carga sobre la fuente | Implementada |
 
 ## Aplicación de DM-009
 
@@ -27,7 +29,5 @@
 ## Decisiones pendientes
 
 - Ventana temporal predeterminada.
-- Regla definitiva de deduplicación.
 - Tratamiento de puntos fronterizos o sin asignación DANE.
 - Estrategia de compresión o almacenamiento cuando aumente el tamaño del histórico acumulativo.
-- Frecuencia de actualización según disponibilidad real del IDEAM.

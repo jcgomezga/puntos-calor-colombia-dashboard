@@ -1,6 +1,6 @@
-# Diccionario de datos — versión preliminar
+# Diccionario de datos — versión 0.2.0
 
-Los nombres definitivos se congelarán al finalizar la Fase 2.
+Los campos de ingesta quedaron congelados al finalizar la Fase 2. Los campos territoriales permanecen sujetos a la validación del esquema DANE en la Fase 3.
 
 | Campo normalizado | Tipo | Descripción | Regla inicial |
 |---|---|---|---|

@@ -20,7 +20,7 @@ Construir un dashboard nacional de detecciones térmicas que funcione sin ArcGIS
 |---|---|---|---|
 | 0 | Gobernanza, estructura y trazabilidad | Documentos base, matriz y estructura verificables | Cerrada |
 | 1 | Prototipo interactivo | Filtros A/B y territoriales, tarjetas y gráficos; compilación limpia | Cerrada |
-| 2 | Ingesta IDEAM | Descarga diaria, normalización, deduplicación y bitácora | Pendiente |
+| 2 | Ingesta IDEAM | Descarga diaria, normalización, deduplicación y bitácora | Cerrada |
 | 3 | Territorialización DANE | Unión espacial y cierres por departamento/municipio | Pendiente |
 | 4 | Publicación | GitHub Pages, actualización programada y manual operativo | Pendiente |
 
