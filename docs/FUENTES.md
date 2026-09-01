@@ -23,6 +23,14 @@ Aspectos comprobados en el código público del portal:
 
 Antes de automatizar se verificará licencia, disponibilidad, esquema de campos, códigos DIVIPOLA y estabilidad de las rutas.
 
+## RUNAP — áreas protegidas
+
+- Entidad: Parques Nacionales Naturales de Colombia.
+- Servicio: `https://mapas.parquesnacionales.gov.co/arcgis/rest/services/pnn/runap/FeatureServer/0`.
+- Uso: relación puntual `dentro/fuera` con las áreas inscritas en RUNAP.
+- Campos auditables: identificador, nombre, categoría, condición y autoridad ambiental.
+- La intersección espacial no confirma incendio, afectación ni causalidad.
+
 ## Regla de procedencia
 
 Cada actualización deberá registrar URL de origen, fecha UTC de descarga, nombre, tamaño, hash SHA-256, filas leídas, filas válidas, duplicados, rechazos y fecha máxima observada.
