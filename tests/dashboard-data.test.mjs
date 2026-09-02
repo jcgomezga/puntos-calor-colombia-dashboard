@@ -28,6 +28,7 @@ test("keeps territorial and temporal catalogs valid", () => {
     assert.ok(point[3] === -1 || point[3] < dashboard.municipalities.length);
     if (dashboard.metadata.protectedAreas) assert.ok(point[11] === 0 || point[11] === 1);
     if (dashboard.metadata.landCover) assert.ok(point[12] === -1 || point[12] < dashboard.landCovers.length);
+    if (dashboard.metadata.miningTitles) assert.ok(point[13] === 0 || point[13] === 1);
   }
 });
 

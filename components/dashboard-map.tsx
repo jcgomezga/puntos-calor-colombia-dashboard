@@ -6,7 +6,7 @@ type Position = number[];
 type Geometry = { type: "Polygon" | "MultiPolygon"; coordinates: unknown };
 type Feature = { type: "Feature"; properties: Record<string, unknown>; geometry: Geometry };
 export type FeatureCollection = { type: "FeatureCollection"; features: Feature[] };
-export type PointRow = [number, number, number, number, number, number, number, number, number | null, number, number, number?, number?];
+export type PointRow = [number, number, number, number, number, number, number, number, number | null, number, number, number?, number?, number?];
 
 const WIDTH = 1000;
 const HEIGHT = 650;
