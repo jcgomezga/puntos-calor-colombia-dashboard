@@ -1,0 +1,29 @@
+{
+  "dashboardRows": 31353,
+  "finishedAtUtc": "2026-09-02T11:54:16Z",
+  "relationRows": 19302,
+  "relations": {
+    "dentro": 7048,
+    "entre_1_y_5_km": 3297,
+    "hasta_1_km": 977,
+    "mas_de_5_km": 20031,
+    "multiples": 5191
+  },
+  "source": {
+    "assignedFeatureCount": 455,
+    "authority": "Agencia Nacional de Hidrocarburos (ANH)",
+    "availableFeatureCount": 3,
+    "downloadedAtUtc": "2026-09-02T11:54:11Z",
+    "featureCount": 480,
+    "layerName": "Tierras 2026-08-06",
+    "maxAllowableOffsetMeters": 2,
+    "reservedFeatureCount": 22,
+    "serviceUrl": "https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer",
+    "source": "Mapa de Tierras ANH",
+    "sourceDate": "2026-08-06",
+    "sourceLayerId": 18,
+    "spatialReference": 9377,
+    "url": "https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer/18"
+  },
+  "status": "completed"
+}
