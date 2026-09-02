@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const dashboard = JSON.parse(await readFile(`${root}/public/data/dashboard.json`, "utf8"));
+const history = JSON.parse(await readFile(`${root}/public/data/history.json`, "utf8"));
 
 test("closes the official national dashboard dataset", () => {
   const statuses = dashboard.metadata.territorialStatus;
@@ -43,4 +44,19 @@ test("removes demonstrative claims from the connected interface", async () => {
   const source = await readFile(`${root}/app/page.tsx`, "utf8");
   assert.doesNotMatch(source, /DATOS DEMOSTRATIVOS|carga simulada|demoPoints/);
   assert.match(source, /DATOS OFICIALES PROCESADOS/);
+});
+
+test("closes daily and monthly historical summaries", () => {
+  assert.equal(history.metadata.historyStartDate, "2026-07-01");
+  assert.equal(history.metadata.totalRows, dashboard.metadata.totalRows);
+  assert.equal(history.metadata.scenarioBRows, dashboard.metadata.scenarioBRows);
+  assert.equal(
+    history.daily.filter((item) => item.scenario === "A").reduce((sum, item) => sum + item.hotspots, 0),
+    dashboard.metadata.totalRows,
+  );
+  assert.equal(
+    history.monthly.filter((item) => item.scenario === "A").reduce((sum, item) => sum + item.hotspots, 0),
+    dashboard.metadata.totalRows,
+  );
+  assert.ok(history.monthly.some((item) => item.period === history.metadata.openMonth && item.status === "open"));
 });

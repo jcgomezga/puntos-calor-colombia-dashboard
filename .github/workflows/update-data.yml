@@ -23,6 +23,7 @@ on:
       - "scripts/enrich_mining_titles.py"
       - "scripts/enrich_anla_projects.py"
       - "scripts/enrich_anh_contracts.py"
+      - "scripts/build_historical_summaries.py"
       - "requirements-data.txt"
       - "config/data-policy.json"
       - "tests_py/**"
@@ -77,6 +78,8 @@ jobs:
         run: python scripts/enrich_anla_projects.py --workers 5 --batch-size 100 --max-cache-hours 24
       - name: Relacionar con áreas contractuales asignadas ANH
         run: python scripts/enrich_anh_contracts.py --workers 5 --batch-size 100 --max-cache-hours 24
+      - name: Construir resúmenes históricos
+        run: python scripts/build_historical_summaries.py --history-start 2026-07-01
       - name: Guardar resultados versionados
         shell: bash
         run: |

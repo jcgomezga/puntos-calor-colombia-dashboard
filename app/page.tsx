@@ -7,6 +7,7 @@ import { DashboardMap, type FeatureCollection, type PointRow } from "@/component
 import { HISTORY_START_LABEL } from "@/lib/data-policy";
 import dashboardJson from "@/public/data/dashboard.json";
 import departmentGeoJson from "@/public/data/departments.json";
+import historyJson from "@/public/data/history.json";
 import municipalityGeoJson from "@/public/data/municipalities.json";
 
 type Scenario = "A" | "B";
@@ -15,6 +16,7 @@ type MiningRelation = "all" | "inside" | "outside";
 type AnlaRelation = "all" | "inside" | "within1" | "between1and5" | "beyond5";
 type AnlaLegalStatus = "all" | "evaluation" | "licensed";
 type AnhRelation = "all" | "inside" | "within1" | "between1and5" | "beyond5";
+type TrendGrouping = "day" | "month";
 type Territory = { code: string; name: string; countA: number; countB: number };
 type Municipality = Territory & { departmentCode: string; areaKm2: number | null };
 type LandCover = { code: string; label: string; level1: string; level1Code: string; level2: string; level3: string };
@@ -22,12 +24,15 @@ type DashboardData = {
   metadata: { generatedAtUtc: string; historyStartDate: string; lastObservationDate: string; totalRows: number; scenarioARows: number; scenarioBRows: number; territorialStatus: Record<string, number>; protectedAreas?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number }; landCover?: { year: number; assignedRows: number; unassignedRows: number; catalogSize: number }; miningTitles?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number; intersectedTitles: number }; anlaProjects?: { featureCount: number; usableGeometryCount: number; nullGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; withEvaluationRows: number; withLicensedRows: number; relatedFeatures: number }; anhContracts?: { featureCount: number; assignedFeatureCount: number; excludedNonAssignedCount: number; usableAssignedGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; relatedAssignedAreas: number; sourceDate: string } };
   dates: string[]; sources: string[]; departments: Territory[]; municipalities: Municipality[]; landCovers?: LandCover[]; points: PointRow[];
 };
+type HistoryData = { metadata: { openMonth: string; closedMonths: string[]; totalRows: number; scenarioBRows: number } };
 
 const dashboard = dashboardJson as unknown as DashboardData;
+const history = historyJson as unknown as HistoryData;
 const departmentsGeo = departmentGeoJson as unknown as FeatureCollection;
 const municipalitiesGeo = municipalityGeoJson as unknown as FeatureCollection;
 const numberFormat = new Intl.NumberFormat("es-CO");
 const dateFormat = new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+const monthFormat = new Intl.DateTimeFormat("es-CO", { month: "short", year: "numeric", timeZone: "UTC" });
 
 function MetricCard({ icon: Icon, label, value, detail }: { icon: typeof Flame; label: string; value: string; detail: string }) {
   return <article className="metric-card"><div className="metric-icon"><Icon size={18} /></div><div><p>{label}</p><strong>{value}</strong><span>{detail}</span></div></article>;
@@ -35,6 +40,10 @@ function MetricCard({ icon: Icon, label, value, detail }: { icon: typeof Flame; 
 
 function labelDate(value: string) {
   return dateFormat.format(new Date(`${value}T12:00:00Z`)).replace(" de ", " ");
+}
+
+function labelMonth(value: string) {
+  return monthFormat.format(new Date(`${value}-15T12:00:00Z`)).replace(" de ", " ");
 }
 
 export default function Home() {
@@ -48,6 +57,7 @@ export default function Home() {
   const [anlaRelation, setAnlaRelation] = useState<AnlaRelation>("all");
   const [anlaLegalStatus, setAnlaLegalStatus] = useState<AnlaLegalStatus>("all");
   const [anhRelation, setAnhRelation] = useState<AnhRelation>("all");
+  const [trendGrouping, setTrendGrouping] = useState<TrendGrouping>("day");
   const [landCoverLevel, setLandCoverLevel] = useState("all");
   const landCovers = useMemo(() => dashboard.landCovers ?? [], []);
   const landCoverLevels = useMemo(() => [...new Map(landCovers.map((item) => [item.level1Code, item.level1])).entries()].sort(), [landCovers]);
@@ -107,10 +117,20 @@ export default function Home() {
   }, [visiblePoints, departmentCode]);
 
   const trend = useMemo(() => {
-    const counts = new Array(dashboard.dates.length).fill(0) as number[];
-    for (const point of visiblePoints) counts[point[4]] += 1;
-    return dashboard.dates.map((date, index) => ({ date, day: labelDate(date).replace(/ 2026$/, ""), value: counts[index] })).filter((_, index) => index >= startIndex && index <= endIndex);
-  }, [visiblePoints, startIndex, endIndex]);
+    const counts = new Map<string, number>();
+    for (const point of visiblePoints) {
+      const date = dashboard.dates[point[4]];
+      const period = trendGrouping === "day" ? date : date.slice(0, 7);
+      counts.set(period, (counts.get(period) ?? 0) + 1);
+    }
+    const periods = [...new Set(dashboard.dates.slice(startIndex, endIndex + 1).map((date) => trendGrouping === "day" ? date : date.slice(0, 7)))];
+    return periods.map((period) => ({
+      period,
+      day: trendGrouping === "day" ? labelDate(period).replace(/ 2026$/, "") : labelMonth(period),
+      label: trendGrouping === "day" ? labelDate(period) : `${labelMonth(period)}${period === history.metadata.openMonth ? " · mes abierto" : ""}`,
+      value: counts.get(period) ?? 0,
+    }));
+  }, [visiblePoints, startIndex, endIndex, trendGrouping]);
 
   const selectedDepartment = dashboard.departments.find((item) => item.code === departmentCode);
   const selectedMunicipality = dashboard.municipalities.find((item) => item.code === municipalityCode);
@@ -160,7 +180,7 @@ export default function Home() {
       </div></article>
       <div className="side-stack">
         <article className="panel chart-panel"><div className="panel-heading compact"><div><p className="panel-kicker">CONCENTRACIÓN</p><h2>{departmentCode === "00" ? "Departamentos" : "Municipios"} con más detecciones</h2></div></div><div className="chart-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><BarChart data={ranking} layout="vertical" margin={{ left: 8, right: 26 }}><CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e8ece8" /><XAxis type="number" hide /><YAxis type="category" dataKey="name" width={92} tick={{ fontSize: 10, fill: "#46534a" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} cursor={{ fill: "#f4f7f4" }} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Bar dataKey="value" name="Detecciones" fill="#d9462e" radius={[0, 5, 5, 0]} barSize={15} isAnimationActive={false} /></BarChart></ResponsiveContainer></div></article>
-        <article className="panel chart-panel trend-panel"><div className="panel-heading compact"><div><p className="panel-kicker">EVOLUCIÓN TEMPORAL</p><h2>Detecciones por fecha</h2></div></div><div className="trend-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><AreaChart data={trend} margin={{ left: -18, right: 12, top: 8 }}><defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f06432" stopOpacity="0.45" /><stop offset="1" stopColor="#f06432" stopOpacity="0.03" /></linearGradient></defs><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e8ece8" /><XAxis dataKey="day" tick={{ fontSize: 9, fill: "#647068" }} axisLine={false} tickLine={false} minTickGap={28} /><YAxis tick={{ fontSize: 10, fill: "#647068" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} labelFormatter={(_, payload) => payload?.[0]?.payload?.date ? labelDate(payload[0].payload.date) : ""} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Area type="monotone" dataKey="value" name="Detecciones" stroke="#c73524" strokeWidth={2.5} fill="url(#trendFill)" isAnimationActive={false} /></AreaChart></ResponsiveContainer></div></article>
+        <article className="panel chart-panel trend-panel"><div className="panel-heading compact"><div><p className="panel-kicker">EVOLUCIÓN TEMPORAL</p><h2>Detecciones por {trendGrouping === "day" ? "día" : "mes"}</h2></div><div className="trend-actions"><span className="open-period">{labelMonth(history.metadata.openMonth)} en curso</span><div className="trend-toggle" role="group" aria-label="Agrupación temporal"><button className={trendGrouping === "day" ? "active" : ""} onClick={() => setTrendGrouping("day")}>Días</button><button className={trendGrouping === "month" ? "active" : ""} onClick={() => setTrendGrouping("month")}>Meses</button></div></div></div><div className="trend-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><AreaChart data={trend} margin={{ left: -18, right: 12, top: 8 }}><defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f06432" stopOpacity="0.45" /><stop offset="1" stopColor="#f06432" stopOpacity="0.03" /></linearGradient></defs><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e8ece8" /><XAxis dataKey="day" tick={{ fontSize: 9, fill: "#647068" }} axisLine={false} tickLine={false} minTickGap={28} /><YAxis tick={{ fontSize: 10, fill: "#647068" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} labelFormatter={(_, payload) => payload?.[0]?.payload?.label ?? ""} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Area type="monotone" dataKey="value" name="Detecciones" stroke="#c73524" strokeWidth={2.5} fill="url(#trendFill)" isAnimationActive={false} /></AreaChart></ResponsiveContainer></div></article>
       </div>
     </section>
 

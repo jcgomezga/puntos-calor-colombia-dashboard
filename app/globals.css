@@ -68,6 +68,11 @@ h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 28px;
 .panel-heading.compact { min-height: 60px; }
 .panel-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 18px; font-weight: 700; }
 .method-chip { background: #e6f0e8; color: #27583a; }
+.trend-actions { display: flex; align-items: center; gap: 8px; }
+.open-period { color: #7a5b35; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.trend-toggle { display: grid; grid-template-columns: 1fr 1fr; padding: 2px; border-radius: 7px; background: #edf1ed; }
+.trend-toggle button { min-width: 48px; padding: 5px 7px; border: 0; border-radius: 5px; background: transparent; color: #637068; font-size: 10px; font-weight: 750; }
+.trend-toggle button.active { background: white; color: var(--forest); box-shadow: 0 1px 4px #1c2f2125; }
 .map-surface { position: relative; height: 520px; overflow: hidden; background-color: #eef2eb; background-image: linear-gradient(#dfe7df 1px, transparent 1px), linear-gradient(90deg, #dfe7df 1px, transparent 1px); background-size: 42px 42px; }
 .real-map { position: absolute; inset: 8px 8px 40px; }
 .real-map svg, .real-map canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -104,5 +109,7 @@ footer code { color: #425148; }
   h1 { font-size: 24px; }
   .filterbar, .metrics-grid, .side-stack, .audit-strip { grid-template-columns: 1fr; }
   .map-surface { height: 450px; }
+  .trend-actions { align-items: flex-end; flex-direction: column; }
+  .open-period { display: none; }
   footer { flex-direction: column; }
 }

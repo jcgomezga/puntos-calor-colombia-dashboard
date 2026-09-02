@@ -21,8 +21,16 @@ Construir un dashboard nacional de detecciones térmicas que funcione sin ArcGIS
 | 0 | Gobernanza, estructura y trazabilidad | Documentos base, matriz y estructura verificables | Cerrada |
 | 1 | Prototipo interactivo | Filtros A/B y territoriales, tarjetas y gráficos; compilación limpia | Cerrada |
 | 2 | Ingesta IDEAM | Descarga diaria, normalización, deduplicación y bitácora | Cerrada |
-| 3 | Territorialización DANE | Unión espacial y cierres por departamento/municipio | Pendiente |
-| 4 | Publicación | GitHub Pages, actualización programada y manual operativo | Pendiente |
+| 3 | Territorialización DANE | Unión espacial y cierres por departamento/municipio | Cerrada |
+| 4A | Áreas protegidas RUNAP | Intersección directa y tabla auditable | Cerrada |
+| 4B | Cobertura IDEAM 2024 | Asignación puntual e incremental | Cerrada |
+| 4C | Títulos mineros ANM | Intersección directa con títulos vigentes | Cerrada |
+| 4D | Proyectos ANLA | Intersección y proximidad hasta 5 km | Cerrada |
+| 4E | Áreas contractuales ANH | Áreas asignadas y proximidad hasta 5 km | Cerrada |
+| 5 | Consolidación histórica | Resúmenes diarios/mensuales y comparación temporal | En implementación |
+| 6 | Episodios espacio-temporales | Parámetros aprobados, agrupación reproducible y sensibilidad | Pendiente |
+
+La publicación en GitHub Pages y la actualización programada son capacidades transversales verificadas en cada fase desde la Fase 3.
 
 ## Regla de cierre de fase
 

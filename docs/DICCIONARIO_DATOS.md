@@ -1,4 +1,4 @@
-# Diccionario de datos — versión 0.3.0
+# Diccionario de datos — versión 0.5.0
 
 Los campos de ingesta quedaron congelados al finalizar la Fase 2 y los territoriales al finalizar la Fase 3.
 
@@ -43,3 +43,27 @@ La fecha de observación se evalúa en `America/Bogota`. El límite inferior es 
 - `public/data/municipalities.json`: límites municipales simplificados para visualización.
 
 El arreglo compacto de puntos usa el esquema declarado en `pointSchema`. Los índices territoriales `-1` identifican observaciones sin intersección oficial; no se fuerzan al polígono más cercano.
+
+## Productos históricos
+
+- `data/summaries/historical_daily.csv`: resumen nacional por fecha y escenario.
+- `data/summaries/historical_monthly.csv`: resumen nacional por mes y escenario.
+- `public/data/history.json`: versión compacta utilizada por la interfaz.
+- `data/metadata/history_latest_run.json`: cierre de la última construcción.
+
+Cada fila histórica contiene:
+
+| Campo | Tipo | Descripción |
+|---|---|---|
+| `period` | fecha o mes | `AAAA-MM-DD` en el resumen diario y `AAAA-MM` en el mensual |
+| `scenario` | texto | `A` para todos los sensores; `B` para el escenario sin Suomi-NPP |
+| `status` | texto | Solo mensual: `closed` para meses anteriores y `open` para el mes de la observación más reciente |
+| `hotspots` | entero | Detecciones únicas del periodo y escenario |
+| `departments` | entero | Departamentos con al menos una detección territorialmente asignada |
+| `municipalities` | entero | Municipios con al menos una detección territorialmente asignada |
+| `runap` | entero | Hotspots dentro de áreas RUNAP |
+| `mining` | entero | Hotspots dentro de títulos mineros vigentes |
+| `anlaWithin5` | entero | Hotspots dentro o hasta 5 km de una entidad ANLA |
+| `anhWithin5` | entero | Hotspots dentro o hasta 5 km de un área contractual asignada ANH |
+
+Los valores espaciales cuentan hotspots únicos, no el número de relaciones individuales. Un mes `open` no debe compararse como si tuviera la misma cobertura temporal que un mes `closed`.

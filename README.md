@@ -2,14 +2,14 @@
 
 Dashboard nacional, abierto y reproducible para explorar detecciones térmicas publicadas por el IDEAM, diferenciadas por departamento y municipio.
 
-> Estado actual: **ingesta IDEAM automatizada y verificada; interfaz todavía demostrativa**. El histórico oficial está almacenado desde el 1 de julio de 2026, pero las cifras visibles no se sustituirán hasta completar la asignación territorial DANE de la Fase 3.
+> Estado actual: **dashboard oficial procesado y automatizado**. La interfaz utiliza el histórico IDEAM territorializado desde el 1 de julio de 2026 y actualiza sus cruces con DANE, RUNAP, cobertura IDEAM, ANM, ANLA y ANH.
 
 ## Alcance
 
 - Consulta territorial nacional por departamento y municipio.
 - Escenario A: todos los sensores disponibles.
 - Escenario B: análisis de sensibilidad sin Suomi-NPP.
-- Estadísticas temporales, territoriales y por sensor.
+- Estadísticas temporales diarias y mensuales, territoriales y por sensor.
 - Histórico acumulativo únicamente desde el 1 de julio de 2026.
 - Actualización programada cada tres horas mediante GitHub Actions.
 - Publicación mediante GitHub Pages, sin ArcGIS Online.
@@ -47,7 +47,7 @@ python scripts/update_ideam_data.py --mode refresh
 python scripts/update_ideam_data.py --mode offline
 ```
 
-GitHub Actions ejecuta `refresh` cada tres horas. El primer `backfill` recuperó correctamente los 62 archivos disponibles entre el 1 de julio y el 31 de agosto de 2026. Véanse el [contrato de ingesta](docs/CONTRATO_INGESTA_IDEAM.md) y el [reporte de la Fase 2](docs/fases/FASE_02_REPORTE.md).
+GitHub Actions ejecuta `refresh` cada tres horas, reprocesa la cadena espacial y reconstruye los resúmenes históricos. El primer `backfill` recuperó los archivos disponibles desde el 1 de julio de 2026; las ejecuciones posteriores acumulan registros válidos sin desplazar ese corte. Véanse el [contrato de ingesta](docs/CONTRATO_INGESTA_IDEAM.md), el [checkpoint actual](docs/CHECKPOINT_ACTUAL.md) y los [reportes por fase](docs/fases).
 
 ## Trazabilidad
 

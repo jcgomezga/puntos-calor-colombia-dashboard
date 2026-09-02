@@ -45,6 +45,11 @@
 | DM-041 | Calcular relaciones ANH en EPSG:9377 con clases dentro, hasta 1 km, entre 1 y 5 km y más de 5 km | Obtener distancias métricas comparables con ANLA y separar intersección de proximidad | Implementada en Fase 4E |
 | DM-042 | Contar hotspots únicos y conservar todas las relaciones ANH hasta 5 km | Evitar inflar indicadores por áreas superpuestas sin perder auditabilidad | Implementada en Fase 4E |
 | DM-043 | Renovar el caché ANH cada 24 horas y aplicar reintentos escalonados | Reducir carga sobre la fuente y tolerar fallas transitorias sin publicar resultados parciales | Implementada en Fase 4E |
+| DM-044 | Construir resúmenes diarios y mensuales separados para los escenarios A y B | Permitir comparación temporal sin mezclar la sensibilidad por sensores | Implementada en Fase 5 |
+| DM-045 | Marcar el mes de la observación más reciente como `open` | Evitar comparar un mes parcial como si fuera un periodo cerrado | Implementada en Fase 5 |
+| DM-046 | Contar hotspots únicos en los resúmenes espaciales históricos | Evitar que relaciones múltiples inflen las series temporales | Implementada en Fase 5 |
+| DM-047 | Exigir que los resúmenes diarios y mensuales cierren con `dashboard.json` | Impedir la publicación de series incompletas o desincronizadas | Implementada en Fase 5 |
+| DM-048 | Diferir los episodios hasta aprobar umbrales espaciales y temporales | Una automatización prematura puede fusionar o separar eventos y modificar resultados retrospectivos | Aprobada para Fase 6 |
 
 ## Aplicación de DM-009
 
