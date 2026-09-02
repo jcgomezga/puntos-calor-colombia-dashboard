@@ -41,6 +41,21 @@ Antes de automatizar se verificará licencia, disponibilidad, esquema de campos,
 - Uso en el dashboard: asignar el contexto de cobertura 2024 a cada detección mediante intersección puntual.
 - La cobertura de 2024 no representa superficie quemada en 2026 ni prueba que la detección corresponda a un incendio.
 
+## ANM — títulos mineros vigentes
+
+- Entidad: Agencia Nacional de Minería (ANM).
+- Servicio: `https://gisanm.anm.gov.co/server/rest/services/Hosted/Titulos_mineros/FeatureServer/0`.
+- Producto: capa poligonal `titulos_vigentes`.
+- Identificador del servicio: `b334d8dfbbd2401e932bb07acf6e49a5`.
+- Campos conservados: expediente, solicitante, estado, modalidad, etapa, minerales, tipo de explotación y área.
+- Uso en el dashboard: clasificar cada hotspot como dentro o fuera de uno o más títulos vigentes.
+- La intersección espacial no confirma actividad minera en el momento de la detección ni demuestra causalidad.
+
+## Fuentes auditadas para fases posteriores
+
+- ANLA: `https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer`. Combina proyectos en evaluación y licenciados mediante puntos, líneas y polígonos; requiere una metodología específica de distancia.
+- ANH: `https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer/18`. Corresponde al Mapa de Tierras del 6 de agosto de 2026; se integrará separando contratos y áreas de las categorías cartográficas disponibles.
+
 ## Regla de procedencia
 
 Cada actualización deberá registrar URL de origen, fecha UTC de descarga, nombre, tamaño, hash SHA-256, filas leídas, filas válidas, duplicados, rechazos y fecha máxima observada.

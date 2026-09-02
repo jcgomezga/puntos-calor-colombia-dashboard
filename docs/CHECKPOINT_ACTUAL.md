@@ -1,14 +1,14 @@
 # Checkpoint actual
 
-- Fecha: 1 de septiembre de 2026.
-- Versión: 0.4.1.
-- Fases cerradas: 0, 1, 2, 3, 4A y 4B.
-- Estado técnico: lint correcto; build GitHub Pages correcto; 20/20 pruebas Python y 9/9 pruebas web aprobadas.
+- Fecha: 2 de septiembre de 2026.
+- Versión: 0.4.2.
+- Fases cerradas: 0, 1, 2, 3, 4A, 4B y 4C.
+- Estado técnico: lint correcto; build GitHub Pages correcto; 24/24 pruebas Python y 9/9 pruebas web aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
 - Periodo almacenado: `2026-07-01` a `2026-09-01`, hora de Colombia.
-- Volumen al checkpoint: 31.322 detecciones únicas; el total seguirá creciendo automáticamente.
-- Escenarios al checkpoint: A = 31.322; B sin Suomi-NPP = 21.919.
-- Cierre territorial: 31.295 asignadas y 27 sin intersección DANE; 0 pendientes por límite o solapamiento.
+- Volumen al checkpoint: 31.325 detecciones únicas; el total seguirá creciendo automáticamente.
+- Escenarios al checkpoint: A = 31.325; B sin Suomi-NPP = 21.919.
+- Cierre territorial: 31.298 asignadas y 27 sin intersección DANE; 0 pendientes por límite o solapamiento.
 - Catálogos: 33 departamentos y 1.122 municipios del MGN 2025.
 - Repositorio remoto: `https://github.com/jcgomezga/puntos-calor-colombia-dashboard`.
 - URL pública: `https://jcgomezga.github.io/puntos-calor-colombia-dashboard/`.
@@ -32,4 +32,10 @@
 - Catálogo de cobertura: 86 clases detalladas presentes en el histórico.
 - Workflow de cobertura verificado: `33566847202`; commit remoto de datos `856aa5b`.
 - Despliegue de la Fase 4B verificado: `33568569681`.
-- Próxima fase: definir el alcance de 4C antes de incorporar una nueva capa temática.
+- RUNAP actualizado: 2.039 hotspots dentro, 29.286 fuera y 4 con solapamiento; cierre 31.325/31.325.
+- Cobertura actualizada: 31.292 asignaciones simples, 3 solapamientos y 30 sin cobertura; 31.295 con alguna cobertura y cierre 31.325/31.325.
+- ANM: 10.658 títulos vigentes consultados; 5.786 hotspots dentro, 25.539 fuera y 324 con títulos superpuestos.
+- Títulos ANM distintos intersectados: 848.
+- Commit remoto de implementación ANM: `9714568c6d6102c260a1409bc7009dad9a02ec3f`.
+- Workflow ANM verificado: `33574392331`; commit remoto de datos `cc11c0e8c512f20c1823ede26b91193c3fbe237f`.
+- Próxima fase: 4D, proyectos ANLA por tipo de geometría y distancia reproducible.

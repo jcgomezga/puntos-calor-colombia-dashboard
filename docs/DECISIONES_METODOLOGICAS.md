@@ -26,6 +26,10 @@
 | DM-022 | Asignar cobertura por intersección puntual y no por cercanía | Evitar atribuir una clase inexistente cuando el punto queda fuera de los polígonos | Implementada en Fase 4B |
 | DM-023 | Persistir la cobertura por `hotspot_id` y consultar solo identificadores nuevos | Hacer sostenibles las actualizaciones cada tres horas sin reprocesar el histórico completo | Implementada en Fase 4B |
 | DM-024 | Filtrar la interfaz por nivel 1 y conservar la leyenda detallada en los datos | Mantener un selector legible sin perder trazabilidad CORINE | Implementada en Fase 4B |
+| DM-025 | Separar ANM, ANLA y ANH en fases independientes | Sus geometrías, estados jurídicos y significados no son equivalentes | Aprobada |
+| DM-026 | Relacionar ANM únicamente por intersección directa con títulos vigentes | Evitar confundir proximidad con pertenencia al polígono del título | Implementada en Fase 4C |
+| DM-027 | Contar hotspots únicos y conservar todas las coincidencias ANM | Evitar inflar indicadores cuando existen títulos superpuestos | Implementada en Fase 4C |
+| DM-028 | Renovar el caché ANM como máximo cada 24 horas | Mantener vigencia sin descargar 10.000 polígonos en cada ejecución de tres horas | Implementada en Fase 4C |
 
 ## Aplicación de DM-009
 
@@ -39,4 +43,5 @@
 ## Decisiones pendientes
 
 - Estrategia de compresión o almacenamiento cuando aumente el tamaño del histórico acumulativo.
-- Siguiente capa temática nacional y orden de implementación después de la Fase 4B.
+- Regla de distancia y tratamiento por geometría para proyectos ANLA de la Fase 4D.
+- Selección de categorías contractuales del Mapa de Tierras ANH para la Fase 4E.
