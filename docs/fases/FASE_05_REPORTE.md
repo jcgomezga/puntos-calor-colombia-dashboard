@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementación local validada. El cierre remoto se completará después de verificar el workflow de actualización y el despliegue de GitHub Pages.
+Fase cerrada y publicada.
 
 ## Objetivo
 
@@ -39,7 +39,7 @@ La fase no crea episodios espacio-temporales. Esa tarea requiere aprobar previam
 - `data/metadata/history_latest_run.json`.
 - Selector temporal diario/mensual en `app/page.tsx`.
 
-## Resultado local inicial
+## Resultado remoto definitivo
 
 | Control | Resultado |
 |---|---:|
@@ -62,13 +62,18 @@ La fase no crea episodios espacio-temporales. Esa tarea requiere aprobar previam
 - Cierre diario A = cierre mensual A = total del dashboard.
 - Cierre diario B = cierre mensual B = total del escenario B.
 
+## Cierre remoto
+
+- Implementación: `2151923ad9e425c3b268e0f765a93673b4e289d2`.
+- Workflow de datos: `33630346728`, correcto.
+- Commit remoto de datos: `6986e07a98d558a6d1283bd542ef9b4d4eed68b9`.
+- Despliegue final de GitHub Pages: `33630725203`, correcto.
+- Las cifras remotas coincidieron con el cierre local; no ingresaron nuevas detecciones durante esta ejecución.
+
 ## Interpretación
 
 Los conteos representan detecciones térmicas, no incendios confirmados ni superficie quemada. La comparación entre meses debe considerar que el mes marcado como abierto todavía no tiene la misma cobertura temporal que los meses cerrados.
 
-## Pendientes de cierre remoto
+## Próxima fase
 
-- Publicar código, pruebas, workflow y documentación.
-- Reproducir los resúmenes mediante GitHub Actions.
-- Verificar el despliegue público.
-- Sustituir las cifras locales por el cierre remoto si ingresan nuevas detecciones durante la ejecución.
+La Fase 6 abordará episodios espacio-temporales. Antes de implementar deberá documentar y someter a aprobación los umbrales de distancia, ventana temporal, número mínimo de detecciones, tratamiento por sensor y reglas de fusión retrospectiva.

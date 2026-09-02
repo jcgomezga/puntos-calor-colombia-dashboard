@@ -27,7 +27,7 @@ Construir un dashboard nacional de detecciones térmicas que funcione sin ArcGIS
 | 4C | Títulos mineros ANM | Intersección directa con títulos vigentes | Cerrada |
 | 4D | Proyectos ANLA | Intersección y proximidad hasta 5 km | Cerrada |
 | 4E | Áreas contractuales ANH | Áreas asignadas y proximidad hasta 5 km | Cerrada |
-| 5 | Consolidación histórica | Resúmenes diarios/mensuales y comparación temporal | En implementación |
+| 5 | Consolidación histórica | Resúmenes diarios/mensuales y comparación temporal | Cerrada |
 | 6 | Episodios espacio-temporales | Parámetros aprobados, agrupación reproducible y sensibilidad | Pendiente |
 
 La publicación en GitHub Pages y la actualización programada son capacidades transversales verificadas en cada fase desde la Fase 3.

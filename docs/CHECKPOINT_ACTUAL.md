@@ -1,9 +1,9 @@
 # Checkpoint actual
 
 - Fecha: 2 de septiembre de 2026.
-- Versión: 0.4.4.
-- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C, 4D y 4E.
-- Estado técnico: lint correcto; builds correctos; 39/39 pruebas Python y 9/9 pruebas web aprobadas.
+- Versión: 0.5.0.
+- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C, 4D, 4E y 5.
+- Estado técnico: lint correcto; builds correctos; 43/43 pruebas Python y 10/10 pruebas web aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
 - Volumen al checkpoint: 31.353 detecciones únicas; el total seguirá creciendo automáticamente.
 - Periodo remoto al cierre: `2026-07-01` a `2026-09-02`, hora de Colombia.
@@ -52,4 +52,9 @@
 - Implementación ANH: `697033f333ea90dd21ce265b8119b4793e541544`.
 - Workflow ANH verificado: `33626531985`; commit remoto de datos `192c1606b745258ec3b1330f9326b7596f2ef9d6`.
 - Despliegue final de la Fase 4E verificado: `33627042510`.
-- Próxima fase: definir y preparar la Fase 5 sin modificar el histórico ni las reglas cerradas.
+- Histórico consolidado: 128 filas diarias y 6 mensuales para los escenarios A y B; cierre A = 31.353 y B = 21.930.
+- Estado mensual: julio y agosto de 2026 cerrados; septiembre de 2026 abierto.
+- Implementación histórica: `2151923ad9e425c3b268e0f765a93673b4e289d2`.
+- Workflow histórico verificado: `33630346728`; commit remoto de datos `6986e07a98d558a6d1283bd542ef9b4d4eed68b9`.
+- Despliegue final de la Fase 5 verificado: `33630725203`.
+- Próxima fase: 6, preparación metodológica de episodios espacio-temporales antes de implementar agrupaciones.
