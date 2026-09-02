@@ -2,7 +2,7 @@
 
 ## Estado
 
-Implementación local validada. El cierre remoto se completa después de verificar el workflow de actualización y el despliegue de GitHub Pages.
+Fase cerrada y publicada.
 
 ## Objetivo
 
@@ -40,21 +40,21 @@ Clases del dashboard:
 | 1 | Entre 1 y 5 km | Distancia mayor que 1.000 m y hasta 5.000 m |
 | 0 | Más de 5 km | Sin relación conservada hasta 5.000 m |
 
-## Resultados del backfill local
+## Resultados remotos definitivos
 
 | Resultado | Conteo |
 |---|---:|
-| Hotspots procesados | 31.325 |
-| Dentro de área asignada | 7.038 |
+| Hotspots procesados | 31.353 |
+| Dentro de área asignada | 7.048 |
 | Hasta 1 km | 977 |
 | Entre 1 y 5 km | 3.297 |
-| Más de 5 km | 20.013 |
-| Hotspots únicos relacionados hasta 5 km | 11.312 |
-| Relaciones individuales conservadas | 19.280 |
-| Hotspots con múltiples relaciones | 5.182 |
+| Más de 5 km | 20.031 |
+| Hotspots únicos relacionados hasta 5 km | 11.322 |
+| Relaciones individuales conservadas | 19.302 |
+| Hotspots con múltiples relaciones | 5.191 |
 | Áreas asignadas relacionadas | 348 |
 
-Las cuatro clases excluyentes suman 31.325. Las 19.280 relaciones no deben compararse como si fueran hotspots únicos: una detección puede estar dentro o próxima a varias áreas.
+Las cuatro clases excluyentes suman 31.353. Las 19.302 relaciones no deben compararse como si fueran hotspots únicos: una detección puede estar dentro o próxima a varias áreas.
 
 ## Productos
 
@@ -74,15 +74,18 @@ Las cuatro clases excluyentes suman 31.325. Las 19.280 relaciones no deben compa
 - ESLint aprobado.
 - Compilación Vinext aprobada.
 - Compilación estática Next.js para GitHub Pages aprobada.
-- Cierre de códigos ANH: 20.013 + 3.297 + 977 + 7.038 = 31.325.
+- Cierre de códigos ANH: 20.031 + 3.297 + 977 + 7.048 = 31.353.
+- Workflow remoto de datos: `33626531985`, correcto.
+- Commit remoto de datos: `192c1606b745258ec3b1330f9326b7596f2ef9d6`.
+- Despliegue final de Pages: `33627042510`, correcto.
 
 ## Interpretación obligatoria
 
 La relación indica intersección o proximidad cartográfica con un área asignada. No demuestra que el área estuviera operando en la fecha de la detección, que la anomalía sea un incendio, que exista afectación ambiental ni que haya causalidad atribuible a un operador o contrato.
 
-## Pendiente de cierre remoto
+## Cierre remoto
 
-- Publicar el código en `main`.
-- Confirmar el workflow automático con datos reales.
-- Verificar el despliegue final de GitHub Pages.
-- Registrar commits y ejecuciones definitivos en la matriz y el checkpoint.
+- Implementación: `697033f333ea90dd21ce265b8119b4793e541544`.
+- Datos reproducidos por GitHub Actions: `192c1606b745258ec3b1330f9326b7596f2ef9d6`.
+- La ejecución remota incorporó 28 detecciones posteriores a la prueba local; por eso sus cifras sustituyen la fotografía local inicial.
+- Interfaz pública desplegada correctamente con el filtro y el indicador ANH.

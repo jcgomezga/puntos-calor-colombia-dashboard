@@ -1,14 +1,14 @@
 # Checkpoint actual
 
 - Fecha: 2 de septiembre de 2026.
-- Versión: 0.4.3.
-- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C y 4D.
-- Estado técnico: lint correcto; build GitHub Pages correcto; 34/34 pruebas Python y 9/9 pruebas web aprobadas.
+- Versión: 0.4.4.
+- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C, 4D y 4E.
+- Estado técnico: lint correcto; builds correctos; 39/39 pruebas Python y 9/9 pruebas web aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
-- Periodo almacenado: `2026-07-01` a `2026-09-01`, hora de Colombia.
-- Volumen al checkpoint: 31.325 detecciones únicas; el total seguirá creciendo automáticamente.
-- Escenarios al checkpoint: A = 31.325; B sin Suomi-NPP = 21.919.
-- Cierre territorial: 31.298 asignadas y 27 sin intersección DANE; 0 pendientes por límite o solapamiento.
+- Volumen al checkpoint: 31.353 detecciones únicas; el total seguirá creciendo automáticamente.
+- Periodo remoto al cierre: `2026-07-01` a `2026-09-02`, hora de Colombia.
+- Escenarios al checkpoint: A = 31.353; B sin Suomi-NPP = 21.930.
+- Cierre territorial: 31.326 asignadas y 27 sin intersección DANE; 0 pendientes por límite o solapamiento.
 - Catálogos: 33 departamentos y 1.122 municipios del MGN 2025.
 - Repositorio remoto: `https://github.com/jcgomezga/puntos-calor-colombia-dashboard`.
 - URL pública: `https://jcgomezga.github.io/puntos-calor-colombia-dashboard/`.
@@ -46,4 +46,10 @@
 - Implementación ANLA: `adc6c9581817386b449c3c556e88142c1855725d`; estabilización de fuente `7262a73a110fd880d9d38fc594de09e1af83274d`.
 - Workflow ANLA verificado: `33600005206`; commit remoto de datos `4696435a230e691f28c862294517ba5f8c000b97`.
 - Despliegue final de la Fase 4D verificado: `33600885234`.
-- Próxima fase: 4E, Mapa de Tierras ANH del 6 de agosto de 2026.
+- ANH: 480 áreas inventariadas; 455 asignadas incluidas y 25 no asignadas excluidas de indicadores contractuales.
+- Relación ANH: 7.048 hotspots dentro, 977 hasta 1 km, 3.297 entre 1 y 5 km y 20.031 a más de 5 km; cierre 31.353/31.353.
+- Hasta 5 km de ANH: 11.322 hotspots únicos, 19.302 relaciones detalladas y 348 áreas asignadas relacionadas.
+- Implementación ANH: `697033f333ea90dd21ce265b8119b4793e541544`.
+- Workflow ANH verificado: `33626531985`; commit remoto de datos `192c1606b745258ec3b1330f9326b7596f2ef9d6`.
+- Despliegue final de la Fase 4E verificado: `33627042510`.
+- Próxima fase: definir y preparar la Fase 5 sin modificar el histórico ni las reglas cerradas.
