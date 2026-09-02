@@ -20,7 +20,7 @@ Servicio: `https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/Pr
 | 6 | Licenciado | Polígono | 5.195 |
 |  | **Total** |  | **10.088** |
 
-El servicio admite 2.000 registros por respuesta. La implementación deberá consultar identificadores y descargar por lotes, sin asumir que una única respuesta contiene la capa completa.
+El servicio admite 2.000 registros por respuesta. La implementación consulta identificadores y descarga lotes de 100, con subdivisión automática ante fallos. Se aplica una simplificación máxima de 2 metros para estabilizar la transferencia de geometrías complejas; este valor debe conservarse en los metadatos.
 
 ## Regla espacial aprobada para implementar
 

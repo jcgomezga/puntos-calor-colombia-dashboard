@@ -29,6 +29,10 @@ test("keeps territorial and temporal catalogs valid", () => {
     if (dashboard.metadata.protectedAreas) assert.ok(point[11] === 0 || point[11] === 1);
     if (dashboard.metadata.landCover) assert.ok(point[12] === -1 || point[12] < dashboard.landCovers.length);
     if (dashboard.metadata.miningTitles) assert.ok(point[13] === 0 || point[13] === 1);
+    if (dashboard.metadata.anlaProjects) {
+      assert.ok(Number.isInteger(point[14]) && point[14] >= 0 && point[14] <= 3);
+      assert.ok(Number.isInteger(point[15]) && point[15] >= 0 && point[15] <= 3);
+    }
   }
 });
 
