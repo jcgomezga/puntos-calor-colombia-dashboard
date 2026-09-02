@@ -1,0 +1,33 @@
+{
+  "authority": "Autoridad Nacional de Licencias Ambientales",
+  "downloadedAtUtc": "2026-09-02T06:52:32Z",
+  "featureCount": 10088,
+  "layers": {
+    "1": {
+      "count": 465,
+      "name": "Linea Proyecto Evaluacion"
+    },
+    "2": {
+      "count": 136,
+      "name": "Area Proyecto Evaluacion"
+    },
+    "4": {
+      "count": 895,
+      "name": "Punto Proyecto Licenciado"
+    },
+    "5": {
+      "count": 3397,
+      "name": "Linea Proyecto Licenciado"
+    },
+    "6": {
+      "count": 5195,
+      "name": "Area Proyecto Licenciado"
+    }
+  },
+  "maxAllowableOffsetMeters": 2,
+  "nullGeometryCount": 44,
+  "source": "Proyectos ANLA",
+  "spatialReference": 9377,
+  "url": "https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer",
+  "usableGeometryCount": 10044
+}
