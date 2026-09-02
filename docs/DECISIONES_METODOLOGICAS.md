@@ -30,12 +30,15 @@
 | DM-026 | Relacionar ANM únicamente por intersección directa con títulos vigentes | Evitar confundir proximidad con pertenencia al polígono del título | Implementada en Fase 4C |
 | DM-027 | Contar hotspots únicos y conservar todas las coincidencias ANM | Evitar inflar indicadores cuando existen títulos superpuestos | Implementada en Fase 4C |
 | DM-028 | Renovar el caché ANM como máximo cada 24 horas | Mantener vigencia sin descargar 10.000 polígonos en cada ejecución de tres horas | Implementada en Fase 4C |
-| DM-029 | Mantener separados proyectos ANLA en evaluación y licenciados | Sus situaciones jurídicas no son equivalentes | Aprobada para Fase 4D |
-| DM-030 | Calcular distancias ANLA en EPSG:9377 | Evitar distancias angulares y obtener resultados métricos reproducibles | Aprobada para Fase 4D |
-| DM-031 | Reservar `dentro` para polígonos ANLA | Puntos y líneas no representan superficies de pertenencia | Aprobada para Fase 4D |
-| DM-032 | Usar clases dentro, hasta 1 km, entre 1 y 5 km y más de 5 km | Mantener comparabilidad con el análisis previo sin confundir proximidad e intersección | Aprobada para Fase 4D |
-| DM-033 | Conservar todas las relaciones hasta 5 km y contar hotspots únicos | Permitir auditoría sin inflar indicadores por proyectos superpuestos | Aprobada para Fase 4D |
-| DM-034 | Resumir cada hotspot mediante su relación ANLA mínima | Obtener una clase excluyente sin perder la tabla detallada | Aprobada para Fase 4D |
+| DM-029 | Mantener separados proyectos ANLA en evaluación y licenciados | Sus situaciones jurídicas no son equivalentes | Implementada en Fase 4D |
+| DM-030 | Calcular distancias ANLA en EPSG:9377 | Evitar distancias angulares y obtener resultados métricos reproducibles | Implementada en Fase 4D |
+| DM-031 | Reservar `dentro` para polígonos ANLA | Puntos y líneas no representan superficies de pertenencia | Implementada en Fase 4D |
+| DM-032 | Usar clases dentro, hasta 1 km, entre 1 y 5 km y más de 5 km | Mantener comparabilidad con el análisis previo sin confundir proximidad e intersección | Implementada en Fase 4D |
+| DM-033 | Conservar todas las relaciones hasta 5 km y contar hotspots únicos | Permitir auditoría sin inflar indicadores por proyectos superpuestos | Implementada en Fase 4D |
+| DM-034 | Resumir cada hotspot mediante su relación ANLA mínima | Obtener una clase excluyente sin perder la tabla detallada | Implementada en Fase 4D |
+| DM-035 | Excluir del cruce los registros ANLA sin geometría y conservarlos en el inventario | Evitar fabricar localizaciones para 44 entidades no representables espacialmente | Implementada en Fase 4D |
+| DM-036 | Usar simplificación máxima de 2 metros y registrar su valor | Estabilizar la descarga de geometrías complejas sin afectar materialmente bandas de 1 y 5 km | Implementada en Fase 4D |
+| DM-037 | Renovar el caché ANLA cada 24 horas y aplicar reintentos escalonados | Reducir carga y tolerar interrupciones transitorias de la fuente | Implementada en Fase 4D |
 
 ## Aplicación de DM-009
 

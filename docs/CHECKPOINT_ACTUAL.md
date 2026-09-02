@@ -1,9 +1,9 @@
 # Checkpoint actual
 
 - Fecha: 2 de septiembre de 2026.
-- Versión: 0.4.2.
-- Fases cerradas: 0, 1, 2, 3, 4A, 4B y 4C.
-- Estado técnico: lint correcto; build GitHub Pages correcto; 24/24 pruebas Python y 9/9 pruebas web aprobadas.
+- Versión: 0.4.3.
+- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C y 4D.
+- Estado técnico: lint correcto; build GitHub Pages correcto; 34/34 pruebas Python y 9/9 pruebas web aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
 - Periodo almacenado: `2026-07-01` a `2026-09-01`, hora de Colombia.
 - Volumen al checkpoint: 31.325 detecciones únicas; el total seguirá creciendo automáticamente.
@@ -39,6 +39,11 @@
 - Commit remoto de implementación ANM: `9714568c6d6102c260a1409bc7009dad9a02ec3f`.
 - Workflow ANM verificado: `33574392331`; commit remoto de datos `cc11c0e8c512f20c1823ede26b91193c3fbe237f`.
 - Despliegue de la Fase 4C verificado: `33575106562`.
-- Preparación 4D: cinco capas ANLA auditadas con 10.088 geometrías: 601 en evaluación y 9.487 licenciadas.
-- Metodología 4D preparada: EPSG:9377; `dentro` solo para polígonos; bandas hasta 1 km y entre 1 y 5 km; estados jurídicos separados.
-- Próximo paso: implementar y ejecutar el cruce nacional ANLA cuando se renueve la ventana de trabajo.
+- ANLA: 10.088 entidades inventariadas; 10.044 geometrías utilizables y 44 registros sin geometría.
+- Relación ANLA: 6.797 hotspots dentro, 3.344 hasta 1 km, 7.093 entre 1 y 5 km y 14.091 a más de 5 km; cierre 31.325/31.325.
+- Hasta 5 km de ANLA: 17.234 hotspots únicos, 120.595 relaciones detalladas y 5.964 entidades geométricas relacionadas.
+- Situación jurídica ANLA: 786 hotspots con proyectos en evaluación, 17.224 con licenciados y 776 presentes en ambos conjuntos.
+- Implementación ANLA: `adc6c9581817386b449c3c556e88142c1855725d`; estabilización de fuente `7262a73a110fd880d9d38fc594de09e1af83274d`.
+- Workflow ANLA verificado: `33600005206`; commit remoto de datos `4696435a230e691f28c862294517ba5f8c000b97`.
+- Despliegue final de la Fase 4D verificado: `33600885234`.
+- Próxima fase: 4E, Mapa de Tierras ANH del 6 de agosto de 2026.
