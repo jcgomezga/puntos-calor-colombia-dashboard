@@ -33,6 +33,9 @@ test("keeps territorial and temporal catalogs valid", () => {
       assert.ok(Number.isInteger(point[14]) && point[14] >= 0 && point[14] <= 3);
       assert.ok(Number.isInteger(point[15]) && point[15] >= 0 && point[15] <= 3);
     }
+    if (dashboard.metadata.anhContracts) {
+      assert.ok(Number.isInteger(point[16]) && point[16] >= 0 && point[16] <= 3);
+    }
   }
 });
 

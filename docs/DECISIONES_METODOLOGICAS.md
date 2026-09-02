@@ -39,6 +39,12 @@
 | DM-035 | Excluir del cruce los registros ANLA sin geometría y conservarlos en el inventario | Evitar fabricar localizaciones para 44 entidades no representables espacialmente | Implementada en Fase 4D |
 | DM-036 | Usar simplificación máxima de 2 metros y registrar su valor | Estabilizar la descarga de geometrías complejas sin afectar materialmente bandas de 1 y 5 km | Implementada en Fase 4D |
 | DM-037 | Renovar el caché ANLA cada 24 horas y aplicar reintentos escalonados | Reducir carga y tolerar interrupciones transitorias de la fuente | Implementada en Fase 4D |
+| DM-038 | Descubrir la capa ANH más reciente por la fecha de su nombre | Evitar depender de un identificador de capa que puede no reflejar el orden temporal | Implementada en Fase 4E |
+| DM-039 | Considerar contractuales solo las áreas ANH con `CLASIFICAC=ASIGNADA` | No presentar áreas reservadas, disponibles o categorías de contexto como contratos | Implementada en Fase 4E |
+| DM-040 | Conservar las 25 áreas ANH no asignadas en el cierre de inventario | Mantener trazabilidad de exclusiones sin incorporarlas a indicadores contractuales | Implementada en Fase 4E |
+| DM-041 | Calcular relaciones ANH en EPSG:9377 con clases dentro, hasta 1 km, entre 1 y 5 km y más de 5 km | Obtener distancias métricas comparables con ANLA y separar intersección de proximidad | Implementada en Fase 4E |
+| DM-042 | Contar hotspots únicos y conservar todas las relaciones ANH hasta 5 km | Evitar inflar indicadores por áreas superpuestas sin perder auditabilidad | Implementada en Fase 4E |
+| DM-043 | Renovar el caché ANH cada 24 horas y aplicar reintentos escalonados | Reducir carga sobre la fuente y tolerar fallas transitorias sin publicar resultados parciales | Implementada en Fase 4E |
 
 ## Aplicación de DM-009
 
@@ -52,4 +58,4 @@
 ## Decisiones pendientes
 
 - Estrategia de compresión o almacenamiento cuando aumente el tamaño del histórico acumulativo.
-- Selección de categorías contractuales del Mapa de Tierras ANH para la Fase 4E.
+- Umbral de migración desde JSON/CSV versionados hacia un formato espacial más compacto.

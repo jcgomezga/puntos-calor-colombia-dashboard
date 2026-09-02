@@ -51,10 +51,23 @@ Antes de automatizar se verificará licencia, disponibilidad, esquema de campos,
 - Uso en el dashboard: clasificar cada hotspot como dentro o fuera de uno o más títulos vigentes.
 - La intersección espacial no confirma actividad minera en el momento de la detección ni demuestra causalidad.
 
-## Fuentes auditadas para fases posteriores
+## ANLA — proyectos en evaluación y licenciados
 
-- ANLA: `https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer`. Combina proyectos en evaluación y licenciados mediante puntos, líneas y polígonos; requiere una metodología específica de distancia.
-- ANH: `https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer/18`. Corresponde al Mapa de Tierras del 6 de agosto de 2026; se integrará separando contratos y áreas de las categorías cartográficas disponibles.
+- Entidad: Autoridad Nacional de Licencias Ambientales (ANLA).
+- Servicio: `https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer`.
+- Capas usadas: proyectos en evaluación y licenciados con geometrías puntuales, lineales y poligonales.
+- Uso: relación directa para polígonos y proximidad métrica hasta 5 km para todas las geometrías.
+
+## ANH — Mapa de Tierras
+
+- Entidad: Agencia Nacional de Hidrocarburos (ANH).
+- Servicio histórico: `https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer`.
+- Capa seleccionada al cierre de Fase 4E: `Tierras 2026-08-06`, identificador 18.
+- Regla de actualización: descubrir automáticamente todas las capas `Tierras AAAA-MM-DD` y seleccionar la fecha más reciente; el identificador numérico no determina la vigencia.
+- Inventario auditado: 480 áreas, de las cuales 455 están clasificadas como `ASIGNADA`, 22 como `RESERVADA` y 3 como `DISPONIBLE`.
+- Uso analítico: únicamente las 455 áreas `ASIGNADA` alimentan las relaciones contractuales; las 25 restantes se conservan en el cierre de fuente, pero no se presentan como contratos.
+- Campos conservados: identificador, número de contrato, nombre de área, operador, estado, tipo contractual, cuenca y proceso.
+- La coincidencia o proximidad espacial no confirma actividad de hidrocarburos en el momento de la detección ni demuestra causalidad.
 
 ## Regla de procedencia
 

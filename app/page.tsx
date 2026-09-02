@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, Building2, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Layers3, Leaf, MapPinned, Pickaxe, Radio, RefreshCw, ShieldCheck } from "lucide-react";
+import { Activity, Building2, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Fuel, Layers3, Leaf, MapPinned, Pickaxe, Radio, RefreshCw, ShieldCheck } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { DashboardMap, type FeatureCollection, type PointRow } from "@/components/dashboard-map";
@@ -14,11 +14,12 @@ type ProtectedRelation = "all" | "inside" | "outside";
 type MiningRelation = "all" | "inside" | "outside";
 type AnlaRelation = "all" | "inside" | "within1" | "between1and5" | "beyond5";
 type AnlaLegalStatus = "all" | "evaluation" | "licensed";
+type AnhRelation = "all" | "inside" | "within1" | "between1and5" | "beyond5";
 type Territory = { code: string; name: string; countA: number; countB: number };
 type Municipality = Territory & { departmentCode: string; areaKm2: number | null };
 type LandCover = { code: string; label: string; level1: string; level1Code: string; level2: string; level3: string };
 type DashboardData = {
-  metadata: { generatedAtUtc: string; historyStartDate: string; lastObservationDate: string; totalRows: number; scenarioARows: number; scenarioBRows: number; territorialStatus: Record<string, number>; protectedAreas?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number }; landCover?: { year: number; assignedRows: number; unassignedRows: number; catalogSize: number }; miningTitles?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number; intersectedTitles: number }; anlaProjects?: { featureCount: number; usableGeometryCount: number; nullGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; withEvaluationRows: number; withLicensedRows: number; relatedFeatures: number } };
+  metadata: { generatedAtUtc: string; historyStartDate: string; lastObservationDate: string; totalRows: number; scenarioARows: number; scenarioBRows: number; territorialStatus: Record<string, number>; protectedAreas?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number }; landCover?: { year: number; assignedRows: number; unassignedRows: number; catalogSize: number }; miningTitles?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number; intersectedTitles: number }; anlaProjects?: { featureCount: number; usableGeometryCount: number; nullGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; withEvaluationRows: number; withLicensedRows: number; relatedFeatures: number }; anhContracts?: { featureCount: number; assignedFeatureCount: number; excludedNonAssignedCount: number; usableAssignedGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; relatedAssignedAreas: number; sourceDate: string } };
   dates: string[]; sources: string[]; departments: Territory[]; municipalities: Municipality[]; landCovers?: LandCover[]; points: PointRow[];
 };
 
@@ -46,6 +47,7 @@ export default function Home() {
   const [miningRelation, setMiningRelation] = useState<MiningRelation>("all");
   const [anlaRelation, setAnlaRelation] = useState<AnlaRelation>("all");
   const [anlaLegalStatus, setAnlaLegalStatus] = useState<AnlaLegalStatus>("all");
+  const [anhRelation, setAnhRelation] = useState<AnhRelation>("all");
   const [landCoverLevel, setLandCoverLevel] = useState("all");
   const landCovers = useMemo(() => dashboard.landCovers ?? [], []);
   const landCoverLevels = useMemo(() => [...new Map(landCovers.map((item) => [item.level1Code, item.level1])).entries()].sort(), [landCovers]);
@@ -75,8 +77,12 @@ export default function Home() {
     if (anlaRelation === "beyond5" && point[14] !== 0) return false;
     if (anlaLegalStatus === "evaluation" && ((point[15] ?? 0) & 1) === 0) return false;
     if (anlaLegalStatus === "licensed" && ((point[15] ?? 0) & 2) === 0) return false;
+    if (anhRelation === "inside" && point[16] !== 3) return false;
+    if (anhRelation === "within1" && point[16] !== 2) return false;
+    if (anhRelation === "between1and5" && point[16] !== 1) return false;
+    if (anhRelation === "beyond5" && point[16] !== 0) return false;
     return true;
-  }), [scenario, startIndex, endIndex, selectedDepartmentIndex, selectedMunicipalityIndex, protectedRelation, landCoverLevel, miningRelation, anlaRelation, anlaLegalStatus, landCovers]);
+  }), [scenario, startIndex, endIndex, selectedDepartmentIndex, selectedMunicipalityIndex, protectedRelation, landCoverLevel, miningRelation, anlaRelation, anlaLegalStatus, anhRelation, landCovers]);
 
   const metrics = useMemo(() => {
     const departments = new Set<number>(), municipalities = new Set<number>(), sources = new Set<number>();
@@ -86,7 +92,7 @@ export default function Home() {
       sources.add(point[6]);
     }
     const covers = new Set(visiblePoints.map((point) => point[12]).filter((index) => index !== undefined && index >= 0));
-    return { departments: departments.size, municipalities: municipalities.size, sources: sources.size, protected: visiblePoints.filter((point) => point[11] === 1).length, covers: covers.size, mining: visiblePoints.filter((point) => point[13] === 1).length, anla: visiblePoints.filter((point) => (point[14] ?? 0) > 0).length };
+    return { departments: departments.size, municipalities: municipalities.size, sources: sources.size, protected: visiblePoints.filter((point) => point[11] === 1).length, covers: covers.size, mining: visiblePoints.filter((point) => point[13] === 1).length, anla: visiblePoints.filter((point) => (point[14] ?? 0) > 0).length, anh: visiblePoints.filter((point) => (point[16] ?? 0) > 0).length };
   }, [visiblePoints]);
 
   const ranking = useMemo(() => {
@@ -110,7 +116,7 @@ export default function Home() {
   const selectedMunicipality = dashboard.municipalities.find((item) => item.code === municipalityCode);
   const title = selectedMunicipality?.name ?? selectedDepartment?.name ?? "Colombia";
   const generated = new Date(dashboard.metadata.generatedAtUtc).toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "medium", timeStyle: "short" });
-  const reset = () => { setScenario("B"); setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); setProtectedRelation("all"); setLandCoverLevel("all"); setMiningRelation("all"); setAnlaRelation("all"); setAnlaLegalStatus("all"); };
+  const reset = () => { setScenario("B"); setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); setProtectedRelation("all"); setLandCoverLevel("all"); setMiningRelation("all"); setAnlaRelation("all"); setAnlaLegalStatus("all"); setAnhRelation("all"); };
 
   return <main className="dashboard-shell">
     <header className="topbar">
@@ -130,6 +136,7 @@ export default function Home() {
       <label><span>Título minero</span><div className="select-wrap"><select value={miningRelation} disabled={!dashboard.metadata.miningTitles} onChange={(event) => setMiningRelation(event.target.value as MiningRelation)}><option value="all">Todas las detecciones</option><option value="inside">Dentro de título vigente</option><option value="outside">Fuera de título vigente</option></select><ChevronDown size={16} /></div></label>
       <label><span>Relación con proyecto ANLA</span><div className="select-wrap"><select value={anlaRelation} disabled={!dashboard.metadata.anlaProjects} onChange={(event) => setAnlaRelation(event.target.value as AnlaRelation)}><option value="all">Todas las detecciones</option><option value="inside">Dentro de área de proyecto</option><option value="within1">Hasta 1 km</option><option value="between1and5">Entre 1 y 5 km</option><option value="beyond5">A más de 5 km</option></select><ChevronDown size={16} /></div></label>
       <label><span>Situación ANLA</span><div className="select-wrap"><select value={anlaLegalStatus} disabled={!dashboard.metadata.anlaProjects} onChange={(event) => setAnlaLegalStatus(event.target.value as AnlaLegalStatus)}><option value="all">Evaluación y licenciados</option><option value="evaluation">En evaluación</option><option value="licensed">Licenciados</option></select><ChevronDown size={16} /></div></label>
+      <label><span>Área contractual ANH</span><div className="select-wrap"><select value={anhRelation} disabled={!dashboard.metadata.anhContracts} onChange={(event) => setAnhRelation(event.target.value as AnhRelation)}><option value="all">Todas las detecciones</option><option value="inside">Dentro de área asignada</option><option value="within1">Hasta 1 km</option><option value="between1and5">Entre 1 y 5 km</option><option value="beyond5">A más de 5 km</option></select><ChevronDown size={16} /></div></label>
       <div className="scenario-field"><span>Escenario de sensores</span><div className="segmented" role="group" aria-label="Escenario de sensores"><button className={scenario === "A" ? "active" : ""} onClick={() => setScenario("A")}>A · todos</button><button className={scenario === "B" ? "active" : ""} onClick={() => setScenario("B")}>B · sin SNPP</button></div></div>
       <button className="reset-button" onClick={reset}><RefreshCw size={16} /> Restablecer</button>
     </section>
@@ -143,6 +150,7 @@ export default function Home() {
       <MetricCard icon={Layers3} label="Coberturas detalladas" value={numberFormat.format(metrics.covers)} detail="IDEAM 2024 · escala 1:100.000" />
       <MetricCard icon={Pickaxe} label="Dentro de títulos mineros" value={numberFormat.format(metrics.mining)} detail="Intersección directa con títulos ANM" />
       <MetricCard icon={Building2} label="Relacionadas con proyectos ANLA" value={numberFormat.format(metrics.anla)} detail="Dentro o hasta 5 km · sin inferir causalidad" />
+      <MetricCard icon={Fuel} label="Relacionadas con contratos ANH" value={numberFormat.format(metrics.anh)} detail="Áreas asignadas dentro o hasta 5 km" />
     </section>
 
     <section className="workspace-grid">
@@ -156,7 +164,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="audit-strip"><div><Database size={18} /><span><strong>Fuentes</strong> IDEAM · DANE · RUNAP · ANM · ANLA</span></div><div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL} · cobertura de contexto {dashboard.metadata.landCover?.year ?? 2024}</span></div><div><ShieldCheck size={18} /><span><strong>Cierre espacial</strong> {numberFormat.format(dashboard.metadata.protectedAreas?.insideRows ?? 0)} en RUNAP · {numberFormat.format(dashboard.metadata.miningTitles?.insideRows ?? 0)} en títulos · {numberFormat.format((dashboard.metadata.anlaProjects?.insideRows ?? 0) + (dashboard.metadata.anlaProjects?.within1KmRows ?? 0) + (dashboard.metadata.anlaProjects?.between1And5KmRows ?? 0))} relacionados con ANLA</span></div></section>
+    <section className="audit-strip"><div><Database size={18} /><span><strong>Fuentes</strong> IDEAM · DANE · RUNAP · ANM · ANLA · ANH</span></div><div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL} · cobertura de contexto {dashboard.metadata.landCover?.year ?? 2024}</span></div><div><ShieldCheck size={18} /><span><strong>Cierre espacial</strong> {numberFormat.format(dashboard.metadata.protectedAreas?.insideRows ?? 0)} en RUNAP · {numberFormat.format(dashboard.metadata.miningTitles?.insideRows ?? 0)} en títulos · {numberFormat.format((dashboard.metadata.anlaProjects?.insideRows ?? 0) + (dashboard.metadata.anlaProjects?.within1KmRows ?? 0) + (dashboard.metadata.anlaProjects?.between1And5KmRows ?? 0))} relacionados con ANLA · {numberFormat.format((dashboard.metadata.anhContracts?.insideRows ?? 0) + (dashboard.metadata.anhContracts?.within1KmRows ?? 0) + (dashboard.metadata.anhContracts?.between1And5KmRows ?? 0))} relacionados con ANH</span></div></section>
     <footer><p>Dashboard nacional en desarrollo · Datos actualizados automáticamente.</p><p>Metodología, fuentes y trazabilidad disponibles en <code>/docs</code>.</p></footer>
   </main>;
 }
