@@ -30,6 +30,7 @@
 | Ejecución nacional | 31.325/31.325 detecciones clasificadas |
 | Workflow de datos | `33574392331`, correcto |
 | Commit remoto de datos | `cc11c0e8c512f20c1823ede26b91193c3fbe237f` |
+| Despliegue GitHub Pages | `33575106562`, correcto |
 
 ## Resultado nacional
 
@@ -61,5 +62,6 @@ La relación indica únicamente que la coordenada de una anomalía térmica inte
 - Commit de implementación remoto: `9714568c6d6102c260a1409bc7009dad9a02ec3f`.
 - Workflow de datos validado: `33574392331`.
 - Commit remoto de datos: `cc11c0e8c512f20c1823ede26b91193c3fbe237f`.
+- Despliegue validado de interfaz, datos y checkpoint: `33575106562`.
 - La siguiente subfase es 4D: proyectos ANLA, separando puntos, líneas y polígonos y definiendo previamente reglas de distancia reproducibles.
 - La Fase 4E incorporará después el Mapa de Tierras ANH con categorías contractuales explícitas.
