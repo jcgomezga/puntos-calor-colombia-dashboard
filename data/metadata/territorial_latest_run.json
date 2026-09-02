@@ -11,7 +11,7 @@
   },
   "dashboard_files": {
     "dashboard.json": {
-      "sha256": "91f4eb548f3199cdb03fdc2546a4464b21a23b9270913c79fb51c42227134802",
+      "sha256": "ef53341097131d2149e638336130dd5e11a414439ef2355491905297d0de78b9",
       "size_bytes": 1584487
     },
     "departments.json": {
@@ -23,26 +23,26 @@
       "size_bytes": 2049297
     }
   },
-  "finished_at_utc": "2026-09-02T12:33:02Z",
-  "started_at_utc": "2026-09-02T12:31:29Z",
+  "finished_at_utc": "2026-09-02T12:55:33Z",
+  "started_at_utc": "2026-09-02T12:52:51Z",
   "status": "completed",
   "territorial_outputs": [
     {
       "path": "territorial/hotspots_2026-07.csv",
       "rows": 11582,
-      "sha256": "f6cc19f77765c71565f405dd9c1c8108a33b37c0c8622c6e25a98e73e40c5aa0",
+      "sha256": "928d17f7adda18004950c982d544bb2b52bad7ac80263f25a2f671f48160bad5",
       "size_bytes": 3327845
     },
     {
       "path": "territorial/hotspots_2026-08.csv",
       "rows": 19309,
-      "sha256": "a9bc95898c9249361609359052da996cf191c16354b0dbea85de656187e97b8d",
+      "sha256": "4030b6453ec8e8f086c6b0e51207e10af3e5533e0b8079197c16d97423ae4cfa",
       "size_bytes": 5533014
     },
     {
       "path": "territorial/hotspots_2026-09.csv",
       "rows": 462,
-      "sha256": "d8e027a60296d0d4edc74f81bf6cfceda1480ce66da62564df9e28b9584ab34c",
+      "sha256": "5de46e980ebaa43e2903f06249f866cd089a0c01d47f9644939acde5ffe65866",
       "size_bytes": 133058
     }
   ],
