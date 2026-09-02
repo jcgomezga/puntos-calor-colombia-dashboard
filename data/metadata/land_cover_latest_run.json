@@ -1,17 +1,17 @@
 {
-  "dashboardRows": 31353,
-  "finishedAtUtc": "2026-09-02T12:57:57Z",
-  "newRowsQueried": 0,
-  "queryBatches": 0,
+  "dashboardRows": 31356,
+  "finishedAtUtc": "2026-09-02T16:43:45Z",
+  "newRowsQueried": 3,
+  "queryBatches": 1,
   "relations": {
-    "asignado": 31320,
+    "asignado": 31323,
     "sin_cobertura": 30,
     "solapamiento": 3
   },
   "source": {
     "authority": "IDEAM",
     "methodology": "CORINE Land Cover adaptada para Colombia",
-    "queriedAtUtc": "2026-09-02T12:57:57Z",
+    "queriedAtUtc": "2026-09-02T16:43:45Z",
     "scale": "1:100.000",
     "source": "Mapa nacional de coberturas de la tierra",
     "url": "https://visualizador.ideam.gov.co/gisserver/rest/services/Estado_Cobertura_Tierra/MapServer/10",
