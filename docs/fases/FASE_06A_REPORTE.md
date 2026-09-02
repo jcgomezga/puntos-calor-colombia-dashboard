@@ -95,3 +95,11 @@ Con esta configuración:
 ## Decisión pendiente
 
 La configuración recomendada no alimentará el dashboard hasta aprobar la Fase 6B. La aprobación debe cubrir el escenario B, 1 km, 24 horas, mínimo tres detecciones, tratamiento separado de pares y bandera de encadenamiento.
+
+## Cierre remoto
+
+- Implementación y matriz: `418b3f3f52fc745c916bf6a7ec6883807841f0cf`.
+- Workflow integral de datos: `33632371337`, correcto.
+- Commit automático posterior: `42f5e235c39592e5b178176656bdf5dc79943c2e`.
+- Despliegue de GitHub Pages: `33632992983`, correcto.
+- La ejecución integral superó las 48 pruebas y no incorporó episodios a los datos públicos.

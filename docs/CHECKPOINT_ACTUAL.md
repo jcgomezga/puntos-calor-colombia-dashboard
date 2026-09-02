@@ -62,4 +62,7 @@
 - Recomendación pendiente de aprobación: escenario B 1 km 24 horas y mínimo tres detecciones.
 - Resultado recomendado: 1.881 episodios preliminares con 10.975 hotspots; 2.027 pares y 6.901 detecciones aisladas.
 - Control de encadenamiento: 16 agrupaciones candidatas y 1.013 hotspots marcados para revisión.
+- Implementación y matriz 6A: `418b3f3f52fc745c916bf6a7ec6883807841f0cf`.
+- Workflow integral verificado: `33632371337`; commit automático `42f5e235c39592e5b178176656bdf5dc79943c2e`.
+- Despliegue posterior a la auditoría: `33632992983`.
 - Próxima subfase: 6B, identidad estable linaje de fusiones generación automatizada e integración al dashboard después de aprobar los parámetros.
