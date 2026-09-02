@@ -2,6 +2,7 @@ import importlib.util
 import math
 import sys
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 
@@ -16,6 +17,12 @@ SPEC.loader.exec_module(MODULE)
 
 
 class AnlaProjectTests(unittest.TestCase):
+    def test_retries_transient_source_failure(self):
+        with patch.object(MODULE.HELPERS, "curl_json", side_effect=[RuntimeError("temporal"), {"ok": True}]) as call:
+            with patch.object(MODULE.time, "sleep"):
+                self.assertEqual(MODULE.resilient_json("https://example.test", {"f": "json"}, 1), {"ok": True})
+        self.assertEqual(call.call_count, 2)
+
     def test_projects_known_origin(self):
         x, y = MODULE.project_epsg9377(-73, 4)
         self.assertAlmostEqual(x, 5_000_000, places=3)

@@ -11,6 +11,7 @@ import math
 import os
 import sys
 import tempfile
+import time
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
@@ -103,6 +104,20 @@ def sector_name(value: object) -> str:
     raw = clean(value)
     code = raw[:-2] if raw.endswith(".0") else raw
     return SECTOR_NAMES.get(code, raw)
+
+
+def resilient_json(url: str, params: dict[str, str], timeout: int, attempts: int = 5):
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            return HELPERS.curl_json(url, params, timeout=timeout)
+        except RuntimeError as error:
+            last_error = error
+            if attempt + 1 < attempts:
+                delay = min(5 * (2**attempt), 60)
+                print(f"ANLA reintento {attempt + 2}/{attempts} en {delay}s: {error}", flush=True)
+                time.sleep(delay)
+    raise RuntimeError(f"ANLA agotó {attempts} intentos: {last_error}")
 
 
 def project_epsg9377(longitude: float, latitude: float) -> tuple[float, float]:
@@ -336,8 +351,8 @@ def spatial_relations(px: float, py: float, records: list[AnlaProject], shapes, 
 def download_projects(batch_size: int = 100, workers: int = 5):
     def download_layer(layer_id: int):
         layer_url = f"{ANLA_SERVICE}/{layer_id}"
-        metadata = HELPERS.curl_json(layer_url, {"f": "json"}, timeout=90)
-        ids_payload = HELPERS.curl_json(
+        metadata = resilient_json(layer_url, {"f": "json"}, timeout=90)
+        ids_payload = resilient_json(
             f"{layer_url}/query", {"where": "1=1", "returnIdsOnly": "true", "f": "json"}, timeout=90,
         )
         object_ids = sorted(int(value) for value in ids_payload.get("objectIds", []))
@@ -345,11 +360,11 @@ def download_projects(batch_size: int = 100, workers: int = 5):
         requested = [field for field in ANLA_FIELDS.split(",") if field in available]
         def fetch(ids: list[int]):
             try:
-                payload = HELPERS.curl_json(f"{layer_url}/query", {
+                payload = resilient_json(f"{layer_url}/query", {
                 "objectIds": ",".join(map(str, ids)), "outFields": ",".join(requested),
                 "returnGeometry": "true", "outSR": "9377", "returnZ": "false",
                 "maxAllowableOffset": "2", "f": "json",
-                }, timeout=120)
+                }, timeout=120, attempts=3)
                 return payload.get("features", [])
             except RuntimeError:
                 if len(ids) == 1:
