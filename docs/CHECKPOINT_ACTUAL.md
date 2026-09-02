@@ -39,4 +39,6 @@
 - Commit remoto de implementación ANM: `9714568c6d6102c260a1409bc7009dad9a02ec3f`.
 - Workflow ANM verificado: `33574392331`; commit remoto de datos `cc11c0e8c512f20c1823ede26b91193c3fbe237f`.
 - Despliegue de la Fase 4C verificado: `33575106562`.
-- Próxima fase: 4D, proyectos ANLA por tipo de geometría y distancia reproducible.
+- Preparación 4D: cinco capas ANLA auditadas con 10.088 geometrías: 601 en evaluación y 9.487 licenciadas.
+- Metodología 4D preparada: EPSG:9377; `dentro` solo para polígonos; bandas hasta 1 km y entre 1 y 5 km; estados jurídicos separados.
+- Próximo paso: implementar y ejecutar el cruce nacional ANLA cuando se renueve la ventana de trabajo.
