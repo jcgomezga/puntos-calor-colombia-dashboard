@@ -1,9 +1,9 @@
 # Checkpoint actual
 
 - Fecha: 2 de septiembre de 2026.
-- Versión: 0.5.0.
+- Versión: 0.6.0-pre.
 - Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C, 4D, 4E y 5.
-- Estado técnico: lint correcto; builds correctos; 43/43 pruebas Python y 10/10 pruebas web aprobadas.
+- Estado técnico: lint correcto; builds correctos; 48/48 pruebas Python y 10/10 pruebas web aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
 - Volumen al checkpoint: 31.353 detecciones únicas; el total seguirá creciendo automáticamente.
 - Periodo remoto al cierre: `2026-07-01` a `2026-09-02`, hora de Colombia.
@@ -57,4 +57,9 @@
 - Implementación histórica: `2151923ad9e425c3b268e0f765a93673b4e289d2`.
 - Workflow histórico verificado: `33630346728`; commit remoto de datos `6986e07a98d558a6d1283bd542ef9b4d4eed68b9`.
 - Despliegue final de la Fase 5 verificado: `33630725203`.
-- Próxima fase: 6, preparación metodológica de episodios espacio-temporales antes de implementar agrupaciones.
+- Fase 6A: matriz de sensibilidad de episodios completada sin modificar el dashboard.
+- Matriz evaluada: 500 m 1 km y 2 km por 12 24 y 48 horas en escenarios A y B; 18 combinaciones.
+- Recomendación pendiente de aprobación: escenario B 1 km 24 horas y mínimo tres detecciones.
+- Resultado recomendado: 1.881 episodios preliminares con 10.975 hotspots; 2.027 pares y 6.901 detecciones aisladas.
+- Control de encadenamiento: 16 agrupaciones candidatas y 1.013 hotspots marcados para revisión.
+- Próxima subfase: 6B, identidad estable linaje de fusiones generación automatizada e integración al dashboard después de aprobar los parámetros.
