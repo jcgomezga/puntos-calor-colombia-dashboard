@@ -1,18 +1,18 @@
 {
   "closure": {
-    "assigned_rows": 31588,
-    "department_count_rows": 31588,
+    "assigned_rows": 31618,
+    "department_count_rows": 31618,
     "departments_catalog": 33,
-    "expected_rows": 31615,
+    "expected_rows": 31645,
     "municipalities_catalog": 1122,
-    "municipality_count_rows": 31588,
-    "point_rows": 31615,
-    "status_rows": 31615
+    "municipality_count_rows": 31618,
+    "point_rows": 31645,
+    "status_rows": 31645
   },
   "dashboard_files": {
     "dashboard.json": {
-      "sha256": "7cc0317a04e255fe02bff2f72ea8e51464858ac28432838316df9391e66c2e7e",
-      "size_bytes": 1596777
+      "sha256": "0b679cc806b26155d0fc7f502f76e83f21af40c7da6dbd08da8f7cdd8216fc46",
+      "size_bytes": 1598181
     },
     "departments.json": {
       "sha256": "2e64d44c689963bf5f48bdaef28b5bedc7767507755fd4660d892fc06b738857",
@@ -23,31 +23,31 @@
       "size_bytes": 2049297
     }
   },
-  "finished_at_utc": "2026-09-02T23:23:49Z",
-  "started_at_utc": "2026-09-02T23:21:04Z",
+  "finished_at_utc": "2026-09-03T04:24:01Z",
+  "started_at_utc": "2026-09-03T04:21:19Z",
   "status": "completed",
   "territorial_outputs": [
     {
       "path": "territorial/hotspots_2026-07.csv",
       "rows": 11582,
-      "sha256": "928d17f7adda18004950c982d544bb2b52bad7ac80263f25a2f671f48160bad5",
+      "sha256": "839780285333d81dcc58939bae3d8fe611424dbf64abd06fb4fba3f76212450c",
       "size_bytes": 3327845
     },
     {
       "path": "territorial/hotspots_2026-08.csv",
       "rows": 19309,
-      "sha256": "1f9a7968270109c548c2e1ab782fc37efe8f49299944c93114c6e17c1ab360c1",
+      "sha256": "d324f0774f2a57555b33b811f9ae89c1bd3afb6ca8d289292d285463eccb4ac2",
       "size_bytes": 5533014
     },
     {
       "path": "territorial/hotspots_2026-09.csv",
-      "rows": 724,
-      "sha256": "8c080e4d98518b5612b177040096f8e4f895c74e0f8ff118ae176a77b32c4a7e",
-      "size_bytes": 207803
+      "rows": 754,
+      "sha256": "4d4d5df81dc28a2aee63ca2b29f79476d354e2b752c1c5b7afc3a5c826706596",
+      "size_bytes": 216496
     }
   ],
   "territorial_status": {
-    "asignado": 31588,
+    "asignado": 31618,
     "sin_asignacion": 27
   }
 }
