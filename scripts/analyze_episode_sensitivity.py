@@ -106,7 +106,7 @@ def load_hotspots(data_dir: Path) -> list[Hotspot]:
     return sorted(points, key=lambda point: (point.minute_utc, point.hotspot_id))
 
 
-def components(points: list[Hotspot], spatial_m: float, temporal_h: float) -> tuple[list[Component], int]:
+def connected_groups(points: list[Hotspot], spatial_m: float, temporal_h: float):
     if spatial_m <= 0 or temporal_h <= 0:
         raise ValueError("los umbrales deben ser positivos")
     ordered = sorted(points, key=lambda point: (point.minute_utc, point.hotspot_id))
@@ -130,8 +130,13 @@ def components(points: list[Hotspot], spatial_m: float, temporal_h: float) -> tu
     groups: dict[int, list[int]] = defaultdict(list)
     for position in range(len(ordered)):
         groups[union.find(position)].append(position)
+    return ordered, list(groups.values()), links
+
+
+def components(points: list[Hotspot], spatial_m: float, temporal_h: float) -> tuple[list[Component], int]:
+    ordered, groups, links = connected_groups(points, spatial_m, temporal_h)
     output = []
-    for members in groups.values():
+    for members in groups:
         selected = [ordered[position] for position in members]
         xs, ys = [point.x for point in selected], [point.y for point in selected]
         output.append(Component(

@@ -1,4 +1,4 @@
-# Diccionario de datos — versión 0.5.0
+# Diccionario de datos — versión 0.6.0
 
 Los campos de ingesta quedaron congelados al finalizar la Fase 2 y los territoriales al finalizar la Fase 3.
 
@@ -67,3 +67,17 @@ Cada fila histórica contiene:
 | `anhWithin5` | entero | Hotspots dentro o hasta 5 km de un área contractual asignada ANH |
 
 Los valores espaciales cuentan hotspots únicos, no el número de relaciones individuales. Un mes `open` no debe compararse como si tuviera la misma cobertura temporal que un mes `closed`.
+
+## Productos de episodios preliminares
+
+- `data/episodes/episodes.csv`: una fila por episodio de tres o más detecciones.
+- `data/episodes/hotspot_episode_membership.csv`: clasificación de cada hotspot del escenario B.
+- `data/episodes/episode_state.json.gz`: estado persistente para conservar identidades entre ejecuciones.
+- `data/episodes/episode_lineage.csv`: eventos auditables `created`, `merged`, `split` y `retired`.
+- `data/metadata/episodes_latest_run.json`: cierre cuantitativo de la última ejecución.
+
+La versión `episodes-b-1000m-24h-min3-v1` enlaza detecciones del escenario B que estén simultáneamente a un máximo de 1.000 m y 24 horas. Los componentes de tres o más miembros son episodios preliminares; los de dos son pares candidatos y los de uno, detecciones aisladas. La agrupación no se corta en límites municipales.
+
+En `dashboard.json`, cada punto agrega `episodeClass` y `episodeIndex`. Los códigos de clase son: `-1` no evaluado por pertenecer solo al escenario A, `0` aislado, `1` par, `2` episodio y `3` episodio encadenado. `episodeIndex = -1` indica que la detección no pertenece a un episodio robusto.
+
+Los episodios son inferencias espacio-temporales sobre anomalías térmicas. No confirman incendios, áreas quemadas ni causalidad.

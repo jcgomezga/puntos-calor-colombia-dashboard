@@ -37,7 +37,23 @@ test("keeps territorial and temporal catalogs valid", () => {
     if (dashboard.metadata.anhContracts) {
       assert.ok(Number.isInteger(point[16]) && point[16] >= 0 && point[16] <= 3);
     }
+    if (dashboard.metadata.episodes) {
+      assert.ok(Number.isInteger(point[17]) && point[17] >= -1 && point[17] <= 3);
+      assert.ok(Number.isInteger(point[18]) && point[18] >= -1 && point[18] < dashboard.episodes.length);
+    }
   }
+});
+
+test("closes operational episode membership", () => {
+  if (!dashboard.metadata.episodes) return;
+  const metadata = dashboard.metadata.episodes;
+  const evaluated = dashboard.points.filter((point) => point[17] >= 0);
+  const episodeIndexes = new Set(dashboard.points.map((point) => point[18]).filter((index) => index >= 0));
+  assert.equal(evaluated.length, metadata.evaluatedRows);
+  assert.equal(dashboard.episodes.length, metadata.episodeCount);
+  assert.equal(episodeIndexes.size, metadata.episodeCount);
+  assert.equal(dashboard.points.filter((point) => point[17] === 1).length, metadata.pairRows);
+  assert.equal(dashboard.points.filter((point) => point[17] === 0).length, metadata.isolatedRows);
 });
 
 test("removes demonstrative claims from the connected interface", async () => {

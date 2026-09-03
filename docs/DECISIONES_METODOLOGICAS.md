@@ -52,10 +52,12 @@
 | DM-048 | Diferir los episodios hasta aprobar umbrales espaciales y temporales | Una automatización prematura puede fusionar o separar eventos y modificar resultados retrospectivos | Aprobada para Fase 6 |
 | DM-049 | Evaluar una matriz de 500 m 1 km y 2 km por 12 24 y 48 horas | Medir sensibilidad antes de seleccionar una única parametrización | Implementada en Fase 6A |
 | DM-050 | Exigir simultáneamente proximidad espacial y temporal para crear un enlace | Evitar agrupaciones basadas solo en cercanía geográfica o coincidencia temporal | Implementada en Fase 6A |
-| DM-051 | Tratar dos detecciones como asociación candidata y reservar episodio preliminar para tres o más | Reducir la clasificación de pares aislados o duplicados de observación como eventos consolidados | Recomendada para Fase 6B |
-| DM-052 | No cortar agrupaciones por límites municipales | Un fenómeno físico puede atravesar divisiones administrativas | Recomendada para Fase 6B |
-| DM-053 | Usar provisionalmente escenario B 1 km y 24 horas como configuración operativa | Es el punto intermedio más estable entre fragmentación y fusión dentro de la matriz evaluada | Pendiente de aprobación para Fase 6B |
-| DM-054 | Marcar agrupaciones encadenadas y conservar la sensibilidad A B | La conectividad transitiva puede extender un grupo más allá de los umbrales entre sus extremos | Recomendada para Fase 6B |
+| DM-051 | Tratar dos detecciones como asociación candidata y reservar episodio preliminar para tres o más | Reducir la clasificación de pares aislados o duplicados de observación como eventos consolidados | Aprobada e implementada en Fase 6B |
+| DM-052 | No cortar agrupaciones por límites municipales | Un fenómeno físico puede atravesar divisiones administrativas | Aprobada e implementada en Fase 6B |
+| DM-053 | Usar escenario B, 1 km y 24 horas como configuración operativa | Es el punto intermedio más estable entre fragmentación y fusión dentro de la matriz evaluada | Aprobada e implementada en Fase 6B |
+| DM-054 | Marcar agrupaciones encadenadas y conservar la sensibilidad A/B | La conectividad transitiva puede extender un grupo más allá de los umbrales entre sus extremos | Aprobada e implementada en Fase 6B |
+| DM-055 | Heredar el identificador según máxima superposición de miembros y registrar fusiones, divisiones, creaciones y retiros | Las actualizaciones pueden alterar retrospectivamente la composición de un episodio | Implementada en Fase 6B |
+| DM-056 | Rechazar un estado persistente creado con otra versión metodológica salvo reinicio explícito | Evitar mezclar identidades calculadas con parámetros incompatibles | Implementada en Fase 6B |
 
 ## Aplicación de DM-009
 
