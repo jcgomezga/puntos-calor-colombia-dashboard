@@ -1,13 +1,13 @@
 # Checkpoint actual
 
 - Fecha: 2 de septiembre de 2026.
-- Versión: 0.6.0-pre.
-- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C, 4D, 4E y 5.
-- Estado técnico: lint correcto; builds correctos; 48/48 pruebas Python y 10/10 pruebas web aprobadas.
+- Versión: 0.6.0.
+- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C, 4D, 4E, 5, 6A y 6B.
+- Estado técnico: lint correcto; builds correctos; 53/53 pruebas Python y 11/11 pruebas web aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
-- Volumen al checkpoint: 31.353 detecciones únicas; el total seguirá creciendo automáticamente.
+- Volumen al checkpoint: 31.645 detecciones únicas; el total seguirá creciendo automáticamente.
 - Periodo remoto al cierre: `2026-07-01` a `2026-09-02`, hora de Colombia.
-- Escenarios al checkpoint: A = 31.353; B sin Suomi-NPP = 21.930.
+- Escenarios al checkpoint: A = 31.645; B sin Suomi-NPP = 22.165.
 - Cierre territorial: 31.326 asignadas y 27 sin intersección DANE; 0 pendientes por límite o solapamiento.
 - Catálogos: 33 departamentos y 1.122 municipios del MGN 2025.
 - Repositorio remoto: `https://github.com/jcgomezga/puntos-calor-colombia-dashboard`.
@@ -59,10 +59,13 @@
 - Despliegue final de la Fase 5 verificado: `33630725203`.
 - Fase 6A: matriz de sensibilidad de episodios completada sin modificar el dashboard.
 - Matriz evaluada: 500 m 1 km y 2 km por 12 24 y 48 horas en escenarios A y B; 18 combinaciones.
-- Recomendación pendiente de aprobación: escenario B 1 km 24 horas y mínimo tres detecciones.
-- Resultado recomendado: 1.881 episodios preliminares con 10.975 hotspots; 2.027 pares y 6.901 detecciones aisladas.
-- Control de encadenamiento: 16 agrupaciones candidatas y 1.013 hotspots marcados para revisión.
+- Configuración operativa aprobada: escenario B 1 km 24 horas y mínimo tres detecciones.
+- Resultado operativo: 1.901 episodios preliminares con 11.052 hotspots; 2.050 pares y 7.013 detecciones aisladas.
+- Control de encadenamiento: 16 episodios y 1.013 hotspots marcados para revisión.
 - Implementación y matriz 6A: `418b3f3f52fc745c916bf6a7ec6883807841f0cf`.
 - Workflow integral verificado: `33632371337`; commit automático `42f5e235c39592e5b178176656bdf5dc79943c2e`.
 - Despliegue posterior a la auditoría: `33632992983`.
-- Próxima subfase: 6B, identidad estable linaje de fusiones generación automatizada e integración al dashboard después de aprobar los parámetros.
+- Implementación 6B: `5622fdf42fc53a45e4994063fdb431b6a60788e3`.
+- Workflow integral 6B: `33714704684`; commit de datos `015ff98a0be38ac554cc47265cb271595ef284f4`.
+- Despliegue público con episodios: `33715137124`.
+- Próxima fase sugerida: 7, visualización detallada y auditoría longitudinal de episodios; requiere definición previa de alcance.
