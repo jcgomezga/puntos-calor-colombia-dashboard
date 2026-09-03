@@ -153,6 +153,9 @@ def assign_episode_ids(
 
     lineage = []
     current_by_id = dict(zip(identifiers, current, strict=True))
+    prior_positions = defaultdict(set)
+    for current_position, prior in overlaps:
+        prior_positions[prior].add(current_position)
     for position, episode_id in enumerate(identifiers):
         candidates = {prior: count for (current_position, prior), count in overlaps.items() if current_position == position}
         if not candidates:
@@ -167,6 +170,16 @@ def assign_episode_ids(
                     "run_id": run_id, "previous_episode_id": prior, "current_episode_id": episode_id,
                     "change_type": "merged", "overlap_hotspots": overlap,
                     "previous_size": len(previous[prior]), "current_size": len(current[position]),
+                })
+        if set(candidates) == {episode_id} and len(prior_positions[episode_id]) == 1:
+            before, after = previous[episode_id], current[position]
+            if before != after:
+                change_type = "expanded" if before < after else "contracted" if after < before else "revised"
+                lineage.append({
+                    "run_id": run_id, "previous_episode_id": episode_id,
+                    "current_episode_id": episode_id, "change_type": change_type,
+                    "overlap_hotspots": len(before & after), "previous_size": len(before),
+                    "current_size": len(after),
                 })
     for prior, prior_members in sorted(previous.items()):
         current_hits = [(identifiers[position], len(prior_members & members)) for position, members in enumerate(current) if prior_members & members]
@@ -294,9 +307,19 @@ def build(data_dir: Path, public_dir: Path, reset_state: bool = False) -> dict[s
         "id": row["episode_id"], "size": int(row["member_count"]), "start": row["start_local"],
         "end": row["end_local"], "durationHours": float(row["duration_hours"]),
         "longitude": float(row["centroid_longitude"]), "latitude": float(row["centroid_latitude"]),
-        "chained": row["chained"] == "true",
+        "chained": row["chained"] == "true", "extentKm": float(row["bbox_diagonal_km"]),
+        "departments": row["departments"].split("|") if row["departments"] else [],
+        "municipalities": row["municipalities"].split("|") if row["municipalities"] else [],
+        "frpMeanMw": float(row["frp_mean_mw"]) if row["frp_mean_mw"] != "" else None,
+        "frpMaxMw": float(row["frp_max_mw"]) if row["frp_max_mw"] != "" else None,
     } for row in episode_rows]
+    dashboard["episodeChanges"] = [{
+        "type": row["change_type"], "previousId": row["previous_episode_id"],
+        "currentId": row["current_episode_id"], "overlap": int(row["overlap_hotspots"]),
+        "previousSize": int(row["previous_size"]), "currentSize": int(row["current_size"]),
+    } for row in lineage]
     classes = Counter(item["episode_class"] for item in membership.values())
+    lineage_counts = Counter(row["change_type"] for row in lineage)
     dashboard["metadata"]["episodes"] = {
         "methodVersion": METHOD_VERSION, "scenario": "B", "spatialMeters": SPATIAL_METERS,
         "temporalHours": TEMPORAL_HOURS, "minimumMembers": MIN_MEMBERS,
@@ -310,7 +333,8 @@ def build(data_dir: Path, public_dir: Path, reset_state: bool = False) -> dict[s
             for members in member_groups if len(members) >= 2
         ),
         "crossMunicipalityEpisodes": sum(int(row["municipality_count"]) > 1 for row in episode_rows),
-        "lineageEventsThisRun": len(lineage), "generatedAtUtc": generated,
+        "lineageEventsThisRun": len(lineage), "lineageCounts": dict(sorted(lineage_counts.items())),
+        "generatedAtUtc": generated,
     }
     atomic_write(dashboard_path, (json.dumps(dashboard, ensure_ascii=False, separators=(",", ":")) + "\n").encode())
     report = {

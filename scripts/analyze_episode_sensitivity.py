@@ -35,7 +35,15 @@ def load_module(filename: str, name: str):
     return module
 
 
-SPATIAL = load_module("enrich_anla_projects.py", "episode_projection")
+SPATIAL = None
+
+
+def projection_module():
+    """Carga las dependencias geoespaciales solo cuando se leen coordenadas reales."""
+    global SPATIAL
+    if SPATIAL is None:
+        SPATIAL = load_module("enrich_anla_projects.py", "episode_projection")
+    return SPATIAL
 
 
 @dataclass(frozen=True)
@@ -86,6 +94,7 @@ def parse_minute_utc(value: str) -> float:
 
 
 def load_hotspots(data_dir: Path) -> list[Hotspot]:
+    spatial = projection_module()
     points, seen = [], set()
     for source in sorted((data_dir / "territorial").glob("hotspots_*.csv")):
         with source.open(encoding="utf-8", newline="") as stream:
@@ -94,7 +103,7 @@ def load_hotspots(data_dir: Path) -> list[Hotspot]:
                 if hotspot_id in seen:
                     raise RuntimeError(f"hotspot_id duplicado: {hotspot_id}")
                 seen.add(hotspot_id)
-                x, y = SPATIAL.project_epsg9377(float(row["longitud"]), float(row["latitud"]))
+                x, y = spatial.project_epsg9377(float(row["longitud"]), float(row["latitud"]))
                 points.append(Hotspot(
                     hotspot_id=hotspot_id, x=x, y=y,
                     minute_utc=parse_minute_utc(row["fecha_hora_utc"]),

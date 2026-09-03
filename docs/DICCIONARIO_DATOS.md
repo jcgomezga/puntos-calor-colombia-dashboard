@@ -81,3 +81,5 @@ La versión `episodes-b-1000m-24h-min3-v1` enlaza detecciones del escenario B qu
 En `dashboard.json`, cada punto agrega `episodeClass` y `episodeIndex`. Los códigos de clase son: `-1` no evaluado por pertenecer solo al escenario A, `0` aislado, `1` par, `2` episodio y `3` episodio encadenado. `episodeIndex = -1` indica que la detección no pertenece a un episodio robusto.
 
 Los episodios son inferencias espacio-temporales sobre anomalías térmicas. No confirman incendios, áreas quemadas ni causalidad.
+
+Desde la Fase 7, el catálogo compacto de episodios agrega extensión de la caja envolvente, departamentos, municipios, FRP media y FRP máxima. `episodeChanges` contiene solo los cambios de la última ejecución, mientras `episode_lineage.csv` conserva el histórico acumulativo de eventos. Los tipos admitidos son `created`, `expanded`, `contracted`, `revised`, `merged`, `split` y `retired`.

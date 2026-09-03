@@ -32,7 +32,25 @@ class OperationalEpisodeTests(unittest.TestCase):
             [{"a", "b", "c", "d"}], {"E-old": {"a", "b", "c"}}, points, "run",
         )
         self.assertEqual(identifiers, ["E-old"])
+        self.assertEqual([row["change_type"] for row in lineage], ["expanded"])
+
+    def test_unchanged_episode_does_not_grow_lineage(self):
+        points = {key: point(key, index) for index, key in enumerate("abc")}
+        _, lineage = MODULE.assign_episode_ids(
+            [{"a", "b", "c"}], {"E-old": {"a", "b", "c"}}, points, "run",
+        )
         self.assertEqual(lineage, [])
+
+    def test_contracted_and_revised_memberships_are_audited(self):
+        points = {key: point(key, index) for index, key in enumerate("abcde")}
+        _, contracted = MODULE.assign_episode_ids(
+            [{"a", "b", "c"}], {"E-old": {"a", "b", "c", "d"}}, points, "run",
+        )
+        _, revised = MODULE.assign_episode_ids(
+            [{"a", "b", "e"}], {"E-old": {"a", "b", "c"}}, points, "run",
+        )
+        self.assertEqual([row["change_type"] for row in contracted], ["contracted"])
+        self.assertEqual([row["change_type"] for row in revised], ["revised"])
 
     def test_merge_keeps_dominant_identifier_and_records_absorbed(self):
         points = {key: point(key, index) for index, key in enumerate("abcdef")}

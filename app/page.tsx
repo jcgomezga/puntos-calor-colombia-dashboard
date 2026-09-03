@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, Building2, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Fuel, Layers3, Leaf, MapPinned, Network, Pickaxe, Radio, RefreshCw, ShieldCheck } from "lucide-react";
+import { Activity, Building2, CalendarDays, ChevronDown, ChevronRight, CircleAlert, Database, Flame, Fuel, Layers3, Leaf, MapPinned, Network, Pickaxe, Radio, RefreshCw, ShieldCheck, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { DashboardMap, type FeatureCollection, type PointRow } from "@/components/dashboard-map";
@@ -21,9 +21,11 @@ type TrendGrouping = "day" | "month";
 type Territory = { code: string; name: string; countA: number; countB: number };
 type Municipality = Territory & { departmentCode: string; areaKm2: number | null };
 type LandCover = { code: string; label: string; level1: string; level1Code: string; level2: string; level3: string };
+type Episode = { id: string; size: number; start: string; end: string; durationHours: number; longitude: number; latitude: number; chained: boolean; extentKm?: number; departments?: string[]; municipalities?: string[]; frpMeanMw?: number | null; frpMaxMw?: number | null };
+type EpisodeChange = { type: string; previousId: string; currentId: string; overlap: number; previousSize: number; currentSize: number };
 type DashboardData = {
-  metadata: { generatedAtUtc: string; historyStartDate: string; lastObservationDate: string; totalRows: number; scenarioARows: number; scenarioBRows: number; territorialStatus: Record<string, number>; protectedAreas?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number }; landCover?: { year: number; assignedRows: number; unassignedRows: number; catalogSize: number }; miningTitles?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number; intersectedTitles: number }; anlaProjects?: { featureCount: number; usableGeometryCount: number; nullGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; withEvaluationRows: number; withLicensedRows: number; relatedFeatures: number }; anhContracts?: { featureCount: number; assignedFeatureCount: number; excludedNonAssignedCount: number; usableAssignedGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; relatedAssignedAreas: number; sourceDate: string }; episodes?: { methodVersion: string; scenario: string; spatialMeters: number; temporalHours: number; minimumMembers: number; episodeCount: number; episodeRows: number; pairCount: number; pairRows: number; isolatedRows: number; chainedEpisodeCount: number; chainedRows: number } };
-  dates: string[]; sources: string[]; departments: Territory[]; municipalities: Municipality[]; landCovers?: LandCover[]; episodes?: unknown[]; points: PointRow[];
+  metadata: { generatedAtUtc: string; historyStartDate: string; lastObservationDate: string; totalRows: number; scenarioARows: number; scenarioBRows: number; territorialStatus: Record<string, number>; protectedAreas?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number }; landCover?: { year: number; assignedRows: number; unassignedRows: number; catalogSize: number }; miningTitles?: { featureCount: number; insideRows: number; outsideRows: number; overlapRows: number; intersectedTitles: number }; anlaProjects?: { featureCount: number; usableGeometryCount: number; nullGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; withEvaluationRows: number; withLicensedRows: number; relatedFeatures: number }; anhContracts?: { featureCount: number; assignedFeatureCount: number; excludedNonAssignedCount: number; usableAssignedGeometryCount: number; insideRows: number; within1KmRows: number; between1And5KmRows: number; beyond5KmRows: number; relatedAssignedAreas: number; sourceDate: string }; episodes?: { methodVersion: string; scenario: string; spatialMeters: number; temporalHours: number; minimumMembers: number; episodeCount: number; episodeRows: number; pairCount: number; pairRows: number; isolatedRows: number; chainedEpisodeCount: number; chainedRows: number; lineageEventsThisRun: number; lineageCounts?: Record<string, number> } };
+  dates: string[]; sources: string[]; departments: Territory[]; municipalities: Municipality[]; landCovers?: LandCover[]; episodes?: Episode[]; episodeChanges?: EpisodeChange[]; points: PointRow[];
 };
 type HistoryData = { metadata: { openMonth: string; closedMonths: string[]; totalRows: number; scenarioBRows: number } };
 
@@ -59,6 +61,7 @@ export default function Home() {
   const [anlaLegalStatus, setAnlaLegalStatus] = useState<AnlaLegalStatus>("all");
   const [anhRelation, setAnhRelation] = useState<AnhRelation>("all");
   const [episodeRelation, setEpisodeRelation] = useState<EpisodeRelation>("all");
+  const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState<number | null>(null);
   const [trendGrouping, setTrendGrouping] = useState<TrendGrouping>("day");
   const [landCoverLevel, setLandCoverLevel] = useState("all");
   const landCovers = useMemo(() => dashboard.landCovers ?? [], []);
@@ -112,6 +115,18 @@ export default function Home() {
     return { departments: departments.size, municipalities: municipalities.size, sources: sources.size, protected: visiblePoints.filter((point) => point[11] === 1).length, covers: covers.size, mining: visiblePoints.filter((point) => point[13] === 1).length, anla: visiblePoints.filter((point) => (point[14] ?? 0) > 0).length, anh: visiblePoints.filter((point) => (point[16] ?? 0) > 0).length, episodes: episodes.size };
   }, [visiblePoints]);
 
+  const episodeRanking = useMemo(() => {
+    const counts = new Map<number, number>();
+    for (const point of visiblePoints) if ((point[18] ?? -1) >= 0) counts.set(point[18]!, (counts.get(point[18]!) ?? 0) + 1);
+    return [...counts.entries()].map(([index, visibleMembers]) => ({ index, visibleMembers, episode: dashboard.episodes?.[index] }))
+      .filter((item): item is { index: number; visibleMembers: number; episode: Episode } => Boolean(item.episode))
+      .sort((a, b) => b.visibleMembers - a.visibleMembers || b.episode.size - a.episode.size || a.episode.id.localeCompare(b.episode.id))
+      .slice(0, 10);
+  }, [visiblePoints]);
+  const selectedEpisode = selectedEpisodeIndex === null ? null : dashboard.episodes?.[selectedEpisodeIndex] ?? null;
+  const selectedEpisodeVisibleMembers = selectedEpisodeIndex === null ? 0 : visiblePoints.filter((point) => point[18] === selectedEpisodeIndex).length;
+  const mapPoints = selectedEpisodeIndex === null ? visiblePoints : visiblePoints.filter((point) => point[18] === selectedEpisodeIndex);
+
   const ranking = useMemo(() => {
     const byMunicipality = departmentCode !== "00";
     const counts = new Map<number, number>();
@@ -143,7 +158,7 @@ export default function Home() {
   const selectedMunicipality = dashboard.municipalities.find((item) => item.code === municipalityCode);
   const title = selectedMunicipality?.name ?? selectedDepartment?.name ?? "Colombia";
   const generated = new Date(dashboard.metadata.generatedAtUtc).toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "medium", timeStyle: "short" });
-  const reset = () => { setScenario("B"); setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); setProtectedRelation("all"); setLandCoverLevel("all"); setMiningRelation("all"); setAnlaRelation("all"); setAnlaLegalStatus("all"); setAnhRelation("all"); setEpisodeRelation("all"); };
+  const reset = () => { setScenario("B"); setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); setProtectedRelation("all"); setLandCoverLevel("all"); setMiningRelation("all"); setAnlaRelation("all"); setAnlaLegalStatus("all"); setAnhRelation("all"); setEpisodeRelation("all"); setSelectedEpisodeIndex(null); };
 
   return <main className="dashboard-shell">
     <header className="topbar">
@@ -184,13 +199,35 @@ export default function Home() {
 
     <section className="workspace-grid">
       <article className="panel map-panel"><div className="panel-heading"><div><p className="panel-kicker">DISTRIBUCIÓN ESPACIAL</p><h2>{title}</h2></div><span className="method-chip">Escenario {scenario}</span></div><div className="map-surface">
-        <DashboardMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={visiblePoints} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); }} onMunicipality={setMunicipalityCode} />
+        <DashboardMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={mapPoints} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); setSelectedEpisodeIndex(null); }} onMunicipality={(code) => { setMunicipalityCode(code); setSelectedEpisodeIndex(null); }} />
         <div className="map-legend"><span><i className="dot-high" /> Detección IDEAM</span><span><i className="area-swatch" /> Límite DANE 2025</span></div><div className="map-caption">Haz clic en un territorio para filtrarlo. Los indicadores y gráficos se recalculan con el periodo y escenario seleccionados.</div>
       </div></article>
       <div className="side-stack">
         <article className="panel chart-panel"><div className="panel-heading compact"><div><p className="panel-kicker">CONCENTRACIÓN</p><h2>{departmentCode === "00" ? "Departamentos" : "Municipios"} con más detecciones</h2></div></div><div className="chart-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><BarChart data={ranking} layout="vertical" margin={{ left: 8, right: 26 }}><CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e8ece8" /><XAxis type="number" hide /><YAxis type="category" dataKey="name" width={92} tick={{ fontSize: 10, fill: "#46534a" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} cursor={{ fill: "#f4f7f4" }} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Bar dataKey="value" name="Detecciones" fill="#d9462e" radius={[0, 5, 5, 0]} barSize={15} isAnimationActive={false} /></BarChart></ResponsiveContainer></div></article>
         <article className="panel chart-panel trend-panel"><div className="panel-heading compact"><div><p className="panel-kicker">EVOLUCIÓN TEMPORAL</p><h2>Detecciones por {trendGrouping === "day" ? "día" : "mes"}</h2></div><div className="trend-actions"><span className="open-period">{labelMonth(history.metadata.openMonth)} en curso</span><div className="trend-toggle" role="group" aria-label="Agrupación temporal"><button className={trendGrouping === "day" ? "active" : ""} onClick={() => setTrendGrouping("day")}>Días</button><button className={trendGrouping === "month" ? "active" : ""} onClick={() => setTrendGrouping("month")}>Meses</button></div></div></div><div className="trend-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><AreaChart data={trend} margin={{ left: -18, right: 12, top: 8 }}><defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f06432" stopOpacity="0.45" /><stop offset="1" stopColor="#f06432" stopOpacity="0.03" /></linearGradient></defs><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e8ece8" /><XAxis dataKey="day" tick={{ fontSize: 9, fill: "#647068" }} axisLine={false} tickLine={false} minTickGap={28} /><YAxis tick={{ fontSize: 10, fill: "#647068" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} labelFormatter={(_, payload) => payload?.[0]?.payload?.label ?? ""} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Area type="monotone" dataKey="value" name="Detecciones" stroke="#c73524" strokeWidth={2.5} fill="url(#trendFill)" isAnimationActive={false} /></AreaChart></ResponsiveContainer></div></article>
       </div>
+    </section>
+
+    <section className="episode-workspace" aria-label="Explorador de episodios preliminares">
+      <article className="panel episode-list-panel">
+        <div className="panel-heading"><div><p className="panel-kicker">EXPLORACIÓN OPERATIVA</p><h2>Episodios con más detecciones visibles</h2></div><span className="method-chip">B · 1 km · 24 h</span></div>
+        <div className="episode-table" role="list">
+          {episodeRanking.length ? episodeRanking.map(({ index, visibleMembers, episode }, position) => <button key={episode.id} type="button" role="listitem" className={selectedEpisodeIndex === index ? "selected" : ""} onClick={() => setSelectedEpisodeIndex(index)}>
+            <span className="episode-rank">{position + 1}</span><span className="episode-name"><strong>{episode.id}</strong><small>{episode.municipalities?.slice(0, 2).join(" · ") || "Sin municipio asignado"}{(episode.municipalities?.length ?? 0) > 2 ? ` +${episode.municipalities!.length - 2}` : ""}</small></span><span className="episode-size"><strong>{numberFormat.format(visibleMembers)}</strong><small>visibles</small></span>{episode.chained && <span className="chain-badge">Encadenado</span>}<ChevronRight size={16} />
+          </button>) : <p className="episode-empty">No hay episodios con los filtros seleccionados.</p>}
+        </div>
+      </article>
+      <article className="panel episode-detail-panel">
+        <div className="panel-heading"><div><p className="panel-kicker">DETALLE Y TRAZABILIDAD</p><h2>{selectedEpisode ? "Episodio seleccionado" : "Selecciona un episodio"}</h2></div>{selectedEpisode && <button className="clear-episode" type="button" onClick={() => setSelectedEpisodeIndex(null)} aria-label="Quitar selección de episodio"><X size={16} /> Quitar selección</button>}</div>
+        {selectedEpisode ? <div className="episode-detail">
+          <div className="episode-id-row"><Network size={19} /><strong>{selectedEpisode.id}</strong>{selectedEpisode.chained && <span className="chain-badge">Requiere revisión</span>}</div>
+          <dl><div><dt>Detecciones visibles</dt><dd>{numberFormat.format(selectedEpisodeVisibleMembers)} de {numberFormat.format(selectedEpisode.size)}</dd></div><div><dt>Duración</dt><dd>{numberFormat.format(selectedEpisode.durationHours)} h</dd></div><div><dt>Extensión de caja</dt><dd>{selectedEpisode.extentKm == null ? "—" : `${numberFormat.format(selectedEpisode.extentKm)} km`}</dd></div><div><dt>FRP máxima</dt><dd>{selectedEpisode.frpMaxMw == null ? "—" : `${numberFormat.format(selectedEpisode.frpMaxMw)} MW`}</dd></div></dl>
+          <p><strong>Periodo:</strong> {new Date(selectedEpisode.start).toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "medium", timeStyle: "short" })} – {new Date(selectedEpisode.end).toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "medium", timeStyle: "short" })}</p>
+          <p><strong>Territorios:</strong> {selectedEpisode.departments?.join(", ") || "Sin departamento asignado"} · {selectedEpisode.municipalities?.join(", ") || "Sin municipio asignado"}</p>
+          <p className="episode-map-note">El mapa muestra únicamente los miembros visibles de este episodio. Quita la selección para recuperar todas las detecciones filtradas.</p>
+        </div> : <div className="episode-placeholder"><Network size={28} /><p>Elige una fila para consultar duración, extensión, territorios y potencia radiativa, y aislar sus detecciones en el mapa.</p></div>}
+        <div className="lineage-summary"><strong>Cambios en la última actualización</strong><span>{numberFormat.format(dashboard.metadata.episodes?.lineageEventsThisRun ?? 0)} eventos registrados</span><small>{Object.entries(dashboard.metadata.episodes?.lineageCounts ?? {}).map(([type, count]) => `${type}: ${numberFormat.format(count)}`).join(" · ") || "Sin cambios de identidad o membresía"}</small></div>
+      </article>
     </section>
 
     <section className="audit-strip"><div><Database size={18} /><span><strong>Fuentes</strong> IDEAM · DANE · RUNAP · ANM · ANLA · ANH</span></div><div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL} · cobertura de contexto {dashboard.metadata.landCover?.year ?? 2024}</span></div><div><ShieldCheck size={18} /><span><strong>Cierre espacial</strong> {numberFormat.format(dashboard.metadata.protectedAreas?.insideRows ?? 0)} en RUNAP · {numberFormat.format(dashboard.metadata.miningTitles?.insideRows ?? 0)} en títulos · {numberFormat.format((dashboard.metadata.anlaProjects?.insideRows ?? 0) + (dashboard.metadata.anlaProjects?.within1KmRows ?? 0) + (dashboard.metadata.anlaProjects?.between1And5KmRows ?? 0))} relacionados con ANLA · {numberFormat.format((dashboard.metadata.anhContracts?.insideRows ?? 0) + (dashboard.metadata.anhContracts?.within1KmRows ?? 0) + (dashboard.metadata.anhContracts?.between1And5KmRows ?? 0))} relacionados con ANH</span></div></section>

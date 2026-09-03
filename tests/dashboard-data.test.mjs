@@ -54,6 +54,16 @@ test("closes operational episode membership", () => {
   assert.equal(episodeIndexes.size, metadata.episodeCount);
   assert.equal(dashboard.points.filter((point) => point[17] === 1).length, metadata.pairRows);
   assert.equal(dashboard.points.filter((point) => point[17] === 0).length, metadata.isolatedRows);
+  if (process.env.REQUIRE_EPISODE_AUDIT === "1") {
+    assert.ok(Array.isArray(dashboard.episodeChanges));
+    assert.equal(dashboard.episodeChanges.length, metadata.lineageEventsThisRun);
+    assert.equal(Object.values(metadata.lineageCounts).reduce((sum, value) => sum + value, 0), metadata.lineageEventsThisRun);
+    for (const episode of dashboard.episodes) {
+      assert.ok(Number.isFinite(episode.extentKm) && episode.extentKm >= 0);
+      assert.ok(Array.isArray(episode.departments));
+      assert.ok(Array.isArray(episode.municipalities));
+    }
+  }
 });
 
 test("removes demonstrative claims from the connected interface", async () => {

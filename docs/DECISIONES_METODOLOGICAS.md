@@ -58,6 +58,10 @@
 | DM-054 | Marcar agrupaciones encadenadas y conservar la sensibilidad A/B | La conectividad transitiva puede extender un grupo más allá de los umbrales entre sus extremos | Aprobada e implementada en Fase 6B |
 | DM-055 | Heredar el identificador según máxima superposición de miembros y registrar fusiones, divisiones, creaciones y retiros | Las actualizaciones pueden alterar retrospectivamente la composición de un episodio | Implementada en Fase 6B |
 | DM-056 | Rechazar un estado persistente creado con otra versión metodológica salvo reinicio explícito | Evitar mezclar identidades calculadas con parámetros incompatibles | Implementada en Fase 6B |
+| DM-057 | Registrar únicamente cambios de episodios y no una copia completa en cada ejecución | Evitar crecimiento redundante del repositorio cada tres horas | Implementada en Fase 7 |
+| DM-058 | Distinguir expansión, contracción y revisión de membresía además de creación, fusión, división y retiro | Hacer auditable la evolución de un identificador que continúa activo | Implementada en Fase 7 |
+| DM-059 | Ordenar el explorador por miembros visibles bajo los filtros activos | Mantener coherencia entre ranking, periodo, territorio y relaciones espaciales seleccionadas | Implementada en Fase 7 |
+| DM-060 | Usar la selección de episodio solo para aislar puntos en el mapa | Conservar los indicadores generales como contexto y evitar dobles filtros invisibles | Implementada en Fase 7 |
 
 ## Aplicación de DM-009
 
