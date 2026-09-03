@@ -41,13 +41,24 @@ La selección del episodio no modifica los indicadores generales: estos permanec
 
 `episodeChanges` publica únicamente los eventos de la última ejecución. `episode_lineage.csv` acumula los cambios reales. No se crean snapshots completos por ejecución.
 
-## Validación local inicial
+## Validación
 
 - 12/12 pruebas focalizadas de sensibilidad, identidad y linaje aprobadas.
 - 11/11 pruebas web aprobadas.
 - `lint` aprobado.
 - exportación estática aprobada.
+- 55/55 pruebas Python aprobadas en el workflow integral.
+- validación de cierres generados aprobada antes del commit automático.
 
-## Estado
+## Primera ejecución longitudinal
 
-Implementación local terminada. Las cifras definitivas, el workflow y el despliegue se añadirán después de la ejecución remota completa.
+El primer refresco conservó 1.901 episodios, 22.165 hotspots B y las demás cifras de la Fase 6B. Produjo cero eventos de linaje porque no existieron cambios de datos entre los dos cortes. Este resultado valida que los episodios sin modificaciones no crean filas redundantes.
+
+## Publicación verificada
+
+- Implementación: `b5064f0f332036a7aca92e5f29e43afd21ae4088`.
+- Workflow integral: `33715992975`, correcto.
+- Datos regenerados: `5c7a7f2ee7d00d3d07f286623d0033e6f0546f8e`.
+- GitHub Pages: `33716313240`, correcto.
+
+Estado final: Fase 7 cerrada.

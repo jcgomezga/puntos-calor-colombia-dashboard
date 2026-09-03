@@ -10,6 +10,7 @@ Dashboard nacional, abierto y reproducible para explorar detecciones térmicas p
 - Escenario A: todos los sensores disponibles.
 - Escenario B: análisis de sensibilidad sin Suomi-NPP.
 - Estadísticas temporales diarias y mensuales, territoriales y por sensor.
+- Episodios preliminares con explorador detallado y linaje entre actualizaciones.
 - Histórico acumulativo únicamente desde el 1 de julio de 2026.
 - Actualización programada cada tres horas mediante GitHub Actions.
 - Publicación mediante GitHub Pages, sin ArcGIS Online.

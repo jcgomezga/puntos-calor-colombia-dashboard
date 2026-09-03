@@ -1,9 +1,9 @@
 # Checkpoint actual
 
 - Fecha: 2 de septiembre de 2026.
-- Versión: 0.6.0.
-- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C, 4D, 4E, 5, 6A y 6B.
-- Estado técnico: lint correcto; builds correctos; 53/53 pruebas Python y 11/11 pruebas web aprobadas.
+- Versión: 0.7.0.
+- Fases cerradas: 0, 1, 2, 3, 4A, 4B, 4C, 4D, 4E, 5, 6A, 6B y 7.
+- Estado técnico: lint correcto; builds correctos; 55/55 pruebas Python y 11/11 pruebas web aprobadas.
 - Estado de datos: histórico oficial IDEAM territorializado y conectado a la interfaz.
 - Volumen al checkpoint: 31.645 detecciones únicas; el total seguirá creciendo automáticamente.
 - Periodo remoto al cierre: `2026-07-01` a `2026-09-02`, hora de Colombia.
@@ -68,4 +68,10 @@
 - Implementación 6B: `5622fdf42fc53a45e4994063fdb431b6a60788e3`.
 - Workflow integral 6B: `33714704684`; commit de datos `015ff98a0be38ac554cc47265cb271595ef284f4`.
 - Despliegue público con episodios: `33715137124`.
-- Próxima fase sugerida: 7, visualización detallada y auditoría longitudinal de episodios; requiere definición previa de alcance.
+- Fase 7: explorador de episodios con ranking filtrado detalle territorial duración extensión FRP y selección cartográfica.
+- Linaje ampliado: creación expansión contracción revisión fusión división y retiro; los episodios sin cambios no generan registros.
+- Primer refresco longitudinal: cero eventos al no existir cambios entre cortes; control antirredundancia aprobado.
+- Implementación Fase 7: `b5064f0f332036a7aca92e5f29e43afd21ae4088`.
+- Workflow integral Fase 7: `33715992975`; commit de datos `5c7a7f2ee7d00d3d07f286623d0033e6f0546f8e`.
+- Despliegue final Fase 7: `33716313240`.
+- Próxima fase: requiere definir una nueva ampliación analítica o territorial sin modificar retrospectivamente los checkpoints cerrados.
