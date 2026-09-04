@@ -1,27 +1,27 @@
 {
-  "dashboardRows": 31939,
-  "finishedAtUtc": "2026-09-04T04:45:48Z",
-  "relationRows": 122337,
+  "dashboardRows": 32001,
+  "finishedAtUtc": "2026-09-04T11:33:23Z",
+  "relationRows": 121772,
   "relations": {
-    "con_evaluacion": 801,
-    "con_licenciado": 17553,
-    "dentro": 6939,
-    "entre_1_y_5_km": 7200,
-    "hasta_1_km": 3424,
-    "mas_de_5_km": 14376,
-    "multiples": 12766
+    "con_evaluacion": 477,
+    "con_licenciado": 17579,
+    "dentro": 6948,
+    "entre_1_y_5_km": 7211,
+    "hasta_1_km": 3426,
+    "mas_de_5_km": 14416,
+    "multiples": 12774
   },
   "source": {
     "authority": "Autoridad Nacional de Licencias Ambientales",
-    "downloadedAtUtc": "2026-09-03T11:27:12Z",
-    "featureCount": 10092,
+    "downloadedAtUtc": "2026-09-04T11:33:01Z",
+    "featureCount": 9929,
     "layers": {
       "1": {
-        "count": 467,
+        "count": 317,
         "name": "Linea Proyecto Evaluacion"
       },
       "2": {
-        "count": 138,
+        "count": 125,
         "name": "Area Proyecto Evaluacion"
       },
       "4": {
@@ -42,7 +42,7 @@
     "source": "Proyectos ANLA",
     "spatialReference": 9377,
     "url": "https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer",
-    "usableGeometryCount": 10048
+    "usableGeometryCount": 9885
   },
   "status": "completed"
 }
