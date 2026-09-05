@@ -1,18 +1,18 @@
 {
   "closure": {
-    "assigned_rows": 32394,
-    "department_count_rows": 32394,
+    "assigned_rows": 33092,
+    "department_count_rows": 33092,
     "departments_catalog": 33,
-    "expected_rows": 32421,
+    "expected_rows": 33119,
     "municipalities_catalog": 1122,
-    "municipality_count_rows": 32394,
-    "point_rows": 32421,
-    "status_rows": 32421
+    "municipality_count_rows": 33092,
+    "point_rows": 33119,
+    "status_rows": 33119
   },
   "dashboard_files": {
     "dashboard.json": {
-      "sha256": "09367a497fef3a72847ff92e23b64ac8254f3f16633181d8466cb7639a3c41e7",
-      "size_bytes": 1634597
+      "sha256": "8ce64d1b52a1bbfad49f753e0fe874bee292dbd33f09fbf9c841393e5fed3991",
+      "size_bytes": 1667544
     },
     "departments.json": {
       "sha256": "2e64d44c689963bf5f48bdaef28b5bedc7767507755fd4660d892fc06b738857",
@@ -23,8 +23,8 @@
       "size_bytes": 2049297
     }
   },
-  "finished_at_utc": "2026-09-05T20:29:01Z",
-  "started_at_utc": "2026-09-05T20:26:34Z",
+  "finished_at_utc": "2026-09-05T23:00:27Z",
+  "started_at_utc": "2026-09-05T22:57:33Z",
   "status": "completed",
   "territorial_outputs": [
     {
@@ -41,13 +41,13 @@
     },
     {
       "path": "territorial/hotspots_2026-09.csv",
-      "rows": 1530,
-      "sha256": "732919717fa208f33d3489681bd6e7792c6e5d40d196e2e456c2c6b8adc506db",
-      "size_bytes": 439827
+      "rows": 2228,
+      "sha256": "1ba2e4f80108e0145ee32351ed38d0ce22718df6b15b96fbbd64537b57b6663f",
+      "size_bytes": 640346
     }
   ],
   "territorial_status": {
-    "asignado": 32394,
+    "asignado": 33092,
     "sin_asignacion": 27
   }
 }
