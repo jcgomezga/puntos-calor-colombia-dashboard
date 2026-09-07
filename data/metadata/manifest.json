@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-07T04:48:48Z",
+  "generated_at_utc": "2026-09-07T12:41:21Z",
   "policy": {
     "history_mode": "cumulative",
     "history_start_date": "2026-07-01",
@@ -25,9 +25,9 @@
     {
       "month": "2026-09",
       "path": "processed/hotspots_2026-09.csv",
-      "rows": 2591,
-      "sha256": "91e9a97e7a683b86bb985b33b93e12b2f5dcc340031eacdd75be615df8e5fa60",
-      "size_bytes": 601734
+      "rows": 2654,
+      "sha256": "3471087a9579b6cd1db023efd94e65c6cf7e075e9dcbcbfb40e23d3d06d6e545",
+      "size_bytes": 616379
     }
   ],
   "raw_files": [
@@ -891,7 +891,7 @@
     },
     {
       "date": "2026-09-05",
-      "downloaded_at_utc": "2026-09-07T04:48:48Z",
+      "downloaded_at_utc": "2026-09-07T12:41:21Z",
       "last_modified": null,
       "path": "raw/2026/09/Puntos_de_calor_Colombia_2026-09-05.csv",
       "read": 787,
@@ -904,16 +904,29 @@
     },
     {
       "date": "2026-09-06",
-      "downloaded_at_utc": "2026-09-07T04:48:48Z",
+      "downloaded_at_utc": "2026-09-07T12:41:21Z",
       "last_modified": null,
       "path": "raw/2026/09/Puntos_de_calor_Colombia_2026-09-06.csv",
-      "read": 359,
+      "read": 360,
       "rejected_cutoff": 0,
       "rejected_invalid": 0,
-      "sha256": "c1a5df9dae0b0a813708eb7e351bf285ba5e5ff68492bdf55879856b0c2d964b",
-      "size_bytes": 30387,
+      "sha256": "31d6e2b615f8dafa70d2d7da8460a6d64e4c8fc7e7372da4ae4a9b9dfe67379c",
+      "size_bytes": 30465,
       "url": "https://puntosdecalor.ideam.gov.co/archivos-csv/Puntos_de_calor_Colombia_2026-09-06.csv",
-      "valid": 359
+      "valid": 360
+    },
+    {
+      "date": "2026-09-07",
+      "downloaded_at_utc": "2026-09-07T12:41:21Z",
+      "last_modified": null,
+      "path": "raw/2026/09/Puntos_de_calor_Colombia_2026-09-07.csv",
+      "read": 62,
+      "rejected_cutoff": 0,
+      "rejected_invalid": 0,
+      "sha256": "3f57e285f5f2f63de4278e6b3c833f8356ea8f11806202af697b8507e9e861b1",
+      "size_bytes": 5366,
+      "url": "https://puntosdecalor.ideam.gov.co/archivos-csv/Puntos_de_calor_Colombia_2026-09-07.csv",
+      "valid": 62
     }
   ]
 }
