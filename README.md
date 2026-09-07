@@ -17,7 +17,7 @@ Dashboard nacional, abierto y reproducible para explorar detecciones térmicas p
 
 ## Geovisor piloto
 
-La rama `feature/geovisor-fase-8a` incorpora un motor MapLibre navegable con detecciones agrupadas, límites DANE y los polígonos oficiales de cobertura IDEAM 2024. El mapa anterior permanece disponible como respaldo y no se modifican los filtros ni los cruces espaciales existentes. Véase el [reporte de la Fase 8A](docs/fases/FASE_08A_REPORTE.md).
+La rama `feature/geovisor-fase-8a` incorpora un motor MapLibre navegable con detecciones agrupadas, límites DANE, coberturas IDEAM 2024 y geometrías consultables de RUNAP, ANM, ANLA y ANH. Estas cuatro capas de contexto se publican como un archivo PMTiles y permanecen apagadas al iniciar para cuidar la legibilidad y el rendimiento. El mapa anterior sigue disponible como respaldo y no se modifican los filtros ni los cruces espaciales existentes. Véanse los reportes de la [Fase 8A](docs/fases/FASE_08A_REPORTE.md) y la [Fase 8B](docs/fases/FASE_08B_REPORTE.md).
 
 Una detección térmica no confirma por sí sola un incendio, su causa ni una actividad específica.
 
@@ -40,6 +40,13 @@ npm run build
 npm run build:pages
 npm test
 python -m unittest discover -s tests_py -p "test_*.py" -v
+```
+
+Reconstrucción opcional de las teselas territoriales, con Tippecanoe disponible en `PATH`:
+
+```bash
+python -m pip install --requirement requirements-tiles.txt
+npm run build:context-tiles
 ```
 
 ## Actualización de datos

@@ -13,6 +13,19 @@ test("keeps the geovisor implementation and the legacy fallback together", () =>
   assert.match(pageSource, /<GeovisorMap/);
   assert.match(pageSource, /<DashboardMap/);
   assert.equal(packageJson.dependencies["maplibre-gl"], "^6.7.0");
+  assert.equal(packageJson.dependencies.pmtiles, "^4.5.0");
+});
+
+test("publishes the four territorial context sources as optional PMTiles layers", () => {
+  assert.match(geovisorSource, /context-layers\.pmtiles/);
+  assert.match(geovisorSource, /maplibregl\.addProtocol\("pmtiles"/);
+  for (const layer of ["runap", "anm", "anla", "anh"]) {
+    assert.match(geovisorSource, new RegExp(`"source-layer": "${layer}"`));
+    assert.match(geovisorSource, new RegExp(`${layer}: false`));
+    assert.match(geovisorSource, new RegExp(`toggleLayer\\("${layer}"\\)`));
+  }
+  assert.match(geovisorSource, /queryModeRef\.current === "context"/);
+  assert.match(geovisorSource, /contextPopup\(feature\)/);
 });
 
 test("uses the official IDEAM 2024 vector tile endpoint and its complete symbol catalog", () => {
