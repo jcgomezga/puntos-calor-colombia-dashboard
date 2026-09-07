@@ -4,6 +4,7 @@ import { Activity, Building2, CalendarDays, ChevronDown, ChevronRight, CircleAle
 import { useMemo, useState } from "react";
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import { DashboardMap, type FeatureCollection, type PointRow } from "@/components/dashboard-map";
+import { GeovisorMap } from "@/components/geovisor-map";
 import { HISTORY_START_LABEL } from "@/lib/data-policy";
 import dashboardJson from "@/public/data/dashboard.json";
 import departmentGeoJson from "@/public/data/departments.json";
@@ -18,6 +19,7 @@ type AnlaLegalStatus = "all" | "evaluation" | "licensed";
 type AnhRelation = "all" | "inside" | "within1" | "between1and5" | "beyond5";
 type EpisodeRelation = "all" | "episode" | "pair" | "isolated" | "chained";
 type TrendGrouping = "day" | "month";
+type MapMode = "geovisor" | "basic";
 type Territory = { code: string; name: string; countA: number; countB: number };
 type Municipality = Territory & { departmentCode: string; areaKm2: number | null };
 type LandCover = { code: string; label: string; level1: string; level1Code: string; level2: string; level3: string };
@@ -63,6 +65,7 @@ export default function Home() {
   const [episodeRelation, setEpisodeRelation] = useState<EpisodeRelation>("all");
   const [selectedEpisodeIndex, setSelectedEpisodeIndex] = useState<number | null>(null);
   const [trendGrouping, setTrendGrouping] = useState<TrendGrouping>("day");
+  const [mapMode, setMapMode] = useState<MapMode>("geovisor");
   const [landCoverLevel, setLandCoverLevel] = useState("all");
   const landCovers = useMemo(() => dashboard.landCovers ?? [], []);
   const landCoverLevels = useMemo(() => [...new Map(landCovers.map((item) => [item.level1Code, item.level1])).entries()].sort(), [landCovers]);
@@ -198,9 +201,9 @@ export default function Home() {
     </section>
 
     <section className="workspace-grid">
-      <article className="panel map-panel"><div className="panel-heading"><div><p className="panel-kicker">DISTRIBUCIÓN ESPACIAL</p><h2>{title}</h2></div><span className="method-chip">Escenario {scenario}</span></div><div className="map-surface">
-        <DashboardMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={mapPoints} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); setSelectedEpisodeIndex(null); }} onMunicipality={(code) => { setMunicipalityCode(code); setSelectedEpisodeIndex(null); }} />
-        <div className="map-legend"><span><i className="dot-high" /> Detección IDEAM</span><span><i className="area-swatch" /> Límite DANE 2025</span></div><div className="map-caption">Haz clic en un territorio para filtrarlo. Los indicadores y gráficos se recalculan con el periodo y escenario seleccionados.</div>
+      <article className="panel map-panel"><div className="panel-heading"><div><p className="panel-kicker">DISTRIBUCIÓN ESPACIAL</p><h2>{title}</h2></div><div className="map-heading-actions"><span className="method-chip">Escenario {scenario}</span><div className="map-mode-toggle" role="group" aria-label="Modo del mapa"><button type="button" className={mapMode === "geovisor" ? "active" : ""} onClick={() => setMapMode("geovisor")}>Geovisor</button><button type="button" className={mapMode === "basic" ? "active" : ""} onClick={() => setMapMode("basic")}>Mapa básico</button></div></div></div><div className="map-surface">
+        {mapMode === "geovisor" ? <GeovisorMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={mapPoints} dates={dashboard.dates} sources={dashboard.sources} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); setSelectedEpisodeIndex(null); }} onMunicipality={(code) => { setMunicipalityCode(code); setSelectedEpisodeIndex(null); }} /> : <><DashboardMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={mapPoints} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); setSelectedEpisodeIndex(null); }} onMunicipality={(code) => { setMunicipalityCode(code); setSelectedEpisodeIndex(null); }} /><div className="map-legend"><span><i className="dot-high" /> Detección IDEAM</span><span><i className="area-swatch" /> Límite DANE 2025</span></div></>}
+        <div className="map-caption">{mapMode === "geovisor" ? "Navega, acerca y activa capas. Haz clic en un territorio, una detección o una cobertura para consultar y filtrar." : "Mapa de respaldo. Haz clic en un territorio para filtrarlo."} Los indicadores y gráficos se recalculan con el periodo y escenario seleccionados.</div>
       </div></article>
       <div className="side-stack">
         <article className="panel chart-panel"><div className="panel-heading compact"><div><p className="panel-kicker">CONCENTRACIÓN</p><h2>{departmentCode === "00" ? "Departamentos" : "Municipios"} con más detecciones</h2></div></div><div className="chart-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><BarChart data={ranking} layout="vertical" margin={{ left: 8, right: 26 }}><CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e8ece8" /><XAxis type="number" hide /><YAxis type="category" dataKey="name" width={92} tick={{ fontSize: 10, fill: "#46534a" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} cursor={{ fill: "#f4f7f4" }} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Bar dataKey="value" name="Detecciones" fill="#d9462e" radius={[0, 5, 5, 0]} barSize={15} isAnimationActive={false} /></BarChart></ResponsiveContainer></div></article>

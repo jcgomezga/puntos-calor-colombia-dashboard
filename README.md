@@ -15,6 +15,10 @@ Dashboard nacional, abierto y reproducible para explorar detecciones térmicas p
 - Actualización programada cada tres horas mediante GitHub Actions.
 - Publicación mediante GitHub Pages, sin ArcGIS Online.
 
+## Geovisor piloto
+
+La rama `feature/geovisor-fase-8a` incorpora un motor MapLibre navegable con detecciones agrupadas, límites DANE y los polígonos oficiales de cobertura IDEAM 2024. El mapa anterior permanece disponible como respaldo y no se modifican los filtros ni los cruces espaciales existentes. Véase el [reporte de la Fase 8A](docs/fases/FASE_08A_REPORTE.md).
+
 Una detección térmica no confirma por sí sola un incendio, su causa ni una actividad específica.
 
 ## Política temporal
