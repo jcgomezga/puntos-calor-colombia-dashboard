@@ -14,6 +14,10 @@ test("keeps the geovisor implementation and the legacy fallback together", () =>
   assert.match(pageSource, /<DashboardMap/);
   assert.equal(packageJson.dependencies["maplibre-gl"], "^6.7.0");
   assert.equal(packageJson.dependencies.pmtiles, "^4.5.0");
+  assert.match(geovisorSource, /getContext\("webgl2"\)/);
+  assert.match(geovisorSource, /Usa «Mapa básico»/);
+  assert.match(pageSource, /labelColombiaDateTime/);
+  assert.doesNotMatch(pageSource, /new Date\(dashboard\.metadata\.generatedAtUtc\)\.toLocaleString/);
 });
 
 test("publishes the four territorial context sources as optional PMTiles layers", () => {

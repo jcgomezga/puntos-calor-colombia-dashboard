@@ -38,6 +38,11 @@ const municipalitiesGeo = municipalityGeoJson as unknown as FeatureCollection;
 const numberFormat = new Intl.NumberFormat("es-CO");
 const dateFormat = new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 const monthFormat = new Intl.DateTimeFormat("es-CO", { month: "short", year: "numeric", timeZone: "UTC" });
+const colombiaDateTimeParts = new Intl.DateTimeFormat("en-CA", {
+  day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit",
+  hourCycle: "h23", timeZone: "America/Bogota",
+});
+const shortMonths = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "oct", "nov", "dic"];
 
 function MetricCard({ icon: Icon, label, value, detail }: { icon: typeof Flame; label: string; value: string; detail: string }) {
   return <article className="metric-card"><div className="metric-icon"><Icon size={18} /></div><div><p>{label}</p><strong>{value}</strong><span>{detail}</span></div></article>;
@@ -49,6 +54,13 @@ function labelDate(value: string) {
 
 function labelMonth(value: string) {
   return monthFormat.format(new Date(`${value}-15T12:00:00Z`)).replace(" de ", " ");
+}
+
+function labelColombiaDateTime(value: string) {
+  const parts = Object.fromEntries(colombiaDateTimeParts.formatToParts(new Date(value)).map((part) => [part.type, part.value]));
+  const hour = Number(parts.hour);
+  const hour12 = hour % 12 || 12;
+  return `${Number(parts.day)} ${shortMonths[Number(parts.month) - 1]} ${parts.year}, ${hour12}:${parts.minute} ${hour < 12 ? "a. m." : "p. m."}`;
 }
 
 export default function Home() {
@@ -160,7 +172,7 @@ export default function Home() {
   const selectedDepartment = dashboard.departments.find((item) => item.code === departmentCode);
   const selectedMunicipality = dashboard.municipalities.find((item) => item.code === municipalityCode);
   const title = selectedMunicipality?.name ?? selectedDepartment?.name ?? "Colombia";
-  const generated = new Date(dashboard.metadata.generatedAtUtc).toLocaleString("es-CO", { timeZone: "America/Bogota", dateStyle: "medium", timeStyle: "short" });
+  const generated = labelColombiaDateTime(dashboard.metadata.generatedAtUtc);
   const reset = () => { setScenario("B"); setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); setProtectedRelation("all"); setLandCoverLevel("all"); setMiningRelation("all"); setAnlaRelation("all"); setAnlaLegalStatus("all"); setAnhRelation("all"); setEpisodeRelation("all"); setSelectedEpisodeIndex(null); };
 
   return <main className="dashboard-shell">

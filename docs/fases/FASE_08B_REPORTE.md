@@ -60,6 +60,11 @@ Estas capas ofrecen contexto espacial y consulta visual. No son una certificaci�
 - 57 pruebas Python aprobadas, incluidas conversión de anillos ArcGIS con huecos y serialización GeoJSON;
 - PMTiles v3 abierto y leído con la biblioteca cliente, con cuatro capas internas y niveles de zoom 3–14;
 - tamaño, conteos y hash verificados contra el manifiesto generado.
+- revisión supervisada del panel, los controles de contexto y el mapa básico de respaldo;
+- formato determinista de la fecha de actualización, sin diferencias de hidratación entre servidor y navegador;
+- mensaje localizado y acceso al respaldo cuando el navegador no dispone de WebGL2.
+
+El navegador aislado usado para esta revisión no ofrece WebGL2, por lo que no permitió rasterizar directamente las capas MapLibre. La estructura del PMTiles, sus cuatro capas, atributos, conteos y carga en la exportación estática sí quedaron verificadas. La inspección visual final de los polígonos requiere un navegador con WebGL2 habilitado.
 
 ## Estado
 

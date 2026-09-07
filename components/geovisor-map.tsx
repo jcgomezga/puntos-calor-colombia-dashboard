@@ -282,6 +282,11 @@ export function GeovisorMap({
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
+    const probe = document.createElement("canvas");
+    if (!probe.getContext("webgl2")) {
+      queueMicrotask(() => setMapError("Este navegador no ofrece WebGL2. Usa «Mapa básico» para consultar límites y detecciones."));
+      return;
+    }
     try {
       ensurePmtilesProtocol();
       const map = new maplibregl.Map({
