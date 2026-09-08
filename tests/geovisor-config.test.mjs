@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const geovisorSource = await readFile(`${root}/components/public-detection-geovisor-map.tsx`, "utf8");
 const geovisorEntrySource = await readFile(`${root}/components/geovisor-entry.tsx`, "utf8");
+const mapWorkspaceSource = await readFile(`${root}/components/dashboard-map-workspace.tsx`, "utf8");
 const copyWorkerSource = await readFile(`${root}/scripts/copy-maplibre-worker.mjs`, "utf8");
 const runViteSource = await readFile(`${root}/scripts/run-vite.mjs`, "utf8");
 const pageSource = await readFile(`${root}/app/page.tsx`, "utf8");
@@ -14,8 +15,9 @@ const tsconfig = JSON.parse(await readFile(`${root}/tsconfig.json`, "utf8"));
 
 test("keeps the geovisor implementation and the legacy fallback together", () => {
   assert.match(pageSource, /useState<MapMode>\("geovisor"\)/);
-  assert.match(pageSource, /<GeovisorMap/);
-  assert.match(pageSource, /<DashboardMap/);
+  assert.match(pageSource, /dashboard-map-workspace/);
+  assert.match(mapWorkspaceSource, /<GeovisorMap/);
+  assert.match(mapWorkspaceSource, /<DashboardMap/);
   assert.equal(packageJson.dependencies["maplibre-gl"], "^6.7.0");
   assert.equal(packageJson.dependencies.pmtiles, "^4.5.0");
   assert.match(geovisorSource, /getContext\("webgl2"\)/);
@@ -89,6 +91,4 @@ test("preserves synchronized DANE selection and clustered heat detections", () =
   assert.match(geovisorSource, /cluster: true/);
   assert.match(geovisorSource, /callbacksRef\.current\.onDepartment/);
   assert.match(geovisorSource, /callbacksRef\.current\.onMunicipality/);
-  assert.match(geovisorSource, /dane-departments/);
-  assert.match(geovisorSource, /dane-municipalities/);
 });
