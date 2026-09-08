@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 22
       - name: Aplicar cambios no cartográficos de MB-05
-        run: node scripts/mb05-apply-a11y-responsive.mjs
+        run: node scripts/mb05-run-patched.mjs
       - name: Guardar cambios
         run: |
           git config user.name "github-actions[bot]"
