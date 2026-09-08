@@ -33,6 +33,20 @@ test("publishes a stable MapLibre worker for Vite preview and GitHub Pages", () 
   assert.equal(packageJson.scripts["prebuild:pages"], "npm run prepare:maplibre");
 });
 
+test("labels departments nationally and municipalities as the user zooms in", () => {
+  assert.match(geovisorEntrySource, /departmentNames = Object\.fromEntries/);
+  assert.match(geovisorEntrySource, /municipalityNames = Object\.fromEntries/);
+  assert.match(geovisorSource, /territoryLabelGeoJson/);
+  assert.match(geovisorSource, /dane-department-label-points/);
+  assert.match(geovisorSource, /dane-municipality-label-points/);
+  assert.match(geovisorSource, /id: DEPARTMENT_LABEL_LAYER_ID/);
+  assert.match(geovisorSource, /maxzoom: 6\.8/);
+  assert.match(geovisorSource, /id: MUNICIPALITY_LABEL_LAYER_ID/);
+  assert.match(geovisorSource, /minzoom: 6\.2/);
+  assert.match(geovisorSource, /departmentCode === "00" \? null/);
+  assert.match(geovisorSource, /DEPARTMENT_LABEL_LAYER_ID, MUNICIPALITY_LABEL_LAYER_ID/);
+});
+
 test("publishes the four territorial context sources as optional PMTiles layers", () => {
   assert.match(geovisorSource, /context-layers\.pmtiles/);
   assert.match(geovisorSource, /maplibregl\.addProtocol\("pmtiles"/);
