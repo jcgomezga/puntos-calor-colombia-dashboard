@@ -7,6 +7,7 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 const geovisorSource = await readFile(`${root}/components/geovisor-map.tsx`, "utf8");
 const geovisorEntrySource = await readFile(`${root}/components/geovisor-entry.tsx`, "utf8");
 const copyWorkerSource = await readFile(`${root}/scripts/copy-maplibre-worker.mjs`, "utf8");
+const runViteSource = await readFile(`${root}/scripts/run-vite.mjs`, "utf8");
 const pageSource = await readFile(`${root}/app/page.tsx`, "utf8");
 const packageJson = JSON.parse(await readFile(`${root}/package.json`, "utf8"));
 const tsconfig = JSON.parse(await readFile(`${root}/tsconfig.json`, "utf8"));
@@ -31,6 +32,13 @@ test("publishes a stable MapLibre worker for Vite preview and GitHub Pages", () 
   assert.equal(packageJson.scripts.predev, "npm run prepare:maplibre");
   assert.equal(packageJson.scripts.prebuild, "npm run prepare:maplibre");
   assert.equal(packageJson.scripts["prebuild:pages"], "npm run prepare:maplibre");
+});
+
+test("starts the Vite preview portably on Windows and Unix-like shells", () => {
+  assert.equal(packageJson.scripts.dev, "node scripts/run-vite.mjs");
+  assert.match(runViteSource, /WRANGLER_LOG_PATH/);
+  assert.match(runViteSource, /spawnSync/);
+  assert.match(runViteSource, /vite\.js/);
 });
 
 test("labels departments nationally and municipalities as the user zooms in", () => {
