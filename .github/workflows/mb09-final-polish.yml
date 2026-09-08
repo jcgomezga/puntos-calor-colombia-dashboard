@@ -5,6 +5,7 @@ on:
     branches: [fix/mb09-geovisor-cartography-accessibility]
     paths:
       - ".github/workflows/mb09-final-polish.yml"
+      - "scripts/mb09-final-polish.mjs"
 
 permissions:
   contents: write
