@@ -26,7 +26,8 @@ test("runs E2E after Pages build in pull-request CI", () => {
 test("blocks Pages deployment on the same E2E gate", () => {
   const buildIndex = pagesWorkflow.indexOf("npm run build:pages");
   const e2eIndex = pagesWorkflow.indexOf("npm run test:e2e");
-  const uploadIndex = pagesWorkflow.indexOf("actions/upload-pages-artifact@v3");
+  const uploadMatch = pagesWorkflow.match(/actions\/upload-pages-artifact@v\d+/);
+  const uploadIndex = uploadMatch?.index ?? -1;
   assert.ok(buildIndex >= 0 && e2eIndex > buildIndex, "Pages debe ejecutar E2E después del build.");
   assert.ok(uploadIndex > e2eIndex, "Pages no debe subir el artefacto antes de superar E2E.");
 });
