@@ -1,0 +1,65 @@
+name: Ajustar ancho de fichas contextuales
+
+on:
+  push:
+    branches:
+      - fix/context-popup-width
+
+permissions:
+  contents: write
+
+jobs:
+  adjust-popup:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: fix/context-popup-width
+      - name: Ampliar ficha contextual sin alterar la cartografía
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          component = Path("components/public-detection-geovisor-map.tsx")
+          source = component.read_text(encoding="utf-8")
+          old = 'const popup = new maplibregl.Popup({ offset: 8, closeButton: true }).setLngLat(lngLat).setDOMContent(root);'
+          new = 'const popup = new maplibregl.Popup({ offset: 8, closeButton: true, maxWidth: "420px" }).setLngLat(lngLat).setDOMContent(root);'
+          if old in source:
+              source = source.replace(old, new, 1)
+          elif new not in source:
+              raise SystemExit("No se encontró el constructor esperado del popup contextual")
+          component.write_text(source, encoding="utf-8")
+
+          css_file = Path("app/globals.css")
+          css = css_file.read_text(encoding="utf-8")
+          old_css = '.geovisor-context-selection { min-width: 250px; max-width: 340px; display: grid; gap: 8px; }'
+          new_css = '.geovisor-context-selection { width: min(390px, calc(100vw - 72px)); min-width: min(250px, calc(100vw - 72px)); max-width: 390px; display: grid; gap: 8px; }\n.context-match-detail .geovisor-popup { min-width: 0; width: 100%; }\n.context-match-detail .geovisor-popup strong { min-width: 0; max-width: none; overflow-wrap: anywhere; }'
+          if old_css in css:
+              css = css.replace(old_css, new_css, 1)
+          elif new_css not in css:
+              raise SystemExit("No se encontró el estilo esperado de la ficha contextual")
+          css_file.write_text(css, encoding="utf-8")
+
+          test_file = Path("tests/mb09-interaction.test.mjs")
+          tests = test_file.read_text(encoding="utf-8")
+          anchor = '  assert.match(css, /\\.context-match-selector select/);\n});'
+          replacement = '  assert.match(css, /\\.context-match-selector select/);\n  assert.match(source, /maxWidth: "420px"/);\n  assert.match(css, /\\.geovisor-context-selection \\{ width: min\\(390px, calc\\(100vw - 72px\\)\\)/);\n  assert.match(css, /\\.context-match-detail \\.geovisor-popup strong \\{[^}]*overflow-wrap: anywhere/);\n});'
+          if anchor in tests:
+              tests = tests.replace(anchor, replacement, 1)
+          elif replacement not in tests:
+              raise SystemExit("No se encontró el bloque de prueba esperado")
+          test_file.write_text(tests, encoding="utf-8")
+          PY
+      - name: Confirmar y publicar el ajuste en la rama
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No hay cambios pendientes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add components/public-detection-geovisor-map.tsx app/globals.css tests/mb09-interaction.test.mjs
+          git commit -m "fix: ampliar fichas contextuales del geovisor"
+          git push origin HEAD:fix/context-popup-width
