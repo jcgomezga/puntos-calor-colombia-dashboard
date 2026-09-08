@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, Building2, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Fuel, Instagram, Layers3, Leaf, Linkedin, MapPinned, Pickaxe, Radio, RefreshCw, ShieldCheck } from "lucide-react";
+import { Activity, Building2, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Fuel, Layers3, Leaf, MapPinned, Pickaxe, Radio, RefreshCw, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
@@ -62,6 +62,13 @@ const MapWorkspace = dynamic(() => import("@/components/dashboard-map-workspace"
   ssr: false,
   loading: () => <div className="geovisor-loading"><span /> Preparando cartografía…</div>,
 });
+
+function InstagramIcon() {
+  return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="2" /><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2" /><circle cx="17.4" cy="6.7" r="1" fill="currentColor" /></svg>;
+}
+function LinkedInIcon() {
+  return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="2" /><circle cx="8" cy="9" r="1.2" fill="currentColor" /><path d="M8 12v5M12 17v-5M12 14c0-1.25 1-2.25 2.25-2.25s2.25 1 2.25 2.25v3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>;
+}
 
 function MetricCard({ icon: Icon, label, value, detail }: { icon: typeof Flame; label: string; value: string; detail: string }) {
   return <article className="metric-card"><div className="metric-icon"><Icon size={18} /></div><div><p>{label}</p><strong>{value}</strong><span>{detail}</span></div></article>;
@@ -148,8 +155,8 @@ export default function Home() {
   return <main className="dashboard-shell">
     <header className="topbar"><div className="brand-block"><div className="brand-mark"><Flame size={21} /></div><div><p className="eyebrow">MONITOREO TERRITORIAL · COLOMBIA</p><h1>Análisis espacial de detecciones de calor en zonas con potencial uso extractivista</h1></div></div><div className="status-cluster"><span className="official-badge">DATOS OFICIALES PROCESADOS</span><span className="status-chip"><CalendarDays size={14} /> Histórico desde {HISTORY_START_LABEL}</span><span className="status-chip"><span className="pulse" /> Actualizado: {generated}</span></div></header>
     <nav className="social-links" aria-label="Redes sociales de Juan Carlos Gómez García">
-      <a className="social-link instagram" href="https://www.instagram.com/juancgomezg_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Juan Carlos Gómez García" title="Instagram"><Instagram size={16} aria-hidden="true" /></a>
-      <a className="social-link linkedin" href="https://www.linkedin.com/in/jcgomezga/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Juan Carlos Gómez García" title="LinkedIn"><Linkedin size={16} aria-hidden="true" /></a>
+      <a className="social-link instagram" href="https://www.instagram.com/juancgomezg_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Juan Carlos Gómez García" title="Instagram"><InstagramIcon /></a>
+      <a className="social-link linkedin" href="https://www.linkedin.com/in/jcgomezga/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Juan Carlos Gómez García" title="LinkedIn"><LinkedInIcon /></a>
     </nav>
     <section className="notice" aria-label="Advertencia metodológica"><CircleAlert size={18} /><p><strong>Lectura responsable:</strong> cada punto representa una detección térmica satelital reportada por IDEAM. No confirma por sí sola un incendio, su extensión ni su causa. Los cruces territoriales expresan coincidencia o proximidad espacial, no causalidad. El portal presenta un <strong>universo operativo</strong> sometido a criterios de control de calidad; algunos registros pueden no tener asignación territorial o de cobertura y permanecen en el total general. <Link href="/metodologia" className="font-semibold text-[#6a452a] underline underline-offset-2">Ver metodología y alcance</Link>.</p></section>
     <section className="filterbar" aria-label="Filtros territoriales">
