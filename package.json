@@ -18,7 +18,7 @@
     "build:context-tiles": "python scripts/build_context_tiles.py",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "test": "npm run build && node --test tests/*.test.mjs",
-    "test:e2e": "node scripts/check-dashboard-e2e.mjs",
+    "test:e2e": "node scripts/check-dashboard-e2e.mjs && node scripts/check-geovisor-webgl-e2e.mjs",
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
   },

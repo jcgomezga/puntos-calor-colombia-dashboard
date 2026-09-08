@@ -8,12 +8,16 @@ const packageJson = JSON.parse(await readFile(`${root}/package.json`, "utf8"));
 const prWorkflow = await readFile(`${root}/.github/workflows/geovisor-ci.yml`, "utf8");
 const pagesWorkflow = await readFile(`${root}/.github/workflows/pages.yml`, "utf8");
 const e2eSource = await readFile(`${root}/scripts/check-dashboard-e2e.mjs`, "utf8");
+const geovisorE2eSource = await readFile(`${root}/scripts/check-geovisor-webgl-e2e.mjs`, "utf8");
 
-test("exposes a real-browser E2E command", () => {
-  assert.equal(packageJson.scripts["test:e2e"], "node scripts/check-dashboard-e2e.mjs");
+test("exposes real-browser E2E for dashboard and WebGL2 cartography", () => {
+  assert.equal(packageJson.scripts["test:e2e"], "node scripts/check-dashboard-e2e.mjs && node scripts/check-geovisor-webgl-e2e.mjs");
   assert.match(e2eSource, /remote-debugging-port/);
   assert.match(e2eSource, /Runtime\.evaluate/);
   assert.match(e2eSource, /Page\.navigate/);
+  assert.match(geovisorE2eSource, /enable-unsafe-swiftshader/);
+  assert.match(geovisorE2eSource, /getContext\("webgl2"/);
+  assert.match(geovisorE2eSource, /maplibregl-canvas/);
 });
 
 test("runs E2E after Pages build in pull-request CI", () => {
@@ -32,7 +36,7 @@ test("blocks Pages deployment on the same E2E gate", () => {
   assert.ok(uploadIndex > e2eIndex, "Pages no debe subir el artefacto antes de superar E2E.");
 });
 
-test("covers core public flows without changing MapLibre internals", () => {
+test("covers core public flows without coupling the general E2E to MapLibre internals", () => {
   for (const contract of [
     "Carga inicial",
     "Filtro Departamento=Tolima",
@@ -48,4 +52,19 @@ test("covers core public flows without changing MapLibre internals", () => {
     assert.match(e2eSource, new RegExp(contract.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }
   assert.doesNotMatch(e2eSource, /queryRenderedFeatures|clusterMaxZoom|map\.addLayer|maplibregl/);
+});
+
+test("covers the final cartographic residuals in a dedicated WebGL2 browser gate", () => {
+  for (const contract of [
+    "Consultar centro del mapa",
+    "Detección",
+    "layer-control",
+    "occlusionRatio",
+    "Mapa básico",
+    "territory-shape[tabindex='0']",
+  ]) {
+    assert.ok(geovisorE2eSource.includes(contract), `Falta contrato cartográfico E2E: ${contract}`);
+  }
+  assert.match(geovisorE2eSource, /navWidth >= 44/);
+  assert.match(geovisorE2eSource, /occlusionRatio < 0\.15/);
 });

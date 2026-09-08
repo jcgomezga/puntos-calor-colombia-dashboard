@@ -66,7 +66,8 @@ test("publishes the four territorial context sources as optional PMTiles layers"
     assert.match(geovisorSource, new RegExp(`${layer}: false`));
     assert.match(geovisorSource, new RegExp(`toggleLayer\\("${layer}"\\)`));
   }
-  assert.match(geovisorSource, /queryModeRef\.current === "context"/);
+  assert.match(geovisorSource, /const mode = queryModeRef\.current/);
+  assert.match(geovisorSource, /if \(mode === "context"\)/);
   assert.match(geovisorSource, /loadContextDetail\(detailKey\)/);
   assert.match(geovisorSource, /visibleContextLayerIds/);
 });
