@@ -347,7 +347,7 @@ try {
   await delay(900);
   await waitForVisibleCount(cdp.send, operational.length, "Carga inicial");
   const heading = await evaluate(cdp.send, `document.querySelector("h1")?.textContent?.trim()`);
-  if (heading !== "Detecciones de calor") throw new Error(`H1 inesperado en carga inicial: ${heading}`);
+  if (heading !== "Análisis espacial de detecciones de calor en zonas con potencial uso extractivista") throw new Error(`H1 inesperado en carga inicial: ${heading}`);
   checks.push({ flow: "carga inicial", expected: operational.length });
 
   await setControl(cdp.send, "Departamento", tolima.code);

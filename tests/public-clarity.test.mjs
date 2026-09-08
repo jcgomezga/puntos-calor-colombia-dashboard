@@ -8,8 +8,10 @@ const layoutSource = await readFile(`${root}/app/layout.tsx`, "utf8");
 const pageSource = await readFile(`${root}/app/page.tsx`, "utf8");
 const methodologySource = await readFile(`${root}/app/metodologia/page.tsx`, "utf8");
 
-test("aligns public metadata with individual thermal detections", () => {
-  assert.match(layoutSource, /Detecciones térmicas IDEAM · Colombia/);
+const publicTitle = "Análisis espacial de detecciones de calor en zonas con potencial uso extractivista";
+
+test("aligns public metadata with the final public title and individual thermal detections", () => {
+  assert.match(layoutSource, new RegExp(publicTitle));
   assert.match(layoutSource, /contexto territorial, ambiental y extractivo/);
   assert.doesNotMatch(layoutSource, /episodios algorítmicos/i);
   assert.match(layoutSource, /GITHUB_ACTIONS/);
