@@ -350,6 +350,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 03d73254ca15def5baa53fdf,episode,E20260707-77F522D2A9,,3,false
 03d772c9d506e1cfecaf8e1f,chained,E20260713-700E636959,,20,true
 03dc61af38a30099dd472a7e,pair,,P20260714-BA7AC8A648,2,false
+03e4d4aa68622f0848dddca2,isolated,,,1,false
 03e5e3c0ec8a0e9681d0e8b1,isolated,,,1,false
 03e6a04ad1e221be7b613354,episode,E20260810-EF37C3F685,,22,false
 03ebced717ff656d2d904b0b,isolated,,,1,false
@@ -2377,6 +2378,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1a32df7b26fb71eb3fdb5f8a,episode,E20260714-BB1E41BA13,,4,false
 1a343f1fb9d662cad2e9868d,episode,E20260707-922F790B1E,,6,false
 1a3833af57f99ad675267a09,isolated,,,1,false
+1a38eb3e81ee033a489a2533,isolated,,,1,false
 1a39aa2dcd373e4bbd2f9a22,episode,E20260826-53D393471B,,14,false
 1a3da5c39448d74c5d781af4,pair,,P20260907-23BEEB01B5,2,false
 1a41136a0ddf3ee23475caf9,isolated,,,1,false
@@ -3515,6 +3517,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 26b5180b66beb20ca7d4c747,episode,E20260807-5AE1CE9BA2,,6,false
 26b75740812ca2fc60445078,isolated,,,1,false
 26bbf2add2646472f22ed5c1,episode,E20260903-C0C7A98658,,8,false
+26bc077617793418a15ebc81,isolated,,,1,false
 26bd6c03fff1c61319b85ac3,isolated,,,1,false
 26be9a53e2a579a3a287b4fa,episode,E20260823-B6C7BA9FA9,,16,false
 26c0a3496f179bebc11db3b0,isolated,,,1,false
@@ -4512,6 +4515,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 3102747a40184ec1e989dbeb,isolated,,,1,false
 310394900b0e47b878979188,pair,,P20260708-F7165ACA13,2,false
 310634e5000bb1c25ab386e5,isolated,,,1,false
+3108b655efeffd504f066a54,isolated,,,1,false
 31099cbc7bcd1d24afd23494,isolated,,,1,false
 3111830c93be9741aca9aac6,pair,,P20260825-277CA84993,2,false
 3114391a15a2512daad8860c,isolated,,,1,false
@@ -8844,6 +8848,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5fe297fecd9eabbec7a49060,isolated,,,1,false
 5fe315bdf14d4aedf9529d20,episode,E20260825-377D3899C9,,5,false
 5fe73ad3469600cfe588e3fa,episode,E20260701-1F533DBB1E,,7,false
+5fec2f8c73b92df01d193155,isolated,,,1,false
 5fec78e513c26bf2cf5547c2,isolated,,,1,false
 5ff452367a838421bf784b3f,isolated,,,1,false
 5ff56854bee4ac4c2979b61d,episode,E20260715-D67F11DDE6,,5,false
@@ -12219,6 +12224,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 848ee046a812367731b7680d,pair,,P20260825-1D83B97E66,2,false
 8490370d34e9d84a9714cce1,isolated,,,1,false
 8494d3a2624bc43792912e9c,isolated,,,1,false
+84962524b4705cafa46f6ae0,isolated,,,1,false
 8496351efcc0ca6b859cedf3,episode,E20260831-F147CD75AA,,10,false
 8497b06bfce4cbb882c58747,episode,E20260812-ACA95B3E5A,,5,false
 849943c6084e5f5b3d00865d,pair,,P20260809-F486A4BCE1,2,false
@@ -17272,6 +17278,7 @@ bb14b7e6f5a782512bc4a04b,episode,E20260810-394BF93F33,,35,false
 bb17dc1a6d9bea163134637f,episode,E20260716-A16938F0C0,,4,false
 bb19724ff5225fb565d6e2e9,episode,E20260810-C5C8D391FC,,7,false
 bb1a90df213376cd97ecebf3,pair,,P20260714-EA8CB4736F,2,false
+bb1b246795e48eda079ad191,isolated,,,1,false
 bb1e87ad3192d83e6cc6881a,isolated,,,1,false
 bb1f049bb407268186aaa4b4,pair,,P20260810-090F6ED18E,2,false
 bb2a6475f46a5412cdc1f657,episode,E20260907-8F3910BE83,,23,false
@@ -19968,6 +19975,7 @@ d950b65c4c385034971ea63f,episode,E20260820-CC259A7D25,,36,false
 d950b86cbcf8b69482e56570,isolated,,,1,false
 d958020f3fb48be90fa4d4f7,isolated,,,1,false
 d95caebbd4251f3f634a6e1b,isolated,,,1,false
+d961ee5217f0309288ce620d,isolated,,,1,false
 d9623274421e8e46e54e5b9d,episode,E20260812-39ADA6F08F,,22,false
 d96fafbced0dbcbcead4b13b,episode,E20260717-5C0E513386,,3,false
 d97159c82abd2a8f49d35d22,episode,E20260812-83338969FC,,7,false
@@ -22317,6 +22325,7 @@ f265c5bf02cc00b62014601f,isolated,,,1,false
 f272bbec1b57a5febaf35af2,episode,E20260717-B282552140,,4,false
 f274815736f69ad8f779666d,chained,E20260810-F33941669D,,186,true
 f282d45280341075258db3ed,isolated,,,1,false
+f287199a853d5f887bcbc0cf,isolated,,,1,false
 f28d0f889da940da02a00aba,pair,,P20260725-6C48D5C458,2,false
 f28dc668609eddca28b6a120,episode,E20260826-53D393471B,,14,false
 f28f2f010dbf5b9c6675d711,chained,E20260810-F33941669D,,186,true
