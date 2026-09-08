@@ -1,0 +1,44 @@
+name: MB-09 pulido final
+
+on:
+  push:
+    branches: [fix/mb09-geovisor-cartography-accessibility]
+    paths:
+      - ".github/workflows/mb09-final-polish.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: fix/mb09-geovisor-cartography-accessibility
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - name: Aplicar pulido final
+        run: node scripts/mb09-final-polish.mjs
+      - run: npm ci
+      - run: npm run lint
+      - name: Build y pruebas
+        run: env -u GITHUB_ACTIONS npm test
+      - name: Exportar Pages
+        run: npm run build:pages
+      - name: E2E general + WebGL2
+        run: npm run test:e2e
+      - name: Guardar cambios validados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/globals.css scripts/check-geovisor-webgl-e2e.mjs
+          if git diff --cached --quiet; then
+            echo "No hubo cambios que guardar."
+            exit 0
+          fi
+          git commit -m "fix: preservar escala y atribución con el panel cartográfico"
+          git push origin HEAD:fix/mb09-geovisor-cartography-accessibility
