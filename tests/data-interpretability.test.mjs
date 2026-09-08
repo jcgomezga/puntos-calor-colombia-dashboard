@@ -74,7 +74,7 @@ test("ANLA overlap is represented and explained as multitag", () => {
   assert.ok(anlaOverlap > 0, "El dataset actual debe contener detecciones relacionadas con estados ANLA solapados para verificar UX-005.");
   assert.match(pageSource, /Situación ANLA:<\/strong> es multietiqueta/);
   assert.match(pageSource, /los subtotales no deben sumarse/);
-  assert.match(methodologySource, /no son excluyentes a escala de detección/);
+  assert.match(methodologySource, /no son necesariamente excluyentes a escala de detección/);
   assert.match(methodologySource, /una detección puede aparecer en ambos filtros/);
 });
 
