@@ -27,6 +27,9 @@ jobs:
         run: npm run build:pages
       - name: Probar WebGL2/MapLibre con SwiftShader
         run: node scripts/mb09a-webgl-diagnostic.mjs
+      - name: Medir servicio vectorial IDEAM
+        if: always()
+        run: node scripts/mb09a-ideam-latency.mjs
       - name: Publicar capturas y diagnóstico
         if: always()
         uses: actions/upload-artifact@v7
