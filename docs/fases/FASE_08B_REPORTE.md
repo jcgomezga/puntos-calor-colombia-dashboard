@@ -39,6 +39,19 @@ El archivo generado en esta revisión ocupa aproximadamente 74,7 MiB, por debajo
 - `.github/workflows/build-context-tiles.yml` compila Tippecanoe desde el repositorio oficial en el commit fijado `4f2621186acfec33b63ddf636f665623c0fef2dd`.
 - El flujo se limita a la rama piloto; su propio commit de salida no vuelve a dispararlo.
 
+### Worker de MapLibre
+
+MapLibre GL JS 6 usa un worker ES module independiente. En la previsualización Vite/Vinext, dejar que el empaquetador infiriera su URL produjo una ruta renombrada y una petición 404 al worker, con el efecto práctico de dejar el geovisor sin capas vectoriales.
+
+La corrección se dejó explícita y reproducible:
+
+- `scripts/copy-maplibre-worker.mjs` copia antes de desarrollo y compilación los archivos `maplibre-gl-worker.mjs` y `maplibre-gl-shared.mjs` desde la versión instalada de MapLibre a `public/maplibre/`;
+- `components/geovisor-entry.tsx` fija la URL del worker en `./maplibre/maplibre-gl-worker.mjs`, una ruta relativa al sitio que funciona tanto en la previsualización Vite/Vinext como bajo el subdirectorio de GitHub Pages;
+- `package.json` ejecuta la preparación en `predev`, `prebuild` y `prebuild:pages`;
+- los archivos generados no se versionan y se regeneran siempre desde la dependencia instalada.
+
+Esta estrategia sigue la recomendación de MapLibre para entornos Next/Turbopack de publicar juntos el worker y su módulo compartido cuando se usa una URL estable de mismo origen.
+
 ## Fuentes y herramientas
 
 - [RUNAP — servicio oficial de Parques Nacionales Naturales](https://mapas.parquesnacionales.gov.co/arcgis/rest/services/pnn/runap/FeatureServer/0)
@@ -46,6 +59,7 @@ El archivo generado en esta revisión ocupa aproximadamente 74,7 MiB, por debajo
 - [Proyectos ANLA — servicio oficial](https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer)
 - [Mapa de Tierras — servicio oficial ANH](https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer)
 - [Integración de PMTiles con MapLibre GL JS](https://docs.protomaps.com/pmtiles/maplibre)
+- [MapLibre GL JS — instalación ESM y configuración del worker](https://maplibre.org/maplibre-gl-js/docs/)
 - [Tippecanoe](https://github.com/felt/tippecanoe)
 
 ## Límites de interpretación
@@ -55,16 +69,19 @@ Estas capas ofrecen contexto espacial y consulta visual. No son una certificaci�
 ## Validación
 
 - lint de la interfaz aprobado;
-- compilación de producción aprobada;
-- 15 pruebas web aprobadas;
+- compilación Vite/Vinext aprobada;
+- 16 pruebas web aprobadas;
+- exportación estática Next/GitHub Pages y TypeScript aprobadas;
+- verificación de que `maplibre-gl-worker.mjs` y `maplibre-gl-shared.mjs` quedan tanto en `public/maplibre/` como en la salida `out/maplibre/`;
 - 57 pruebas Python aprobadas, incluidas conversión de anillos ArcGIS con huecos y serialización GeoJSON;
 - PMTiles v3 abierto y leído con la biblioteca cliente, con cuatro capas internas y niveles de zoom 3–14;
-- tamaño, conteos y hash verificados contra el manifiesto generado.
+- tamaño, conteos y hash verificados contra el manifiesto generado;
 - revisión supervisada del panel, los controles de contexto y el mapa básico de respaldo;
 - formato determinista de la fecha de actualización, sin diferencias de hidratación entre servidor y navegador;
-- mensaje localizado y acceso al respaldo cuando el navegador no dispone de WebGL2.
+- mensaje localizado y acceso al respaldo cuando el navegador no dispone de WebGL2;
+- GitHub Actions `Validar geovisor` aprobado contra el PR y la versión actual de `main`.
 
-El navegador aislado usado para esta revisión no ofrece WebGL2, por lo que no permitió rasterizar directamente las capas MapLibre. La estructura del PMTiles, sus cuatro capas, atributos, conteos y carga en la exportación estática sí quedaron verificadas. La inspección visual final de los polígonos requiere un navegador con WebGL2 habilitado.
+El navegador aislado usado para esta revisión no ofrece WebGL2, por lo que no permitió rasterizar directamente las capas MapLibre. La estructura del PMTiles, sus cuatro capas, atributos, conteos, worker y carga en ambas rutas de compilación sí quedaron verificados. La inspección visual final de los polígonos requiere un navegador con WebGL2 habilitado.
 
 ## Estado
 
