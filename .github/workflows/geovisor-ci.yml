@@ -24,6 +24,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Auditar dependencias productivas
+        continue-on-error: true
+        run: npm audit --omit=dev --audit-level=high
       - run: npm run lint
       - name: Probar build Vite/Vinext y pruebas web
         run: env -u GITHUB_ACTIONS npm test
