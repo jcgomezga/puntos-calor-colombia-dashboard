@@ -87,7 +87,7 @@ export default function MethodologyPage() {
         <section className="rounded-xl border border-[#dbe3dc] bg-white p-5 shadow-sm">
           <h2 className="mb-3 font-serif text-xl">6. Situación de proyectos ANLA</h2>
           <p className="text-sm leading-6 text-[#46534a]">
-            Las categorías de situación ANLA <strong>no son necesariamente excluyentes a escala de detección</strong>. Una misma detección puede estar relacionada espacialmente con varios proyectos a la vez y esos proyectos pueden encontrarse en situaciones diferentes —por ejemplo, uno en evaluación y otro licenciado—. En consecuencia, una detección puede aparecer en ambos filtros y los subtotales por situación <strong>no deben sumarse</strong> como si fueran grupos mutuamente exclusivos.
+            Las categorías de situación ANLA <strong>no son necesariamente excluyentes a escala de detección</strong>. Una misma detección puede estar relacionada espacialmente con varios proyectos a la vez y esos proyectos pueden encontrarse en situaciones diferentes —por ejemplo, uno en evaluación y otro licenciado—. En consecuencia, una detección puede aparecer en ambos filtros y los subtotales por situación no deben sumarse como si fueran grupos mutuamente exclusivos.
           </p>
         </section>
 
