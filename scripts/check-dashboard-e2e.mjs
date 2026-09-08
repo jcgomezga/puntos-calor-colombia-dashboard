@@ -134,10 +134,12 @@ async function connectCdp(webSocketUrl) {
   const socket = new WebSocket(webSocketUrl);
   const pending = new Map();
   let sequence = 0;
+
   await new Promise((resolveSocket, rejectSocket) => {
     socket.addEventListener("open", resolveSocket, { once: true });
     socket.addEventListener("error", rejectSocket, { once: true });
   });
+
   socket.addEventListener("message", (event) => {
     const message = JSON.parse(String(event.data));
     if (!message.id) return;
@@ -147,6 +149,7 @@ async function connectCdp(webSocketUrl) {
     if (message.error) waiter.reject(new Error(message.error.message));
     else waiter.resolve(message.result);
   });
+
   function send(method, params = {}) {
     const id = ++sequence;
     return new Promise((resolveMessage, rejectMessage) => {
@@ -154,6 +157,7 @@ async function connectCdp(webSocketUrl) {
       socket.send(JSON.stringify({ id, method, params }));
     });
   }
+
   return { socket, send };
 }
 
@@ -202,8 +206,8 @@ function countVisible({ departmentIndex, municipalityIndex, startIndex = 0, endI
     if (coverageCode !== "all") {
       if (coverageCode === "unassigned") {
         if ((point[12] ?? -1) >= 0) return false;
-      } else {
-        if ((point[12] ?? -1) < 0 || dashboard.landCovers?.[point[12]]?.level1Code !== coverageCode) return false;
+      } else if ((point[12] ?? -1) < 0 || dashboard.landCovers?.[point[12]]?.level1Code !== coverageCode) {
+        return false;
       }
     }
     if (anlaStatus === "evaluation" && ((point[15] ?? 0) & 1) === 0) return false;
@@ -216,9 +220,7 @@ function findZeroCombination() {
   const coverCodes = [...new Set((dashboard.landCovers ?? []).map((item) => item.level1Code))].sort();
   for (let departmentIndex = 0; departmentIndex < dashboard.departments.length; departmentIndex += 1) {
     for (const coverageCode of coverCodes) {
-      if (countVisible({ departmentIndex, coverageCode }) === 0) {
-        return { departmentIndex, coverageCode };
-      }
+      if (countVisible({ departmentIndex, coverageCode }) === 0) return { departmentIndex, coverageCode };
     }
   }
   for (let departmentIndex = 0; departmentIndex < dashboard.departments.length; departmentIndex += 1) {
@@ -240,16 +242,22 @@ const filterControl = (label) => `(() => {
 })()`;
 
 async function setControl(send, label, value) {
+  const wanted = JSON.stringify(value);
   await evaluate(send, `(() => {
     const control = ${filterControl(label)};
     if (control.disabled) throw new Error("Control deshabilitado: ${label}");
-    const wanted = ${JSON.stringify(value)};
-    if (control.tagName === "SELECT" && ![...control.options].some((option) => option.value === wanted)) throw new Error("Opción ausente en ${label}: " + wanted);
-    control.value = wanted;
-    control.dispatchEvent(new Event("input", { bubbles: true }));
-    control.dispatchEvent(new Event("change", { bubbles: true }));
-    return control.value;
+    const wanted = ${wanted};
+    if (control.tagName === "SELECT" && ![...control.options].some((option) => option.value === wanted)) {
+      throw new Error("Opción ausente en ${label}: " + wanted);
+    }
+    const prototype = control instanceof HTMLInputElement ? HTMLInputElement.prototype : HTMLSelectElement.prototype;
+    const setter = Object.getOwnPropertyDescriptor(prototype, "value")?.set;
+    if (!setter) throw new Error("No se encontró setter nativo para ${label}");
+    setter.call(control, wanted);
+    control.dispatchEvent(new Event("input", { bubbles: true, composed: true }));
+    control.dispatchEvent(new Event("change", { bubbles: true, composed: true }));
   })()`);
+  await waitFor(send, `${filterControl(label)}.value === ${wanted}`, `El control ${label} no conservó el valor ${value}.`);
 }
 
 async function selectOptionByText(send, label, prefix) {
@@ -278,7 +286,16 @@ async function waitForVisibleCount(send, expected, context) {
 async function resetFilters(send) {
   await evaluate(send, `document.querySelector(".reset-button")?.click()`);
   await waitForVisibleCount(send, operational.length, "Restablecer filtros");
-  await waitFor(send, `${filterControl("Departamento")}.value === "00" && ${filterControl("Municipio")}.disabled === true`, "Restablecer no devolvió territorio al estado inicial.");
+  await waitFor(
+    send,
+    `${filterControl("Departamento")}.value === "00" && ${filterControl("Municipio")}.disabled === true && ${filterControl("Desde")}.value === ${JSON.stringify(dashboard.metadata.historyStartDate)} && ${filterControl("Hasta")}.value === ${JSON.stringify(dashboard.metadata.lastObservationDate)}`,
+    "Restablecer no devolvió filtros y territorio al estado inicial.",
+  );
+}
+
+async function assertNoRuntimeErrors(send, context) {
+  const errors = await evaluate(send, `window.__dashboardE2eErrors ?? []`);
+  if (errors.length) throw new Error(`${context}: errores no controlados detectados en navegador:\n- ${errors.join("\n- ")}`);
 }
 
 const tolima = findNamed(dashboard.departments, "Tolima");
@@ -343,10 +360,12 @@ try {
   checks.push({ flow: "municipio", value: ibague.name, expected: countVisible({ departmentIndex: tolimaIndex, municipalityIndex: ibagueIndex }) });
   await resetFilters(cdp.send);
 
+  // El control Hasta ya inicia en la última observación. Cambiar Desde con el setter nativo
+  // verifica el input date real sin depender de una asignación de propiedad que React pueda ignorar.
   await setControl(cdp.send, "Desde", lastDate);
-  await setControl(cdp.send, "Hasta", lastDate);
   const lastDayExpected = countVisible({ startIndex: lastDateIndex, endIndex: lastDateIndex });
   await waitForVisibleCount(cdp.send, lastDayExpected, `Rango de fecha ${lastDate}`);
+  await waitFor(cdp.send, `${filterControl("Hasta")}.value === ${JSON.stringify(lastDate)}`, "El límite Hasta dejó de coincidir con la última observación.");
   checks.push({ flow: "rango de fecha", value: lastDate, expected: lastDayExpected });
   await resetFilters(cdp.send);
 
@@ -373,24 +392,35 @@ try {
   await setControl(cdp.send, "Cobertura 2024", zeroCombination.coverageCode);
   if (zeroCombination.protectedRelation) await setControl(cdp.send, "Área protegida", zeroCombination.protectedRelation);
   await waitForVisibleCount(cdp.send, 0, "Combinación con cero resultados");
-  await waitFor(cdp.send, `document.querySelectorAll(".chart-empty").length >= 2 && [...document.querySelectorAll(".chart-empty")].every((item) => item.textContent?.includes("No hay detecciones para los filtros seleccionados"))`, "Los gráficos no mostraron un estado vacío explícito en el navegador real.", 12_000);
+  await waitFor(
+    cdp.send,
+    `document.querySelectorAll(".chart-empty").length >= 2 && [...document.querySelectorAll(".chart-empty")].every((item) => item.textContent?.includes("No hay detecciones para los filtros seleccionados"))`,
+    "Los gráficos no mostraron un estado vacío explícito en el navegador real.",
+    12_000,
+  );
   checks.push({ flow: "estado vacío", department: zeroDepartment.name, coverage: zeroCombination.coverageCode, protected: zeroCombination.protectedRelation ?? "all" });
   await resetFilters(cdp.send);
 
   await evaluate(cdp.send, `([...document.querySelectorAll(".trend-toggle button")].find((button) => button.textContent?.trim() === "Meses"))?.click()`);
-  await waitFor(cdp.send, `document.querySelector(".trend-panel h2")?.textContent?.trim() === "Detecciones por mes" && ([...document.querySelectorAll(".trend-toggle button")].find((button) => button.textContent?.trim() === "Meses"))?.getAttribute("aria-pressed") === "true"`, "El cambio Días→Meses no se reflejó end-to-end.");
+  await waitFor(
+    cdp.send,
+    `document.querySelector(".trend-panel h2")?.textContent?.trim() === "Detecciones por mes" && ([...document.querySelectorAll(".trend-toggle button")].find((button) => button.textContent?.trim() === "Meses"))?.getAttribute("aria-pressed") === "true"`,
+    "El cambio Días→Meses no se reflejó end-to-end.",
+  );
   checks.push({ flow: "agrupación temporal", value: "mes" });
+  await assertNoRuntimeErrors(cdp.send, "Dashboard principal");
 
   await evaluate(cdp.send, `document.querySelector(".notice a[href$='/metodologia']")?.click()`);
-  await waitFor(cdp.send, `location.pathname.endsWith("/metodologia") && document.querySelector("h1")?.textContent?.includes("Cómo leer el dashboard")`, "La navegación cliente hacia Metodología no se completó.", 12_000);
+  await waitFor(
+    cdp.send,
+    `location.pathname.endsWith("/metodologia") && document.querySelector("h1")?.textContent?.includes("Cómo leer el dashboard")`,
+    "La navegación cliente hacia Metodología no se completó.",
+    12_000,
+  );
   checks.push({ flow: "navegación metodología" });
-  await evaluate(cdp.send, `history.back()`);
-  await waitForDashboard(cdp.send);
+  await assertNoRuntimeErrors(cdp.send, "Metodología");
 
-  const runtimeErrors = await evaluate(cdp.send, `window.__dashboardE2eErrors ?? []`);
-  if (runtimeErrors.length) throw new Error(`Errores no controlados detectados en navegador:\n- ${runtimeErrors.join("\n- ")}`);
   if (chrome.exitCode && chrome.exitCode !== 0) throw new Error(`Chrome terminó con código ${chrome.exitCode}. ${chromeErrors.slice(-1200)}`);
-
   console.log(JSON.stringify({ operational: operational.length, checks }, null, 2));
 } finally {
   try { cdp?.socket.close(); } catch {}
