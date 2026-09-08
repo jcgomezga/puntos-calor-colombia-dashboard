@@ -1,13 +1,13 @@
 {
   "status": "completed",
-  "finishedAtUtc": "2026-09-08T16:47:53Z",
+  "finishedAtUtc": "2026-09-08T21:22:36Z",
   "methodVersion": "episodes-b-1000m-24h-min3-v1",
   "scenario": "B",
   "spatialMeters": 1000,
   "temporalHours": 24,
   "minimumMembers": 3,
   "evaluatedRows": 23625,
-  "excludedScenarioARows": 10272,
+  "excludedScenarioARows": 10285,
   "episodeCount": 2030,
   "episodeRows": 11745,
   "pairCount": 2186,
@@ -20,5 +20,5 @@
   "crossMunicipalityEpisodes": 140,
   "lineageEventsThisRun": 0,
   "lineageCounts": {},
-  "generatedAtUtc": "2026-09-08T16:47:53Z"
+  "generatedAtUtc": "2026-09-08T21:22:36Z"
 }
