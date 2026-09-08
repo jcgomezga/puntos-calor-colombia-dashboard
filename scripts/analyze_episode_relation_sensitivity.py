@@ -262,11 +262,14 @@ def build(data_dir: Path) -> dict[str, object]:
         for member in members:
             a_owner[member] = position
     descendants: dict[int, list[int]] = defaultdict(list)
+    b_parent: dict[int, int] = {}
     for b_position, members in enumerate(groups_b):
         owners = {a_owner.get(member) for member in members}
         if None in owners or len(owners) != 1:
             raise RuntimeError(f"episodio B {b_position} no tiene un único episodio A progenitor: {owners}")
-        descendants[next(iter(owners))].append(b_position)
+        parent = next(iter(owners))
+        descendants[parent].append(b_position)
+        b_parent[b_position] = parent
 
     a_with_descendant = sum(bool(descendants.get(position)) for position in range(len(groups_a)))
     a_lost = len(groups_a) - a_with_descendant
@@ -300,21 +303,23 @@ def build(data_dir: Path) -> dict[str, object]:
             raise RuntimeError(f"descomposición de relación {domain} no cierra")
 
         for b_position in range(len(groups_b)):
-            a_position = next(position for position, children in descendants.items() if b_position in children)
+            a_position = b_parent[b_position]
             if presence_b[domain][b_position] and not presence_a[domain][a_position]:
                 raise RuntimeError(f"relación {domain} aparece en B pero no en su progenitor A")
 
         counts_a, labels_a, unkeyed_a = ranked_counts([
-            entity_map if presence_a[domain][position] else {}
-            for position, entity_map in enumerate(entities_a[domain])
+            entity_map for position, entity_map in enumerate(entities_a[domain])
+            if presence_a[domain][position]
         ])
         counts_b, labels_b, unkeyed_b = ranked_counts([
-            entity_map if presence_b[domain][position] else {}
-            for position, entity_map in enumerate(entities_b[domain])
+            entity_map for position, entity_map in enumerate(entities_b[domain])
+            if presence_b[domain][position]
         ])
         labels = {**labels_a, **labels_b}
         keys = sorted(set(counts_a) | set(counts_b))
-        rho = spearman_counts(counts_a, counts_b, keys)
+        common_keys = sorted(set(counts_a) & set(counts_b))
+        rho_union = spearman_counts(counts_a, counts_b, keys)
+        rho_common = spearman_counts(counts_a, counts_b, common_keys)
         top_a = top_entries(counts_a, labels)
         top_b = top_entries(counts_b, labels)
         top_a_keys = {item["key"] for item in top_a}
@@ -347,7 +352,9 @@ def build(data_dir: Path) -> dict[str, object]:
                 "preservationPercent": round(preserved / related_a * 100, 4) if related_a else 100.0,
             },
             "ranking": {
-                "entities": len(keys), "spearmanCountRanks": round(rho, 6) if rho is not None else None,
+                "entitiesUnion": len(keys), "entitiesCommon": len(common_keys),
+                "spearmanCountRanksUnion": round(rho_union, 6) if rho_union is not None else None,
+                "spearmanCountRanksCommon": round(rho_common, 6) if rho_common is not None else None,
                 "top10Overlap": overlap, "top10Jaccard": round(jaccard, 6),
                 "relatedEpisodesWithoutRankingKeyA": unkeyed_a,
                 "relatedEpisodesWithoutRankingKeyB": unkeyed_b,
@@ -362,7 +369,9 @@ def build(data_dir: Path) -> dict[str, object]:
             "deltaPercentagePointsBminusA": round(pct_b - pct_a, 4),
             "relatedAPreserved": preserved, "relatedALostNoRobustB": lost_no_descendant,
             "relatedALostWithinB": lost_with_descendant,
-            "rankingEntities": len(keys), "spearmanCountRanks": round(rho, 6) if rho is not None else "",
+            "rankingEntitiesUnion": len(keys), "rankingEntitiesCommon": len(common_keys),
+            "spearmanCountRanksUnion": round(rho_union, 6) if rho_union is not None else "",
+            "spearmanCountRanksCommon": round(rho_common, 6) if rho_common is not None else "",
             "top10Overlap": overlap, "top10Jaccard": round(jaccard, 6),
         })
 
