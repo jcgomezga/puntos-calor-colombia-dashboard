@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./globals.css";
+import { AnalyticsInteractionTracker } from "@/components/analytics-interaction-tracker";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 
 const basePath = process.env.GITHUB_ACTIONS === "true" ? "/puntos-calor-colombia-dashboard" : "";
@@ -30,6 +31,7 @@ export default function RootLayout({
         {children}
         {analyticsEnabled ? (
           <>
+            <AnalyticsInteractionTracker />
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
               strategy="afterInteractive"
