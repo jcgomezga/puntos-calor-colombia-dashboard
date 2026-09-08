@@ -43,8 +43,10 @@ test("starts the Vite preview portably on Windows and Unix-like shells", () => {
 });
 
 test("labels departments nationally and municipalities as the user zooms in", () => {
-  assert.match(geovisorEntrySource, /departmentNames = Object\.fromEntries/);
-  assert.match(geovisorEntrySource, /municipalityNames = Object\.fromEntries/);
+  assert.match(pageSource, /departmentNames = useMemo\(\(\) => Object\.fromEntries/);
+  assert.match(pageSource, /municipalityNames = useMemo\(\(\) => Object\.fromEntries/);
+  assert.match(pageSource, /departmentNames=\{departmentNames\}/);
+  assert.match(pageSource, /municipalityNames=\{municipalityNames\}/);
   assert.match(geovisorSource, /territoryLabels/);
   assert.match(geovisorSource, /dane-department-label-points/);
   assert.match(geovisorSource, /dane-municipality-label-points/);
@@ -89,6 +91,48 @@ test("preserves synchronized DANE selection and clustered heat detections", () =
   assert.match(geovisorSource, /cluster: true/);
   assert.match(geovisorSource, /callbacksRef\.current\.onDepartment/);
   assert.match(geovisorSource, /callbacksRef\.current\.onMunicipality/);
-  assert.match(geovisorSource, /dane-departments/);
-  assert.match(geovisorSource, /dane-municipalities/);
+  assert.match(geovisorSource, /selectedDepartment/);
+  assert.match(geovisorSource, /selectedMunicipality/);
+  assert.match(geovisorSource, /fitBounds/);
+});
+
+test("uses one public operational sensor universe and keeps A-B outside the interface", () => {
+  assert.match(pageSource, /if \(point\[7\] !== 1\) return false/);
+  assert.doesNotMatch(pageSource, /scenarioMode|Escenario A|Escenario B/);
+});
+
+test("makes individual IDEAM detections the public map unit and hides episode machinery", () => {
+  assert.match(geovisorSource, /cluster: true/);
+  assert.match(geovisorSource, /point_count/);
+  assert.match(geovisorSource, /detections-point/);
+  assert.doesNotMatch(pageSource, /episodeMode|episodios operacionales/i);
+});
+
+test("keeps episode analysis in the backend for future detailed analysis", () => {
+  assert.match(packageJson.scripts["build:pages"], /next build/);
+});
+
+test("evaluates public territorial filters directly on each detection", () => {
+  assert.match(pageSource, /protectedRelation === "inside"/);
+  assert.match(pageSource, /landCoverLevel !== "all"/);
+  assert.match(pageSource, /miningRelation === "inside"/);
+  assert.match(pageSource, /anlaRelation === "inside"/);
+  assert.match(pageSource, /anhRelation === "inside"/);
+});
+
+test("publishes complete context cards and automatically enters context click mode", () => {
+  assert.match(geovisorSource, /loadContextDetail/);
+  assert.match(geovisorSource, /setQueryMode\("context"\)/);
+});
+
+test("adds RUNAP, ANM, ANLA and ANH relations to each individual detection card", () => {
+  assert.match(geovisorSource, /RUNAP/);
+  assert.match(geovisorSource, /ANM/);
+  assert.match(geovisorSource, /ANLA/);
+  assert.match(geovisorSource, /ANH/);
+});
+
+test("keeps IDEAM land cover as a richer territorial query using published fields", () => {
+  assert.match(geovisorSource, /LAND_COVER_CLASSES/);
+  assert.match(geovisorSource, /queryRenderedFeatures/);
 });
