@@ -9,7 +9,7 @@ const basePath = process.env.GITHUB_ACTIONS === "true" ? "/puntos-calor-colombia
 const analyticsEnabled = process.env.NODE_ENV === "production";
 
 export const metadata: Metadata = {
-  title: "Detecciones térmicas IDEAM · Colombia",
+  title: "Análisis espacial de detecciones de calor en zonas con potencial uso extractivista",
   description: "Dashboard nacional para explorar detecciones térmicas IDEAM y su contexto territorial, ambiental y extractivo en Colombia.",
   other: {
     "codex-preview": "development",

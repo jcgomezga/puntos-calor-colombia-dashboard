@@ -1,6 +1,6 @@
 "use client";
 
-import { Activity, Building2, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Fuel, Layers3, Leaf, MapPinned, Pickaxe, Radio, RefreshCw, ShieldCheck } from "lucide-react";
+import { Activity, Building2, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Fuel, Instagram, Layers3, Leaf, Linkedin, MapPinned, Pickaxe, Radio, RefreshCw, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
@@ -146,7 +146,11 @@ export default function Home() {
   const reset = () => { setDepartmentCode("00"); setMunicipalityCode("00000"); setStartDate(dashboard.metadata.historyStartDate); setEndDate(dashboard.metadata.lastObservationDate); setProtectedRelation("all"); setLandCoverLevel("all"); setMiningRelation("all"); setAnlaRelation("all"); setAnlaLegalStatus("all"); setAnhRelation("all"); };
 
   return <main className="dashboard-shell">
-    <header className="topbar"><div className="brand-block"><div className="brand-mark"><Flame size={21} /></div><div><p className="eyebrow">MONITOREO TERRITORIAL · COLOMBIA</p><h1>Detecciones de calor</h1></div></div><div className="status-cluster"><span className="official-badge">DATOS OFICIALES PROCESADOS</span><span className="status-chip"><CalendarDays size={14} /> Histórico desde {HISTORY_START_LABEL}</span><span className="status-chip"><span className="pulse" /> Actualizado: {generated}</span></div></header>
+    <header className="topbar"><div className="brand-block"><div className="brand-mark"><Flame size={21} /></div><div><p className="eyebrow">MONITOREO TERRITORIAL · COLOMBIA</p><h1>Análisis espacial de detecciones de calor en zonas con potencial uso extractivista</h1></div></div><div className="status-cluster"><span className="official-badge">DATOS OFICIALES PROCESADOS</span><span className="status-chip"><CalendarDays size={14} /> Histórico desde {HISTORY_START_LABEL}</span><span className="status-chip"><span className="pulse" /> Actualizado: {generated}</span></div></header>
+    <nav className="social-links" aria-label="Redes sociales de Juan Carlos Gómez García">
+      <a className="social-link instagram" href="https://www.instagram.com/juancgomezg_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Juan Carlos Gómez García" title="Instagram"><Instagram size={16} aria-hidden="true" /></a>
+      <a className="social-link linkedin" href="https://www.linkedin.com/in/jcgomezga/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Juan Carlos Gómez García" title="LinkedIn"><Linkedin size={16} aria-hidden="true" /></a>
+    </nav>
     <section className="notice" aria-label="Advertencia metodológica"><CircleAlert size={18} /><p><strong>Lectura responsable:</strong> cada punto representa una detección térmica satelital reportada por IDEAM. No confirma por sí sola un incendio, su extensión ni su causa. Los cruces territoriales expresan coincidencia o proximidad espacial, no causalidad. El portal presenta un <strong>universo operativo</strong> sometido a criterios de control de calidad; algunos registros pueden no tener asignación territorial o de cobertura y permanecen en el total general. <Link href="/metodologia" className="font-semibold text-[#6a452a] underline underline-offset-2">Ver metodología y alcance</Link>.</p></section>
     <section className="filterbar" aria-label="Filtros territoriales">
       <label><span>Desde</span><input type="date" min={dashboard.metadata.historyStartDate} max={endDate} value={startDate} onChange={(e) => setStartDate(e.target.value)} /></label><label><span>Hasta</span><input type="date" min={startDate} max={dashboard.metadata.lastObservationDate} value={endDate} onChange={(e) => setEndDate(e.target.value)} /></label>
