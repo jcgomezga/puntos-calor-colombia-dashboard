@@ -31,6 +31,8 @@ jobs:
         run: env -u GITHUB_ACTIONS npm test
       - name: Probar exportación GitHub Pages
         run: npm run build:pages
+      - name: Medir presupuesto JavaScript de Pages
+        run: node scripts/check-pages-bundle-budget.mjs
       - name: Verificar activos publicables del geovisor
         run: |
           test -f public/maplibre/maplibre-gl-worker.mjs
