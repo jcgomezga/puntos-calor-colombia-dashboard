@@ -59,6 +59,7 @@ let pmtilesProtocol: Protocol | null = null;
 
 type LayerState = { landCover: boolean; hotspots: boolean; boundaries: boolean; runap: boolean; anm: boolean; anla: boolean; anh: boolean };
 type QueryMode = "hotspot" | "territory" | "coverage" | "context";
+type CoverageStatus = "loading" | "ready" | "error";
 type TerritoryNames = Record<string, string>;
 const INITIAL_LAYERS: LayerState = { landCover: true, hotspots: true, boundaries: true, runap: false, anm: false, anla: false, anh: false };
 
@@ -248,8 +249,11 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
 }) {
   const containerRef = useRef<HTMLDivElement>(null), mapRef = useRef<MapLibreMap | null>(null);
   const callbacksRef = useRef({ onDepartment, onMunicipality }), selectionRef = useRef({ departmentCode, municipalityCode });
-  const queryModeRef = useRef<QueryMode>("hotspot"), layerStateRef = useRef<LayerState>(INITIAL_LAYERS);
+  const queryModeRef = useRef<QueryMode>("hotspot"), layerStateRef = useRef<LayerState>(INITIAL_LAYERS), coverageStatusRef = useRef<CoverageStatus>("loading");
+  const centerQueryRef = useRef<() => void>(() => {});
   const [ready, setReady] = useState(false), [mapError, setMapError] = useState("");
+  const [coverageStatus, setCoverageStatus] = useState<CoverageStatus>("loading"), [queryFeedback, setQueryFeedback] = useState("");
+  const [panelOpen, setPanelOpen] = useState(() => typeof window === "undefined" || !window.matchMedia("(max-width: 640px)").matches);
   const [layers, setLayers] = useState<LayerState>(INITIAL_LAYERS), [queryMode, setQueryMode] = useState<QueryMode>("hotspot");
   const [landCoverOpacity, setLandCoverOpacity] = useState(DEFAULT_LAND_COVER_OPACITY);
   const hotspotData = useMemo(() => hotspotGeoJson(points, dates, sources, confidences), [points, dates, sources, confidences]);
@@ -257,7 +261,13 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
   const municipalityLabelData = useMemo(() => territoryLabels(municipalities.features, municipalityNames, "m", "d"), [municipalities.features, municipalityNames]);
   const hotspotDataRef = useRef(hotspotData);
 
-  useEffect(() => { hotspotDataRef.current = hotspotData; callbacksRef.current = { onDepartment, onMunicipality }; selectionRef.current = { departmentCode, municipalityCode }; queryModeRef.current = queryMode; layerStateRef.current = layers; }, [hotspotData, onDepartment, onMunicipality, departmentCode, municipalityCode, queryMode, layers]);
+  useEffect(() => { hotspotDataRef.current = hotspotData; callbacksRef.current = { onDepartment, onMunicipality }; selectionRef.current = { departmentCode, municipalityCode }; queryModeRef.current = queryMode; layerStateRef.current = layers; coverageStatusRef.current = coverageStatus; }, [hotspotData, onDepartment, onMunicipality, departmentCode, municipalityCode, queryMode, layers, coverageStatus]);
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 640px)");
+    const adaptPanel = () => setPanelOpen(!media.matches);
+    media.addEventListener("change", adaptPanel);
+    return () => media.removeEventListener("change", adaptPanel);
+  }, []);
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -267,9 +277,15 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
       ensurePmtilesProtocol();
       const map = new maplibregl.Map({ container: containerRef.current, style: { version: 8, sources: {}, layers: [{ id: "background", type: "background", paint: { "background-color": "#edf2ed" } }] }, bounds: COLOMBIA_BOUNDS, fitBoundsOptions: { padding: 28 }, maxBounds: [[-85, -7], [-63.5, 17]], minZoom: 3, maxZoom: 16, attributionControl: false });
       mapRef.current = map; map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-left"); map.addControl(new maplibregl.ScaleControl({ unit: "metric", maxWidth: 110 }), "bottom-right"); map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-left");
-      map.on("error", (event) => { const message = event.error?.message ?? ""; if (message.includes("context-layers.pmtiles")) setMapError("Las capas RUNAP, ANM, ANLA y ANH no respondieron; el resto del geovisor sigue disponible."); else if (message.includes("MNCT_2024") || message.includes("VectorTileServer")) setMapError("La capa remota de coberturas IDEAM no respondió; el resto del geovisor sigue disponible."); });
+      map.on("error", (event) => {
+        const message = event.error?.message ?? "";
+        if (message.includes("context-layers.pmtiles")) setMapError("Las capas RUNAP, ANM, ANLA y ANH no respondieron; el resto del geovisor sigue disponible.");
+        else if (message.includes("MNCT_2024") || message.includes("VectorTileServer")) { setCoverageStatus("error"); coverageStatusRef.current = "error"; setMapError("La capa remota de coberturas IDEAM no respondió; el resto del geovisor sigue disponible."); }
+      });
       map.on("load", () => {
+        setCoverageStatus("loading"); coverageStatusRef.current = "loading";
         map.addSource(IDEAM_SOURCE_ID, { type: "vector", tiles: [IDEAM_TILE_URL], minzoom: 0, maxzoom: 23, attribution: "IDEAM · Mapa Nacional de las Coberturas de la Tierra 2024" });
+        map.on("sourcedata", (event) => { if (event.sourceId === IDEAM_SOURCE_ID && event.isSourceLoaded) { setCoverageStatus("ready"); coverageStatusRef.current = "ready"; } });
         LAND_COVER_CLASSES.forEach(([label, color], index) => map.addLayer({ id: LAND_COVER_LAYER_IDS[index], type: "fill", source: IDEAM_SOURCE_ID, "source-layer": IDEAM_SOURCE_LAYER, filter: ["==", "_symbol", index], paint: { "fill-color": color, "fill-opacity": DEFAULT_LAND_COVER_OPACITY }, metadata: { label } }));
         map.addSource(CONTEXT_SOURCE_ID, { type: "vector", url: contextArchiveUrl(), attribution: "PNN · ANM · ANLA · ANH" });
         map.addLayer({ id: "runap-fill", type: "fill", source: CONTEXT_SOURCE_ID, "source-layer": "runap", layout: { visibility: "none" }, paint: { "fill-color": "#26854d", "fill-opacity": 0.24 } });
@@ -280,7 +296,7 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
         map.addLayer({ id: "anm-line", type: "line", source: CONTEXT_SOURCE_ID, "source-layer": "anm", layout: { visibility: "none" }, paint: { "line-color": "#6b2d96", "line-width": 1.05, "line-opacity": 0.9 } });
         map.addLayer({ id: "anla-fill", type: "fill", source: CONTEXT_SOURCE_ID, "source-layer": "anla", filter: ["==", ["geometry-type"], "Polygon"], layout: { visibility: "none" }, paint: { "fill-color": ["match", ["get", "situacion"], "evaluacion", "#22a6b3", "#2e69c9"], "fill-opacity": 0.2 } });
         map.addLayer({ id: "anla-line", type: "line", source: CONTEXT_SOURCE_ID, "source-layer": "anla", filter: ["==", ["geometry-type"], "LineString"], layout: { visibility: "none" }, paint: { "line-color": ["match", ["get", "situacion"], "evaluacion", "#17808b", "#1f4f9f"], "line-width": 1.4, "line-opacity": 0.9 } });
-        map.addLayer({ id: "anla-point", type: "circle", source: CONTEXT_SOURCE_ID, "source-layer": "anla", filter: ["==", ["geometry-type"], "Point"], layout: { visibility: "none" }, paint: { "circle-color": "#2e69c9", "circle-radius": 4.5, "circle-stroke-color": "#fff", "circle-stroke-width": 1 } });
+        map.addLayer({ id: "anla-point", type: "circle", source: CONTEXT_SOURCE_ID, "source-layer": "anla", filter: ["==", ["geometry-type"], "Point"], layout: { visibility: "none" }, paint: { "circle-color": ["match", ["get", "situacion"], "evaluacion", "#22a6b3", "#2e69c9"], "circle-radius": 4.5, "circle-stroke-color": "#fff", "circle-stroke-width": 1 } });
         map.addSource("dane-departments", { type: "geojson", data: departments as GeoJSON.FeatureCollection });
         map.addLayer({ id: "dane-departments-fill", type: "fill", source: "dane-departments", paint: { "fill-color": "#d4e3d6", "fill-opacity": 0.035 } });
         map.addLayer({ id: "dane-departments-line", type: "line", source: "dane-departments", paint: { "line-color": "#476653", "line-width": 1.1, "line-opacity": 0.8 } });
@@ -295,26 +311,58 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
         map.addLayer({ id: "hotspot-clusters", type: "circle", source: "hotspots", filter: ["has", "point_count"], paint: { "circle-color": ["step", ["get", "point_count"], "#f39a53", 100, "#e56235", 1000, "#ba2f25"], "circle-radius": ["step", ["get", "point_count"], 15, 100, 20, 1000, 26], "circle-stroke-color": "#fff", "circle-stroke-width": 1.5, "circle-opacity": 0.9 } });
         map.addLayer({ id: "hotspot-cluster-count", type: "symbol", source: "hotspots", filter: ["has", "point_count"], layout: { "text-field": ["get", "point_count_abbreviated"], "text-size": 11 }, paint: { "text-color": "#fff" } });
         map.addLayer({ id: "hotspot-unclustered", type: "circle", source: "hotspots", filter: ["!", ["has", "point_count"]], paint: { "circle-color": "#d93f2b", "circle-radius": ["interpolate", ["linear"], ["zoom"], 4, 3.2, 10, 6.2], "circle-stroke-color": "#fff", "circle-stroke-width": 1, "circle-opacity": 0.86 } });
-        map.on("click", "hotspot-clusters", async (event) => { if (queryModeRef.current !== "hotspot") return; const cluster = event.features?.[0]; if (!cluster || cluster.geometry.type !== "Point") return; const source = map.getSource("hotspots") as GeoJSONSource; const zoom = await source.getClusterExpansionZoom(Number(cluster.properties.cluster_id)); map.easeTo({ center: cluster.geometry.coordinates as [number, number], zoom }); });
-        map.on("click", "hotspot-unclustered", (event) => { if (queryModeRef.current !== "hotspot") return; const feature = event.features?.[0]; if (!feature || feature.geometry.type !== "Point") return; new maplibregl.Popup({ offset: 10, closeButton: true }).setLngLat(feature.geometry.coordinates as [number, number]).setDOMContent(hotspotPopup(feature)).addTo(map); });
-        map.on("click", (event) => {
-          if (queryModeRef.current === "hotspot") { if (map.queryRenderedFeatures(event.point, { layers: ["hotspot-clusters", "hotspot-unclustered"] }).length) return; return; }
-          if (queryModeRef.current === "coverage" && layerStateRef.current.landCover) { const feature = map.queryRenderedFeatures(event.point, { layers: LAND_COVER_LAYER_IDS })[0]; if (!feature) return; new maplibregl.Popup({ offset: 8, closeButton: true }).setLngLat(event.lngLat).setDOMContent(landCoverPopup(feature)).addTo(map); return; }
-          if (queryModeRef.current === "context") {
-            const contextLayers = visibleContextLayerIds(layerStateRef.current);
-            const features = contextLayers.length ? uniqueContextFeatures(map.queryRenderedFeatures(event.point, { layers: contextLayers })) : [];
-            if (!features.length) return;
-            contextSelectionPopup(features, event.lngLat).addTo(map);
+        const queryAtPoint = async (point: maplibregl.Point, lngLat: maplibregl.LngLat) => {
+          const mode = queryModeRef.current;
+          if (mode === "hotspot") {
+            const feature = map.queryRenderedFeatures(point, { layers: ["hotspot-clusters", "hotspot-unclustered"] })[0];
+            if (!feature) { setQueryFeedback("No hay una detección térmica consultable en el punto actual."); return; }
+            if (feature.geometry.type !== "Point") return;
+            if (feature.properties?.cluster_id !== undefined) {
+              const source = map.getSource("hotspots") as GeoJSONSource;
+              const zoom = await source.getClusterExpansionZoom(Number(feature.properties.cluster_id));
+              map.easeTo({ center: feature.geometry.coordinates as [number, number], zoom });
+              setQueryFeedback(`Cluster con ${Number(feature.properties.point_count ?? 0).toLocaleString("es-CO")} detecciones; se amplió el mapa para desagregarlo.`);
+              return;
+            }
+            new maplibregl.Popup({ offset: 10, closeButton: true }).setLngLat(feature.geometry.coordinates as [number, number]).setDOMContent(hotspotPopup(feature)).addTo(map);
+            setQueryFeedback("Detección térmica consultada. La ficha se abrió sobre el mapa.");
             return;
           }
-          if (queryModeRef.current !== "territory" || !layerStateRef.current.boundaries) return;
-          if (selectionRef.current.departmentCode !== "00") { const municipality = map.queryRenderedFeatures(event.point, { layers: ["dane-municipalities-fill"] })[0]; const code = String(municipality?.properties.m ?? ""); if (code) callbacksRef.current.onMunicipality(code); return; }
-          const department = map.queryRenderedFeatures(event.point, { layers: ["dane-departments-fill"] })[0]; const code = String(department?.properties.DPTO_CCDGO ?? ""); if (code) callbacksRef.current.onDepartment(code);
-        });
+          if (mode === "coverage" && layerStateRef.current.landCover) {
+            if (coverageStatusRef.current === "loading") { setQueryFeedback("La cobertura IDEAM todavía está cargando; intenta de nuevo en unos segundos."); return; }
+            if (coverageStatusRef.current === "error") { setQueryFeedback("La cobertura IDEAM no está disponible en este momento."); return; }
+            const feature = map.queryRenderedFeatures(point, { layers: LAND_COVER_LAYER_IDS })[0];
+            if (!feature) { setQueryFeedback("No se encontró una clase de cobertura renderizada en el punto actual."); return; }
+            new maplibregl.Popup({ offset: 8, closeButton: true }).setLngLat(lngLat).setDOMContent(landCoverPopup(feature)).addTo(map);
+            setQueryFeedback("Cobertura IDEAM consultada. La ficha se abrió sobre el mapa.");
+            return;
+          }
+          if (mode === "context") {
+            const contextLayers = visibleContextLayerIds(layerStateRef.current);
+            const features = contextLayers.length ? uniqueContextFeatures(map.queryRenderedFeatures(point, { layers: contextLayers })) : [];
+            if (!features.length) { setQueryFeedback("No hay entidades de contexto visibles en el punto actual."); return; }
+            contextSelectionPopup(features, lngLat).addTo(map);
+            setQueryFeedback(features.length === 1 ? "1 coincidencia contextual consultada." : `${features.length} coincidencias contextuales; usa el selector de la ficha para cambiar de entidad.`);
+            return;
+          }
+          if (mode !== "territory" || !layerStateRef.current.boundaries) return;
+          if (selectionRef.current.departmentCode !== "00") {
+            const municipality = map.queryRenderedFeatures(point, { layers: ["dane-municipalities-fill"] })[0];
+            const code = String(municipality?.properties.m ?? "");
+            if (!code) { setQueryFeedback("No se encontró un municipio consultable en el punto actual."); return; }
+            callbacksRef.current.onMunicipality(code); setQueryFeedback("Municipio seleccionado desde el mapa."); return;
+          }
+          const department = map.queryRenderedFeatures(point, { layers: ["dane-departments-fill"] })[0];
+          const code = String(department?.properties.DPTO_CCDGO ?? "");
+          if (!code) { setQueryFeedback("No se encontró un departamento consultable en el punto actual."); return; }
+          callbacksRef.current.onDepartment(code); setQueryFeedback("Departamento seleccionado desde el mapa.");
+        };
+        map.on("click", (event) => { void queryAtPoint(event.point, event.lngLat); });
+        centerQueryRef.current = () => { const center = map.getCenter(); void queryAtPoint(map.project(center), center); };
         ["hotspot-clusters", "hotspot-unclustered", "dane-departments-fill", "dane-municipalities-fill", ...LAND_COVER_LAYER_IDS, ...Object.values(CONTEXT_GROUPS).flat()].forEach((id) => addInteractiveCursor(map, id)); setReady(true);
       });
     } catch (error) { queueMicrotask(() => setMapError(error instanceof Error ? error.message : "El navegador no pudo iniciar el geovisor.")); }
-    return () => { mapRef.current?.remove(); mapRef.current = null; };
+    return () => { centerQueryRef.current = () => {}; mapRef.current?.remove(); mapRef.current = null; };
   }, [departments, municipalities, departmentLabelData, municipalityLabelData]);
 
   useEffect(() => { const map = mapRef.current; if (map?.isStyleLoaded()) (map.getSource("hotspots") as GeoJSONSource | undefined)?.setData(hotspotData); }, [hotspotData]);
@@ -345,17 +393,26 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
     if (queryMode === "hotspot" && !next.hotspots) setQueryMode(next.boundaries ? "territory" : next.landCover ? "coverage" : "context");
   };
   const hasVisibleContext = layers.runap || layers.anm || layers.anla || layers.anh;
+  const coverageStatusLabel = coverageStatus === "loading" ? "Cobertura IDEAM: cargando teselas remotas" : coverageStatus === "ready" ? "Cobertura IDEAM: lista para consulta" : "Cobertura IDEAM: no disponible";
   return <div className="geovisor-map" aria-label={`Geovisor interactivo con ${points.length.toLocaleString("es-CO")} detecciones térmicas`}>
     <div ref={containerRef} className="geovisor-canvas" />{!ready && !mapError && <div className="geovisor-loading"><span /> Preparando capas geográficas…</div>}{mapError && <div className="geovisor-error" role="status">{mapError}</div>}
-    <aside className="layer-control" aria-label="Control de capas"><div className="layer-control-title"><Layers3 size={15} /><strong>Capas visibles</strong></div>
-      <label><input type="checkbox" checked={layers.hotspots} onChange={() => toggleLayer("hotspots")} /><span className="layer-symbol hotspot" /> Detecciones térmicas IDEAM</label>
-      <label><input type="checkbox" checked={layers.boundaries} onChange={() => toggleLayer("boundaries")} /><span className="layer-symbol boundary" /> Límites DANE 2025</label>
-      <label><input type="checkbox" checked={layers.landCover} onChange={() => toggleLayer("landCover")} /><span className="layer-symbol coverage" /> Coberturas IDEAM 2024</label>
-      <label className="opacity-control"><span>Opacidad de coberturas</span><input type="range" min="0.15" max="0.85" step="0.05" value={landCoverOpacity} disabled={!layers.landCover} onChange={(e) => setLandCoverOpacity(Number(e.target.value))} /></label>
-      <div className="layer-group-title">Contexto territorial</div>
-      <label><input type="checkbox" checked={layers.runap} onChange={() => toggleLayer("runap")} /><span className="layer-symbol runap" /> Áreas protegidas RUNAP</label><label><input type="checkbox" checked={layers.anm} onChange={() => toggleLayer("anm")} /><span className="layer-symbol anm" /> Títulos mineros ANM</label><label><input type="checkbox" checked={layers.anla} onChange={() => toggleLayer("anla")} /><span className="layer-symbol anla" /> Proyectos ANLA</label><label><input type="checkbox" checked={layers.anh} onChange={() => toggleLayer("anh")} /><span className="layer-symbol anh" /> Áreas asignadas ANH</label>
-      <div className="query-control"><span>Consulta con clic</span><div role="group" aria-label="Capa consultada al hacer clic"><button type="button" className={queryMode === "hotspot" ? "active" : ""} aria-pressed={queryMode === "hotspot"} disabled={!layers.hotspots} onClick={() => setQueryMode("hotspot")}>Detección</button><button type="button" className={queryMode === "territory" ? "active" : ""} aria-pressed={queryMode === "territory"} disabled={!layers.boundaries} onClick={() => setQueryMode("territory")}>Territorio</button><button type="button" className={queryMode === "coverage" ? "active" : ""} aria-pressed={queryMode === "coverage"} disabled={!layers.landCover} onClick={() => setQueryMode("coverage")}>Cobertura</button><button type="button" className={queryMode === "context" ? "active" : ""} aria-pressed={queryMode === "context"} disabled={!hasVisibleContext} onClick={() => setQueryMode("context")}>Contexto</button></div></div>
-      <details><summary>Leyenda de coberturas</summary><div className="coverage-legend">{FAMILY_LEGEND.map(([label, color]) => <span key={label}><i style={{ backgroundColor: color }} />{label}</span>)}</div></details>
+    <aside className={`layer-control ${panelOpen ? "open" : "collapsed"}`} aria-label="Control de capas y consulta">
+      <div className="layer-control-title"><span className="layer-control-heading"><Layers3 size={15} /><strong>Capas y consulta</strong></span><button type="button" className="layer-control-toggle" aria-expanded={panelOpen} aria-controls="geovisor-layer-panel" onClick={() => setPanelOpen((value) => !value)}>{panelOpen ? "Ocultar" : "Capas"}</button></div>
+      {panelOpen && <div id="geovisor-layer-panel" className="layer-control-body">
+        <label><input type="checkbox" checked={layers.hotspots} onChange={() => toggleLayer("hotspots")} /><span className="layer-symbol hotspot" /> Detecciones térmicas IDEAM</label>
+        <label><input type="checkbox" checked={layers.boundaries} onChange={() => toggleLayer("boundaries")} /><span className="layer-symbol boundary" /> Límites DANE 2025</label>
+        <label><input type="checkbox" checked={layers.landCover} onChange={() => toggleLayer("landCover")} /><span className="layer-symbol coverage" /> Coberturas IDEAM 2024</label>
+        <div className={`coverage-status ${coverageStatus}`} role="status" aria-live="polite">{coverageStatusLabel}</div>
+        <label className="opacity-control"><span>Opacidad de coberturas</span><input type="range" min="0.15" max="0.85" step="0.05" value={landCoverOpacity} disabled={!layers.landCover} onChange={(e) => setLandCoverOpacity(Number(e.target.value))} /></label>
+        <div className="layer-group-title">Contexto territorial</div>
+        <label><input type="checkbox" checked={layers.runap} onChange={() => toggleLayer("runap")} /><span className="layer-symbol runap" /> Áreas protegidas RUNAP</label><label><input type="checkbox" checked={layers.anm} onChange={() => toggleLayer("anm")} /><span className="layer-symbol anm" /> Títulos mineros ANM</label><label><input type="checkbox" checked={layers.anla} onChange={() => toggleLayer("anla")} /><span className="layer-symbol anla" /> Proyectos ANLA</label><label><input type="checkbox" checked={layers.anh} onChange={() => toggleLayer("anh")} /><span className="layer-symbol anh" /> Áreas asignadas ANH</label>
+        <div className="query-control"><span>Consulta espacial</span><div role="group" aria-label="Capa consultada"><button type="button" className={queryMode === "hotspot" ? "active" : ""} aria-pressed={queryMode === "hotspot"} disabled={!layers.hotspots} onClick={() => setQueryMode("hotspot")}>Detección</button><button type="button" className={queryMode === "territory" ? "active" : ""} aria-pressed={queryMode === "territory"} disabled={!layers.boundaries} onClick={() => setQueryMode("territory")}>Territorio</button><button type="button" className={queryMode === "coverage" ? "active" : ""} aria-pressed={queryMode === "coverage"} disabled={!layers.landCover} onClick={() => setQueryMode("coverage")}>Cobertura</button><button type="button" className={queryMode === "context" ? "active" : ""} aria-pressed={queryMode === "context"} disabled={!hasVisibleContext} onClick={() => setQueryMode("context")}>Contexto</button></div></div>
+        <button type="button" className="center-query-button" onClick={() => centerQueryRef.current()}>Consultar centro del mapa</button>
+        <div className="query-feedback" role="status" aria-live="polite">{queryFeedback || "Con teclado: desplaza el mapa, elige el tipo de consulta y usa «Consultar centro del mapa»."}</div>
+        <details><summary>Leyenda de detecciones</summary><div className="hotspot-legend"><span><i className="cluster-marker low" />1–99 detecciones</span><span><i className="cluster-marker medium" />100–999 detecciones</span><span><i className="cluster-marker high" />1.000 o más</span><small>El número, tamaño y color del cluster expresan cantidad de detecciones agrupadas; no intensidad ni severidad de un incendio.</small></div></details>
+        {layers.anla && <details><summary>Leyenda ANLA</summary><div className="anla-legend"><span><i className="anla-evaluation" />En evaluación</span><span><i className="anla-licensed" />Licenciado</span><small>La situación jurídica se conserva en polígonos, líneas y puntos.</small></div></details>}
+        <details><summary>Leyenda de coberturas</summary><div className="coverage-legend">{FAMILY_LEGEND.map(([label, color]) => <span key={label}><i style={{ backgroundColor: color }} />{label}</span>)}</div></details>
+      </div>}
     </aside>
   </div>;
 }
