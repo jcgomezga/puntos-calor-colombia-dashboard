@@ -19,10 +19,13 @@ test("keeps the public geovisor canonical and isolates the obsolete implementati
   await access(`${root}/archive/legacy-geovisor/geovisor-map.tsx`);
 
   const tsconfig = JSON.parse(await read("tsconfig.json"));
+  const eslintConfig = await read("eslint.config.mjs");
   const entry = await read("components/geovisor-entry.tsx");
   const operational = await read("components/operational-geovisor-map.tsx");
 
   assert.deepEqual(tsconfig.compilerOptions.paths["@/components/geovisor-map"], ["./components/geovisor-entry.tsx"]);
+  assert.ok(tsconfig.exclude.includes("archive"), "El archivo histórico no debe entrar al proyecto TypeScript activo.");
+  assert.match(eslintConfig, /"archive\/\*\*"/);
   assert.match(entry, /public-detection-geovisor-map/);
   assert.match(entry, /PublicDetectionGeovisorMap/);
   assert.match(operational, /OPERATIONAL_SPATIAL_METERS = 1_000/);
