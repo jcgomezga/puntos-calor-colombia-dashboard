@@ -76,6 +76,15 @@ test("runs a real-browser responsive gate at representative widths", () => {
   assert.match(responsiveSource, /sideColumns !== 1/);
 });
 
+test("waits for Chrome to exit before deleting its temporary profile", () => {
+  assert.match(responsiveSource, /async function stopChrome\(process\)/);
+  assert.match(responsiveSource, /await stopChrome\(chrome\)/);
+  assert.match(responsiveSource, /SIGTERM/);
+  assert.match(responsiveSource, /SIGKILL/);
+  assert.match(responsiveSource, /maxRetries: 5/);
+  assert.match(responsiveSource, /retryDelay: 100/);
+});
+
 test("leaves cartographic target sizing for the final map block", () => {
   assert.match(cssSource, /\.geovisor-map \.maplibregl-ctrl-group button \{ width: 29px; height: 29px; \}/);
   assert.match(cssSource, /\.layer-control \{[^}]*width: 215px/);
