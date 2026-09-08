@@ -48,7 +48,7 @@ jobs:
           make -C "$RUNNER_TEMP/tippecanoe" -j2
       - name: Probar conversión geométrica
         run: python -m unittest tests_py.test_build_context_tiles -v
-      - name: Construir archivo PMTiles con atributos de consulta
+      - name: Construir geometrías y catálogo de fichas
         run: python scripts/build_context_tiles_enriched.py --tippecanoe "$RUNNER_TEMP/tippecanoe/tippecanoe"
       - name: Verificar salida publicable
         run: |
@@ -57,22 +57,32 @@ jobs:
           from pathlib import Path
 
           archive = Path("public/data/context-layers.pmtiles")
-          metadata = json.loads(Path("public/data/context-layers.json").read_text(encoding="utf-8"))
+          metadata_path = Path("public/data/context-layers.json")
+          details_path = Path("public/data/context-details.json")
+          metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+          catalog = json.loads(details_path.read_text(encoding="utf-8"))
+
           assert archive.stat().st_size == metadata["sizeBytes"]
           assert archive.stat().st_size < 100_000_000
           assert metadata["totalFeatures"] == 22_847
           assert set(metadata["featureCounts"]) == {"runap", "anm", "anla", "anh"}
+          assert metadata["details"]["path"] == "context-details.json"
+          assert metadata["details"]["recordCount"] == catalog["recordCount"]
+          assert metadata["details"]["sizeBytes"] == details_path.stat().st_size
+          assert catalog["recordCount"] >= metadata["totalFeatures"]
+          assert len(catalog["records"]) == catalog["recordCount"]
           PY
-      - name: Guardar teselas en la rama piloto
+      - name: Guardar geometrías y fichas en la rama piloto
         shell: bash
         run: |
-          if [[ -z "$(git status --porcelain -- public/data/context-layers.pmtiles public/data/context-layers.json)" ]]; then
-            echo "Las teselas no cambiaron."
+          FILES=(public/data/context-layers.pmtiles public/data/context-layers.json public/data/context-details.json)
+          if [[ -z "$(git status --porcelain -- "${FILES[@]}")" ]]; then
+            echo "Los artefactos territoriales no cambiaron."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/context-layers.pmtiles public/data/context-layers.json
-          git commit -m "data: enriquecer fichas territoriales PMTiles"
+          git add "${FILES[@]}"
+          git commit -m "data: publicar fichas territoriales completas"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
