@@ -1,19 +1,19 @@
 {
   "by_sensor": {
-    "MODIS": 2323,
-    "VIIRS": 31500
+    "MODIS": 2328,
+    "VIIRS": 31569
   },
   "by_source": {
     "MODIS-Aqua": 1797,
-    "MODIS-Terra": 526,
-    "VIIRS-NOAA-20": 10899,
-    "VIIRS-NOAA-21": 10329,
+    "MODIS-Terra": 531,
+    "VIIRS-NOAA-20": 10949,
+    "VIIRS-NOAA-21": 10348,
     "VIIRS-Suomi-NPP": 10272
   },
   "duplicates_removed": 0,
   "first_observation_local": "2026-07-01T01:33-05:00",
-  "generated_at_utc": "2026-09-08T11:24:59Z",
-  "last_observation_local": "2026-09-08T03:35-05:00",
+  "generated_at_utc": "2026-09-08T16:31:29Z",
+  "last_observation_local": "2026-09-08T09:03-05:00",
   "policy": {
     "history_mode": "cumulative",
     "history_start_date": "2026-07-01",
@@ -26,30 +26,30 @@
       "month": "2026-07",
       "path": "processed/hotspots_2026-07.csv",
       "rows": 11582,
-      "sha256": "eea347ed4b848c9c757b153a8d5ed76b88e290fcd58fe9250c9815618b068e57",
+      "sha256": "dc14dd9bc88772e1c53dbd7eb78dc8132d1f1821747d38491cd676332c116e20",
       "size_bytes": 2685492
     },
     {
       "month": "2026-08",
       "path": "processed/hotspots_2026-08.csv",
       "rows": 19309,
-      "sha256": "9852a53119b10f96e428d492856f7457b3cf32568412da5ac9326ed9265524c8",
+      "sha256": "06fd58f813c9d017b861c2479eb98b3abea2151af2833a2d1ff706daa733525b",
       "size_bytes": 4477713
     },
     {
       "month": "2026-09",
       "path": "processed/hotspots_2026-09.csv",
-      "rows": 2932,
-      "sha256": "dbca89f2ae0d517ea17071e9b1bbc63d9e1e26cc2bb22832304e287cd9a861fe",
-      "size_bytes": 680486
+      "rows": 3006,
+      "sha256": "dd48ac2477da3f8f621beeaa91033509a88705b3e377b59566ce8ee49abc9a10",
+      "size_bytes": 697506
     }
   ],
   "raw_files": 70,
-  "rows_read": 33823,
+  "rows_read": 33897,
   "rows_rejected_cutoff": 0,
   "rows_rejected_invalid": 0,
-  "rows_unique": 33823,
-  "rows_valid_before_dedup": 33823,
-  "scenario_a_rows": 33823,
-  "scenario_b_rows": 23551
+  "rows_unique": 33897,
+  "rows_valid_before_dedup": 33897,
+  "scenario_a_rows": 33897,
+  "scenario_b_rows": 23625
 }
