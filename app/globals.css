@@ -223,7 +223,7 @@ footer code { color: #425148; }
 /* MB-09 cartografía, responsive y accesibilidad espacial */
 .territory-shape:focus-visible { outline: none; stroke: #0e5e34; stroke-width: 3; fill: #9fc5a6; fill-opacity: .98; }
 .geovisor-map .maplibregl-ctrl-group button { width: 40px; height: 40px; }
-.layer-control { max-height: calc(100% - 20px); padding: 8px; display: flex; flex-direction: column; overflow: hidden; }
+.layer-control { max-height: calc(100% - 72px); padding: 8px; display: flex; flex-direction: column; overflow: hidden; }
 .layer-control-title { margin-bottom: 5px; justify-content: space-between; gap: 8px; }
 .layer-control-heading { min-width: 0; display: flex; align-items: center; gap: 6px; }
 .layer-control-toggle { min-height: 36px; padding: 5px 9px; border: 1px solid #c7d2c9; border-radius: 6px; background: #f8faf8; color: #31513c; font-size: 9px; font-weight: 800; cursor: pointer; }
@@ -250,7 +250,7 @@ footer code { color: #425148; }
 .layer-control.collapsed .layer-control-title { margin-bottom: 0; }
 @media (max-width: 640px) {
   .geovisor-map .maplibregl-ctrl-group button { width: 44px; height: 44px; }
-  .layer-control { width: min(280px, calc(100% - 20px)); max-height: calc(100% - 20px); }
+  .layer-control { width: min(280px, calc(100% - 20px)); max-height: calc(100% - 72px); }
   .layer-control.collapsed { width: auto; padding: 4px; }
   .layer-control.collapsed .layer-control-heading { display: none; }
   .layer-control-toggle, .layer-control-body > label:not(.opacity-control), .query-control button, .center-query-button { min-height: 44px; }

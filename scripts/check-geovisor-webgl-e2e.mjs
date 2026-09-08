@@ -1,7 +1,7 @@
 import { spawn, spawnSync } from "node:child_process";
 import { createReadStream } from "node:fs";
 import { createServer } from "node:http";
-import { mkdtemp, readFile, rm, stat } from "node:fs/promises";
+import { mkdtemp, rm, stat } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { extname, resolve } from "node:path";
 
@@ -227,6 +227,10 @@ try {
     const detection = [...document.querySelectorAll(".query-control button")].find((button) => button.textContent?.trim() === "Detección");
     const centerButton = [...document.querySelectorAll("button")].find((button) => button.textContent?.trim() === "Consultar centro del mapa");
     const nav = document.querySelector(".maplibregl-ctrl-group button");
+    const rect = (element) => { if (!element) return null; const r = element.getBoundingClientRect(); return { x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom }; };
+    const panelRect = rect(panel);
+    const scaleRect = rect(document.querySelector(".maplibregl-ctrl-scale"));
+    const overlapArea = (a, b) => { if (!a || !b) return 0; const width = Math.max(0, Math.min(a.right,b.right)-Math.max(a.x,b.x)); const height = Math.max(0, Math.min(a.bottom,b.bottom)-Math.max(a.y,b.y)); return width * height; };
     return {
       canvasCount: document.querySelectorAll(".geovisor-map .maplibregl-canvas").length,
       panelOpen: panel?.classList.contains("open") ?? false,
@@ -234,6 +238,7 @@ try {
       centerButton: Boolean(centerButton),
       navWidth: nav ? Number.parseFloat(getComputedStyle(nav).width) : 0,
       navHeight: nav ? Number.parseFloat(getComputedStyle(nav).height) : 0,
+      scalePanelOverlap: overlapArea(panelRect, scaleRect),
     };
   })()`);
   assert(desktop.canvasCount === 1, `Se esperó 1 canvas MapLibre; se encontraron ${desktop.canvasCount}.`);
@@ -241,6 +246,7 @@ try {
   assert(desktop.detectionPressed === "true", "Detección debe ser el modo de consulta inicial.");
   assert(desktop.centerButton, "Falta la alternativa accesible «Consultar centro del mapa».");
   assert(desktop.navWidth >= 40 && desktop.navHeight >= 40, `Targets MapLibre insuficientes en escritorio: ${desktop.navWidth}×${desktop.navHeight}.`);
+  assert(desktop.scalePanelOverlap === 0, `El panel de escritorio tapa la escala cartográfica (${desktop.scalePanelOverlap}px²).`);
   checks.push({ flow: "geovisor escritorio", ...desktop });
 
   await evaluate(cdp.send, `([...document.querySelectorAll("button")].find((button) => button.textContent?.trim() === "Consultar centro del mapa"))?.click()`);
@@ -275,7 +281,17 @@ try {
 
   await evaluate(cdp.send, `document.querySelector(".layer-control-toggle")?.click()`);
   await waitFor(cdp.send, `document.querySelector(".layer-control")?.classList.contains("open") === true && Boolean(document.querySelector(".center-query-button"))`, "No fue posible abrir el panel cartográfico móvil.");
-  checks.push({ flow: "panel móvil expandible" });
+  const mobileOpen = await evaluate(cdp.send, `(() => {
+    const rect = (element) => { if (!element) return null; const r = element.getBoundingClientRect(); return { x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom }; };
+    const overlapArea = (a, b) => { if (!a || !b) return 0; const width = Math.max(0, Math.min(a.right,b.right)-Math.max(a.x,b.x)); const height = Math.max(0, Math.min(a.bottom,b.bottom)-Math.max(a.y,b.y)); return width * height; };
+    const panel = rect(document.querySelector(".layer-control"));
+    const scale = rect(document.querySelector(".maplibregl-ctrl-scale"));
+    const attribution = rect(document.querySelector(".maplibregl-ctrl-attrib"));
+    return { panel, scaleOverlap: overlapArea(panel, scale), attributionOverlap: overlapArea(panel, attribution) };
+  })()`);
+  assert(mobileOpen.scaleOverlap === 0, `El panel móvil tapa la escala cartográfica (${mobileOpen.scaleOverlap}px²).`);
+  assert(mobileOpen.attributionOverlap === 0, `El panel móvil tapa la atribución cartográfica (${mobileOpen.attributionOverlap}px²).`);
+  checks.push({ flow: "panel móvil expandible", ...mobileOpen });
 
   const basicButtonExists = await evaluate(cdp.send, `[...document.querySelectorAll("button")].some((button) => button.textContent?.trim() === "Mapa básico")`);
   if (basicButtonExists) {
