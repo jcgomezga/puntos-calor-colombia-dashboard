@@ -3,8 +3,8 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Detecciones de calor · Colombia",
-  description: "Dashboard nacional para explorar detecciones térmicas del IDEAM por departamento y municipio.",
+  title: "Episodios de detecciones térmicas · Colombia",
+  description: "Dashboard nacional para explorar episodios algorítmicos de detecciones térmicas IDEAM y su contexto territorial.",
   other: {
     "codex-preview": "development",
   },
