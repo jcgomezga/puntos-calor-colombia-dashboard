@@ -24,8 +24,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Auditar dependencias productivas
-        continue-on-error: true
+      - name: Auditar dependencias productivas (gate bloqueante)
         run: npm audit --omit=dev --audit-level=high
       - run: npm run lint
       - name: Probar build Vite/Vinext y pruebas web
@@ -46,7 +45,7 @@ jobs:
             const manifest = JSON.parse(readFileSync(path, "utf8"));
             if (manifest.shardCount !== 128) throw new Error(`${path}: shardCount inesperado`);
             if (manifest.recordCount < 22_847) throw new Error(`${path}: faltan fichas territoriales`);
-            if (manifest.maxShardBytes >= 500_000) throw new Error(`${path}: fragmento demasiado grande (${manifest.maxShardBytes} bytes)`);
+            if (manifest.maxShardBytes >= 500_000) throw new Error(`${path}: fragmento demasiado grande (${manifest.maxShardBytes} bytes`);
             console.log(`${path}: ${manifest.recordCount} fichas, ${manifest.writtenShards} fragmentos, máximo ${manifest.maxShardBytes} bytes`);
           }
           NODE
