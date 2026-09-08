@@ -1,9 +1,15 @@
 import { mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { isDateLikeValue, normalizeContextDetail } from "../lib/context-detail-values.mjs";
 
 export const DETAIL_SHARD_COUNT = 128;
 const VALID_SOURCES = new Set(["runap", "anm", "anla", "anh"]);
+const DATE_FIELDS_BY_SOURCE = {
+  anm: ["fecha_inscripcion", "fecha_terminacion"],
+  anla: ["fecha_acto"],
+  anh: ["fecha_firma"],
+};
 
 export function detailShardIndex(detailKey) {
   let hash = 5381;
@@ -35,6 +41,7 @@ export async function buildContextDetailShards({ inputPath, outputDir } = {}) {
 
   const shards = new Map();
   const sourceCounts = { runap: 0, anm: 0, anla: 0, anh: 0 };
+  const quality = { normalizedDateFields: 0, suppressedAnmStateDates: 0 };
   for (const [detailKey, detail] of Object.entries(records)) {
     const source = sourceFromKey(detailKey);
     const shardName = detailShardName(detailKey);
@@ -44,7 +51,18 @@ export async function buildContextDetailShards({ inputPath, outputDir } = {}) {
       shard = {};
       shards.set(shardKey, shard);
     }
-    shard[detailKey] = detail;
+
+    const normalizedDetail = normalizeContextDetail(detailKey, detail) ?? {};
+    if (source === "anm" && isDateLikeValue(detail?.estado) && normalizedDetail.estado === "") {
+      quality.suppressedAnmStateDates += 1;
+    }
+    for (const field of DATE_FIELDS_BY_SOURCE[source] ?? []) {
+      const before = detail?.[field] == null ? "" : String(detail[field]);
+      const after = normalizedDetail?.[field] == null ? "" : String(normalizedDetail[field]);
+      if (before !== after) quality.normalizedDateFields += 1;
+    }
+
+    shard[detailKey] = normalizedDetail;
     sourceCounts[source] += 1;
   }
 
@@ -70,6 +88,7 @@ export async function buildContextDetailShards({ inputPath, outputDir } = {}) {
     writtenShards: shards.size,
     recordCount: Object.keys(records).length,
     sourceCounts,
+    quality,
     totalShardBytes,
     maxShardBytes,
   };
