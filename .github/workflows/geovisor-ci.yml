@@ -1,0 +1,37 @@
+name: Validar geovisor
+
+on:
+  push:
+    branches: [feature/geovisor-fase-8a]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: geovisor-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - name: Probar build Vite/Vinext y pruebas web
+        run: npm test
+      - name: Probar exportación GitHub Pages
+        run: npm run build:pages
+      - name: Verificar worker MapLibre publicable
+        run: |
+          test -f public/maplibre/maplibre-gl-worker.mjs
+          test -f public/maplibre/maplibre-gl-shared.mjs
+          test -f out/maplibre/maplibre-gl-worker.mjs
+          test -f out/maplibre/maplibre-gl-shared.mjs
