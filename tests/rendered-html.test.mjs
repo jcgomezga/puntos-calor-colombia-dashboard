@@ -3,6 +3,7 @@ import test from "node:test";
 
 const developmentPreviewMeta =
   /<meta(?=[^>]*\bname=["']codex-preview["'])(?=[^>]*\bcontent=["']development["'])[^>]*>/i;
+const publicTitle = "Análisis espacial de detecciones de calor en zonas con potencial uso extractivista";
 
 const assets = {
   fetch: async () => new Response("Not found", { status: 404 }),
@@ -32,7 +33,7 @@ test("renders development preview metadata and the public methodology route", as
   assert.match(html, developmentPreviewMeta);
   assert.match(html, /Histórico desde/);
   assert.match(html, /1(?: de)? jul(?: de)? 2026/);
-  assert.match(html, /Detecciones térmicas IDEAM/);
+  assert.match(html, new RegExp(publicTitle));
   assert.match(html, /metodologia/);
 
   const methodologyResponse = await worker.fetch(
