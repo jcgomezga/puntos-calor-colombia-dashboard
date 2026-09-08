@@ -1,0 +1,35 @@
+name: MB-06 aplicar interpretabilidad
+
+on:
+  push:
+    branches: [fix/data-interpretability-reconciliation]
+    paths:
+      - ".github/workflows/mb06-apply-interpretability.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/data-interpretability-reconciliation
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Aplicar cambios de MB-06
+        run: node scripts/mb06-apply-interpretability.mjs
+      - name: Guardar cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/page.tsx app/globals.css components/public-detection-geovisor-map.tsx
+          if git diff --cached --quiet; then
+            echo "No hubo cambios que guardar."
+            exit 0
+          fi
+          git commit -m "data: mejorar reconciliación e interpretación pública"
+          git pull --rebase origin fix/data-interpretability-reconciliation
+          git push origin HEAD:fix/data-interpretability-reconciliation
