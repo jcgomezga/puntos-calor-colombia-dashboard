@@ -23,6 +23,18 @@ jobs:
           cache: npm
       - name: Aplicar cierre funcional MB-09B
         run: node scripts/mb09b-finalize.mjs
+      - name: Corregir aserción generada del gate MB-09
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("tests/mb09-cartography-accessibility.test.mjs")
+          text = path.read_text()
+          old = '  assert.doesNotMatch(geovisor, /map.on("click", "hotspot-clusters"/);'
+          new = '  assert.equal(geovisor.includes(\'map.on("click", "hotspot-clusters"\'), false);'
+          if old not in text:
+              raise SystemExit("No se encontró la aserción MB-09 que debía corregirse")
+          path.write_text(text.replace(old, new))
+          PY
       - run: npm ci
       - name: Lint
         run: npm run lint
