@@ -31,6 +31,8 @@ jobs:
         run: env -u GITHUB_ACTIONS npm test
       - name: Probar exportación GitHub Pages
         run: npm run build:pages
+      - name: Ejecutar E2E real del dashboard en Chrome
+        run: npm run test:e2e
       - name: Validar responsive no cartográfico en Chrome
         run: node scripts/check-responsive-layout.mjs
       - name: Medir presupuesto JavaScript de Pages
