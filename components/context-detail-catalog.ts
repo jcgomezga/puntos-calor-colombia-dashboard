@@ -1,5 +1,7 @@
 "use client";
 
+import { normalizeContextDetail } from "@/lib/context-detail-values.mjs";
+
 export type ContextDetail = Record<string, unknown>;
 
 type ContextDetailShard = {
@@ -53,5 +55,5 @@ export async function loadContextDetail(detailKey: string): Promise<ContextDetai
     shardPromises.set(descriptor.cacheKey, promise);
   }
   const shard = await promise;
-  return shard.records?.[key] ?? null;
+  return normalizeContextDetail(key, shard.records?.[key] ?? null) as ContextDetail | null;
 }
