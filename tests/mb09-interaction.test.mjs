@@ -41,6 +41,9 @@ test("exposes coincident context entities through a native selector", () => {
   assert.match(source, /contextFeatureLabel/);
   assert.match(source, /select\.addEventListener\("change"/);
   assert.match(css, /\.context-match-selector select/);
+  assert.match(source, /maxWidth: "420px"/);
+  assert.match(css, /\.geovisor-context-selection \{ width: min\(390px, calc\(100vw - 72px\)\)/);
+  assert.match(css, /\.context-match-detail \.geovisor-popup strong \{[^}]*overflow-wrap: anywhere/);
 });
 
 test("returns to a valid available query mode when a queried layer is disabled", () => {

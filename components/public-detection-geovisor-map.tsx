@@ -192,7 +192,7 @@ function contextSelectionPopup(features: MapGeoJSONFeature[], lngLat: maplibregl
   const note = document.createElement("span"); note.textContent = "Selecciona la entidad para consultar su ficha.";
   heading.append(strong, note); root.append(heading);
   const detailHost = document.createElement("div"); detailHost.className = "context-match-detail";
-  const popup = new maplibregl.Popup({ offset: 8, closeButton: true }).setLngLat(lngLat).setDOMContent(root);
+  const popup = new maplibregl.Popup({ offset: 8, closeButton: true, maxWidth: "420px" }).setLngLat(lngLat).setDOMContent(root);
   let requestVersion = 0;
   const renderFeature = (feature: MapGeoJSONFeature) => {
     const version = ++requestVersion;
