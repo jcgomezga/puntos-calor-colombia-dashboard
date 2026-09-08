@@ -45,7 +45,7 @@ Las pruebas recorren todos los puntos del universo operativo y verifican que cad
 
 La situación ANLA se representa en cada detección mediante un bitmask: evaluación y licenciado pueden coexistir. MB-06 no cambia esa lógica; la hace visible y comprensible.
 
-La prueba del dataset publicado registró **347 detecciones** con ambas etiquetas ANLA simultáneamente. Por tanto, los filtros `En evaluación` y `Licenciado` no constituyen particiones mutuamente excluyentes y sus subtotales no deben sumarse.
+La prueba del dataset publicado registró **347 detecciones** con ambas etiquetas ANLA simultáneamente. Por tanto, los filtros `En evaluación` y `Licenciado` no constituyen particiones mutuamente excluyentes y sus subtotales por situación no deben sumarse.
 
 La advertencia aparece tanto en el dashboard como en la página de metodología.
 
@@ -69,6 +69,19 @@ MB-06 no modifica geometrías, clustering, fuentes/capas, simbología, prioridad
 
 ## Validación
 
-La primera ejecución del PR (`34245242854`) confirmó correctamente los conteos anteriores y que las nuevas pruebas de MB-06 pasaban, pero detectó dos regresiones en pruebas históricas de claridad pública por una reformulación textual de la advertencia de confianza. No fue un fallo funcional. Se restauró el contrato verbal esperado —`no deben interpretarse como una probabilidad de que exista un incendio`— y se mantuvo la explicación más precisa por sensor.
+Las primeras ejecuciones del PR sirvieron para detectar únicamente incompatibilidades de redacción con contratos históricos de claridad pública; las nuevas pruebas funcionales de MB-06 ya pasaban. Se restauraron las expresiones públicas esperadas sin retirar la explicación más precisa por sensor ni el carácter multietiqueta de ANLA.
 
-La evidencia de la ejecución final verde se añadirá antes de integrar el PR.
+La ejecución funcional final **GitHub Actions run 34246407300**, sobre el head `ed105fba2610c720510707ad87deea90214baf4b`, terminó completamente en verde:
+
+- `npm audit --omit=dev --audit-level=high`: **0 vulnerabilidades**;
+- lint: correcto;
+- Vite/Vinext y suite web: **55/55 pruebas**, 0 fallos;
+- reconciliación publicada: **23.551** detecciones operativas, **22** sin territorio, **25** sin cobertura y **347** con ambas situaciones ANLA;
+- exportación Next.js/GitHub Pages: correcta con `/` y `/metodologia` estáticas;
+- gate responsive Chrome: correcto en 1440×900, 1024×768, 768×1024 y 390×844, incluidos los nuevos filtros;
+- presupuesto JavaScript: mayor chunk **1.081.567 bytes gzip**, por debajo del límite bloqueante de 1.250.000 bytes; total JS **2.011.004 bytes gzip**;
+- catálogo de fichas territoriales preservado: **22.952 fichas**, **439 fragmentos**, máximo **82.273 bytes**.
+
+La advertencia de runtime de GitHub Actions sobre `checkout@v4` / `setup-node@v4` y Node 20/24 continúa siendo una deuda de mantenimiento no bloqueante y queda fuera de MB-06.
+
+Este run constituye la evidencia funcional de cierre. El commit documental posterior debe volver a pasar la misma CI antes del merge para garantizar que el head final del PR permanece verde.
