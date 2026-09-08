@@ -10,18 +10,19 @@ const municipalitiesGeo = municipalityGeoJson as unknown as FeatureCollection;
 
 type MapMode = "geovisor" | "basic";
 
-export function DashboardMapWorkspace({ mode, points, dates, sources, departmentCode, municipalityCode, onDepartment, onMunicipality }: {
+export function DashboardMapWorkspace({ mode, points, dates, sources, confidences, departmentCode, municipalityCode, onDepartment, onMunicipality }: {
   mode: MapMode;
   points: PointRow[];
   dates: string[];
   sources: string[];
+  confidences: string[];
   departmentCode: string;
   municipalityCode: string;
   onDepartment: (code: string) => void;
   onMunicipality: (code: string) => void;
 }) {
   if (mode === "geovisor") {
-    return <GeovisorMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={points} dates={dates} sources={sources} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={onDepartment} onMunicipality={onMunicipality} />;
+    return <GeovisorMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={points} dates={dates} sources={sources} confidences={confidences} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={onDepartment} onMunicipality={onMunicipality} />;
   }
 
   return <DashboardMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={points} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={onDepartment} onMunicipality={onMunicipality} />;
