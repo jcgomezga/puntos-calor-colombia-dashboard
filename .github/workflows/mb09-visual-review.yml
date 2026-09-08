@@ -1,0 +1,37 @@
+name: MB-09 revisión visual
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "components/public-detection-geovisor-map.tsx"
+      - "components/dashboard-map.tsx"
+      - "app/globals.css"
+      - "app/page.tsx"
+      - "scripts/check-geovisor-webgl-e2e.mjs"
+      - ".github/workflows/mb09-visual-review.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build:pages
+      - name: Generar capturas WebGL2
+        run: node scripts/mb09-visual-capture.mjs
+      - name: Publicar capturas
+        uses: actions/upload-artifact@v7
+        with:
+          name: mb09-visual-review
+          path: artifacts/mb09-visual
+          retention-days: 7
