@@ -1,5 +1,5 @@
 {
-  "generatedAtUtc": "2026-09-07T23:20:25Z",
+  "generatedAtUtc": "2026-09-08T03:06:36Z",
   "format": "PMTiles v3",
   "featureCounts": {
     "runap": 1909,
@@ -32,8 +32,8 @@
       "reason": "áreas no asignadas fuera del alcance visual"
     }
   },
-  "sizeBytes": 78258254,
-  "sha256": "e572d78522027c34b05a79db58dec9e65f25db142333f22007ab36fdb15f185f",
+  "sizeBytes": 60668987,
+  "sha256": "632131de714c2b9168738e0f0be6a9a1339f985a2850a020d3e67a10d28f9223",
   "sources": {
     "runap": {
       "authority": "Parques Nacionales Naturales de Colombia",
@@ -103,5 +103,10 @@
       "spatialReference": 9377,
       "url": "https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer/18"
     }
+  },
+  "details": {
+    "path": "context-details.json",
+    "recordCount": 22952,
+    "sizeBytes": 10808309
   }
 }
