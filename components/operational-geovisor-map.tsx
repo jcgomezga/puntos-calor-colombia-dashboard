@@ -6,6 +6,7 @@ import type { GeoJSONSource, Map as MapLibreMap, MapGeoJSONFeature } from "mapli
 import { Protocol } from "pmtiles";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { FeatureCollection, PointRow } from "@/components/dashboard-map";
+import { loadContextDetail } from "@/components/context-detail-catalog";
 import dashboardJson from "@/public/data/dashboard.json";
 
 const COLOMBIA_BOUNDS: maplibregl.LngLatBoundsLike = [[-81.85, -4.35], [-66.75, 13.55]];
@@ -330,8 +331,12 @@ function landCoverPopup(feature: MapGeoJSONFeature) {
   return root;
 }
 
-function contextPopup(feature: MapGeoJSONFeature) {
-  const properties = feature.properties as Record<string, unknown>;
+function contextPopup(
+  feature: MapGeoJSONFeature,
+  details: Record<string, unknown> | null = null,
+  status: "loading" | "ready" | "error" = "ready",
+) {
+  const properties = { ...(feature.properties as Record<string, unknown>), ...(details ?? {}) };
   const sourceLayer = feature.sourceLayer;
   const root = document.createElement("div");
   root.className = "geovisor-popup";
@@ -408,6 +413,8 @@ function contextPopup(feature: MapGeoJSONFeature) {
     addIf("Minuta oficial", properties.url_minuta);
     rows.push(popupRow("Lectura", "Coincidencia/proximidad espacial; no implica causalidad"));
   }
+  if (status === "loading") rows.push(popupRow("Detalle", "Cargando ficha completa…"));
+  if (status === "error") rows.push(popupRow("Detalle", "No fue posible cargar los atributos ampliados; se muestran los datos disponibles en la tesela."));
   root.append(title, ...rows);
   return root;
 }
@@ -650,7 +657,20 @@ export function OperationalGeovisorMap({
           if (queryModeRef.current === "context") {
             const feature = map.queryRenderedFeatures(event.point, { layers: [...CONTEXT_LAYER_IDS] })[0];
             if (!feature) return;
-            new maplibregl.Popup({ offset: 8, closeButton: true }).setLngLat(event.lngLat).setDOMContent(contextPopup(feature)).addTo(map);
+            const detailKey = present((feature.properties as Record<string, unknown>).detail_key);
+            const popup = new maplibregl.Popup({ offset: 8, closeButton: true })
+              .setLngLat(event.lngLat)
+              .setDOMContent(contextPopup(feature, null, detailKey ? "loading" : "ready"))
+              .addTo(map);
+            if (detailKey) {
+              void loadContextDetail(detailKey)
+                .then((details) => {
+                  if (popup.isOpen()) popup.setDOMContent(contextPopup(feature, details, "ready"));
+                })
+                .catch(() => {
+                  if (popup.isOpen()) popup.setDOMContent(contextPopup(feature, null, "error"));
+                });
+            }
             return;
           }
           if (queryModeRef.current !== "territory" || !layerStateRef.current.boundaries) return;
