@@ -48,10 +48,10 @@ test("labels departments nationally and municipalities as the user zooms in", ()
   assert.match(geovisorSource, /dane-department-label-points/);
   assert.match(geovisorSource, /dane-municipality-label-points/);
   assert.match(geovisorSource, /id: DEPARTMENT_LABEL_LAYER_ID/);
-  assert.match(geovisorSource, /maxzoom: 6\.8/);
+  assert.match(geovisorSource, /maxzoom: NATIONAL_DEPARTMENT_LABEL_MAX_ZOOM/);
   assert.match(geovisorSource, /id: MUNICIPALITY_LABEL_LAYER_ID/);
-  assert.match(geovisorSource, /minzoom: 6\.2/);
-  assert.match(geovisorSource, /departmentCode === "00" \? null/);
+  assert.match(geovisorSource, /minzoom: NATIONAL_MUNICIPALITY_LABEL_MIN_ZOOM/);
+  assert.match(geovisorSource, /hasDepartmentSelection/);
   assert.match(geovisorSource, /DEPARTMENT_LABEL_LAYER_ID, MUNICIPALITY_LABEL_LAYER_ID/);
 });
 
