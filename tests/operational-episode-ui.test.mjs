@@ -14,8 +14,10 @@ test("uses one public operational sensor universe and keeps A-B outside the inte
   assert.doesNotMatch(pageSource, /setScenario/);
   assert.doesNotMatch(pageSource, /Escenario de sensores/);
   assert.doesNotMatch(pageSource, />A · todos</);
-  assert.doesNotMatch(pageSource, />B · sin SNPP</);
+  assert.doesNotMatch(pageSource, />B · sin SNPP/);
+  assert.doesNotMatch(pageSource, /sensibilidad histórica A\/B/);
   assert.match(pageSource, /if \(point\[7\] !== 1\) return false/);
+  assert.match(pageSource, /sensibilidad por composición instrumental/);
   assert.match(sensitivityReport, /Escenario A/);
   assert.match(sensitivityReport, /Escenario B/);
 });
@@ -38,6 +40,16 @@ test("pins the adopted episode configuration and responsible interpretation", ()
   assert.match(pageSource, /1 km · 24 h · ≥3/);
   assert.match(pageSource, /agrupación algorítmica/);
   assert.match(pageSource, /no confirma por sí sola un incendio/);
+});
+
+test("describes context filters from the episode perspective", () => {
+  assert.match(pageSource, /Sin filtro por RUNAP/);
+  assert.match(pageSource, /Con miembro dentro de RUNAP/);
+  assert.match(pageSource, /Sin filtro por ANM/);
+  assert.match(pageSource, /Con miembro dentro de título vigente/);
+  assert.match(pageSource, /Sin filtro por ANLA/);
+  assert.match(pageSource, /Con miembro hasta 1 km/);
+  assert.match(pageSource, /Sin filtro por ANH/);
 });
 
 test("publishes complete context cards with non-causal interpretation", () => {
