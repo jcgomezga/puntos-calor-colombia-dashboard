@@ -15,23 +15,23 @@ test("makes detection an explicit click-query mode", () => {
   assert.match(source, /aria-pressed=\{queryMode === "hotspot"\}/);
 });
 
-test("does not let hotspot handlers intercept another explicit query mode", () => {
-  assert.match(source, /map\.on\("click", "hotspot-clusters", async \(event\) => \{ if \(queryModeRef\.current !== "hotspot"\) return;/);
-  assert.match(source, /map\.on\("click", "hotspot-unclustered", \(event\) => \{ if \(queryModeRef\.current !== "hotspot"\) return;/);
-  const generic = source.indexOf('map.on("click", (event) => {');
-  const coverage = source.indexOf('queryModeRef.current === "coverage"', generic);
-  const context = source.indexOf('queryModeRef.current === "context"', generic);
-  assert.ok(generic >= 0 && coverage > generic && context > coverage);
-  const beforeCoverage = source.slice(generic, coverage);
-  assert.match(beforeCoverage, /queryModeRef\.current === "hotspot"/);
-  assert.doesNotMatch(beforeCoverage, /^\s*if \(map\.queryRenderedFeatures/m, "No debe existir un retorno global por hotspot antes de evaluar el modo elegido.");
+test("routes every spatial query through the explicit selected mode", () => {
+  assert.match(source, /const queryAtPoint = async/);
+  assert.match(source, /const mode = queryModeRef\.current;/);
+  assert.match(source, /if \(mode === "hotspot"\)/);
+  assert.match(source, /if \(mode === "coverage"/);
+  assert.match(source, /if \(mode === "context"\)/);
+  assert.equal(source.includes('map.on("click", "hotspot-clusters"'), false, "No deben quedar handlers de clic por capa que eludan el modo elegido.");
+  assert.equal(source.includes('map.on("click", "hotspot-unclustered"'), false, "No deben quedar handlers de clic por capa que eludan el modo elegido.");
+  assert.match(source, /map\.on\("click", \(event\) => \{ void queryAtPoint\(event\.point, event\.lngLat\); \}\)/);
 });
 
 test("collects and deduplicates every rendered context entity instead of silently taking index zero", () => {
   assert.match(source, /function uniqueContextFeatures\(features: MapGeoJSONFeature\[\]\)/);
   assert.match(source, /contextFeatureIdentity/);
-  assert.match(source, /uniqueContextFeatures\(map\.queryRenderedFeatures\(event\.point, \{ layers: contextLayers \}\)\)/);
-  assert.doesNotMatch(source, /queryRenderedFeatures\(event\.point, \{ layers: contextLayers \}\)\[0\]/);
+  assert.match(source, /uniqueContextFeatures\(map\.queryRenderedFeatures\(point, \{ layers: contextLayers \}\)\)/);
+  assert.doesNotMatch(source, /queryRenderedFeatures\(point, \{ layers: contextLayers \}\)\[0\]/);
+  assert.match(source, /contextSelectionPopup\(features, lngLat\)/);
 });
 
 test("exposes coincident context entities through a native selector", () => {
