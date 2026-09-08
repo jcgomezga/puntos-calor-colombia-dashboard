@@ -2,9 +2,10 @@
 """Construye las teselas de contexto con atributos de consulta ampliados.
 
 Reutiliza el motor geométrico y las salvaguardas de build_context_tiles.py, pero
-publica en las teselas un subconjunto más completo de atributos ya descargados
-de las fuentes oficiales. No altera las reglas espaciales ni el universo de
-geometrías: RUNAP, ANM, ANLA y ANH conservan exactamente el mismo alcance.
+publica un subconjunto de atributos oficiales útil para consulta sin duplicar en
+cada tesela campos narrativos extensos. No altera las reglas espaciales ni el
+universo de geometrías: RUNAP, ANM, ANLA y ANH conservan exactamente el mismo
+alcance.
 """
 
 from __future__ import annotations
@@ -79,9 +80,6 @@ def anla_features(data_dir: Path, transformer) -> Iterable[dict[str, object]]:
                 "fecha_acto": BASE.clean(attributes.get("fec_act_ad")),
                 "articulo_acto": BASE.clean(attributes.get("art_act_ad")),
                 "contrato": BASE.clean(attributes.get("contrato")),
-                "descripcion": BASE.clean(attributes.get("descrip")),
-                "nomenclatura": BASE.clean(attributes.get("nomenclat")),
-                "observacion": BASE.clean(attributes.get("observ")),
                 "area_ha": attributes.get("area_ha"),
                 "longitud_m": attributes.get("longitud_m"),
                 "tipo_infraestructura": BASE.clean(attributes.get("tipo_infra")),
