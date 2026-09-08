@@ -26,7 +26,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - name: Probar build Vite/Vinext y pruebas web
-        run: npm test
+        run: env -u GITHUB_ACTIONS npm test
       - name: Probar exportación GitHub Pages
         run: npm run build:pages
       - name: Verificar worker MapLibre publicable
