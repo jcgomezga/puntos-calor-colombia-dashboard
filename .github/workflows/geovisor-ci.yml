@@ -29,9 +29,21 @@ jobs:
         run: env -u GITHUB_ACTIONS npm test
       - name: Probar exportación GitHub Pages
         run: npm run build:pages
-      - name: Verificar worker MapLibre publicable
+      - name: Verificar activos publicables del geovisor
         run: |
           test -f public/maplibre/maplibre-gl-worker.mjs
           test -f public/maplibre/maplibre-gl-shared.mjs
           test -f out/maplibre/maplibre-gl-worker.mjs
           test -f out/maplibre/maplibre-gl-shared.mjs
+          test -f public/data/context-details/manifest.json
+          test -f out/data/context-details/manifest.json
+          node --input-type=module <<'NODE'
+          import { readFileSync } from "node:fs";
+          for (const path of ["public/data/context-details/manifest.json", "out/data/context-details/manifest.json"]) {
+            const manifest = JSON.parse(readFileSync(path, "utf8"));
+            if (manifest.shardCount !== 128) throw new Error(`${path}: shardCount inesperado`);
+            if (manifest.recordCount < 22_847) throw new Error(`${path}: faltan fichas territoriales`);
+            if (manifest.maxShardBytes >= 500_000) throw new Error(`${path}: fragmento demasiado grande (${manifest.maxShardBytes} bytes)`);
+            console.log(`${path}: ${manifest.recordCount} fichas, ${manifest.writtenShards} fragmentos, máximo ${manifest.maxShardBytes} bytes`);
+          }
+          NODE
