@@ -82,5 +82,5 @@ test("public methodology distinguishes VIIRS and MODIS confidence semantics", ()
   assert.match(methodologySource, /VIIRS y MODIS no usan la misma escala/);
   assert.match(methodologySource, /Baja, Nominal o Alta/);
   assert.match(methodologySource, /0 a 100&nbsp;%/);
-  assert.match(methodologySource, /no es la probabilidad de que exista un incendio/);
+  assert.match(methodologySource, /no deben interpretarse como una probabilidad de que exista un incendio/);
 });
