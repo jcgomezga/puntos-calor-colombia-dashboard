@@ -4,7 +4,7 @@ import { relative, resolve } from "node:path";
 
 const outputRoot = resolve(process.cwd(), process.env.PAGES_OUTPUT_DIR ?? "out");
 const chunksRoot = resolve(outputRoot, "_next/static/chunks");
-const defaultLargestChunkBudget = 2_100_000;
+const defaultLargestChunkBudget = 1_250_000;
 const largestChunkBudget = Number(process.env.PAGES_LARGEST_JS_GZIP_BUDGET_BYTES ?? defaultLargestChunkBudget);
 
 function collectJavaScriptFiles(directory) {
