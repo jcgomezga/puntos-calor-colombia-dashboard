@@ -6,6 +6,7 @@ on:
     branches: [feature/geovisor-fase-8a]
     paths:
       - "scripts/build_context_tiles.py"
+      - "scripts/build_context_tiles_enriched.py"
       - "requirements-tiles.txt"
       - "data/boundaries/runap_join.geojson.gz"
       - "data/boundaries/anm_titles_join.geojson.gz"
@@ -47,8 +48,8 @@ jobs:
           make -C "$RUNNER_TEMP/tippecanoe" -j2
       - name: Probar conversión geométrica
         run: python -m unittest tests_py.test_build_context_tiles -v
-      - name: Construir archivo PMTiles
-        run: python scripts/build_context_tiles.py --tippecanoe "$RUNNER_TEMP/tippecanoe/tippecanoe"
+      - name: Construir archivo PMTiles con atributos de consulta
+        run: python scripts/build_context_tiles_enriched.py --tippecanoe "$RUNNER_TEMP/tippecanoe/tippecanoe"
       - name: Verificar salida publicable
         run: |
           python - <<'PY'
@@ -72,6 +73,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data/context-layers.pmtiles public/data/context-layers.json
-          git commit -m "data: construir teselas territoriales PMTiles"
+          git commit -m "data: enriquecer fichas territoriales PMTiles"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
