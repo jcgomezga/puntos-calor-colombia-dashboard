@@ -58,7 +58,7 @@ const CONTEXT_GROUPS = {
 let pmtilesProtocol: Protocol | null = null;
 
 type LayerState = { landCover: boolean; hotspots: boolean; boundaries: boolean; runap: boolean; anm: boolean; anla: boolean; anh: boolean };
-type QueryMode = "territory" | "coverage" | "context";
+type QueryMode = "hotspot" | "territory" | "coverage" | "context";
 type TerritoryNames = Record<string, string>;
 const INITIAL_LAYERS: LayerState = { landCover: true, hotspots: true, boundaries: true, runap: false, anm: false, anla: false, anh: false };
 
@@ -163,6 +163,58 @@ function contextPopup(feature: MapGeoJSONFeature, details: Record<string, unknow
   if (status === "error") rows.push(popupRow("Detalle", "No fue posible cargar los atributos ampliados; se muestran los datos disponibles en la tesela."));
   root.append(title, ...rows); return root;
 }
+function contextFeatureIdentity(feature: MapGeoJSONFeature) {
+  const p = feature.properties as Record<string, unknown>;
+  const detailKey = present(p.detail_key);
+  if (detailKey) return `${feature.sourceLayer ?? "contexto"}:detail:${detailKey}`;
+  if (feature.id !== null && feature.id !== undefined) return `${feature.sourceLayer ?? "contexto"}:id:${String(feature.id)}`;
+  const fallback = firstProperty(p, ["codigo", "expediente", "contrato_id", "contrato", "nombre", "proyecto", "area", "solicitante"]);
+  return `${feature.sourceLayer ?? "contexto"}:fallback:${fallback || JSON.stringify(p)}`;
+}
+function uniqueContextFeatures(features: MapGeoJSONFeature[]) {
+  const seen = new Set<string>();
+  return features.filter((feature) => { const key = contextFeatureIdentity(feature); if (seen.has(key)) return false; seen.add(key); return true; });
+}
+function contextFeatureLabel(feature: MapGeoJSONFeature) {
+  const p = feature.properties as Record<string, unknown>;
+  const source = (feature.sourceLayer || "contexto").toUpperCase();
+  const label = feature.sourceLayer === "runap" ? firstProperty(p, ["nombre", "categoria"]) :
+    feature.sourceLayer === "anm" ? firstProperty(p, ["codigo", "solicitante"]) :
+    feature.sourceLayer === "anla" ? firstProperty(p, ["expediente", "proyecto"]) :
+    feature.sourceLayer === "anh" ? firstProperty(p, ["contrato", "area", "contrato_id"]) : "";
+  return label ? `${source} · ${label}` : source;
+}
+function contextSelectionPopup(features: MapGeoJSONFeature[], lngLat: maplibregl.LngLatLike) {
+  const root = document.createElement("div"); root.className = "geovisor-context-selection";
+  const heading = document.createElement("div"); heading.className = "context-match-heading";
+  const strong = document.createElement("strong"); strong.textContent = features.length === 1 ? "1 coincidencia contextual" : `${features.length} coincidencias contextuales`;
+  const note = document.createElement("span"); note.textContent = "Selecciona la entidad para consultar su ficha.";
+  heading.append(strong, note); root.append(heading);
+  const detailHost = document.createElement("div"); detailHost.className = "context-match-detail";
+  const popup = new maplibregl.Popup({ offset: 8, closeButton: true }).setLngLat(lngLat).setDOMContent(root);
+  let requestVersion = 0;
+  const renderFeature = (feature: MapGeoJSONFeature) => {
+    const version = ++requestVersion;
+    const detailKey = present((feature.properties as Record<string, unknown>).detail_key);
+    detailHost.replaceChildren(contextPopup(feature, null, detailKey ? "loading" : "ready"));
+    if (!detailKey) return;
+    void loadContextDetail(detailKey).then((details) => {
+      if (version === requestVersion && popup.isOpen()) detailHost.replaceChildren(contextPopup(feature, details, "ready"));
+    }).catch(() => {
+      if (version === requestVersion && popup.isOpen()) detailHost.replaceChildren(contextPopup(feature, null, "error"));
+    });
+  };
+  if (features.length > 1) {
+    const label = document.createElement("label"); label.className = "context-match-selector"; label.textContent = "Entidad coincidente";
+    const select = document.createElement("select"); select.setAttribute("aria-label", "Entidad contextual coincidente");
+    features.forEach((feature, index) => { const option = document.createElement("option"); option.value = String(index); option.textContent = contextFeatureLabel(feature); select.append(option); });
+    select.addEventListener("change", () => renderFeature(features[Number(select.value)] ?? features[0]));
+    label.append(select); root.append(label);
+  }
+  root.append(detailHost); renderFeature(features[0]);
+  return popup;
+}
+
 function geometryCoordinates(feature: FeatureCollection["features"][number]): number[][][] {
   if (feature.geometry.type === "Polygon") return feature.geometry.coordinates as number[][][];
   return (feature.geometry.coordinates as number[][][][]).map((polygon) => polygon[0]).filter(Boolean);
@@ -196,9 +248,9 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
 }) {
   const containerRef = useRef<HTMLDivElement>(null), mapRef = useRef<MapLibreMap | null>(null);
   const callbacksRef = useRef({ onDepartment, onMunicipality }), selectionRef = useRef({ departmentCode, municipalityCode });
-  const queryModeRef = useRef<QueryMode>("territory"), layerStateRef = useRef<LayerState>(INITIAL_LAYERS);
+  const queryModeRef = useRef<QueryMode>("hotspot"), layerStateRef = useRef<LayerState>(INITIAL_LAYERS);
   const [ready, setReady] = useState(false), [mapError, setMapError] = useState("");
-  const [layers, setLayers] = useState<LayerState>(INITIAL_LAYERS), [queryMode, setQueryMode] = useState<QueryMode>("territory");
+  const [layers, setLayers] = useState<LayerState>(INITIAL_LAYERS), [queryMode, setQueryMode] = useState<QueryMode>("hotspot");
   const [landCoverOpacity, setLandCoverOpacity] = useState(DEFAULT_LAND_COVER_OPACITY);
   const hotspotData = useMemo(() => hotspotGeoJson(points, dates, sources, confidences), [points, dates, sources, confidences]);
   const departmentLabelData = useMemo(() => territoryLabels(departments.features, departmentNames, "DPTO_CCDGO"), [departments.features, departmentNames]);
@@ -243,16 +295,16 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
         map.addLayer({ id: "hotspot-clusters", type: "circle", source: "hotspots", filter: ["has", "point_count"], paint: { "circle-color": ["step", ["get", "point_count"], "#f39a53", 100, "#e56235", 1000, "#ba2f25"], "circle-radius": ["step", ["get", "point_count"], 15, 100, 20, 1000, 26], "circle-stroke-color": "#fff", "circle-stroke-width": 1.5, "circle-opacity": 0.9 } });
         map.addLayer({ id: "hotspot-cluster-count", type: "symbol", source: "hotspots", filter: ["has", "point_count"], layout: { "text-field": ["get", "point_count_abbreviated"], "text-size": 11 }, paint: { "text-color": "#fff" } });
         map.addLayer({ id: "hotspot-unclustered", type: "circle", source: "hotspots", filter: ["!", ["has", "point_count"]], paint: { "circle-color": "#d93f2b", "circle-radius": ["interpolate", ["linear"], ["zoom"], 4, 3.2, 10, 6.2], "circle-stroke-color": "#fff", "circle-stroke-width": 1, "circle-opacity": 0.86 } });
-        map.on("click", "hotspot-clusters", async (event) => { const cluster = event.features?.[0]; if (!cluster || cluster.geometry.type !== "Point") return; const source = map.getSource("hotspots") as GeoJSONSource; const zoom = await source.getClusterExpansionZoom(Number(cluster.properties.cluster_id)); map.easeTo({ center: cluster.geometry.coordinates as [number, number], zoom }); });
-        map.on("click", "hotspot-unclustered", (event) => { const feature = event.features?.[0]; if (!feature || feature.geometry.type !== "Point") return; new maplibregl.Popup({ offset: 10, closeButton: true }).setLngLat(feature.geometry.coordinates as [number, number]).setDOMContent(hotspotPopup(feature)).addTo(map); });
+        map.on("click", "hotspot-clusters", async (event) => { if (queryModeRef.current !== "hotspot") return; const cluster = event.features?.[0]; if (!cluster || cluster.geometry.type !== "Point") return; const source = map.getSource("hotspots") as GeoJSONSource; const zoom = await source.getClusterExpansionZoom(Number(cluster.properties.cluster_id)); map.easeTo({ center: cluster.geometry.coordinates as [number, number], zoom }); });
+        map.on("click", "hotspot-unclustered", (event) => { if (queryModeRef.current !== "hotspot") return; const feature = event.features?.[0]; if (!feature || feature.geometry.type !== "Point") return; new maplibregl.Popup({ offset: 10, closeButton: true }).setLngLat(feature.geometry.coordinates as [number, number]).setDOMContent(hotspotPopup(feature)).addTo(map); });
         map.on("click", (event) => {
-          if (map.queryRenderedFeatures(event.point, { layers: ["hotspot-clusters", "hotspot-unclustered"] }).length) return;
+          if (queryModeRef.current === "hotspot") { if (map.queryRenderedFeatures(event.point, { layers: ["hotspot-clusters", "hotspot-unclustered"] }).length) return; return; }
           if (queryModeRef.current === "coverage" && layerStateRef.current.landCover) { const feature = map.queryRenderedFeatures(event.point, { layers: LAND_COVER_LAYER_IDS })[0]; if (!feature) return; new maplibregl.Popup({ offset: 8, closeButton: true }).setLngLat(event.lngLat).setDOMContent(landCoverPopup(feature)).addTo(map); return; }
           if (queryModeRef.current === "context") {
-            const contextLayers = visibleContextLayerIds(layerStateRef.current); const feature = contextLayers.length ? map.queryRenderedFeatures(event.point, { layers: contextLayers })[0] : undefined; if (!feature) return;
-            const detailKey = present((feature.properties as Record<string, unknown>).detail_key);
-            const popup = new maplibregl.Popup({ offset: 8, closeButton: true }).setLngLat(event.lngLat).setDOMContent(contextPopup(feature, null, detailKey ? "loading" : "ready")).addTo(map);
-            if (detailKey) void loadContextDetail(detailKey).then((details) => { if (popup.isOpen()) popup.setDOMContent(contextPopup(feature, details, "ready")); }).catch(() => { if (popup.isOpen()) popup.setDOMContent(contextPopup(feature, null, "error")); });
+            const contextLayers = visibleContextLayerIds(layerStateRef.current);
+            const features = contextLayers.length ? uniqueContextFeatures(map.queryRenderedFeatures(event.point, { layers: contextLayers })) : [];
+            if (!features.length) return;
+            contextSelectionPopup(features, event.lngLat).addTo(map);
             return;
           }
           if (queryModeRef.current !== "territory" || !layerStateRef.current.boundaries) return;
@@ -287,8 +339,10 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
   const toggleLayer = (key: keyof LayerState) => {
     const next = { ...layers, [key]: !layers[key] }; setLayers(next);
     if ((key === "runap" || key === "anm" || key === "anla" || key === "anh") && next[key]) setQueryMode("context");
-    if (queryMode === "context" && !next.runap && !next.anm && !next.anla && !next.anh) setQueryMode("territory");
-    if (queryMode === "coverage" && !next.landCover) setQueryMode("territory");
+    if (queryMode === "context" && !next.runap && !next.anm && !next.anla && !next.anh) setQueryMode("hotspot");
+    if (queryMode === "coverage" && !next.landCover) setQueryMode("hotspot");
+    if (queryMode === "territory" && !next.boundaries) setQueryMode("hotspot");
+    if (queryMode === "hotspot" && !next.hotspots) setQueryMode(next.boundaries ? "territory" : next.landCover ? "coverage" : "context");
   };
   const hasVisibleContext = layers.runap || layers.anm || layers.anla || layers.anh;
   return <div className="geovisor-map" aria-label={`Geovisor interactivo con ${points.length.toLocaleString("es-CO")} detecciones térmicas`}>
@@ -300,7 +354,7 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
       <label className="opacity-control"><span>Opacidad de coberturas</span><input type="range" min="0.15" max="0.85" step="0.05" value={landCoverOpacity} disabled={!layers.landCover} onChange={(e) => setLandCoverOpacity(Number(e.target.value))} /></label>
       <div className="layer-group-title">Contexto territorial</div>
       <label><input type="checkbox" checked={layers.runap} onChange={() => toggleLayer("runap")} /><span className="layer-symbol runap" /> Áreas protegidas RUNAP</label><label><input type="checkbox" checked={layers.anm} onChange={() => toggleLayer("anm")} /><span className="layer-symbol anm" /> Títulos mineros ANM</label><label><input type="checkbox" checked={layers.anla} onChange={() => toggleLayer("anla")} /><span className="layer-symbol anla" /> Proyectos ANLA</label><label><input type="checkbox" checked={layers.anh} onChange={() => toggleLayer("anh")} /><span className="layer-symbol anh" /> Áreas asignadas ANH</label>
-      <div className="query-control"><span>Consulta con clic</span><div role="group" aria-label="Capa consultada al hacer clic"><button type="button" className={queryMode === "territory" ? "active" : ""} disabled={!layers.boundaries} onClick={() => setQueryMode("territory")}>Territorio</button><button type="button" className={queryMode === "coverage" ? "active" : ""} disabled={!layers.landCover} onClick={() => setQueryMode("coverage")}>Cobertura</button><button type="button" className={queryMode === "context" ? "active" : ""} disabled={!hasVisibleContext} onClick={() => setQueryMode("context")}>Contexto</button></div></div>
+      <div className="query-control"><span>Consulta con clic</span><div role="group" aria-label="Capa consultada al hacer clic"><button type="button" className={queryMode === "hotspot" ? "active" : ""} aria-pressed={queryMode === "hotspot"} disabled={!layers.hotspots} onClick={() => setQueryMode("hotspot")}>Detección</button><button type="button" className={queryMode === "territory" ? "active" : ""} aria-pressed={queryMode === "territory"} disabled={!layers.boundaries} onClick={() => setQueryMode("territory")}>Territorio</button><button type="button" className={queryMode === "coverage" ? "active" : ""} aria-pressed={queryMode === "coverage"} disabled={!layers.landCover} onClick={() => setQueryMode("coverage")}>Cobertura</button><button type="button" className={queryMode === "context" ? "active" : ""} aria-pressed={queryMode === "context"} disabled={!hasVisibleContext} onClick={() => setQueryMode("context")}>Contexto</button></div></div>
       <details><summary>Leyenda de coberturas</summary><div className="coverage-legend">{FAMILY_LEGEND.map(([label, color]) => <span key={label}><i style={{ backgroundColor: color }} />{label}</span>)}</div></details>
     </aside>
   </div>;
