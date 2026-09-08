@@ -1,0 +1,46 @@
+name: Finalizar fichas territoriales diferidas
+
+on:
+  push:
+    branches: [feature/geovisor-fase-8a]
+    paths:
+      - "scripts/finalize_context_detail_ui.py"
+      - ".github/workflows/finalize-context-detail-ui.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: finalize-context-detail-ui-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  migrate:
+    if: github.ref == 'refs/heads/feature/geovisor-fase-8a'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Aplicar conexión diferida de fichas
+        run: python scripts/finalize_context_detail_ui.py
+      - name: Verificar cambios
+        run: |
+          git diff --check
+          node --test tests/context-detail-catalog.test.mjs
+      - name: Guardar migración en la rama piloto
+        shell: bash
+        run: |
+          FILES=(components/operational-geovisor-map.tsx components/context-detail-catalog.ts tests/context-detail-catalog.test.mjs)
+          if [[ -z "$(git status --porcelain -- "${FILES[@]}")" ]]; then
+            echo "La migración ya estaba aplicada."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${FILES[@]}"
+          git commit -m "feat: cargar fichas territoriales completas bajo demanda"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
