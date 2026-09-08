@@ -1,0 +1,39 @@
+name: Auditar sensibilidad A-B por episodios
+
+on:
+  push:
+    branches: [feature/geovisor-fase-8a]
+    paths:
+      - scripts/analyze_episode_relation_sensitivity.py
+      - .github/workflows/episode-relation-sensitivity.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar dependencias geoespaciales
+        run: pip install -r requirements-data.txt
+      - name: Reconstruir escenarios y comparar relaciones
+        run: python scripts/analyze_episode_relation_sensitivity.py
+      - name: Mostrar resumen auditable
+        run: cat data/metadata/episode_relation_sensitivity_latest_run.json
+      - name: Publicar artefactos de auditoría
+        uses: actions/upload-artifact@v4
+        with:
+          name: episode-relation-sensitivity
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            data/episodes/relation_sensitivity_summary.csv
+            data/episodes/relation_sensitivity_rankings.csv
+            data/episodes/relation_sensitivity.json
+            data/metadata/episode_relation_sensitivity_latest_run.json
