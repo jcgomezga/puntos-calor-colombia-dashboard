@@ -43,8 +43,10 @@ test("starts the Vite preview portably on Windows and Unix-like shells", () => {
 });
 
 test("labels departments nationally and municipalities as the user zooms in", () => {
-  assert.match(geovisorEntrySource, /departmentNames = Object\.fromEntries/);
-  assert.match(geovisorEntrySource, /municipalityNames = Object\.fromEntries/);
+  assert.match(pageSource, /departmentNames = useMemo\(\(\) => Object\.fromEntries/);
+  assert.match(pageSource, /municipalityNames = useMemo\(\(\) => Object\.fromEntries/);
+  assert.match(pageSource, /departmentNames=\{departmentNames\}/);
+  assert.match(pageSource, /municipalityNames=\{municipalityNames\}/);
   assert.match(geovisorSource, /territoryLabels/);
   assert.match(geovisorSource, /dane-department-label-points/);
   assert.match(geovisorSource, /dane-municipality-label-points/);
