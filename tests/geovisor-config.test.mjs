@@ -24,14 +24,15 @@ test("keeps the geovisor implementation and the legacy fallback together", () =>
   assert.doesNotMatch(pageSource, /new Date\(dashboard\.metadata\.generatedAtUtc\)\.toLocaleString/);
 });
 
-test("publishes a stable MapLibre worker for Vite preview and GitHub Pages", () => {
+test("publishes a stable MapLibre worker and context detail shards for Vite preview and GitHub Pages", () => {
   assert.deepEqual(tsconfig.compilerOptions.paths["@/components/geovisor-map"], ["./components/geovisor-entry.tsx"]);
   assert.match(geovisorEntrySource, /setWorkerUrl\("\.\/maplibre\/maplibre-gl-worker\.mjs"\)/);
   assert.match(copyWorkerSource, /maplibre-gl-worker\.mjs/);
   assert.match(copyWorkerSource, /maplibre-gl-shared\.mjs/);
-  assert.equal(packageJson.scripts.predev, "npm run prepare:maplibre");
-  assert.equal(packageJson.scripts.prebuild, "npm run prepare:maplibre");
-  assert.equal(packageJson.scripts["prebuild:pages"], "npm run prepare:maplibre");
+  for (const hook of ["predev", "prebuild", "prebuild:pages"]) {
+    assert.match(packageJson.scripts[hook], /prepare:maplibre/);
+    assert.match(packageJson.scripts[hook], /prepare:context-details/);
+  }
 });
 
 test("starts the Vite preview portably on Windows and Unix-like shells", () => {
