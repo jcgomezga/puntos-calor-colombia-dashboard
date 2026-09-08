@@ -1,11 +1,16 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import {
   isDateLikeValue,
   normalizeContextDetail,
   normalizeDateValue,
 } from "../lib/context-detail-values.mjs";
 
+const root = fileURLToPath(new URL("..", import.meta.url));
+const loaderSource = await readFile(`${root}/components/context-detail-catalog.ts`, "utf8");
+const shardSource = await readFile(`${root}/scripts/shard-context-details.mjs`, "utf8");
 const epochMs = Date.parse("2026-08-06T00:00:00Z");
 
 test("normalizes unambiguous ArcGIS dates without guessing local formats", () => {
@@ -50,4 +55,11 @@ test("normalizes ANLA and ANH date fields while leaving RUNAP untouched", () => 
   assert.equal(anla?.fecha_acto, "2026-08-06");
   assert.equal(anh?.fecha_firma, "2026-08-06");
   assert.deepEqual(normalizeContextDetail("runap:1", runap), runap);
+});
+
+test("applies the same publication contract both at shard build time and at lazy load time", () => {
+  assert.match(loaderSource, /normalizeContextDetail\(key,/);
+  assert.match(shardSource, /normalizeContextDetail\(detailKey,/);
+  assert.match(shardSource, /suppressedAnmStateDates/);
+  assert.match(shardSource, /normalizedDateFields/);
 });
