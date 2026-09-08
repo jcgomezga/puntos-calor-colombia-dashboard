@@ -34,6 +34,34 @@ function delay(ms) {
   return new Promise((resolveDelay) => setTimeout(resolveDelay, ms));
 }
 
+async function stopChrome(process) {
+  if (!process || process.exitCode !== null || process.signalCode !== null) return;
+
+  const waitForExit = (timeoutMs) => new Promise((resolveExit) => {
+    let settled = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      process.off("exit", finish);
+      resolveExit(process.exitCode !== null || process.signalCode !== null);
+    };
+    const timer = setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      process.off("exit", finish);
+      resolveExit(false);
+    }, timeoutMs);
+    process.once("exit", finish);
+  });
+
+  try { process.kill("SIGTERM"); } catch {}
+  if (await waitForExit(3_000)) return;
+
+  try { process.kill("SIGKILL"); } catch {}
+  await waitForExit(1_000);
+}
+
 async function resolvePublicFile(pathname) {
   let relative = decodeURIComponent(pathname);
   if (relative === BASE_PATH || relative === `${BASE_PATH}/`) relative = "/";
@@ -253,7 +281,7 @@ try {
   if (chrome.exitCode && chrome.exitCode !== 0) throw new Error(`Chrome terminó con código ${chrome.exitCode}. ${chromeErrors.slice(-1000)}`);
 } finally {
   try { cdp?.socket.close(); } catch {}
-  try { chrome?.kill("SIGTERM"); } catch {}
+  await stopChrome(chrome);
   if (server) await new Promise((resolveClose) => server.close(resolveClose));
-  if (userDataDir) await rm(userDataDir, { recursive: true, force: true });
+  if (userDataDir) await rm(userDataDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
 }
