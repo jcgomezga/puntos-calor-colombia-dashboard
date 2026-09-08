@@ -30,8 +30,9 @@ test("mounts the SIG interaction tracker with production analytics", () => {
 
 test("covers the main analytical interactions of the dashboard", () => {
   for (const eventName of expectedEvents) {
-    assert.match(tracker, new RegExp(`trackAnalyticsEvent\\("${eventName}"`), `Falta instrumentar ${eventName}`);
+    assert.match(tracker, new RegExp(`"${eventName}"`), `Falta instrumentar ${eventName}`);
   }
+  assert.match(tracker, /trackAnalyticsEvent\(result\.event, result\.params\)/);
   assert.match(tracker, /\.filterbar/);
   assert.match(tracker, /aria-label="Modo de mapa"/);
   assert.match(tracker, /\.query-control/);
