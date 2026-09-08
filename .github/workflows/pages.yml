@@ -32,6 +32,8 @@ jobs:
       - name: Ejecutar pruebas antes de publicar
         run: env -u GITHUB_ACTIONS npm test
       - run: npm run build:pages
+      - name: Ejecutar E2E real antes de publicar
+        run: npm run test:e2e
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
