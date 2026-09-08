@@ -88,11 +88,17 @@ function relationLabel(value: unknown) {
   if (code === 1) return "Entre 1 y 5 km";
   return "A más de 5 km";
 }
-function hotspotGeoJson(points: PointRow[], dates: string[], sources: string[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
+function confidenceScaleLabel(source: unknown) {
+  const name = present(source);
+  if (name.startsWith("VIIRS")) return "Categoría VIIRS (Baja/Nominal/Alta)";
+  if (name.startsWith("MODIS")) return "MODIS (0–100 %)";
+  return "Escala propia del producto";
+}
+function hotspotGeoJson(points: PointRow[], dates: string[], sources: string[], confidences: string[]): GeoJSON.FeatureCollection<GeoJSON.Point> {
   return { type: "FeatureCollection", features: points.map((point, index) => ({
     type: "Feature", id: index, geometry: { type: "Point", coordinates: [point[0], point[1]] }, properties: {
       date: dates[point[4]] ?? "Sin fecha", minute: point[5], source: sources[point[6]] ?? "Fuente no identificada",
-      frp: point[8], confidence: point[9], protected: point[11] === 1, mining: point[13] === 1,
+      frp: point[8], confidence: confidences[point[9]] ?? "Sin dato", protected: point[11] === 1, mining: point[13] === 1,
       anlaRelation: point[14] ?? 0, anhRelation: point[16] ?? 0,
     },
   })) };
@@ -104,7 +110,8 @@ function hotspotPopup(feature: MapGeoJSONFeature) {
   const minute = Number(p.minute);
   const hour = Number.isFinite(minute) ? `${String(Math.floor(minute / 60)).padStart(2, "0")}:${String(minute % 60).padStart(2, "0")}` : "—";
   root.append(title, popupRow("Fecha", `${present(p.date) || "Sin fecha"} · ${hour}`), popupRow("Sensor", present(p.source) || "Sin dato"),
-    popupRow("FRP", p.frp == null ? "Sin dato" : humanNumber(p.frp, " MW")), popupRow("Confianza", humanNumber(p.confidence)),
+    popupRow("FRP", p.frp == null ? "Sin dato" : humanNumber(p.frp, " MW")), popupRow("Confianza", present(p.confidence) || "Sin dato"),
+    popupRow("Escala de confianza", confidenceScaleLabel(p.source)), popupRow("Lectura", "Indicador del producto; no es probabilidad de incendio ni escala comparable entre sensores"),
     popupRow("RUNAP", p.protected ? "Dentro" : "Fuera"), popupRow("Título ANM", p.mining ? "Dentro" : "Fuera"),
     popupRow("Proyecto ANLA", relationLabel(p.anlaRelation)), popupRow("Área ANH", relationLabel(p.anhRelation)));
   return root;
@@ -183,9 +190,9 @@ function visibleContextLayerIds(state: LayerState) {
   return (Object.keys(CONTEXT_GROUPS) as Array<keyof typeof CONTEXT_GROUPS>).flatMap((key) => state[key] ? [...CONTEXT_GROUPS[key]] : []);
 }
 
-export function PublicDetectionGeovisorMap({ departments, municipalities, departmentNames, municipalityNames, points, dates, sources, departmentCode, municipalityCode, onDepartment, onMunicipality }: {
+export function PublicDetectionGeovisorMap({ departments, municipalities, departmentNames, municipalityNames, points, dates, sources, confidences, departmentCode, municipalityCode, onDepartment, onMunicipality }: {
   departments: FeatureCollection; municipalities: FeatureCollection; departmentNames: TerritoryNames; municipalityNames: TerritoryNames;
-  points: PointRow[]; dates: string[]; sources: string[]; departmentCode: string; municipalityCode: string; onDepartment: (code: string) => void; onMunicipality: (code: string) => void;
+  points: PointRow[]; dates: string[]; sources: string[]; confidences: string[]; departmentCode: string; municipalityCode: string; onDepartment: (code: string) => void; onMunicipality: (code: string) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null), mapRef = useRef<MapLibreMap | null>(null);
   const callbacksRef = useRef({ onDepartment, onMunicipality }), selectionRef = useRef({ departmentCode, municipalityCode });
@@ -193,7 +200,7 @@ export function PublicDetectionGeovisorMap({ departments, municipalities, depart
   const [ready, setReady] = useState(false), [mapError, setMapError] = useState("");
   const [layers, setLayers] = useState<LayerState>(INITIAL_LAYERS), [queryMode, setQueryMode] = useState<QueryMode>("territory");
   const [landCoverOpacity, setLandCoverOpacity] = useState(DEFAULT_LAND_COVER_OPACITY);
-  const hotspotData = useMemo(() => hotspotGeoJson(points, dates, sources), [points, dates, sources]);
+  const hotspotData = useMemo(() => hotspotGeoJson(points, dates, sources, confidences), [points, dates, sources, confidences]);
   const departmentLabelData = useMemo(() => territoryLabels(departments.features, departmentNames, "DPTO_CCDGO"), [departments.features, departmentNames]);
   const municipalityLabelData = useMemo(() => territoryLabels(municipalities.features, municipalityNames, "m", "d"), [municipalities.features, municipalityNames]);
   const hotspotDataRef = useRef(hotspotData);
