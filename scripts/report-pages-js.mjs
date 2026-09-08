@@ -3,7 +3,9 @@ import { basename, join } from "node:path";
 import { gzipSync } from "node:zlib";
 
 const outputRoot = join(process.cwd(), "out");
+const chunksRoot = join(outputRoot, "_next", "static", "chunks");
 const htmlPath = join(outputRoot, "index.html");
+const INITIAL_GZIP_BUDGET_BYTES = 500_000;
 
 if (!existsSync(htmlPath)) {
   throw new Error(`No existe ${htmlPath}. Ejecuta primero npm run build:pages.`);
@@ -53,24 +55,46 @@ function resolveOutputFile(source) {
   throw new Error(`No se pudo resolver el script publicado: ${source}`);
 }
 
-const scripts = scriptSources.map((source) => {
-  const path = resolveOutputFile(source);
+function measure(path, source = null) {
   const bytes = readFileSync(path);
   return {
-    source,
+    ...(source ? { source } : {}),
     path: path.replace(`${process.cwd()}/`, ""),
     decodedBytes: statSync(path).size,
     gzipBytes: gzipSync(bytes, { level: 9 }).byteLength,
   };
-});
+}
+
+const initialScripts = scriptSources.map((source) => measure(resolveOutputFile(source), source));
+const initialPaths = new Set(initialScripts.map((item) => item.path));
+const deferredScripts = walk(chunksRoot)
+  .filter((path) => path.endsWith(".js"))
+  .map((path) => measure(path))
+  .filter((item) => !initialPaths.has(item.path))
+  .sort((a, b) => b.gzipBytes - a.gzipBytes);
 
 const summary = {
-  scriptCount: scripts.length,
-  decodedBytes: scripts.reduce((sum, item) => sum + item.decodedBytes, 0),
-  gzipBytes: scripts.reduce((sum, item) => sum + item.gzipBytes, 0),
-  largestDecodedBytes: Math.max(...scripts.map((item) => item.decodedBytes)),
-  largestGzipBytes: Math.max(...scripts.map((item) => item.gzipBytes)),
-  scripts: scripts.sort((a, b) => b.gzipBytes - a.gzipBytes),
+  initialGzipBudgetBytes: INITIAL_GZIP_BUDGET_BYTES,
+  initial: {
+    scriptCount: initialScripts.length,
+    decodedBytes: initialScripts.reduce((sum, item) => sum + item.decodedBytes, 0),
+    gzipBytes: initialScripts.reduce((sum, item) => sum + item.gzipBytes, 0),
+    largestDecodedBytes: Math.max(...initialScripts.map((item) => item.decodedBytes)),
+    largestGzipBytes: Math.max(...initialScripts.map((item) => item.gzipBytes)),
+    scripts: initialScripts.sort((a, b) => b.gzipBytes - a.gzipBytes),
+  },
+  deferred: {
+    scriptCount: deferredScripts.length,
+    largestDecodedBytes: deferredScripts[0]?.decodedBytes ?? 0,
+    largestGzipBytes: deferredScripts[0]?.gzipBytes ?? 0,
+    largestScripts: deferredScripts.slice(0, 10),
+  },
 };
 
 console.log(JSON.stringify(summary, null, 2));
+
+if (summary.initial.gzipBytes > INITIAL_GZIP_BUDGET_BYTES) {
+  throw new Error(
+    `JavaScript inicial excede el presupuesto: ${summary.initial.gzipBytes} > ${INITIAL_GZIP_BUDGET_BYTES} bytes gzip.`,
+  );
+}
