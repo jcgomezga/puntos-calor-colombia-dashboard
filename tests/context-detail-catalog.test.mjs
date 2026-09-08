@@ -28,6 +28,10 @@ test("loads complete territorial cards lazily from small deterministic shards", 
   assert.match(mapSource, /Cargando ficha completa/);
   assert.match(mapSource, /No fue posible cargar los atributos ampliados/);
   assert.match(loaderSource, /context-details\/\$\{source\}\/\$\{shard\}\.json/);
+  assert.match(loaderSource, /CONTEXT_DETAIL_CONTRACT_VERSION = 2/);
+  assert.match(loaderSource, /\?v=\$\{CONTEXT_DETAIL_CONTRACT_VERSION\}/);
+  assert.match(loaderSource, /normalizeLoadedDetail/);
+  assert.match(loaderSource, /normalized\.estado = ""/);
   assert.match(loaderSource, /shardPromises/);
   assert.match(loaderSource, /cache: "force-cache"/);
   assert.doesNotMatch(loaderSource, /fetch\([^\n]*context-details\.json/);
@@ -64,6 +68,12 @@ test("omits the unreliable ANM state from the public detail contract", () => {
   assert.match(tileBuilder, /"fecha_inscripcion": normalize_date/);
   assert.match(tileBuilder, /"fecha_terminacion": normalize_date/);
   assert.match(publicMapSource, /Ficha de título minero ANM/);
+});
+
+test("normalizes ANLA and ANH dates in the future canonical catalog", () => {
+  assert.match(tileBuilder, /"fecha_acto": normalize_date\(attributes\.get\("fec_act_ad"\)\)/);
+  assert.match(tileBuilder, /"fecha_firma": normalize_date\(attributes\.get\("FECHA_FIRM"\)\)/);
+  assert.match(tileBuilder, /"contractVersion": 2/);
 });
 
 test("shards the canonical catalog without losing records and applies contract v2", async () => {
