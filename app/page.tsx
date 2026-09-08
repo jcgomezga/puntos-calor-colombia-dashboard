@@ -87,28 +87,51 @@ export default function Home() {
   const selectedMunicipalityIndex = municipalityIndex.get(municipalityCode);
 
   const municipalityOptions = useMemo(() => dashboard.municipalities.filter((item) => item.departmentCode === departmentCode), [departmentCode]);
-  const visiblePoints = useMemo(() => dashboard.points.filter((point) => {
+  const basePoints = useMemo(() => dashboard.points.filter((point) => {
     if (point[7] !== 1) return false;
     if (point[4] < startIndex || point[4] > endIndex) return false;
     if (selectedDepartmentIndex !== undefined && point[2] !== selectedDepartmentIndex) return false;
     if (selectedMunicipalityIndex !== undefined && point[3] !== selectedMunicipalityIndex) return false;
-    if (protectedRelation === "inside" && point[11] !== 1) return false;
-    if (protectedRelation === "outside" && point[11] === 1) return false;
-    if (landCoverLevel !== "all" && (point[12] === undefined || point[12] < 0 || landCovers[point[12]]?.level1Code !== landCoverLevel)) return false;
-    if (miningRelation === "inside" && point[13] !== 1) return false;
-    if (miningRelation === "outside" && point[13] === 1) return false;
-    if (anlaRelation === "inside" && point[14] !== 3) return false;
-    if (anlaRelation === "within1" && point[14] !== 2) return false;
-    if (anlaRelation === "between1and5" && point[14] !== 1) return false;
-    if (anlaRelation === "beyond5" && point[14] !== 0) return false;
-    if (anlaLegalStatus === "evaluation" && ((point[15] ?? 0) & 1) === 0) return false;
-    if (anlaLegalStatus === "licensed" && ((point[15] ?? 0) & 2) === 0) return false;
-    if (anhRelation === "inside" && point[16] !== 3) return false;
-    if (anhRelation === "within1" && point[16] !== 2) return false;
-    if (anhRelation === "between1and5" && point[16] !== 1) return false;
-    if (anhRelation === "beyond5" && point[16] !== 0) return false;
     return true;
-  }), [startIndex, endIndex, selectedDepartmentIndex, selectedMunicipalityIndex, protectedRelation, landCoverLevel, miningRelation, anlaRelation, anlaLegalStatus, anhRelation, landCovers]);
+  }), [startIndex, endIndex, selectedDepartmentIndex, selectedMunicipalityIndex]);
+
+  const episodeFilterActive = protectedRelation !== "all" || landCoverLevel !== "all" || miningRelation !== "all" || anlaRelation !== "all" || anlaLegalStatus !== "all" || anhRelation !== "all";
+  const qualifyingEpisodeIndexes = useMemo(() => {
+    const members = new Map<number, PointRow[]>();
+    for (const point of basePoints) {
+      const episodeIndex = point[18] ?? -1;
+      if (episodeIndex < 0) continue;
+      if (!members.has(episodeIndex)) members.set(episodeIndex, []);
+      members.get(episodeIndex)!.push(point);
+    }
+    const qualifies = new Set<number>();
+    for (const [episodeIndex, episodeMembers] of members) {
+      const has = (predicate: (point: PointRow) => boolean) => episodeMembers.some(predicate);
+      const lacks = (predicate: (point: PointRow) => boolean) => !has(predicate);
+      if (protectedRelation === "inside" && !has((point) => point[11] === 1)) continue;
+      if (protectedRelation === "outside" && !lacks((point) => point[11] === 1)) continue;
+      if (landCoverLevel !== "all" && !has((point) => point[12] !== undefined && point[12] >= 0 && landCovers[point[12]]?.level1Code === landCoverLevel)) continue;
+      if (miningRelation === "inside" && !has((point) => point[13] === 1)) continue;
+      if (miningRelation === "outside" && !lacks((point) => point[13] === 1)) continue;
+      if (anlaRelation === "inside" && !has((point) => point[14] === 3)) continue;
+      if (anlaRelation === "within1" && !has((point) => point[14] === 2)) continue;
+      if (anlaRelation === "between1and5" && !has((point) => point[14] === 1)) continue;
+      if (anlaRelation === "beyond5" && !lacks((point) => (point[14] ?? 0) > 0)) continue;
+      if (anlaLegalStatus === "evaluation" && !has((point) => ((point[15] ?? 0) & 1) !== 0)) continue;
+      if (anlaLegalStatus === "licensed" && !has((point) => ((point[15] ?? 0) & 2) !== 0)) continue;
+      if (anhRelation === "inside" && !has((point) => point[16] === 3)) continue;
+      if (anhRelation === "within1" && !has((point) => point[16] === 2)) continue;
+      if (anhRelation === "between1and5" && !has((point) => point[16] === 1)) continue;
+      if (anhRelation === "beyond5" && !lacks((point) => (point[16] ?? 0) > 0)) continue;
+      qualifies.add(episodeIndex);
+    }
+    return qualifies;
+  }, [basePoints, protectedRelation, landCoverLevel, miningRelation, anlaRelation, anlaLegalStatus, anhRelation, landCovers]);
+
+  const visiblePoints = useMemo(() => {
+    if (!episodeFilterActive) return basePoints;
+    return basePoints.filter((point) => qualifyingEpisodeIndexes.has(point[18] ?? -1));
+  }, [basePoints, episodeFilterActive, qualifyingEpisodeIndexes]);
 
   const metrics = useMemo(() => {
     const departments = new Set<number>(), municipalities = new Set<number>(), sources = new Set<number>();
