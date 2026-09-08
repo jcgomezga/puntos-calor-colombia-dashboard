@@ -19,6 +19,7 @@
       }
     ],
     "paths": {
+      "@/components/geovisor-map": ["./components/geovisor-entry.tsx"],
       "@/*": ["./*"]
     }
   },
