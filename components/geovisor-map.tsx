@@ -13,6 +13,8 @@ const IDEAM_SOURCE_LAYER = "Capa geográfica del Mapa Nacional de las Coberturas
 const IDEAM_TILE_URL = "https://visualizador.ideam.gov.co/gisserver/rest/services/Hosted/MNCT_2024V01_VT/VectorTileServer/tile/{z}/{y}/{x}.pbf";
 const DEFAULT_LAND_COVER_OPACITY = 0.54;
 const CONTEXT_SOURCE_ID = "contexto-territorial";
+const DEPARTMENT_LABEL_LAYER_ID = "dane-department-labels";
+const MUNICIPALITY_LABEL_LAYER_ID = "dane-municipality-labels";
 
 const LAND_COVER_CLASSES = [
   ["1.1.1. Tejido urbano continuo", "#CC0000"],
@@ -101,6 +103,7 @@ type LayerState = {
   anh: boolean;
 };
 type QueryMode = "territory" | "coverage" | "context";
+type TerritoryNames = Record<string, string>;
 
 const INITIAL_LAYERS: LayerState = {
   landCover: true,
@@ -154,6 +157,78 @@ function featureBounds(features: FeatureCollection["features"]): maplibregl.LngL
 
   features.forEach((feature) => visit(feature.geometry.coordinates));
   return Number.isFinite(minX) ? [[minX, minY], [maxX, maxY]] : null;
+}
+
+function outerRings(feature: FeatureCollection["features"][number]): number[][][] {
+  if (feature.geometry.type === "Polygon") {
+    const polygon = feature.geometry.coordinates as number[][][];
+    return polygon[0] ? [polygon[0]] : [];
+  }
+  return (feature.geometry.coordinates as number[][][][])
+    .map((polygon) => polygon[0])
+    .filter((ring): ring is number[][] => Boolean(ring?.length));
+}
+
+function ringCentroid(ring: number[][]) {
+  let crossSum = 0;
+  let centroidX = 0;
+  let centroidY = 0;
+  const valid = ring.filter((point) => Number.isFinite(point[0]) && Number.isFinite(point[1]));
+  if (!valid.length) return null;
+
+  for (let index = 0; index < valid.length; index += 1) {
+    const current = valid[index];
+    const next = valid[(index + 1) % valid.length];
+    const cross = current[0] * next[1] - next[0] * current[1];
+    crossSum += cross;
+    centroidX += (current[0] + next[0]) * cross;
+    centroidY += (current[1] + next[1]) * cross;
+  }
+
+  if (Math.abs(crossSum) > 1e-12) {
+    return {
+      point: [centroidX / (3 * crossSum), centroidY / (3 * crossSum)] as [number, number],
+      area: Math.abs(crossSum) / 2,
+    };
+  }
+
+  const x = valid.reduce((sum, point) => sum + point[0], 0) / valid.length;
+  const y = valid.reduce((sum, point) => sum + point[1], 0) / valid.length;
+  return { point: [x, y] as [number, number], area: 0 };
+}
+
+function featureLabelPoint(feature: FeatureCollection["features"][number]) {
+  let best: ReturnType<typeof ringCentroid> = null;
+  for (const ring of outerRings(feature)) {
+    const candidate = ringCentroid(ring);
+    if (candidate && (!best || candidate.area > best.area)) best = candidate;
+  }
+  return best?.point ?? null;
+}
+
+function territoryLabelGeoJson(
+  features: FeatureCollection["features"],
+  names: TerritoryNames,
+  codeProperty: string,
+  departmentProperty?: string,
+): GeoJSON.FeatureCollection<GeoJSON.Point> {
+  const labels: GeoJSON.Feature<GeoJSON.Point>[] = [];
+  for (const feature of features) {
+    const code = String(feature.properties[codeProperty] ?? "");
+    const name = names[code];
+    const point = featureLabelPoint(feature);
+    if (!code || !name || !point) continue;
+    labels.push({
+      type: "Feature",
+      geometry: { type: "Point", coordinates: point },
+      properties: {
+        code,
+        name,
+        ...(departmentProperty ? { departmentCode: String(feature.properties[departmentProperty] ?? "") } : {}),
+      },
+    });
+  }
+  return { type: "FeatureCollection", features: labels };
 }
 
 function popupRow(label: string, value: string) {
@@ -240,6 +315,8 @@ function addInteractiveCursor(map: MapLibreMap, layerId: string) {
 export function GeovisorMap({
   departments,
   municipalities,
+  departmentNames,
+  municipalityNames,
   points,
   dates,
   sources,
@@ -250,6 +327,8 @@ export function GeovisorMap({
 }: {
   departments: FeatureCollection;
   municipalities: FeatureCollection;
+  departmentNames: TerritoryNames;
+  municipalityNames: TerritoryNames;
   points: PointRow[];
   dates: string[];
   sources: string[];
@@ -270,6 +349,14 @@ export function GeovisorMap({
   const [queryMode, setQueryMode] = useState<QueryMode>("territory");
   const [landCoverOpacity, setLandCoverOpacity] = useState(DEFAULT_LAND_COVER_OPACITY);
   const hotspotData = useMemo(() => hotspotGeoJson(points, dates, sources), [points, dates, sources]);
+  const departmentLabelData = useMemo(
+    () => territoryLabelGeoJson(departments.features, departmentNames, "DPTO_CCDGO"),
+    [departments.features, departmentNames],
+  );
+  const municipalityLabelData = useMemo(
+    () => territoryLabelGeoJson(municipalities.features, municipalityNames, "m", "d"),
+    [municipalities.features, municipalityNames],
+  );
   const hotspotDataRef = useRef(hotspotData);
 
   useEffect(() => {
@@ -418,6 +505,55 @@ export function GeovisorMap({
           paint: { "line-color": "#607b66", "line-width": 0.8, "line-opacity": 0.88 },
         });
 
+        map.addSource("dane-department-label-points", { type: "geojson", data: departmentLabelData });
+        map.addLayer({
+          id: DEPARTMENT_LABEL_LAYER_ID,
+          type: "symbol",
+          source: "dane-department-label-points",
+          minzoom: 3,
+          maxzoom: 6.8,
+          layout: {
+            "text-field": ["get", "name"],
+            "text-size": ["interpolate", ["linear"], ["zoom"], 3, 11, 5, 13.5, 6.8, 15.5],
+            "text-transform": "uppercase",
+            "text-letter-spacing": 0.04,
+            "text-max-width": 10,
+            "text-padding": 3,
+            "text-allow-overlap": false,
+          },
+          paint: {
+            "text-color": "#173a28",
+            "text-halo-color": "rgba(255, 255, 255, 0.96)",
+            "text-halo-width": 2.2,
+            "text-halo-blur": 0.35,
+          },
+        });
+
+        map.addSource("dane-municipality-label-points", { type: "geojson", data: municipalityLabelData });
+        map.addLayer({
+          id: MUNICIPALITY_LABEL_LAYER_ID,
+          type: "symbol",
+          source: "dane-municipality-label-points",
+          minzoom: 6.2,
+          maxzoom: 14,
+          layout: {
+            "text-field": ["get", "name"],
+            "text-size": ["interpolate", ["linear"], ["zoom"], 6.2, 9.5, 8.5, 11.5, 12, 13],
+            "text-variable-anchor": ["center", "top", "bottom", "left", "right"],
+            "text-justify": "auto",
+            "text-radial-offset": 0.15,
+            "text-max-width": 9,
+            "text-padding": 2,
+            "text-allow-overlap": false,
+          },
+          paint: {
+            "text-color": "#28483a",
+            "text-halo-color": "rgba(255, 255, 255, 0.96)",
+            "text-halo-width": 1.8,
+            "text-halo-blur": 0.3,
+          },
+        });
+
         map.addSource("hotspots", {
           type: "geojson",
           data: hotspotDataRef.current,
@@ -522,7 +658,7 @@ export function GeovisorMap({
       mapRef.current?.remove();
       mapRef.current = null;
     };
-  }, [departments, municipalities]);
+  }, [departments, municipalities, departmentLabelData, municipalityLabelData]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -536,6 +672,7 @@ export function GeovisorMap({
     if (!map?.isStyleLoaded()) return;
     map.setFilter("dane-municipalities-fill", ["==", ["get", "d"], departmentCode]);
     map.setFilter("dane-municipalities-line", ["==", ["get", "d"], departmentCode]);
+    map.setFilter(MUNICIPALITY_LABEL_LAYER_ID, departmentCode === "00" ? null : ["==", ["get", "departmentCode"], departmentCode]);
     map.setPaintProperty("dane-departments-fill", "fill-color", ["case", ["==", ["get", "DPTO_CCDGO"], departmentCode], "#2f7d4c", "#d4e3d6"]);
     map.setPaintProperty("dane-departments-fill", "fill-opacity", ["case", ["==", ["get", "DPTO_CCDGO"], departmentCode], 0.25, 0.035]);
     map.setPaintProperty("dane-municipalities-fill", "fill-color", ["case", ["==", ["get", "m"], municipalityCode], "#215b39", "#ecf3ed"]);
@@ -555,7 +692,8 @@ export function GeovisorMap({
     if (!map?.isStyleLoaded()) return;
     LAND_COVER_LAYER_IDS.forEach((id) => map.setLayoutProperty(id, "visibility", layers.landCover ? "visible" : "none"));
     ["hotspot-clusters", "hotspot-cluster-count", "hotspot-unclustered"].forEach((id) => map.setLayoutProperty(id, "visibility", layers.hotspots ? "visible" : "none"));
-    ["dane-departments-fill", "dane-departments-line", "dane-municipalities-fill", "dane-municipalities-line"].forEach((id) => map.setLayoutProperty(id, "visibility", layers.boundaries ? "visible" : "none"));
+    ["dane-departments-fill", "dane-departments-line", "dane-municipalities-fill", "dane-municipalities-line", DEPARTMENT_LABEL_LAYER_ID, MUNICIPALITY_LABEL_LAYER_ID]
+      .forEach((id) => map.setLayoutProperty(id, "visibility", layers.boundaries ? "visible" : "none"));
     (Object.keys(CONTEXT_GROUPS) as Array<keyof typeof CONTEXT_GROUPS>).forEach((key) => {
       CONTEXT_GROUPS[key].forEach((id) => map.setLayoutProperty(id, "visibility", layers[key] ? "visible" : "none"));
     });
