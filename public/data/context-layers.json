@@ -1,0 +1,112 @@
+{
+  "generatedAtUtc": "2026-09-08T03:10:44Z",
+  "format": "PMTiles v3",
+  "featureCounts": {
+    "runap": 1909,
+    "anm": 10656,
+    "anla": 9827,
+    "anh": 455
+  },
+  "sourceFeatureCounts": {
+    "runap": 1909,
+    "anm": 10658,
+    "anla": 9931,
+    "anh": 480
+  },
+  "totalFeatures": 22847,
+  "notRendered": {
+    "runap": {
+      "count": 0,
+      "reason": "sin geometría dibujable"
+    },
+    "anm": {
+      "count": 2,
+      "reason": "sin geometría dibujable"
+    },
+    "anla": {
+      "count": 104,
+      "reason": "sin geometría dibujable"
+    },
+    "anh": {
+      "count": 25,
+      "reason": "áreas no asignadas fuera del alcance visual"
+    }
+  },
+  "sizeBytes": 60668987,
+  "sha256": "31749256d8f3bd5417c2d738365f83846ccc6d46387fd542f39331805abcb011",
+  "sources": {
+    "runap": {
+      "authority": "Parques Nacionales Naturales de Colombia",
+      "downloadedAtUtc": "2026-09-01T18:50:51Z",
+      "featureCount": 1909,
+      "layerName": "Registro Unico Nacional AP",
+      "source": "Registro Único Nacional de Áreas Protegidas (RUNAP)",
+      "spatialReference": 4326,
+      "url": "https://mapas.parquesnacionales.gov.co/arcgis/rest/services/pnn/runap/FeatureServer/0"
+    },
+    "anm": {
+      "authority": "Agencia Nacional de Minería (ANM)",
+      "downloadedAtUtc": "2026-09-07T12:47:13Z",
+      "featureCount": 10658,
+      "layerName": "titulos_vigentes",
+      "serviceItemId": "b334d8dfbbd2401e932bb07acf6e49a5",
+      "source": "Títulos mineros vigentes",
+      "spatialReference": 4326,
+      "url": "https://gisanm.anm.gov.co/server/rest/services/Hosted/Titulos_mineros/FeatureServer/0"
+    },
+    "anla": {
+      "authority": "Autoridad Nacional de Licencias Ambientales",
+      "downloadedAtUtc": "2026-09-07T19:21:20Z",
+      "featureCount": 9931,
+      "layers": {
+        "1": {
+          "count": 317,
+          "name": "Linea Proyecto Evaluacion"
+        },
+        "2": {
+          "count": 125,
+          "name": "Area Proyecto Evaluacion"
+        },
+        "4": {
+          "count": 895,
+          "name": "Punto Proyecto Licenciado"
+        },
+        "5": {
+          "count": 3398,
+          "name": "Linea Proyecto Licenciado"
+        },
+        "6": {
+          "count": 5196,
+          "name": "Area Proyecto Licenciado"
+        }
+      },
+      "maxAllowableOffsetMeters": 2,
+      "nullGeometryCount": 44,
+      "source": "Proyectos ANLA",
+      "spatialReference": 9377,
+      "url": "https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer",
+      "usableGeometryCount": 9887
+    },
+    "anh": {
+      "assignedFeatureCount": 455,
+      "authority": "Agencia Nacional de Hidrocarburos (ANH)",
+      "availableFeatureCount": 3,
+      "downloadedAtUtc": "2026-09-07T04:52:30Z",
+      "featureCount": 480,
+      "layerName": "Tierras 2026-08-06",
+      "maxAllowableOffsetMeters": 2,
+      "reservedFeatureCount": 22,
+      "serviceUrl": "https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer",
+      "source": "Mapa de Tierras ANH",
+      "sourceDate": "2026-08-06",
+      "sourceLayerId": 18,
+      "spatialReference": 9377,
+      "url": "https://geovisor.anh.gov.co/server/rest/services/GEOVISOR_v32/ANH_HISTORICOS1_EGDB/MapServer/18"
+    }
+  },
+  "details": {
+    "path": "context-details.json",
+    "recordCount": 22952,
+    "sizeBytes": 10808309
+  }
+}

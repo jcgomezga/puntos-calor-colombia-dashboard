@@ -1,0 +1,88 @@
+name: Construir teselas de contexto territorial
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/geovisor-fase-8a]
+    paths:
+      - "scripts/build_context_tiles.py"
+      - "scripts/build_context_tiles_enriched.py"
+      - "requirements-tiles.txt"
+      - "data/boundaries/runap_join.geojson.gz"
+      - "data/boundaries/anm_titles_join.geojson.gz"
+      - "data/boundaries/anla_projects_join.json.gz"
+      - "data/boundaries/anh_tierras_join.json.gz"
+      - "data/boundaries/*_metadata.json"
+      - "tests_py/test_build_context_tiles.py"
+      - ".github/workflows/build-context-tiles.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: context-tiles-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/feature/geovisor-fase-8a'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-tiles.txt
+      - name: Instalar dependencias geoespaciales
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes build-essential libsqlite3-dev zlib1g-dev
+          python -m pip install --requirement requirements-tiles.txt
+      - name: Compilar Tippecanoe oficial fijado
+        env:
+          TIPPECANOE_COMMIT: 4f2621186acfec33b63ddf636f665623c0fef2dd
+        run: |
+          git clone --filter=blob:none https://github.com/felt/tippecanoe.git "$RUNNER_TEMP/tippecanoe"
+          git -C "$RUNNER_TEMP/tippecanoe" checkout "$TIPPECANOE_COMMIT"
+          make -C "$RUNNER_TEMP/tippecanoe" -j2
+      - name: Probar conversión geométrica
+        run: python -m unittest tests_py.test_build_context_tiles -v
+      - name: Construir geometrías y catálogo de fichas
+        run: python scripts/build_context_tiles_enriched.py --tippecanoe "$RUNNER_TEMP/tippecanoe/tippecanoe"
+      - name: Verificar salida publicable
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          archive = Path("public/data/context-layers.pmtiles")
+          metadata_path = Path("public/data/context-layers.json")
+          details_path = Path("public/data/context-details.json")
+          metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+          catalog = json.loads(details_path.read_text(encoding="utf-8"))
+
+          assert archive.stat().st_size == metadata["sizeBytes"]
+          assert archive.stat().st_size < 100_000_000
+          assert metadata["totalFeatures"] == 22_847
+          assert set(metadata["featureCounts"]) == {"runap", "anm", "anla", "anh"}
+          assert metadata["details"]["path"] == "context-details.json"
+          assert metadata["details"]["recordCount"] == catalog["recordCount"]
+          assert metadata["details"]["sizeBytes"] == details_path.stat().st_size
+          assert catalog["recordCount"] >= metadata["totalFeatures"]
+          assert len(catalog["records"]) == catalog["recordCount"]
+          PY
+      - name: Guardar geometrías y fichas en la rama piloto
+        shell: bash
+        run: |
+          FILES=(public/data/context-layers.pmtiles public/data/context-layers.json public/data/context-details.json)
+          if [[ -z "$(git status --porcelain -- "${FILES[@]}")" ]]; then
+            echo "Los artefactos territoriales no cambiaron."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${FILES[@]}"
+          git commit -m "data: publicar fichas territoriales completas"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

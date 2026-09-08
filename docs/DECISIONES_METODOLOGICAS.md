@@ -62,6 +62,13 @@
 | DM-058 | Distinguir expansión, contracción y revisión de membresía además de creación, fusión, división y retiro | Hacer auditable la evolución de un identificador que continúa activo | Implementada en Fase 7 |
 | DM-059 | Ordenar el explorador por miembros visibles bajo los filtros activos | Mantener coherencia entre ranking, periodo, territorio y relaciones espaciales seleccionadas | Implementada en Fase 7 |
 | DM-060 | Usar la selección de episodio solo para aislar puntos en el mapa | Conservar los indicadores generales como contexto y evitar dobles filtros invisibles | Implementada en Fase 7 |
+| DM-061 | Retirar el selector A/B de la interfaz y conservar A/B como sensibilidad histórica reproducible | Evitar presentar como dos modos operativos lo que ya fue resuelto metodológicamente, sin borrar la auditoría instrumental | Implementada en Fase 8C |
+| DM-062 | Adoptar públicamente una única configuración operacional de 1 km, 24 h y mínimo 3 detecciones | Dar una definición estable y comprensible a la unidad principal del geovisor | Implementada en Fase 8C |
+| DM-063 | Usar episodios como capa principal y detecciones individuales como capa secundaria apagada por defecto | Separar la unidad analítica operacional de sus observaciones satelitales constitutivas | Implementada en Fase 8C |
+| DM-064 | Evaluar los filtros territoriales sobre el conjunto de miembros de cada episodio | Evitar exigir artificialmente que una misma detección satisfaga simultáneamente relaciones espaciales distintas | Implementada en Fase 8C |
+| DM-065 | Publicar las fichas completas RUNAP, ANM, ANLA y ANH mediante PMTiles compacto más un catálogo de atributos cargado bajo demanda | Mantener geometrías ágiles y atributos auditables sin inflar las teselas por repetición de texto | Implementada en Fase 8C |
+| DM-066 | Definir explícitamente episodio como agrupación algorítmica y no como incendio confirmado, cicatriz o superficie quemada | Evitar sobreinterpretar las señales térmicas y mantener separación entre detección, agrupación y validación de incendio | Implementada en Fase 8C |
+| DM-067 | Mantener Cobertura de la Tierra IDEAM 2024 como consulta territorial con jerarquía CORINE ampliada | Aportar contexto de uso/cobertura sin convertir la capa en evidencia causal | Implementada en Fase 8C |
 
 ## Aplicación de DM-009
 
