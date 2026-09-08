@@ -26,6 +26,7 @@ on:
       - "scripts/build_historical_summaries.py"
       - "scripts/build_operational_episodes.py"
       - "requirements-data.txt"
+      - "requirements-tiles.txt"
       - "config/data-policy.json"
       - "tests_py/**"
       - ".github/workflows/update-data.yml"
@@ -46,7 +47,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Instalar dependencias geoespaciales
-        run: python -m pip install --requirement requirements-data.txt
+        run: python -m pip install --requirement requirements-data.txt --requirement requirements-tiles.txt
       - name: Probar contrato de datos
         run: python -m unittest discover -s tests_py -p "test_*.py" -v
       - name: Determinar modo
