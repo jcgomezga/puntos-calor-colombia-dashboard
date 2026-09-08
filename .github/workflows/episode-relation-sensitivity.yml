@@ -15,8 +15,8 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
@@ -28,7 +28,7 @@ jobs:
       - name: Mostrar resumen auditable
         run: cat data/metadata/episode_relation_sensitivity_latest_run.json
       - name: Publicar artefactos de auditoría
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: episode-relation-sensitivity
           if-no-files-found: error
