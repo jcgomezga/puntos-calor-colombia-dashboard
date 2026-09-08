@@ -3,14 +3,11 @@
 import { Activity, Building2, CalendarDays, ChevronDown, CircleAlert, Database, Flame, Fuel, Layers3, Leaf, MapPinned, Pickaxe, Radio, RefreshCw, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import { DashboardMap, type FeatureCollection, type PointRow } from "@/components/dashboard-map";
-import { GeovisorMap } from "@/components/geovisor-map";
+import dynamic from "next/dynamic";
+import type { PointRow } from "@/components/dashboard-map";
 import { HISTORY_START_LABEL } from "@/lib/data-policy";
 import dashboardJson from "@/public/data/dashboard.json";
-import departmentGeoJson from "@/public/data/departments.json";
 import historyJson from "@/public/data/history.json";
-import municipalityGeoJson from "@/public/data/municipalities.json";
 
 type ProtectedRelation = "all" | "inside" | "outside";
 type MiningRelation = "all" | "inside" | "outside";
@@ -37,8 +34,6 @@ type HistoryData = { metadata: { openMonth: string; closedMonths: string[]; tota
 
 const dashboard = dashboardJson as unknown as DashboardData;
 const history = historyJson as unknown as HistoryData;
-const departmentsGeo = departmentGeoJson as unknown as FeatureCollection;
-const municipalitiesGeo = municipalityGeoJson as unknown as FeatureCollection;
 const numberFormat = new Intl.NumberFormat("es-CO");
 const dateFormat = new Intl.DateTimeFormat("es-CO", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 const monthFormat = new Intl.DateTimeFormat("es-CO", { month: "short", year: "numeric", timeZone: "UTC" });
@@ -51,6 +46,20 @@ const LAND_COVER_FAMILY_NAMES: Record<string, string> = {
   "4": "Áreas húmedas",
   "5": "Superficies de agua",
 };
+
+const RankingChart = dynamic(() => import("@/components/dashboard-charts").then((module) => module.RankingChart), {
+  ssr: false,
+  loading: () => <div className="chart-loading" aria-hidden="true">Preparando gráfico…</div>,
+});
+const TrendChart = dynamic(() => import("@/components/dashboard-charts").then((module) => module.TrendChart), {
+  ssr: false,
+  loading: () => <div className="chart-loading" aria-hidden="true">Preparando gráfico…</div>,
+});
+
+const MapWorkspace = dynamic(() => import("@/components/dashboard-map-workspace").then((module) => module.DashboardMapWorkspace), {
+  ssr: false,
+  loading: () => <div className="geovisor-loading"><span /> Preparando cartografía…</div>,
+});
 
 function MetricCard({ icon: Icon, label, value, detail }: { icon: typeof Flame; label: string; value: string; detail: string }) {
   return <article className="metric-card"><div className="metric-icon"><Icon size={18} /></div><div><p>{label}</p><strong>{value}</strong><span>{detail}</span></div></article>;
@@ -142,10 +151,10 @@ export default function Home() {
       <MetricCard icon={Flame} label="Detecciones visibles" value={numberFormat.format(visiblePoints.length)} detail={`${labelDate(startDate)}–${labelDate(endDate)}`} /><MetricCard icon={MapPinned} label="Departamentos" value={numberFormat.format(metrics.departments)} detail="Con al menos una detección asignada" /><MetricCard icon={Activity} label="Municipios" value={numberFormat.format(metrics.municipalities)} detail="Asignación oficial DANE 2025" /><MetricCard icon={Radio} label="Fuentes satelitales" value={numberFormat.format(metrics.sources)} detail="Universo operativo publicado" /><MetricCard icon={Leaf} label="Dentro de áreas protegidas" value={numberFormat.format(metrics.protected)} detail="Intersección espacial con RUNAP" /><MetricCard icon={Layers3} label="Coberturas detalladas" value={numberFormat.format(metrics.covers)} detail="IDEAM 2024 · escala 1:100.000" /><MetricCard icon={Pickaxe} label="Dentro de títulos mineros" value={numberFormat.format(metrics.mining)} detail="Intersección directa con títulos ANM" /><MetricCard icon={Building2} label="Relacionadas con proyectos ANLA" value={numberFormat.format(metrics.anla)} detail="Dentro o hasta 5 km · sin inferir causalidad" /><MetricCard icon={Fuel} label="Relacionadas con contratos ANH" value={numberFormat.format(metrics.anh)} detail="Áreas asignadas dentro o hasta 5 km" />
     </section>
     <section className="workspace-grid"><article className="panel map-panel"><div className="panel-heading"><div><p className="panel-kicker">DISTRIBUCIÓN ESPACIAL</p><h2>{title}</h2></div><div className="segmented" role="group" aria-label="Modo de mapa"><button className={mapMode === "geovisor" ? "active" : ""} onClick={() => setMapMode("geovisor")}>Geovisor</button><button className={mapMode === "basic" ? "active" : ""} onClick={() => setMapMode("basic")}>Mapa básico</button></div></div><div className="map-surface">
-      {mapMode === "geovisor" ? <GeovisorMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={visiblePoints} dates={dashboard.dates} sources={dashboard.sources} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); }} onMunicipality={setMunicipalityCode} /> : <DashboardMap departments={departmentsGeo} municipalities={municipalitiesGeo} points={visiblePoints} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); }} onMunicipality={setMunicipalityCode} />}
+      <MapWorkspace mode={mapMode} points={visiblePoints} dates={dashboard.dates} sources={dashboard.sources} departmentCode={departmentCode} municipalityCode={municipalityCode} onDepartment={(code) => { setDepartmentCode(code); setMunicipalityCode("00000"); }} onMunicipality={setMunicipalityCode} />
       <div className="map-caption">Navega, acerca y activa capas. Haz clic en una detección, territorio, cobertura o capa de contexto para consultar sus atributos. Los indicadores y gráficos se recalculan con el periodo y los filtros seleccionados.</div></div></article>
-      <div className="side-stack"><article className="panel chart-panel"><div className="panel-heading compact"><div><p className="panel-kicker">CONCENTRACIÓN</p><h2>{departmentCode === "00" ? "Departamentos" : "Municipios"} con más detecciones</h2></div></div><div className="chart-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><BarChart data={ranking} layout="vertical" margin={{ left: 8, right: 26 }}><CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e8ece8" /><XAxis type="number" hide /><YAxis type="category" dataKey="name" width={92} tick={{ fontSize: 10, fill: "#46534a" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} cursor={{ fill: "#f4f7f4" }} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Bar dataKey="value" name="Detecciones" fill="#d9462e" radius={[0, 5, 5, 0]} barSize={15} isAnimationActive={false} /></BarChart></ResponsiveContainer></div></article>
-      <article className="panel chart-panel trend-panel"><div className="panel-heading compact"><div><p className="panel-kicker">EVOLUCIÓN TEMPORAL</p><h2>Detecciones por {trendGrouping === "day" ? "día" : "mes"}</h2></div><div className="trend-actions"><span className="open-period">{labelMonth(history.metadata.openMonth)} en curso</span><div className="trend-toggle" role="group" aria-label="Agrupación temporal"><button className={trendGrouping === "day" ? "active" : ""} onClick={() => setTrendGrouping("day")}>Días</button><button className={trendGrouping === "month" ? "active" : ""} onClick={() => setTrendGrouping("month")}>Meses</button></div></div></div><div className="trend-wrap"><ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={0}><AreaChart data={trend} margin={{ left: -18, right: 12, top: 8 }}><defs><linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#f06432" stopOpacity="0.45" /><stop offset="1" stopColor="#f06432" stopOpacity="0.03" /></linearGradient></defs><CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e8ece8" /><XAxis dataKey="day" tick={{ fontSize: 9, fill: "#647068" }} axisLine={false} tickLine={false} minTickGap={28} /><YAxis tick={{ fontSize: 10, fill: "#647068" }} axisLine={false} tickLine={false} /><Tooltip formatter={(value) => numberFormat.format(Number(value))} labelFormatter={(_, payload) => payload?.[0]?.payload?.label ?? ""} contentStyle={{ borderRadius: 8, borderColor: "#dbe3dc", fontSize: 12 }} /><Area type="monotone" dataKey="value" name="Detecciones" stroke="#c73524" strokeWidth={2.5} fill="url(#trendFill)" isAnimationActive={false} /></AreaChart></ResponsiveContainer></div></article></div>
+      <div className="side-stack"><article className="panel chart-panel"><div className="panel-heading compact"><div><p className="panel-kicker">CONCENTRACIÓN</p><h2>{departmentCode === "00" ? "Departamentos" : "Municipios"} con más detecciones</h2></div></div><div className="chart-wrap"><RankingChart data={ranking} /></div></article>
+      <article className="panel chart-panel trend-panel"><div className="panel-heading compact"><div><p className="panel-kicker">EVOLUCIÓN TEMPORAL</p><h2>Detecciones por {trendGrouping === "day" ? "día" : "mes"}</h2></div><div className="trend-actions"><span className="open-period">{labelMonth(history.metadata.openMonth)} en curso</span><div className="trend-toggle" role="group" aria-label="Agrupación temporal"><button className={trendGrouping === "day" ? "active" : ""} onClick={() => setTrendGrouping("day")}>Días</button><button className={trendGrouping === "month" ? "active" : ""} onClick={() => setTrendGrouping("month")}>Meses</button></div></div></div><div className="trend-wrap"><TrendChart data={trend} /></div></article></div>
     </section>
     <section className="audit-strip"><div><Database size={18} /><span><strong>Fuentes</strong> IDEAM · DANE · RUNAP · ANM · ANLA · ANH</span></div><div><CalendarDays size={18} /><span><strong>Histórico acumulativo</strong> desde {HISTORY_START_LABEL}</span></div><div><ShieldCheck size={18} /><span><strong>Interpretación</strong> detecciones térmicas y relaciones espaciales; no equivalen automáticamente a incendios confirmados ni establecen causalidad.</span></div></section>
     <footer><p>Dashboard nacional en desarrollo · Datos actualizados automáticamente.</p><p><Link href="/metodologia" className="font-semibold text-[#425148] underline underline-offset-2">Metodología, fuentes y trazabilidad</Link>.</p></footer>
