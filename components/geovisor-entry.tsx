@@ -3,7 +3,7 @@
 import * as maplibregl from "maplibre-gl";
 import type { ComponentProps } from "react";
 import dashboardJson from "@/public/data/dashboard.json";
-import { GeovisorMap as BaseGeovisorMap } from "./geovisor-map";
+import { OperationalGeovisorMap as BaseGeovisorMap } from "./operational-geovisor-map";
 
 // MapLibre GL JS v6 requires an explicit worker URL when bundled. A relative
 // same-origin path works in the Work/Vite preview and under the GitHub Pages
