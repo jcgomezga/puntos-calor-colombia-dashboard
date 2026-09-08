@@ -1,7 +1,7 @@
 import { spawn, spawnSync } from "node:child_process";
 import { createReadStream } from "node:fs";
 import { createServer } from "node:http";
-import { mkdir, mkdtemp, readFile, rm, stat, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { extname, resolve } from "node:path";
 
@@ -120,6 +120,10 @@ async function screenshot(send, filename) {
   const result = await send("Page.captureScreenshot", { format: "png", captureBeyondViewport: false, fromSurface: true });
   await writeFile(resolve(ARTIFACT_DIR, filename), Buffer.from(result.data, "base64"));
 }
+async function focusMap(send) {
+  await evaluate(send, `document.querySelector(".map-panel")?.scrollIntoView({ block: "start", behavior: "instant" })`);
+  await delay(700);
+}
 
 let server, chrome, cdp, profileDir;
 const network = [];
@@ -160,14 +164,16 @@ try {
   await cdp.send("Page.navigate", { url: `http://127.0.0.1:${PORT}${BASE_PATH}/` });
   await waitFor(cdp.send, `Boolean(document.querySelector(".dashboard-shell"))`, 12_000);
   const mapReady = await waitFor(cdp.send, `Boolean(document.querySelector(".geovisor-map .maplibregl-canvas")) || Boolean(document.querySelector(".geovisor-error"))`, 20_000);
+  await focusMap(cdp.send);
   await delay(mapReady ? 8_000 : 1_000);
 
   const probe = `(() => {
     const rect = (selector) => { const el = document.querySelector(selector); if (!el) return null; const r = el.getBoundingClientRect(); return { x:r.x,y:r.y,width:r.width,height:r.height,right:r.right,bottom:r.bottom }; };
-    const canvas = document.querySelector(".geovisor-map .maplibregl-canvas");
+    const overlapRatio = (a, b) => { if (!a || !b) return 0; const width = Math.max(0, Math.min(a.right,b.right)-Math.max(a.x,b.x)); const height = Math.max(0, Math.min(a.bottom,b.bottom)-Math.max(a.y,b.y)); return a.width*a.height ? (width*height)/(a.width*a.height) : 0; };
+    const geovisor = rect(".geovisor-map"), layerControl = rect(".layer-control");
     const error = document.querySelector(".geovisor-error")?.textContent?.trim() ?? "";
     const resources = performance.getEntriesByType("resource").filter((entry) => /VectorTileServer|context-layers\\.pmtiles|maplibre-gl-worker|maplibre-gl-shared/i.test(entry.name)).map((entry) => ({ name: entry.name, duration: entry.duration, transferSize: entry.transferSize, decodedBodySize: entry.decodedBodySize }));
-    return { error, canvas: rect(".geovisor-map .maplibregl-canvas"), geovisor: rect(".geovisor-map"), layerControl: rect(".layer-control"), navControl: rect(".maplibregl-ctrl-top-left"), attribution: rect(".maplibregl-ctrl-bottom-left"), scale: rect(".maplibregl-ctrl-bottom-right"), maplibreCanvasCount: document.querySelectorAll(".geovisor-map .maplibregl-canvas").length, resources };
+    return { scrollY: window.scrollY, error, canvas: rect(".geovisor-map .maplibregl-canvas"), geovisor, layerControl, layerControlOcclusionRatio: overlapRatio(geovisor, layerControl), navControl: rect(".maplibregl-ctrl-top-left"), attribution: rect(".maplibregl-ctrl-bottom-left"), scale: rect(".maplibregl-ctrl-bottom-right"), maplibreCanvasCount: document.querySelectorAll(".geovisor-map .maplibregl-canvas").length, resources };
   })()`;
   diagnostic.desktop = await evaluate(cdp.send, probe);
   await screenshot(cdp.send, "geovisor-desktop.png");
@@ -185,7 +191,8 @@ try {
   await screenshot(cdp.send, "geovisor-context-layers.png");
 
   await cdp.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
-  await delay(1_200);
+  await focusMap(cdp.send);
+  await delay(1_500);
   diagnostic.mobile = await evaluate(cdp.send, probe);
   await screenshot(cdp.send, "geovisor-mobile-390.png");
 
