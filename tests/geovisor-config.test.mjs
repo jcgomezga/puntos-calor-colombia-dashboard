@@ -77,6 +77,15 @@ test("uses the official IDEAM 2024 vector tile endpoint and its complete symbol 
   assert.equal(catalogBlock.match(/^\s+\["/gm)?.length, 54);
 });
 
+test("uses a scale-aware hierarchy for department and municipality labels", () => {
+  assert.match(geovisorSource, /NATIONAL_DEPARTMENT_LABEL_MAX_ZOOM = 7\.6/);
+  assert.match(geovisorSource, /NATIONAL_MUNICIPALITY_LABEL_MIN_ZOOM = 8/);
+  assert.match(geovisorSource, /SELECTED_MUNICIPALITY_LABEL_MIN_ZOOM = 6\.35/);
+  assert.match(geovisorSource, /setLayerZoomRange\(DEPARTMENT_LABEL_LAYER_ID/);
+  assert.match(geovisorSource, /setLayerZoomRange\(MUNICIPALITY_LABEL_LAYER_ID/);
+  assert.match(geovisorSource, /"text-padding": 5/);
+});
+
 test("preserves synchronized DANE selection and clustered heat detections", () => {
   assert.match(geovisorSource, /cluster:\s*true/);
   assert.match(geovisorSource, /callbacksRef\.current\.onDepartment/);

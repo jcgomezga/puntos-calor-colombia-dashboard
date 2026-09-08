@@ -15,6 +15,11 @@ const DEFAULT_LAND_COVER_OPACITY = 0.54;
 const CONTEXT_SOURCE_ID = "contexto-territorial";
 const DEPARTMENT_LABEL_LAYER_ID = "dane-department-labels";
 const MUNICIPALITY_LABEL_LAYER_ID = "dane-municipality-labels";
+const NATIONAL_DEPARTMENT_LABEL_MAX_ZOOM = 7.6;
+const NATIONAL_MUNICIPALITY_LABEL_MIN_ZOOM = 8;
+const SELECTED_DEPARTMENT_LABEL_MAX_ZOOM = 6.6;
+const SELECTED_MUNICIPALITY_LABEL_MIN_ZOOM = 6.35;
+const MUNICIPALITY_LABEL_MAX_ZOOM = 14;
 
 const LAND_COVER_CLASSES = [
   ["1.1.1. Tejido urbano continuo", "#CC0000"],
@@ -511,14 +516,14 @@ export function GeovisorMap({
           type: "symbol",
           source: "dane-department-label-points",
           minzoom: 3,
-          maxzoom: 6.8,
+          maxzoom: NATIONAL_DEPARTMENT_LABEL_MAX_ZOOM,
           layout: {
             "text-field": ["get", "name"],
-            "text-size": ["interpolate", ["linear"], ["zoom"], 3, 11, 5, 13.5, 6.8, 15.5],
+            "text-size": ["interpolate", ["linear"], ["zoom"], 3, 10.5, 5, 13, 7.6, 15.25],
             "text-transform": "uppercase",
             "text-letter-spacing": 0.04,
             "text-max-width": 10,
-            "text-padding": 3,
+            "text-padding": 4,
             "text-allow-overlap": false,
           },
           paint: {
@@ -534,16 +539,16 @@ export function GeovisorMap({
           id: MUNICIPALITY_LABEL_LAYER_ID,
           type: "symbol",
           source: "dane-municipality-label-points",
-          minzoom: 6.2,
-          maxzoom: 14,
+          minzoom: NATIONAL_MUNICIPALITY_LABEL_MIN_ZOOM,
+          maxzoom: MUNICIPALITY_LABEL_MAX_ZOOM,
           layout: {
             "text-field": ["get", "name"],
-            "text-size": ["interpolate", ["linear"], ["zoom"], 6.2, 9.5, 8.5, 11.5, 12, 13],
+            "text-size": ["interpolate", ["linear"], ["zoom"], 6.35, 9.25, 8, 10.5, 10, 12, 12, 13.2],
             "text-variable-anchor": ["center", "top", "bottom", "left", "right"],
             "text-justify": "auto",
-            "text-radial-offset": 0.15,
-            "text-max-width": 9,
-            "text-padding": 2,
+            "text-radial-offset": 0.2,
+            "text-max-width": 8.5,
+            "text-padding": 5,
             "text-allow-overlap": false,
           },
           paint: {
@@ -672,7 +677,10 @@ export function GeovisorMap({
     if (!map?.isStyleLoaded()) return;
     map.setFilter("dane-municipalities-fill", ["==", ["get", "d"], departmentCode]);
     map.setFilter("dane-municipalities-line", ["==", ["get", "d"], departmentCode]);
-    map.setFilter(MUNICIPALITY_LABEL_LAYER_ID, departmentCode === "00" ? null : ["==", ["get", "departmentCode"], departmentCode]);
+    const hasDepartmentSelection = departmentCode !== "00";
+    map.setFilter(MUNICIPALITY_LABEL_LAYER_ID, hasDepartmentSelection ? ["==", ["get", "departmentCode"], departmentCode] : null);
+    map.setLayerZoomRange(DEPARTMENT_LABEL_LAYER_ID, 3, hasDepartmentSelection ? SELECTED_DEPARTMENT_LABEL_MAX_ZOOM : NATIONAL_DEPARTMENT_LABEL_MAX_ZOOM);
+    map.setLayerZoomRange(MUNICIPALITY_LABEL_LAYER_ID, hasDepartmentSelection ? SELECTED_MUNICIPALITY_LABEL_MIN_ZOOM : NATIONAL_MUNICIPALITY_LABEL_MIN_ZOOM, MUNICIPALITY_LABEL_MAX_ZOOM);
     map.setPaintProperty("dane-departments-fill", "fill-color", ["case", ["==", ["get", "DPTO_CCDGO"], departmentCode], "#2f7d4c", "#d4e3d6"]);
     map.setPaintProperty("dane-departments-fill", "fill-opacity", ["case", ["==", ["get", "DPTO_CCDGO"], departmentCode], 0.25, 0.035]);
     map.setPaintProperty("dane-municipalities-fill", "fill-color", ["case", ["==", ["get", "m"], municipalityCode], "#215b39", "#ecf3ed"]);
