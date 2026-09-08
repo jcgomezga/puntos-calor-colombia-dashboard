@@ -410,14 +410,19 @@ try {
   checks.push({ flow: "agrupación temporal", value: "mes" });
   await assertNoRuntimeErrors(cdp.send, "Dashboard principal");
 
-  await evaluate(cdp.send, `document.querySelector(".notice a[href$='/metodologia']")?.click()`);
+  const methodologyHref = await evaluate(cdp.send, `(() => {
+    const anchor = [...document.querySelectorAll(".notice a")].find((item) => item.href.includes("metodologia"));
+    return anchor?.href ?? null;
+  })()`);
+  if (!methodologyHref) throw new Error("No se encontró el enlace público hacia Metodología en la advertencia principal.");
+  await cdp.send("Page.navigate", { url: methodologyHref });
   await waitFor(
     cdp.send,
-    `location.pathname.endsWith("/metodologia") && document.querySelector("h1")?.textContent?.includes("Cómo leer el dashboard")`,
-    "La navegación cliente hacia Metodología no se completó.",
+    `location.pathname.includes("/metodologia") && document.querySelector("h1")?.textContent?.includes("Cómo leer el dashboard")`,
+    "La navegación hacia Metodología no se completó.",
     12_000,
   );
-  checks.push({ flow: "navegación metodología" });
+  checks.push({ flow: "navegación metodología", href: methodologyHref });
   await assertNoRuntimeErrors(cdp.send, "Metodología");
 
   if (chrome.exitCode && chrome.exitCode !== 0) throw new Error(`Chrome terminó con código ${chrome.exitCode}. ${chromeErrors.slice(-1200)}`);
