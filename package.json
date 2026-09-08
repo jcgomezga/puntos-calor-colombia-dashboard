@@ -7,7 +7,6 @@
   },
   "scripts": {
     "install:ci": "bash scripts/install-ci.sh",
-    "postinstall": "git add components/public-detection-geovisor-map.tsx components/dashboard-map.tsx app/page.tsx app/globals.css tests/mb09-cartography-accessibility.test.mjs",
     "prepare:maplibre": "node scripts/copy-maplibre-worker.mjs",
     "prepare:context-details": "node scripts/shard-context-details.mjs",
     "predev": "npm run prepare:maplibre && npm run prepare:context-details",
@@ -16,10 +15,9 @@
     "build": "bash scripts/build-verified.sh",
     "prebuild:pages": "npm run prepare:maplibre && npm run prepare:context-details",
     "build:pages": "next build",
-    "postbuild:pages": "git restore --worktree .",
     "build:context-tiles": "python scripts/build_context_tiles.py",
     "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
-    "test": "npm run build && node --test $(find tests -name '*.test.mjs' ! -name 'mb09-cartography-accessibility.test.mjs' -print)",
+    "test": "npm run build && node --test tests/*.test.mjs",
     "test:e2e": "node scripts/check-dashboard-e2e.mjs",
     "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
