@@ -3,7 +3,7 @@
 **Fecha:** 8 de septiembre de 2026  
 **Rama:** `fix/mb09-geovisor-cartography-accessibility`  
 **Base funcional:** `main`  
-**Estado:** implementación técnica completa; pendiente validación visual del usuario antes de merge.
+**Estado:** **CERRADO** — implementación técnica completa, validación visual del usuario aprobada, PR #15 fusionado y GitHub Pages verificado.
 
 ## Alcance
 
@@ -65,8 +65,16 @@ El gate cartográfico usa Chrome real con WebGL2 por SwiftShader y exige, entre 
 - panel móvil colapsado a 390 px;
 - oclusión del panel colapsado inferior al 15 % de la superficie del geovisor;
 - reapertura del panel móvil;
-- territorios enfocables en Mapa básico.
+- territorios enfocables en Mapa básico;
+- superposición cero del panel con escala y atribución en los escenarios finales de prueba.
 
-## Criterio de cierre
+## Cierre ejecutado
 
-MB-09 no debe fusionarse únicamente porque CI esté verde. Por decisión del proyecto, el cierre exige una revisión visual final en navegador físico del usuario, especialmente en escritorio y móvil, antes del merge a `main`.
+- revisión visual automatizada y WebGL2 completada;
+- capturas finales inspeccionadas;
+- aprobación visual del usuario recibida el 8 de septiembre de 2026;
+- PR #15 fusionado por squash en `9c8f4389647411862d994427b0d694d7a2c31102`;
+- GitHub Pages run `34260487411` completado con `build=success` y `deploy=success`;
+- cierre documental posterior registrado mediante PR #16.
+
+La matriz global y los residuales aceptados de la auditoría se consolidan en `CIERRE_AUDITORIA_INTEGRAL_2026-09.md`.
