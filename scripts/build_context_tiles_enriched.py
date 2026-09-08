@@ -39,6 +39,37 @@ def detail_key(source: str, value: object, prefix: object | None = None) -> str:
     return f"{source}:{BASE.clean(prefix)}:{clean_value}"
 
 
+def normalize_date(value: object) -> str:
+    """Normaliza fechas ArcGIS/ISO a YYYY-MM-DD sin inventar valores."""
+    text = BASE.clean(value)
+    if not text:
+        return ""
+    if len(text) >= 10 and text[4:5] == "-" and text[7:8] == "-":
+        return text[:10]
+    try:
+        numeric = float(text)
+    except (TypeError, ValueError):
+        numeric = None
+    if numeric is not None:
+        absolute = abs(numeric)
+        if absolute >= 100_000_000_000:
+            seconds = numeric / 1000
+        elif absolute >= 100_000_000:
+            seconds = numeric
+        else:
+            seconds = None
+        if seconds is not None:
+            try:
+                return datetime.fromtimestamp(seconds, tz=timezone.utc).date().isoformat()
+            except (OverflowError, OSError, ValueError):
+                pass
+    candidate = text.replace("Z", "+00:00")
+    try:
+        return datetime.fromisoformat(candidate).date().isoformat()
+    except ValueError:
+        return text
+
+
 def runap_features(data_dir: Path) -> Iterable[dict[str, object]]:
     collection = BASE.read_gzip_json(data_dir / "boundaries" / "runap_join.geojson.gz")
     for feature in collection.get("features", []):
@@ -65,7 +96,6 @@ def anm_features(data_dir: Path) -> Iterable[dict[str, object]]:
         yield BASE.geojson_feature(geometry, {
             "detail_key": detail_key("anm", identifier),
             "codigo": BASE.clean(properties.get("codigo_exp")),
-            "estado": BASE.clean(properties.get("estado_exp")),
         }, identifier)
 
 
@@ -153,14 +183,13 @@ def build_detail_catalog(data_dir: Path) -> dict[str, object]:
             "solicitante": BASE.clean(properties.get("solicitante")),
             "minerales": BASE.clean(properties.get("minerales")),
             "etapa": BASE.clean(properties.get("etapa")),
-            "estado": BASE.clean(properties.get("estado_exp")),
             "modalidad": BASE.clean(properties.get("modalidade")),
             "tipo": BASE.clean(properties.get("tipo_explo")),
             "municipios": BASE.clean(properties.get("municipios")),
             "departamento": BASE.clean(properties.get("departamento")),
             "area_ha": properties.get("area_ha"),
-            "fecha_inscripcion": BASE.clean(properties.get("fecha_insc")),
-            "fecha_terminacion": BASE.clean(properties.get("fecha_term")),
+            "fecha_inscripcion": normalize_date(properties.get("fecha_insc")),
+            "fecha_terminacion": normalize_date(properties.get("fecha_term")),
         }
 
     anla = BASE.read_gzip_json(data_dir / "boundaries" / "anla_projects_join.json.gz")
@@ -188,7 +217,7 @@ def build_detail_catalog(data_dir: Path) -> dict[str, object]:
                     "geometria": geometry_type,
                     "estado": BASE.clean(attributes.get("estado")),
                     "acto_administrativo": BASE.clean(attributes.get("num_act_ad")),
-                    "fecha_acto": BASE.clean(attributes.get("fec_act_ad")),
+                    "fecha_acto": normalize_date(attributes.get("fec_act_ad")),
                     "articulo_acto": BASE.clean(attributes.get("art_act_ad")),
                     "contrato": BASE.clean(attributes.get("contrato")),
                     "tipo_infraestructura": BASE.clean(attributes.get("tipo_infra")),
@@ -211,7 +240,7 @@ def build_detail_catalog(data_dir: Path) -> dict[str, object]:
             "contrato_id": BASE.clean(attributes.get("CONTRAT_ID")),
             "contrato": BASE.clean(attributes.get("CONTRATO_N")),
             "area": BASE.clean(attributes.get("AREA_NOMBR")),
-            "fecha_firma": BASE.clean(attributes.get("FECHA_FIRM")),
+            "fecha_firma": normalize_date(attributes.get("FECHA_FIRM")),
             "clasificacion": BASE.clean(attributes.get("CLASIFICAC")),
             "tipo": BASE.clean(attributes.get("TIPO_CONTR")),
             "estado": BASE.clean(attributes.get("ESTAD_AREA")),
@@ -231,6 +260,7 @@ def build_detail_catalog(data_dir: Path) -> dict[str, object]:
     catalog = {
         "generatedAtUtc": datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z"),
         "recordCount": len(records),
+        "contractVersion": 2,
         "records": records,
     }
     DETAILS_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -244,6 +274,7 @@ def enriched_build_tiles(data_dir: Path, output: Path, metadata_path: Path, tipp
     metadata["details"] = {
         "path": "context-details.json",
         "recordCount": catalog["recordCount"],
+        "contractVersion": catalog["contractVersion"],
         "sizeBytes": DETAILS_PATH.stat().st_size,
     }
     metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
