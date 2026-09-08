@@ -80,7 +80,7 @@ export default function MethodologyPage() {
             El campo <strong>Confianza</strong> conserva el indicador informado para cada detección, pero <strong>VIIRS y MODIS no usan la misma escala</strong>. En los registros VIIRS del portal se presentan categorías como <strong>Baja, Nominal o Alta</strong>; en MODIS se presenta un valor de <strong>0 a 100&nbsp;%</strong>. Por ello, una categoría VIIRS no debe convertirse a un porcentaje ni compararse numéricamente con MODIS.
           </p>
           <p className="text-sm leading-6 text-[#46534a]">
-            La confianza ayuda a valorar la calidad de una detección dentro del producto de su sensor; <strong>no es la probabilidad de que exista un incendio</strong>. El <strong>FRP</strong> es la potencia radiativa estimada para el píxel y se expresa en MW cuando está disponible; algunos registros pueden aparecer como “Sin dato”.
+            La confianza ayuda a valorar la calidad de una detección dentro del producto de su sensor; estos valores <strong>no deben interpretarse como una probabilidad de que exista un incendio</strong>. El <strong>FRP</strong> es la potencia radiativa estimada para el píxel y se expresa en MW cuando está disponible; algunos registros pueden aparecer como “Sin dato”.
           </p>
         </section>
 
