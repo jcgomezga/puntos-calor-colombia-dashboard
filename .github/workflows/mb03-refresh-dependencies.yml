@@ -21,8 +21,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Actualizar Next.js a la versión corregida
-        run: npm install --save-exact next@16.3.4
+      - name: Alinear Next.js y su configuración ESLint
+        run: |
+          npm install --save-exact next@16.3.4
+          npm install --save-dev --save-exact eslint-config-next@16.3.4
       - name: Aplicar correcciones compatibles de npm audit
         run: npm audit fix --omit=dev
       - name: Verificar auditoría productiva
@@ -36,6 +38,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add package.json package-lock.json
-          git commit -m "security: actualizar dependencias productivas corregidas"
+          git commit -m "security: alinear Next.js y dependencias corregidas"
           git pull --rebase origin fix/qa-security-gates
           git push origin HEAD:fix/qa-security-gates
