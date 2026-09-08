@@ -1,0 +1,46 @@
+name: MB-09B finalizar cartografía
+
+on:
+  push:
+    branches: [fix/mb09-geovisor-cartography-accessibility]
+    paths:
+      - ".github/workflows/mb09b-finalize.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: fix/mb09-geovisor-cartography-accessibility
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - name: Aplicar cierre funcional MB-09B
+        run: node scripts/mb09b-finalize.mjs
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Pruebas y build Vite/Vinext
+        run: env -u GITHUB_ACTIONS npm test
+      - name: Exportación Pages
+        run: npm run build:pages
+      - name: E2E general en Chrome
+        run: npm run test:e2e
+      - name: Guardar implementación validada
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add components/public-detection-geovisor-map.tsx components/dashboard-map.tsx app/page.tsx app/globals.css tests/mb09-cartography-accessibility.test.mjs
+          if git diff --cached --quiet; then
+            echo "No hubo cambios que guardar."
+            exit 0
+          fi
+          git commit -m "fix: cerrar interacción cartográfica responsive y accesible"
+          git pull --rebase origin fix/mb09-geovisor-cartography-accessibility
+          git push origin HEAD:fix/mb09-geovisor-cartography-accessibility
