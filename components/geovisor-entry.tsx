@@ -3,12 +3,10 @@
 import * as maplibregl from "maplibre-gl";
 import type { ComponentProps } from "react";
 import dashboardJson from "@/public/data/dashboard.json";
-import { OperationalGeovisorMap as BaseGeovisorMap } from "./operational-geovisor-map";
+import { PublicDetectionGeovisorMap as BaseGeovisorMap } from "./public-detection-geovisor-map";
 
-// MapLibre GL JS v6 requires an explicit worker URL when bundled. A relative
-// same-origin path works in the Work/Vite preview and under the GitHub Pages
-// repository base path. The matching worker and shared module are copied from
-// the installed MapLibre package before each build/dev run.
+// MapLibre GL JS v6 requiere un worker explícito. La ruta relativa funciona
+// tanto en Vite local como bajo el basePath del repositorio en GitHub Pages.
 maplibregl.setWorkerUrl("./maplibre/maplibre-gl-worker.mjs");
 
 type DashboardCatalog = {
