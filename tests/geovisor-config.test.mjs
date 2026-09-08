@@ -4,7 +4,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
-const geovisorSource = await readFile(`${root}/components/geovisor-map.tsx`, "utf8");
+const geovisorSource = await readFile(`${root}/components/public-detection-geovisor-map.tsx`, "utf8");
 const geovisorEntrySource = await readFile(`${root}/components/geovisor-entry.tsx`, "utf8");
 const copyWorkerSource = await readFile(`${root}/scripts/copy-maplibre-worker.mjs`, "utf8");
 const runViteSource = await readFile(`${root}/scripts/run-vite.mjs`, "utf8");
@@ -45,15 +45,15 @@ test("starts the Vite preview portably on Windows and Unix-like shells", () => {
 test("labels departments nationally and municipalities as the user zooms in", () => {
   assert.match(geovisorEntrySource, /departmentNames = Object\.fromEntries/);
   assert.match(geovisorEntrySource, /municipalityNames = Object\.fromEntries/);
-  assert.match(geovisorSource, /territoryLabelGeoJson/);
+  assert.match(geovisorSource, /territoryLabels/);
   assert.match(geovisorSource, /dane-department-label-points/);
   assert.match(geovisorSource, /dane-municipality-label-points/);
-  assert.match(geovisorSource, /id: DEPARTMENT_LABEL_LAYER_ID/);
-  assert.match(geovisorSource, /maxzoom: NATIONAL_DEPARTMENT_LABEL_MAX_ZOOM/);
-  assert.match(geovisorSource, /id: MUNICIPALITY_LABEL_LAYER_ID/);
-  assert.match(geovisorSource, /minzoom: NATIONAL_MUNICIPALITY_LABEL_MIN_ZOOM/);
-  assert.match(geovisorSource, /hasDepartmentSelection/);
-  assert.match(geovisorSource, /DEPARTMENT_LABEL_LAYER_ID, MUNICIPALITY_LABEL_LAYER_ID/);
+  assert.match(geovisorSource, /DEPARTMENT_LABEL_LAYER_ID/);
+  assert.match(geovisorSource, /NATIONAL_DEPARTMENT_LABEL_MAX_ZOOM/);
+  assert.match(geovisorSource, /MUNICIPALITY_LABEL_LAYER_ID/);
+  assert.match(geovisorSource, /NATIONAL_MUNICIPALITY_LABEL_MIN_ZOOM/);
+  assert.match(geovisorSource, /setLayerZoomRange\(DEPARTMENT_LABEL_LAYER_ID/);
+  assert.match(geovisorSource, /setLayerZoomRange\(MUNICIPALITY_LABEL_LAYER_ID/);
 });
 
 test("publishes the four territorial context sources as optional PMTiles layers", () => {
@@ -65,17 +65,15 @@ test("publishes the four territorial context sources as optional PMTiles layers"
     assert.match(geovisorSource, new RegExp(`toggleLayer\\("${layer}"\\)`));
   }
   assert.match(geovisorSource, /queryModeRef\.current === "context"/);
-  assert.match(geovisorSource, /contextPopup\(feature\)/);
+  assert.match(geovisorSource, /loadContextDetail\(detailKey\)/);
+  assert.match(geovisorSource, /visibleContextLayerIds/);
 });
 
 test("uses the official IDEAM 2024 vector tile endpoint and its complete symbol catalog", () => {
-  assert.match(
-    geovisorSource,
-    /visualizador\.ideam\.gov\.co\/gisserver\/rest\/services\/Hosted\/MNCT_2024V01_VT\/VectorTileServer\/tile\/\{z\}\/\{y\}\/\{x\}\.pbf/,
-  );
+  assert.match(geovisorSource, /visualizador\.ideam\.gov\.co\/gisserver\/rest\/services\/Hosted\/MNCT_2024V01_VT\/VectorTileServer\/tile\/\{z\}\/\{y\}\/\{x\}\.pbf/);
   assert.match(geovisorSource, /Mapa Nacional de las Coberturas de la Tierra 2024/);
   const catalogBlock = geovisorSource.match(/const LAND_COVER_CLASSES = \[([\s\S]*?)\] as const;/)?.[1] ?? "";
-  assert.equal(catalogBlock.match(/^\s+\["/gm)?.length, 54);
+  assert.equal(catalogBlock.match(/\["/g)?.length, 54);
 });
 
 test("uses a scale-aware hierarchy for department and municipality labels", () => {
@@ -88,7 +86,7 @@ test("uses a scale-aware hierarchy for department and municipality labels", () =
 });
 
 test("preserves synchronized DANE selection and clustered heat detections", () => {
-  assert.match(geovisorSource, /cluster:\s*true/);
+  assert.match(geovisorSource, /cluster: true/);
   assert.match(geovisorSource, /callbacksRef\.current\.onDepartment/);
   assert.match(geovisorSource, /callbacksRef\.current\.onMunicipality/);
   assert.match(geovisorSource, /dane-departments/);
