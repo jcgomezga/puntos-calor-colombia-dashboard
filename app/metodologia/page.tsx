@@ -76,22 +76,25 @@ export default function MethodologyPage() {
 
         <section className="rounded-xl border border-[#dbe3dc] bg-white p-5 shadow-sm">
           <h2 className="mb-3 font-serif text-xl">5. Confianza y FRP</h2>
+          <p className="mb-3 text-sm leading-6 text-[#46534a]">
+            El campo <strong>Confianza</strong> conserva el indicador informado para cada detección, pero <strong>VIIRS y MODIS no usan la misma escala</strong>. En los registros VIIRS del portal se presentan categorías como <strong>Baja, Nominal o Alta</strong>; en MODIS se presenta un valor de <strong>0 a 100&nbsp;%</strong>. Por ello, una categoría VIIRS no debe convertirse a un porcentaje ni compararse numéricamente con MODIS.
+          </p>
           <p className="text-sm leading-6 text-[#46534a]">
-            El campo <strong>Confianza</strong> reproduce el indicador informado por la fuente/sensor para la detección. Su escala y significado dependen del producto satelital y <strong>no deben interpretarse como una probabilidad de que exista un incendio</strong> ni compararse automáticamente entre sensores distintos. El <strong>FRP</strong> es la potencia radiativa del fuego estimada por el producto y se expresa en MW cuando está disponible; algunos registros pueden aparecer como “Sin dato”.
+            La confianza ayuda a valorar la calidad de una detección dentro del producto de su sensor; <strong>no es la probabilidad de que exista un incendio</strong>. El <strong>FRP</strong> es la potencia radiativa estimada para el píxel y se expresa en MW cuando está disponible; algunos registros pueden aparecer como “Sin dato”.
           </p>
         </section>
 
         <section className="rounded-xl border border-[#dbe3dc] bg-white p-5 shadow-sm">
           <h2 className="mb-3 font-serif text-xl">6. Situación de proyectos ANLA</h2>
           <p className="text-sm leading-6 text-[#46534a]">
-            Las categorías de situación ANLA <strong>no son necesariamente excluyentes a escala de detección</strong>. Una misma detección puede estar relacionada espacialmente con más de un proyecto y esos proyectos pueden encontrarse en situaciones diferentes. Por eso los subtotales por situación no deben sumarse como si fueran grupos mutuamente exclusivos.
+            Las categorías de situación ANLA <strong>no son excluyentes a escala de detección</strong>. Una misma detección puede estar relacionada espacialmente con varios proyectos a la vez y esos proyectos pueden encontrarse en situaciones diferentes —por ejemplo, uno en evaluación y otro licenciado—. En consecuencia, una detección puede aparecer en ambos filtros y los subtotales por situación <strong>no deben sumarse</strong> como si fueran grupos mutuamente exclusivos.
           </p>
         </section>
 
         <section className="rounded-xl border border-[#dbe3dc] bg-white p-5 shadow-sm">
           <h2 className="mb-3 font-serif text-xl">7. Registros sin asignación</h2>
           <p className="text-sm leading-6 text-[#46534a]">
-            Algunas detecciones pueden no tener una asignación territorial o de cobertura disponible en los productos usados para el cruce. Esos registros permanecen en el total general cuando cumplen los demás criterios del portal. Por ello, la suma de categorías territoriales o de cobertura puede no coincidir exactamente con el total general visible.
+            Algunas detecciones pueden no tener una asignación territorial o de cobertura disponible en los productos usados para el cruce. Esos registros permanecen en el total general cuando cumplen los demás criterios del portal. Por ello, la suma de categorías territoriales o de cobertura puede no coincidir exactamente con el total general visible. El dashboard permite aislar estas detecciones mediante las opciones <strong>Sin territorio asignado</strong> y <strong>Sin cobertura asignada</strong> de los filtros correspondientes.
           </p>
         </section>
 
