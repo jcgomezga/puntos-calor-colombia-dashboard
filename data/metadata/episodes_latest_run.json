@@ -1,27 +1,27 @@
 {
   "status": "completed",
-  "finishedAtUtc": "2026-09-12T11:02:32Z",
+  "finishedAtUtc": "2026-09-12T15:42:06Z",
   "methodVersion": "episodes-b-1000m-24h-min3-v1",
   "scenario": "B",
   "spatialMeters": 1000,
   "temporalHours": 24,
   "minimumMembers": 3,
-  "evaluatedRows": 25378,
+  "evaluatedRows": 25422,
   "excludedScenarioARows": 11227,
-  "episodeCount": 2195,
-  "episodeRows": 12708,
-  "pairCount": 2338,
-  "pairRows": 4676,
-  "isolatedRows": 7994,
+  "episodeCount": 2200,
+  "episodeRows": 12736,
+  "pairCount": 2342,
+  "pairRows": 4684,
+  "isolatedRows": 8002,
   "chainedEpisodeCount": 17,
   "chainedRows": 1043,
-  "candidateLinks": 38686,
-  "crossMunicipalityCandidateGroups": 204,
+  "candidateLinks": 38760,
+  "crossMunicipalityCandidateGroups": 205,
   "crossMunicipalityEpisodes": 153,
-  "lineageEventsThisRun": 6,
+  "lineageEventsThisRun": 10,
   "lineageCounts": {
     "created": 5,
-    "expanded": 1
+    "expanded": 5
   },
-  "generatedAtUtc": "2026-09-12T11:02:32Z"
+  "generatedAtUtc": "2026-09-12T15:42:06Z"
 }
