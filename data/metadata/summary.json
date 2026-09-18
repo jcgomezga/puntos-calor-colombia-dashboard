@@ -1,19 +1,19 @@
 {
   "by_sensor": {
-    "MODIS": 2540,
-    "VIIRS": 36241
+    "MODIS": 2560,
+    "VIIRS": 36361
   },
   "by_source": {
-    "MODIS-Aqua": 1962,
+    "MODIS-Aqua": 1982,
     "MODIS-Terra": 578,
     "VIIRS-NOAA-20": 12496,
-    "VIIRS-NOAA-21": 11819,
-    "VIIRS-Suomi-NPP": 11926
+    "VIIRS-NOAA-21": 11936,
+    "VIIRS-Suomi-NPP": 11929
   },
   "duplicates_removed": 0,
   "first_observation_local": "2026-07-01T01:33-05:00",
-  "generated_at_utc": "2026-09-17T21:26:41Z",
-  "last_observation_local": "2026-09-17T13:17-05:00",
+  "generated_at_utc": "2026-09-18T04:50:04Z",
+  "last_observation_local": "2026-09-17T15:06-05:00",
   "policy": {
     "history_mode": "cumulative",
     "history_start_date": "2026-07-01",
@@ -39,17 +39,17 @@
     {
       "month": "2026-09",
       "path": "processed/hotspots_2026-09.csv",
-      "rows": 7890,
-      "sha256": "0f439f79a93056269560578663361c89ee20eaff49314b9076836033c61b82b6",
-      "size_bytes": 1831411
+      "rows": 8030,
+      "sha256": "731623f14be9198a29c8799429fd86f8d45201b6a1be7c4f7ab51bb68e98f178",
+      "size_bytes": 1863622
     }
   ],
   "raw_files": 79,
-  "rows_read": 38781,
+  "rows_read": 38921,
   "rows_rejected_cutoff": 0,
   "rows_rejected_invalid": 0,
-  "rows_unique": 38781,
-  "rows_valid_before_dedup": 38781,
-  "scenario_a_rows": 38781,
-  "scenario_b_rows": 26855
+  "rows_unique": 38921,
+  "rows_valid_before_dedup": 38921,
+  "scenario_a_rows": 38921,
+  "scenario_b_rows": 26992
 }

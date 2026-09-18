@@ -30,6 +30,8 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 00312238f9d9411d593de8d6,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 003585896932f92c89f92410,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,
 0036be8b9c5ce178ee5af979,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+0039da18d7a76064949fdd72,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
+003c9603d173cd78b57cda37,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 003cf0809f33d08e5611558f,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,BingMaps
 003d94472d325f5aec959532,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 003de520077a4165008f7cce,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -41,6 +43,8 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 0044225f5dfb611ef7455a70,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 0045ad919bb10f5ef85d5151,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0048c0ae2ebf837d8c7d5a9f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
+004cfd68b7d7251a1d8456cb,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
+004d21f1d9e4935d1c175421,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 004f7a2a6729bef7e2a5827c,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,"Sentinel_2024_mediana_11042025, GoogleEarth, Basemap"
 005071d62b21b4f17a336f28,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 0050a54e78aff647d7a01033,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
@@ -369,6 +373,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 0271e756e45f0842d92fa727,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 0272ff0c120f7a2b89ce650c,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,
 0273743a342efc2c18decdb1,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
+0273d413826bfabfae4dafb4,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 0274be0d03e7a97731f66cd9,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 02763aa744cd2b183f12e3e0,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 027b04cede60518450afc62a,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
@@ -394,6 +399,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 029d944f89113b45166017cb,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 029ef90b784b11e6134e627e,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 029f0675af787eb0ef09fcd5,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,"Landsat_2024_mediana_28042025, Landsat8_556_24/01/2024",GoogleEarth
+029f3050a50a66fdea0cd218,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 02a08350bb97058e0e275dce,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 02a3f3f6476c7339a23b0c9c,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 02a6c2c56a4cb3c7e5b254a0,asignado,334,3.3.4. Zonas quemadas,3,33,334,,,,SI,L9_658_20240224,
@@ -580,6 +586,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 03f5db6651e6724791e3ad25,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,L9_560_20240507,L8_560_20240209
 03f6ec284536f1b7fa38f9d4,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 03f7cc2425f1640fb6523b6c,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+03ff713167d59ee64a048a60,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 040031bfa496f7aadb1f824a,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 0400c8d7c34e5e79aecb94f2,asignado,31221,3.1.2.2.1. Bosque abierto bajo de tierra firme,3,31,312,3122,31221,,SI,Landsat_2024_mediana_28042025,
 040108e9fa58455296acdb05,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -889,6 +896,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 06020da1432915bb1d394b49,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 0608afd6d56acb5d5f225958,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,
 0608d2537fa0154853283d48,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
+060970ba5707c3d1b1cee731,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 060f6dbfbb05ac6ee0326480,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 061618a921e92042d9702cf4,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 0618bce27725c38f4a91f138,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -1257,6 +1265,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 088289157796270b5f9133a3,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0883ef1942f33ae30658e24b,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
 088420b75f4d46efe756b53b,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
+0884a9897b2c728dd623af98,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0884ba1a20f03d02d00dd1ad,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0884c86e00dde21b39442990,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,<Null>
 088c04d0367f6dfed8fe6897,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
@@ -1445,6 +1454,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 09d45ac95a800b98430164e0,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,<Null>
 09d7e879fcd6c2be028822dc,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 09d8256aeffe85c47db265fe,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+09db82397590485c114b45ea,asignado,334,3.3.4. Zonas quemadas,3,33,334,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 09dc34c7921eaf5ed4f25611,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 09ddf15be259b802656ab73d,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,<Null>
 09e198994832a84a3b9f84e9,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
@@ -1506,6 +1516,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 0a4e7f5fc92ab7f5123cca08,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 0a50a16b7959032f8db16651,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,<Null>
 0a5112adda89e2fcfc9a09c3,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,L9_759_20240115,
+0a532582046c827a6143b771,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 0a54511f21d376f7ca781d79,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0a5513aafd42d1ac6181b046,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0a5603e831e31cb257af963d,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
@@ -1646,6 +1657,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 0b2998dc098ef6eecb007b21,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0b2c36cb84d5b5ba5d6dfa71,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0b2ca9e1d9aa8ee18441aea1,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+0b2f06768c325878bbf651aa,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Sentinel_2024_mediana_11042025,
 0b2f67987210c698c11e2311,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 0b2f6f559b7f4c664ed0a640,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0b316567540ccfcd3f6a55ab,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -2335,6 +2347,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 0fbfcd9e73eb3a00881d34f2,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 0fc0601d75931a5696ab2866,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0fc193ee796679a1495b5f67,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
+0fc251cf7cd8364acd69ffda,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 0fc2fdf2f9d5e1f08623cb64,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
 0fc8b5b9d5f4e44f6b944cde,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 0fc8f3cbf043cac789995e60,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
@@ -2484,6 +2497,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 10b8fab9b9aebecde9f6eac6,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 10b9aef3def977e8335c577d,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 10bba83a9485a22b3c42712a,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+10bc9facd81a69d49c209e9b,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 10bdc228b27432f2711db328,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,
 10bf46848b22c8d316fb0c21,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,L9_658_20240224,
 10c00573134c3b750801ab09,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
@@ -3403,6 +3417,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 16d108c262860fffb2803b47,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 16d397d038f17599e03c49a4,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,L8_858_20240410,"Layer Google Earth, Basemap ESRI"
 16d45e827cbfe6739ebb1061,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+16d45f761d1c6cf295ffdd3b,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,
 16d50b005fad80c652864c91,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,
 16d52f36309bcdf6bcf03f40,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,<Null>
 16d65036760a55a2a1c4f5c0,asignado,332,3.3.2. Afloramientos rocosos,3,33,332,,,,SI,Landsat_2024_mediana_28042025,
@@ -4315,6 +4330,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 1ce229358c6d5aaf83331af5,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 1ce28c4f4b0292e1480d48d3,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 1ce3f364499d355871ef8ae1,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+1ce42ae58e5e602e9bcd6933,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 1ce797ed5efb1d3543745314,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,<Null>
 1cea4683286441dbd516aa7c,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 1cecae97b058173ad3dbc1f4,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
@@ -4669,6 +4685,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 1f20eb7b20742794bf195238,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025, L9_657_20240412, L9_557_20240225","GoogleEarth, BingMaps, Planet Medres Normalized Analytic 2024-01 Mosaic"
 1f215d1e9fca94a3670905a5,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 1f287390be4cb038ab885ff9,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
+1f28d4715cea20d50c3a9580,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,<Null>
 1f2c34ccb4b6fa0e60da92de,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 1f2d1732fc14e4ba78cfe2a8,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 1f317cfb276dfc396147332d,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -4680,6 +4697,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 1f37231578bcf3da3fdff535,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
 1f381e7db122c36b7beaaa9d,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
 1f384294d4ff3646e3e398ac,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,<Null>
+1f3963377809fd59d880d692,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 1f39e968cb36987fccef3fa4,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 1f3ad4d9511178cb399e9474,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 1f3bf66b4f316b3c0d2a491a,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
@@ -4710,6 +4728,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 1f6edba99ba401bac304be00,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 1f73c9e613bbc0028fcd4941,asignado,3131,3.1.3.1. Bosque fragmentado con pastos y cultivos,3,31,313,3131,,,SI,L8_758_20240106,
 1f749d7d4f4179b7a61b0345,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
+1f76c801cf9942d7626fc5bf,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 1f76d26a0d876fb56808d81a,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 1f7aaa15596d9dd873e56eb0,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,<Null>
 1f7bbf5f146896b79fba0e78,asignado,241,2.4.1. Mosaico de cultivos,2,24,241,,,,SI,Landsat_2024_mediana_28042025,Basemap
@@ -5048,6 +5067,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 217a5d7ece30705ef0bc2024,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 2181945fa908daba3e8a42a8,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 2182a52dad0b8a1e972cf59d,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
+2184fe3f6458f4dd355cabaa,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 2185e3ec85eddb9e0af5e76a,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,
 218613c0f7b1fe6269fd9aea,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 2186e81ec97ba35decc2e834,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
@@ -5355,6 +5375,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 2377c333e7bd6ff58cb09f4b,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 237837bd88e372faffb0f2ae,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 2378beab01ecfc85dd694a12,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+237ae16da054fd9f29a4a4eb,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 237d10b1d676a0b67fe03449,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 237d9645311e1a08511853d4,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 237e25c1ec758ee63fcf1752,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,
@@ -5537,6 +5558,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 24bb6b0a2bce4065c05cc5d5,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 24bda9cb98db865b1dec5740,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 24c27ff1c09b9beac16783ba,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
+24c3aa6804ff3273d7589196,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 24c6182e4729975ff4a6488a,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 24c897ae9e47e00b399a19b0,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,<Null>
 24c8d066cabaa699c2749764,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
@@ -5674,7 +5696,9 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 25be87df19f6e8fb802d39fc,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,<Null>
 25bf5de4f2845e6571856cd4,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 25c07de375391a5e99e4ba02,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
+25c0f4b27d5bea87a9bf3f3e,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 25c12d11b7907508bdd52ba5,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+25c1bf71a01d24cb69d92b14,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 25c304a89df20365ba508d61,asignado,315,3.1.5. Plantación forestal,3,31,315,,,,SI,Landsat_2024_mediana_28042025,
 25c336c1abd3e076032c9e9c,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 25c3f9a1ffb204cb1e6a31ce,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
@@ -6213,6 +6237,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 2907fa2668a7238f222d3de0,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,L8_859_20240222_20240224_GEO,
 2908d8a125b1694ce06d7b4a,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 290c32fa33be549dded5ae1c,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
+2911b1c7f534634c2a6e5403,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 2912463b6788fd7f4d72dd8d,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 291279f931ba9d10e6fa3b29,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,L8_859_20240222_20240224,
 29131a1414f04651d70219cd,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -6245,6 +6270,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 295465f79516bc8823b70eb4,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 2956337c75d9afbe4c0664dd,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 29569aba4bde75543bfcb624,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
+2956cbecff4b6773155f077a,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 29578ca7fa06edf254d1ca72,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 295ad60f5f5169500c19d384,asignado,315,3.1.5. Plantación forestal,3,31,315,,,,SI,Landsat_2024_mediana_28042025,
 295e2af4bd3f8e795e0b60dc,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -6368,6 +6394,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 2a2ab567935be8148ae23fa3,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 2a2afa886289423212d82a9b,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 2a2e09b9717e3d2e148340bd,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
+2a323853fa1e7313401244e6,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 2a324489024ffeb5f77a2348,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,<Null>
 2a331a497eb844b97f25901b,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 2a35e2f18ca817f5c68aa9c7,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
@@ -7023,6 +7050,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 2e5f151a29db9545256128fc,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 2e5f1575fc3e7601a0754148,asignado,2122,2.1.2.2. Maíz,2,21,212,2122,,,SI,Landsat_2024_mediana_28042025,
 2e5f69fb45642baacad6d450,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
+2e5fa60c4f563435ea6472cf,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,<Null>
 2e5febf8916e6028c91d3136,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 2e609a561c06088ac0b7dd30,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
 2e61505c2f913a0c595596d3,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
@@ -7032,7 +7060,9 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 2e68cf7b2158bca520a07dec,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 2e6980ea08622bf8a669883f,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 2e69b8fcf6e00ba8cc09123a,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+2e6a8c8f7f319dd54bb11a7a,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 2e6b3db09b0cdb1bfbd4664c,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
+2e70b1529bdc1ad7e5560aa4,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 2e7188e9c8347012c001852b,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 2e72d0c133da88f109eef8c6,asignado,3132,3.1.3.2. Bosque fragmentado con vegetación secundaria,3,31,313,3132,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 2e744fc5231b97dfce053615,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
@@ -7164,6 +7194,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 2f54e3554e8bf283776f0de3,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 2f56749a4c87447db5dae9f8,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 2f5ae5d523e55753a554b028,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+2f5bd46b6f582f02dc2ed2db,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 2f5c2f5b8b33c2a85b2185a4,asignado,2232,2.2.3.2. Palma de aceite,2,22,223,2232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 2f5df23aca76756b3c8e7173,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 2f5f1b03e55605409f638154,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
@@ -7213,6 +7244,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 2f9e5004ac9a4676bd5280d5,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 2fa0a21bdebb6b7719904b8f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 2fa3d17de7c3570214bbf4ef,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
+2fa513302e25716d42206e38,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 2fa8d70e32bea11cfaf77ad7,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 2fa9a3ab902b5486e0d5b034,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 2fabde01dc969f3c9e99f550,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -7286,6 +7318,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3023251755bacbf11944eb8b,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 30252b3989d8ddecc874d702,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 3025a8469c2c7cd365e0c6d9,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
+3026f58f22fc39204f0e09cd,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 302882cc251864e49e6d2c06,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 302b4120112c50532377286d,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
 302ce1a1fc50a571788fe49e,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
@@ -7294,6 +7327,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 302f0c73c86f139f25b8c624,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,L9_457_20240109,Web Maps (Bing/ArcGIS/Google)
 30303bc4af563425484a52ff,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
 30317652f819557a63bbfc7d,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+30318960a31198e3eb909598,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
 30323b8781189fc30661454a,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 3032ee0904c7424bdc614ef8,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 303ac94537d0b0744c103747,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -8020,6 +8054,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 34a1c140f648bc2519ca0c9e,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 34a20dcf6d05a1b2af93ce0f,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 34a5a7a06be48d36afb8d63c,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
+34a9b5205f8a97a69868718c,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 34ad100474e7bf04f202666f,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 34b1feb062333fb27f16cf40,asignado,3131,3.1.3.1. Bosque fragmentado con pastos y cultivos,3,31,313,3131,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 34b353e057014753cc64e99e,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
@@ -8499,6 +8534,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 37a9f0ebe8454a052c65749c,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 37ae420a2a47d9112f0852c8,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025, L9_657_20240412","GoogleEarth, BingMaps, Planet Medres Normalized Analytic 2024-01 Mosaic"
 37aecb47f9d06877e1af46e2,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+37b16bda26c7dd0174cd366b,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 37b37c7f589bda8118806baf,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 37b39bd1aaeea0c86d841084,asignado,32121,3.2.1.2.1. Herbazal abierto arenoso,3,32,321,3212,32121,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 37b43cc1067ecd69662045e4,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
@@ -9176,6 +9212,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3c3bcf794fdb1e2267e876b4,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 3c3be8f64c405bbad549e77a,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 3c3d5266949616f932786481,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
+3c3d7b365a6498d0b1a2e1ae,asignado,315,3.1.5. Plantación forestal,3,31,315,,,,SI,Landsat_2024_mediana_28042025,
 3c3f2a749df1fdfcd4aebabd,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 3c401b86df9511a97a952d4b,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 3c414a2eb80661f2a06da50d,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
@@ -9199,6 +9236,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3c5de3cd33e45fe87ff199a7,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,<Null>
 3c5ec69be14fab9d16ac7771,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 3c5eef81819779879bd395dd,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+3c613ffcaf0eb1b212c4786a,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 3c616f4fe3892c4a9c199867,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,"Landsat9_854_31/07/2024, Landsat9_954_15/07/2024, Landsat_2024_mediana_28042025",
 3c62bfba0046771bfac8402a,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 3c64a6c09597845d2f69e835,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
@@ -9393,6 +9431,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3db23d410d70d612b20b6eec,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat9_854_31/07/2024,
 3db4fecdf7c9bd2e83988eaf,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 3db70264f43a2072c67275e1,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
+3db887a04d84d7236d0860e1,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 3dbdec1f7af159e8276f404e,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 3dbea2a4b37b8a419579c889,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
 3dbea84fa6866d83b1b24990,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -9607,6 +9646,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3f17f3a88eea497a6846441b,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 3f19512b64022f2e1c2bae09,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 3f1a489226fbc0c3c7308f19,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+3f1af0646abd70603bf56e93,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 3f1db3f22819e7f1fe930046,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 3f1dca9690da3e31520df622,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 3f206ef8c3262094b18db705,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
@@ -9627,6 +9667,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3f3c05a070584a4b2bcbb075,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
 3f3d1d3278dcc56ed52c512c,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
 3f3d58bb31c912f77597418b,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
+3f3db20c5ad6d14fd560db1f,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 3f3ee0b029d67d2456bf1836,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 3f43380acabe6019a04ca9a6,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 3f46f6f5db92a6499e7c03b3,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -9654,6 +9695,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3f7c27d81aaf9255fdbf4634,asignado,413,4.1.3. Vegetación acuática sobre cuerpos de agua,4,41,413,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 3f7e9b075e2146a4402f4a78,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 3f7f4078391a0c7b41e4be1b,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
+3f81ff4b8062642925b5ad79,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 3f85e8cbd33765a498985567,asignado,232,2.3.2. Pastos arbolados,2,23,232,,,,SI,Landsat_2024_mediana_28042025,
 3f85f45406afc5f2d04ad0d3,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 3f85f8fc424c1558f37a1dac,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -9688,6 +9730,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3fbcf6cd75e7fcab5d172994,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 3fbec4ccca1159728fe66de2,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 3fbf5d8c94e659b6070a58ca,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025, L9_658_20240224","GoogleEarth, Planet Medres Normalized Analytic 2024-01 Mosaic"
+3fc172533ac3a26f2d136307,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 3fc2393794252538a960206f,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 3fc3eda91a0f2aa2e42d46b1,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 3fc6b50bb43618482a494a19,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
@@ -9701,6 +9744,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 3fd772d85cbf73a060b7266b,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 3fd82c372d3f93c2b477e486,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 3fd9c0ff5a9dd052f6e542b6,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,<Null>
+3fd9d0eb30757357312a4dad,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 3fdbc037b1729712407000f2,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,
 3fde236238eb3a0f9af42e6a,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 3fdf38e5f739b50dc5640e13,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -9720,6 +9764,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 40007f68b114656deb82ad9f,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
 40011d8e12ced7d80558d3b3,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,<Null>
 40019e11b283b69f32ec6343,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
+4004860cd4754a3350b7e3f1,asignado,321122,3.2.1.1.2.2. Herbazal denso inundable arbolado,3,32,321,3211,32112,321122,SI,Landsat_2024_mediana_28042025,GoogleEarth
 4007f61bde0bdd9c9235c5ca,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 4008521ea62a8dfd5afd77ba,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025, L9_657_20240412, L9_557_20240225","GoogleEarth, BingMaps, Planet Medres Normalized Analytic 2024-01 Mosaic"
 4009e6ea10db7939786e024b,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
@@ -9827,6 +9872,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 40ad848c9590b90002c48d9b,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 40b02e50e10f39ce710641e6,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
 40b7eeb09388eff724cc73f0,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+40b94e500d0dd13818559192,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 40bb0e91373a798f9a74a7b2,asignado,3132,3.1.3.2. Bosque fragmentado con vegetación secundaria,3,31,313,3132,,,SI,Landsat_2024_mediana_28042025,
 40bb2ec2aca6648e34b8f6c3,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,L9_759_20240115,Planet Medres Normalized Analytic 2024-01 Mosaic
 40bbe0320482eeba5594d8f4,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
@@ -10317,6 +10363,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 43f5997d9e61c0cbfd49f4d5,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
 43f62ef806c1925d81576dce,asignado,321122,3.2.1.1.2.2. Herbazal denso inundable arbolado,3,32,321,3211,32112,321122,SI,Landsat_2024_mediana_28042025,GoogleEarth
 43f9549156e64720d419b3f2,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,
+43fb24614ac8d4a440bafcf4,asignado,321113,3.2.1.1.1.3.  Herbazal denso de tierra firme con arbustos,3,32,321,3211,32111,321113,SI,Landsat_2024_mediana_28042025,
 43fbeb1ddeda381a45140346,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,
 43fccbc3843bf9e1c3f06790,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 43fe89a71131c40483f83663,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -10344,6 +10391,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 44218b1fd34132e1333308f3,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 44236d9375c2787401ed960e,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 44249af6456a35a3be70f116,asignado,32121,3.2.1.2.1. Herbazal abierto arenoso,3,32,321,3212,32121,,SI,Landsat9_456_09/01/2024,
+44254fc60d604eac00e24f5f,asignado,31121,3.1.1.2.1. Bosque denso bajo de tierra firme,3,31,311,3112,31121,,SI,Landsat_2024_mediana_28042025,
 4425886f1c8e1c42baf739b8,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 44282ea18410a66f9ca05508,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 442bacfdb3a36aff61ca5499,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -11060,6 +11108,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 48c151774e7750148c463e46,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 48c1f7dd651493692957e1ed,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
 48c21c6115bf6b8f5803afd7,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+48c38e344529124c317ddc32,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 48c7a145c6161234599e6e8c,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 48c86814990c513c18be5010,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 48c9f03aa604ffd717f9869d,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
@@ -11204,6 +11253,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 49bc73ba2bab277eccda6741,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 49bcd2b6de390949af53661c,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 49bf6460fb41bf18be3b5618,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+49c5b6515bbdd07749cbe785,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 49c9ba66808a58e549d06187,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 49cd5c3afb9466fe90cd3cab,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 49ce39d8d5fec332b8d85bd3,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
@@ -11253,6 +11303,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 4a144107a5c7195754a188e9,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 4a14e42c276b8751a9edd056,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 4a1845788d12bd958e8f00dc,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+4a18eb524e68e76b7c5be7ab,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 4a1ae2583c51caa2e10ae175,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 4a1b996411ad8ad1b998253d,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 4a1dfd3a44b23990b93f8f27,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
@@ -11941,6 +11992,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 4eade55972d97ca24e647f85,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,<Null>
 4eb2a469e9c0899c61f7b77e,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 4eb2d29e351e70b27ba9f257,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+4eb3ba08db4d937888bb4f63,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 4eb554ec6ceb98b7b94b690a,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 4eb6791fa1c5e869be26364e,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 4eb8b8b225cd9af86bffece4,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,
@@ -12068,6 +12120,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 4f992af8e9765f2a80b25be2,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 4f9aac87d3df18cf75cdad64,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,IDEAM_puntos_CLC2024_verificacion_campo_2025
 4f9d2ce47abc2bd514b7f130,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+4f9d371933a07187220b74b8,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 4f9d9d903292ebd85c081933,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 4f9dc562469731a758cace9e,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 4f9dd719ef6c97e799efb08a,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
@@ -12110,6 +12163,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 4fd54669128142f5247f6989,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 4fd85938edaba2e3384b2e05,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 4fda17024e980250d3f39a4c,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+4fdae383cb40408947126c84,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
 4fde67fd99cbfdfbe1f7cb16,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 4fe03116e220469e69bde7d4,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 4fe172e07ffb5bc02293230e,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
@@ -12344,6 +12398,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 5164b6a9cca5eee6d2c3fdf5,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 5164e1441c5109dce39867df,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 5165d3b33129a18029bc24f2,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,
+5165e7904f3fed3200a1204b,asignado,2222,2.2.2.2. Café,2,22,222,2222,,,SI,Landsat_2024_mediana_28042025,
 51687ad26f478eff7e01ce4e,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 516a39fca9553bc6e48afa57,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 516a5e10c5285d0f674ae458,asignado,111,1.1.1. Tejido urbano continuo,1,11,111,,,,SI,Landsat_2024_mediana_28042025,
@@ -13230,6 +13285,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 5758a9e0614cb15e79d29c6e,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 575bbf3980434bcd1a2e4856,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 575ce4e8bbf950b784e898f9,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
+575d47a95e2ae85e6efc0459,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,
 575d4b631375c823ab3d7b1b,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 57615458ff241e55d62b2e23,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,L8_959_20240221,
 5763bfbd26c2aaebc5febee5,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -13494,6 +13550,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 58ec2b3e1c77c3d27a7fe80f,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 58f0457731544aea526b5b44,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,<Null>
 58f33cf458fd405d113c97ff,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
+58f39000a8feee3450f556f9,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 58f3e62f716f8b7c29172cd0,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 58f3e93aff7a22dab2081891,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 58f3fca16e7849f8aae7dca7,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -13762,6 +13819,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 5aa473c718933166f5431ada,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025, L9_658_20240224","GoogleEarth, Planet Medres Normalized Analytic 2024-01 Mosaic"
 5aa544ece9feac25f5f22263,asignado,2222,2.2.2.2. Café,2,22,222,2222,,,SI,Landsat_2024_mediana_28042025,
 5aa678841ad895e7fb3dba23,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+5aaf9ef22c75d4bd4e1a517e,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 5ab0cb2251c3cc3b5c2881fb,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,
 5ab15ab549d49d478a1a7ff2,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,
 5ab235ff9de3861dd4691bd9,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
@@ -13985,6 +14043,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 5c029bad107c29df1120cec6,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
 5c03efb46f998b42c9c69696,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,<Null>
 5c04ceba441fdcfafe17b48a,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+5c06876ce0141a44313aee1c,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 5c08ffe5677a3fff2ec0357e,asignado,323,3.2.3. Vegetación secundaria o en transición,3,32,323,,,,SI,L8_758_20240122,
 5c0953f4511af7ec6cced716,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 5c0af88337d47d6bab48ce9c,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -14327,6 +14386,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 5e485542f74b31bd738f3d6c,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 5e49d357b270db4d8194d9a7,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,Basemap
 5e4a87af93b55db64810ff17,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+5e4b95b620f85371f292f605,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 5e4de6a22f1f48211c2aa516,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 5e51449b83fb8aad7af66a2a,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 5e538fb8267ebbb3c2d70fd7,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -14621,6 +14681,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 6033cd542fd2b41189eac526,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,
 6034508047305cba63d9ae23,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
 60368d63e1ca5239c3a71ab6,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,
+6037ab0d68f0cd8547f59103,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 603a6c3a9451993c08f64f37,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,IDEAM_puntos_CLC2022_verificacion_campo_2025
 603f41757da851435547f75f,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 603f553b131ceeb39a09733f,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
@@ -14903,6 +14964,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 6231568247ec3f6be4034a52,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 623180924d09ba77c58dac32,asignado,1312,1.3.1.2. Explotación de hidrocarburos,1,13,131,1312,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 623b4ce9a4e55f519fad353b,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
+623b957e402add82a6033d2d,asignado,512,"5.1.2. Lagunas, lagos y ciénagas naturales",5,51,512,,,,SI,Landsat_2024_mediana_28042025,<Null>
 623dc80a2d6fce527bdcc043,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,<Null>
 624036f78430f922b0fea2f1,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 62406fccd895b79f8169bfb6,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -15033,6 +15095,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 6302b0ea8e91aec3bf9df8f8,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 63056aa838facff83d161c9a,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 63069d00d5c9eea6675f892c,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
+63070c11f87d5b5dd263b1ad,asignado,321112,3.2.1.1.1.2.  Herbazal denso de tierra firme arbolado,3,32,321,3211,32111,321112,SI,Landsat_2024_mediana_28042025,
 6307b9243ac1079226a5db3a,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 63083158ca861c2122a2b2f9,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 63084e11b55dc813aad03a89,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,<Null>
@@ -15826,6 +15889,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 6828566e315e2b42039a8843,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 682928cf260366fa8d090a0c,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,Basemap
 68293cd70a049767e5a2ba3e,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
+682bb7d6feea86cd50a4e506,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 682d425e8468ca8eef78fda5,asignado,334,3.3.4. Zonas quemadas,3,33,334,,,,SI,L9_658_20240224,
 682ece5f499acb5b57425cc7,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 682f9f14a38392cd3ec33275,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,L9_759_20240115,
@@ -16083,6 +16147,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 69bb7033ed445349cd17c5e9,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 69bbc86298dd505552abe56f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 69bd954caa81ae80b03208da,asignado,321113,3.2.1.1.1.3.  Herbazal denso de tierra firme con arbustos,3,32,321,3211,32111,321113,SI,Landsat_2024_mediana_28042025,
+69c1081c93d95c5402fab2e2,asignado,232,2.3.2. Pastos arbolados,2,23,232,,,,SI,Landsat_2024_mediana_28042025,
 69c113ccf4b10a2bd3a6c1b8,asignado,315,3.1.5. Plantación forestal,3,31,315,,,,SI,Landsat_2024_mediana_28042025,
 69c239a30671bc4c7e8faaf3,asignado,122,"1.2.2. Red vial, ferroviaria y terrenos asociados",1,12,122,,,,SI,Landsat_2024_mediana_28042025,<Null>
 69c34559835b207bf7c7b195,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -16296,6 +16361,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 6b33113364bd8f959892fca4,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025,L9_657_20240412,  L9_658_20240224","Basemap, Planet Medres Normalized Analytic 2024-01 Mosaic"
 6b35870ab40ea6d81a3cb777,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 6b372de62a96391040665209,asignado,2213,2.2.1.3. Plátano y banano,2,22,221,2213,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+6b38b7cc518c46ce4af498c9,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 6b38be5b38ec5ac630e70b29,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
 6b3926dc366b431786da1455,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 6b3f5c0825f2addf429ea7ed,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,<Null>
@@ -16566,6 +16632,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 6d2f81d3e5abe618176496c5,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,<Null>
 6d34865b348b8db0a1d77580,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 6d3502aacfe4c3b777d8d3b4,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
+6d363b58c8154845e116983b,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 6d366408b0bf60fa7d66a678,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 6d3688ecd7a094b8a841654b,asignado,3132,3.1.3.2. Bosque fragmentado con vegetación secundaria,3,31,313,3132,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 6d370988d869345e2ddb304b,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -17184,8 +17251,10 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 7128ae2d04584bc7c00bf037,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 7128df3e85ebefbcee96e014,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 712a950e0e2751322ce33ee7,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
+712b8f99ff8b6400a276c387,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
 712f04287d30b676861257bb,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 71315c4336635dea0e239df1,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
+7133a027cc547ea66bf65ab3,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 71350eeb8e1ee9d272b60d5d,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 7135bba0bc2be0883654f285,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 713799e324a9ea910c5b7aec,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -17302,6 +17371,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 7200fb8bb6e3b9072f75b258,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 720234d809c10b1f18d5714b,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,
 7203998b957ba789958964aa,asignado,241,2.4.1. Mosaico de cultivos,2,24,241,,,,SI,Landsat_2024_mediana_28042025,
+7204aa1971ea15ef0d0d2ddc,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 7206929c4aa1ad7105f36dce,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 7206cf1295b349f089f6dceb,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 7206dbde49c2e4451455a1f2,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
@@ -17380,6 +17450,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 729b2ca6d35f0752e86c9b65,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 729d0fc532b1810f3a721bda,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 729fe2a5945e434f2e3d5655,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
+72a0388b4d45f882a2c4e153,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 72a1de1c6a7e11301218e0f5,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
 72a41fecf48343d70eca738f,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 72a464359e19eaa97070f6ba,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,L9_461_20240109,"ArcGIS.com Aerial, Google Map Aerial"
@@ -17395,6 +17466,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 72b54e745f0a2ae519bb5c25,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 72b59ca74e1879b793f21a41,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"Sentinel_2024_mediana_11042025, GoogleEarth, Basemap"
 72b5d0e06d6801de7fb31bba,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
+72b9903c2ad2298185cf2e74,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 72ba108c970cbd3c8e6d1a98,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 72ba5ed46c7bf1605f865cd6,asignado,2222,2.2.2.2. Café,2,22,222,2222,,,SI,Landsat_2024_mediana_28042025,
 72bcb055a3bb3ab231e23f5d,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -17419,6 +17491,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 72dbcf0a88b6010ab2f62817,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,<Null>
 72dbdeeede38cfb77753ebc5,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 72dc6fb420a78bf8718a9dc1,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025,L9_657_20240412,  L9_658_20240224","Basemap, Planet Medres Normalized Analytic 2024-01 Mosaic"
+72de04c9ec42d231ab504d86,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Sentinel_2024_mediana_11042025,
 72df0826e72a17ee7fd7303d,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 72df3e292fe3c3941320afdd,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
 72e00febe29b8b8cfe466bef,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
@@ -17943,6 +18016,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 761147c8d965c1a3b5e1a219,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 7611b6ec5966b821d9c32727,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 76129070e1a4dafd6175c885,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
+7613c400963ab73658daed6d,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 76148892f6e7120353103cfa,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 7614a9bdcda179023bc40d57,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 761570f32e024631c3a42daf,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,Basemap
@@ -19389,6 +19463,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 7fcabcd3f6d3da164e9d35cc,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 7fcdc7145bab0c9651734b66,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
 7fce0a3986c73dec07914309,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+7fce19daf6e29109589f66e4,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 7fcf150550b8232113cfa8de,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 7fcf3b8bb8ce5690dea3eaf6,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 7fcff000d9ae518c14e3d72d,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,<Null>
@@ -19725,6 +19800,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 8217167d33778e2093a388d2,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 82178254979746c8e4dfeae4,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 821897d4528be651674d493e,asignado,32121,3.2.1.2.1. Herbazal abierto arenoso,3,32,321,3212,32121,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+821a8814ec5f332e1a072279,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 821d2a7c8dc2f3e58d113e7e,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,<Null>
 821e72df966cc194bff61b93,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 8224040b2c1cf632dd241a4c,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
@@ -20282,6 +20358,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 85c98dfc28bf58634c44964e,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,<Null>
 85c9b37c177dfe7013422a38,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 85caaaed8678fa956d90043d,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+85cc2e41e052a2ab9471c0bc,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
 85ce4ca0792ca9f9a99cf587,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 85cfb313ff1dc92138fe9a56,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"Sentinel_2024_mediana_11042025, GoogleEarth, Basemap"
 85d0616f52e28a270752e207,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,L8_760_20240229,
@@ -21126,6 +21203,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 8b7a9be2716acf6ce6139060,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,
 8b7c6956c407a35006220974,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
 8b7ee8c320e7eb8f674a84f5,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+8b81608df73b8bab61233c7a,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025, L9_657_20240412, L9_557_20240225","GoogleEarth, BingMaps, Planet Medres Normalized Analytic 2024-01 Mosaic"
 8b84c080cf6a3542c5b16041,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 8b865399d4fe99d6b7c242a9,asignado,111,1.1.1. Tejido urbano continuo,1,11,111,,,,SI,L8_859_20240222_20240224,
 8b86a8cca53839dd9d58d151,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,
@@ -21412,6 +21490,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 8d7ebfb242b80ec372bacee7,asignado,3132,3.1.3.2. Bosque fragmentado con vegetación secundaria,3,31,313,3132,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 8d7f048041623693fc437b43,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 8d7f079e8be16513b0016c11,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
+8d81e1a6046fd3a4fe02ee01,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 8d88038b0e867d8aabfb72b4,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 8d91a337ef7e768ff35f659c,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 8d92afbe28d74d40c359bebf,asignado,112,1.1.2. Tejido urbano discontinuo,1,11,112,,,,SI,Landsat_2024_mediana_28042025,
@@ -21443,6 +21522,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 8dba920c3c3228c92a38bafc,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 8dbb71eda03aeb037dcd57d9,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 8dbc57a00c3106d820c903cc,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
+8dbd36993e45783ccfab93cc,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 8dbdd9288aea2cd6a6b1ff34,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 8dbde6d8b91f1a0b235cc5ea,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 8dbf6b67b860f0c43e6d8d53,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
@@ -21497,6 +21577,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 8dfc5c9f280bf3fbea23a77d,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 8dfdf567688f1979ceb6250d,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 8e01016012ca9fb67d00568c,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
+8e01d8ec6ad1cbde9677dfe9,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 8e0410fa2fa775e9e0669c70,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 8e0489e612ae642ef4176828,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 8e050c0872a6b73cdd5630a7,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -21882,6 +21963,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 90624e1fba321cd16a51286e,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 9063b724fc300d3efb39d6d7,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 9064a8df529170ce46f66861,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
+906a8f640d3731b38ec626bc,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 906b6b8e3c71affbeafda717,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
 906d21d01bd236cd7b9f7574,asignado,334,3.3.4. Zonas quemadas,3,33,334,,,,SI,L9_658_20240224,
 906daa51184030dd95fd7cea,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
@@ -21899,6 +21981,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 9081f6707ebf65bb2623fa3d,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 9084647cf64778b63af4fec0,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 908556f2995fa5ee0b163175,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+90858289bfe152eafc6eacd9,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 9086e4dad018c592931d2cd8,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 908919186d23b8bba2bd67e2,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 908b756802a3a4606f89a943,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
@@ -21946,6 +22029,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 90c1083e8b9065b1e97c7447,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,
 90c12681333c1b939ca8a1f2,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 90c52ee898b286c5cde8252a,asignado,323,3.2.3. Vegetación secundaria o en transición,3,32,323,,,,SI,L9_661_20240311,
+90c556a5c1aa9a6d06673bc3,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 90c99870b318dfdeacc48352,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 90ca10647ece0ed7adf6eded,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 90cd6b2e017a66dea00e3340,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -22014,6 +22098,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 9124aea3f308cb0353031acb,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 9124e3866c120275fcb5945a,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 91257ef209b520551fe8d518,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+9129589297c76885d289c9b3,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 912b87081f6bd6c34d56398a,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,
 912d78a058931d1e1418308f,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 912e6297a9560ae95a361e31,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -22360,6 +22445,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 9346785a6df3944d82da3196,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 934b5d9cf88feae4ff663519,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 934c149a26837b4a94a265a9,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
+934d54b03c6bfad4bb7a3602,asignado,321122,3.2.1.1.2.2. Herbazal denso inundable arbolado,3,32,321,3211,32112,321122,SI,Landsat_2024_mediana_28042025,GoogleEarth
 934e1c0403713515326260b5,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
 934f0b21d86af92d8e07f141,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
 934f673f37825fd050ef86ed,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
@@ -22517,6 +22603,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 945feabacd3c31a4957ceb9b,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,
 946641f08d0cdff5a07bbaa4,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 94686141779d09067a695c4d,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+94693125230b564e55addedc,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
 9469730af21109523700d955,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,
 946b78a4262b8b70827b1532,asignado,31121,3.1.1.2.1. Bosque denso bajo de tierra firme,3,31,311,3112,31121,,SI,Landsat9_853_06/12/2024,<Null>
 946c6916a84e08bb990a5374,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -22546,6 +22633,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 948ff030380fcfcc681a081d,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 9490df0e85ae4d022044fd95,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 94913dad256c9b7e1e5acbda,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+94915fefec6919e5fb67501f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 9491a4b4ceb15bc1c678dac5,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,L9_759_20240115,
 94939af2b2f7b97e119a9d7a,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 9494909353c8c16268f7c99f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
@@ -22960,6 +23048,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 976c7aa008615417e7824ec3,asignado,31122,3.1.1.2.2. Bosque denso bajo inundable,3,31,311,3112,31122,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 976ec13abddc8bba62a38b6f,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 9770b3d316a2b0f85f85c464,asignado,413,4.1.3. Vegetación acuática sobre cuerpos de agua,4,41,413,,,,SI,Landsat9_952_28/01/2024,<Null>
+9775b54b6907919f3e0d7fab,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 9775d92b7af7f9dcec9ba2c6,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 9779db47c96501f732917f38,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 977c671c5285de7cd60985e7,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -23228,6 +23317,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 9931b294961fba9b6fdf7d2b,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 9931d3a5a07a5f22986fab3e,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,L9_658_20240224,
 9932e31c0c4cb8a6bdf14eb5,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
+9935c9c17411ce0a0063f9e9,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 993bf6c1d4c78aa422e57ca6,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 993d724101be40e9565f7e4f,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 993e06b729c64dd401a4af8d,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
@@ -23720,6 +23810,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 9c898aff9285db74d29e2e74,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 9c8b8e588285cc0d6fcbb5cc,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 9c8b98dd0f7688f924f0e3d1,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
+9c8c1d6efba26cb0217504f2,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,<Null>
 9c8db019a8cef4d49d7d8af1,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 9c953c164787d57870f7a158,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 9c95dfc7ade2dd607913061f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,<Null>
@@ -24069,6 +24160,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 9ec1cb1dd629c32b0a0d32be,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 9ec3164b19bfd54f38753248,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,
 9ec421279d679f945273a72a,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
+9ec4a687fa0446e61892fa27,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 9ec57cfface499c9a7e49ddf,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 9ec68a631145369beba5cb3c,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 9ec7b0b92de6b392318d6f54,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -24171,6 +24263,7 @@ hotspot_id,cobertura_estado,cobertura_codigo,cobertura_leyenda,cobertura_nivel_1
 9f6a2ecf362a523d14913166,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 9f731427ac30a364ee01a116,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 9f743f4dffc040cf1e0fdbf5,asignado,321113,3.2.1.1.1.3.  Herbazal denso de tierra firme con arbustos,3,32,321,3211,32111,321113,SI,Landsat_2024_mediana_28042025,GoogleEarth
+9f747016128bea39aeb6ed9b,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 9f7516fcd3c5c2cc50e2e494,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,L9_658_20240224,
 9f778727f4303f4b1cc7abd1,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 9f7ae4ef87c3a664a1d01619,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -24814,6 +24907,7 @@ a3dc5736243ea118db7a1047,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,L8_75
 a3dd2d00b2696b497a0eb0f5,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 a3e1c6e080ee578554da30be,asignado,112,1.1.2. Tejido urbano discontinuo,1,11,112,,,,SI,Landsat_2024_mediana_28042025,
 a3e2ee31ad945c5e7937f8d9,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
+a3e326fc11be3b8cb49c0020,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 a3e3cb0499294b85e80e7e23,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 a3e5a22d487069b73a3d9199,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 a3e5b83c579b23a86e0c58f6,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -24939,6 +25033,7 @@ a4b6c0f1613af6e4725dc9c8,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable n
 a4bcaf8c807d5455fdd4a694,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 a4bcbc30f66a1c2d94c2a1a1,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,
 a4bcc0e3701e2765628fa1b2,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,L9_759_20240115,
+a4be645f489734cb81a3c19d,asignado,321113,3.2.1.1.1.3.  Herbazal denso de tierra firme con arbustos,3,32,321,3211,32111,321113,SI,Landsat_2024_mediana_28042025,
 a4c48095e19715f0a12e60cd,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 a4c4a7b3cd016c512e4324b8,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,
 a4c649f3efc46fb5bb599c1c,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -25607,6 +25702,7 @@ a916d65c6570d30ba4805e45,asignado,323,3.2.3. Vegetación secundaria o en transic
 a9170f1fb61680a6e6bbdfda,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 a9179d86f4e0e62f6211be05,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 a918ee1913e5320af28b6407,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+a91d93f9cd2e9d900e829030,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 a91d9d9de0426426ffb718dd,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025, L9_657_20240412, L9_557_20240225","GoogleEarth, BingMaps, Planet Medres Normalized Analytic 2024-01 Mosaic"
 a91ed7ec80de6c90ef574d9c,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 a91ef44b75acf3a97341a30b,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
@@ -25972,6 +26068,7 @@ ab5864edbb48dfccf6afbfb8,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Lands
 ab59237ac2a41e07452bc8c0,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 ab5a5a7cd0051b8847018606,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
 ab5c3987a00733498adc9b24,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+ab5d8d04edf1c4c49f0cda84,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 ab60ffb17abc7273f7ca6e66,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 ab62471612ecdcc6e465b441,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 ab63539795e18ece2cf3b6de,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
@@ -26187,6 +26284,7 @@ acd46fcc981e85c1d25f92c8,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espa
 acd6159a29fdfacada91746c,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 acd7501442a5a2dc3bf5af8c,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 acd756b928b5a695b998ec19,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+acda2a7833af3751f9739a42,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 acde1683dc9903b9ceef3c52,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 ace43955e292495c8796eed4,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
 ace5c69d297041bd55182068,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -26384,6 +26482,7 @@ ae3913fdc4dfa4e2bdc0c5e2,asignado,244,2.4.4. Mosaico de pastos con espacios natu
 ae39c913050d1d6cac2e9a03,asignado,31121,3.1.1.2.1. Bosque denso bajo de tierra firme,3,31,311,3112,31121,,SI,Landsat_2024_mediana_28042025,
 ae3b859a0299b4c04606ada2,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 ae3c922ef44230cfa11b8108,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
+ae413de3ca0b14d97e884c72,asignado,111,1.1.1. Tejido urbano continuo,1,11,111,,,,SI,Landsat_2024_mediana_28042025,
 ae459160581311da64052d25,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 ae4c20603c912dd474b93554,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 ae4c3ef29f34875ada9c65b7,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,<Null>
@@ -26474,6 +26573,7 @@ aece91dbd09dce72bf206211,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra 
 aecf03404b90b32de220c0de,asignado,111,1.1.1. Tejido urbano continuo,1,11,111,,,,SI,Landsat_2024_mediana_28042025,
 aecf4a05ca850db86d249dde,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 aecf5b0378fbc2a2c62acd9b,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+aed02e11c9f90b5fd117e00d,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 aed0e28c0cfc726d28fa50fd,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 aed15a4942db9bf5e535d585,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 aed180a154141a1cb14c2d8c,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,
@@ -27306,6 +27406,7 @@ b40a3fa9744d4772f81265c5,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,L
 b40c21b9b76b99585b21e34d,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 b40cb67f37c528f0f8e13b3c,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,
 b40e2fbd34d561cc5fc94ac8,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
+b40edb2afa4b789f6130bf9d,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 b412d1f522fc8c96c3d1e056,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 b414475485fceff07bd9c983,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
 b418ac3cd096cf98471620cb,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,IDEAM_puntos_CLC2024_verificacion_campo_2025
@@ -27771,12 +27872,14 @@ b702d255f99592bdfa666893,asignado,244,2.4.4. Mosaico de pastos con espacios natu
 b704298227e45263f1f0e00d,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 b7046aa6e9787491617f2a5a,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,<Null>
 b70ba9326be4197207f83b10,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+b70c842c721db9d62017a079,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 b70e8ba6eee29521be66bc71,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 b7103117aa88bc9e10c2acb5,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,<Null>
 b710811a153239aa46d33e8c,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 b7129ca90922f55aa5f49194,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,<Null>
 b71363ee9d5647255a2615e9,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 b7168955cbcc3783d573bb1d,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+b716f716faf66cc5ce99d2f9,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
 b717b6baae4ff1194ed1b7a1,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 b71926c147f2bb88efc7cd09,asignado,31211,3.1.2.1.1. Bosque abierto alto de tierra firme,3,31,312,3121,31211,,SI,Landsat_2024_mediana_28042025,<Null>
 b719ffdd61606d48f38b611f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -27790,6 +27893,7 @@ b724da9643543aadb36a8612,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable n
 b72708524df52ac9fead4678,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,<Null>
 b728e8298574b92ba3848d68,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,
 b728fc5d2431cb51ebd30f5a,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
+b7295a02ca352837c509ca09,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,IDEAM_puntos_CLC2022_verificacion_campo_2025
 b7298ee94644b93f744ec80c,asignado,2232,2.2.3.2. Palma de aceite,2,22,223,2232,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 b72a139350679cc6f56ef59a,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 b72ad6cf8082a76c9ed4a7ba,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
@@ -28280,6 +28384,7 @@ ba45416a27b5414d75e89ddb,asignado,314,3.1.4. Bosque de galería y ripario,3,31,3
 ba475053d8c5592a2f2e2744,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 ba48d13b029fce421f65e574,asignado,31211,3.1.2.1.1. Bosque abierto alto de tierra firme,3,31,312,3121,31211,,SI,Landsat_2024_mediana_28042025,<Null>
 ba4b7c44c2517189d8ac94e5,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
+ba50f9230859ff6aefbacfdb,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 ba51f3409d33c6bbae39816d,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 ba54389971e2b74e9a45b930,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 ba581745d8d9b30b1ff8f245,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -28429,6 +28534,7 @@ bb4914d2c5d66da4e6852eb9,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra 
 bb49379d0f348cd26ac041ea,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bb4ad7c8f3bd07b5a2dd8b93,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 bb4bcb940a243fc20082e537,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
+bb4d00437ac3e4c8e7f58df3,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bb4d4d8cb90816154c494932,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
 bb4e4920866047e1cd1028e3,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 bb4f937315a44ea5b15688f8,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
@@ -28532,6 +28638,7 @@ bc132e1ed7109010d8081a41,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable n
 bc172cf504c48df7e0d99c66,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 bc1bd603307d9f7f30b1254b,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,L9_559_20240304,Web Maps (Bing/ArcGIS/Google)
 bc1beaeb7e687b173ca447bf,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+bc1de4d238dc647e065d40cb,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 bc1e50aa9b1d0250d377a7ce,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bc208a5b355d1e7558dc35ef,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bc222b51668d621d3e2c3426,asignado,111,1.1.1. Tejido urbano continuo,1,11,111,,,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025","GoogleEarth, Basemap"
@@ -28662,6 +28769,7 @@ bceb59af58252b42684ff85e,asignado,245,2.4.5. Mosaico de cultivos con espacios na
 bcee57acb4150fdb4da70074,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,L8_860_20240129,
 bcefea8ae7bf4a7a6f0c9525,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 bcf22dd1e4e56fc1ec369493,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+bcf5d9b7d42dd40f156eeb0d,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bcf6355eeec1717dbf959409,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 bcf9ebf1317e8b0d3b0d8861,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,<Null>
 bcfa2ffe517176e53040b876,asignado,315,3.1.5. Plantación forestal,3,31,315,,,,SI,Landsat_2024_mediana_28042025,
@@ -28795,6 +28903,7 @@ bdc8ede00f616aacba5f130e,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra 
 bdc9227535f455be9f8b7d3b,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bdcad7c5a423d5d934462a6d,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bdcb5235013be4964fca1794,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,2212,22121,,SI,Landsat_2024_mediana_28042025,
+bdcd869690538c7b2a1b5837,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bdd1004e1c85a2489996b4c7,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 bdd14068a0dbe5556f11ee3c,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 bdd442414980c1e1d5e84fe1,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
@@ -29119,6 +29228,7 @@ bfe637af83faed73b4e4e977,asignado,244,2.4.4. Mosaico de pastos con espacios natu
 bfe67151ebeb350587c0e365,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025, L9_658_20240224","GoogleEarth, Planet Medres Normalized Analytic 2024-01 Mosaic"
 bfe6fda4302adcb37a99a727,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bfea7427b84cbc4efca80337,asignado,111,1.1.1. Tejido urbano continuo,1,11,111,,,,SI,Landsat_2024_mediana_28042025,
+bfeb6650e385768cd4575a03,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 bfecfd603cac798b7340f364,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 bfed3d14178f471fed61c3a0,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 bfee6a2d49e0c36b0e75c116,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -29241,6 +29351,7 @@ c0a55f601e56ce1114de65e4,asignado,314,3.1.4. Bosque de galería y ripario,3,31,3
 c0a7c559249987b4f5e8c4e2,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 c0a85fb9c979c41a6077bf51,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 c0af4b76412659cd6e6e676f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
+c0b0cb83c8c30ee4088ef599,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 c0b690b396bb2fe07753b0bc,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
 c0b804ac9395f3bea25e4114,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 c0ba05102795b0af957aef47,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
@@ -29294,6 +29405,7 @@ c117ddeab53e6af481d7ff92,asignado,244,2.4.4. Mosaico de pastos con espacios natu
 c118762c5551b2967105a188,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 c118b2ccae55532737214c36,asignado,132,1.3.2. Zona de disposición de residuos,1,13,132,,,,SI,Landsat_2024_mediana_28042025,
 c1198781601130b1a3cc338f,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+c11a880714438bb3d9dbbc86,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 c1205dfbf93aba90e2f0eed3,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,"Landsat_2024_mediana_28042025, Landsat8_852_13/01/2024","GoogleEarth, Basemap"
 c1233a26b4d0c5d8a008ffc2,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 c127484e14f442fe4688ac52,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -29360,6 +29472,7 @@ c17de35c8f5a20840b1cc5d4,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Lan
 c17fafc833b4f2e255bb67cc,asignado,32122,3.2.1.2.2. Herbazal abierto rocoso,3,32,321,3212,32122,,SI,Landsat_2024_mediana_28042025,IDEAM_puntos_CLC2024_verificacion_campo_2025
 c1802bf7b155c69c0858d738,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
 c18135dbbab8311372efeabf,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
+c1828fcee538f1a8546c1ba5,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 c1841726cd3382229f393eed,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 c184654266de7886cd5e6875,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 c184f5ee47167513c19567e9,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -30418,6 +30531,7 @@ c85c8f6960b8ac88a55e2f8f,asignado,112,1.1.2. Tejido urbano discontinuo,1,11,112,
 c85fcc1ba6228ebfa94ba82c,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 c860de92e59674dd63031cb5,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,Basemap
 c861fb6f41dc5160242e190e,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+c862801317d817824bfae674,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,<Null>
 c862ebd0b785cb4fdc0ee49c,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 c864379452a27ee5a0deb5e2,asignado,122,"1.2.2. Red vial, ferroviaria y terrenos asociados",1,12,122,,,,SI,Landsat_2024_mediana_28042025,
 c8648e3ebeceb9e0bae3d46d,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
@@ -30614,6 +30728,7 @@ c9a35005c722be1e929d16ca,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra 
 c9a46998beadf45e61007105,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 c9a7cb19b96dec4022e689e1,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 c9a99bb5e63b2ee36f90325e,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,<Null>
+c9ab5f8dfa8b98e1e1a6c5e8,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 c9accf12bcbb6df0bf5326f2,sin_cobertura,,,,,,,,,,,
 c9af55fdbccaaa838cc18475,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 c9b0bbd24bdf438c91c0620f,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -31332,6 +31447,7 @@ ce64c96f5036d8fe1e309b73,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,L
 ce66305674ac8b675585a4ea,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 ce6a26a525735574c2dd5a69,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 ce6c4ed2c544d61ddb715d98,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+ce6cf4af9ef95e670b5b878d,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 ce6da3aea459a0861a69d44c,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 ce6ef0da4f8625afeaaa4768,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,L8_760_20240229,
 ce7196dfc26fbd6ac542fbaa,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
@@ -31569,6 +31685,7 @@ d0111864cc1b95e847c535e6,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,2
 d0122595143e59eca1f6a552,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 d0124591a6eb5dfe0caadf9d,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 d0129f288d588f99044c23da,asignado,211,2.1.1. Otros cultivos transitorios,2,21,211,,,,SI,Landsat_2024_mediana_28042025,
+d0133336125c15abcc4344cf,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 d0156570909aacac2a846774,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 d01bf187bc8c1712180efa77,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 d01e997b7b671590fe9e0892,asignado,3132,3.1.3.2. Bosque fragmentado con vegetación secundaria,3,31,313,3132,,,SI,Landsat_2024_mediana_28042025,
@@ -32044,6 +32161,7 @@ d35c4fe3d3e587f94bf41a25,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32
 d35d1c3f56f7fb93ad28e954,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 d35d5a041c99d7926cc3025a,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 d35d5d8cc77cada1df34c3e5,asignado,511,5.1.1. Ríos,5,51,511,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+d35edeea01d80555635682ce,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 d3608445cffef88e7318336d,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 d361c2c49da84ba57a6138a7,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,<Null>
 d362073749d359b4930c4306,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -32233,6 +32351,7 @@ d4a561f9e083db26c232111e,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra 
 d4a6916118be55ce97fa0fff,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 d4aa12ef238e6368940a560a,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,IDEAM_puntos_CLC2024_verificacion_campo_2025
 d4ac72791655a4fc0f47fadb,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
+d4ad56de8f4ba4560b456848,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 d4b15d6a48f6a7d2d15edda0,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 d4b16a99d2e2927d2119e324,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 d4b48c0a9c89665d62c92d3b,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -32818,6 +32937,7 @@ d8aa94a2fbcc5f0c02eea64e,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,L
 d8ab4eb1916cfa4462da4adf,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 d8ad52fd30e8a9100a1e5c96,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 d8b03ff47d9ff28f4ec2b124,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+d8b277df9213bcdbc92c3fce,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
 d8b3b2eca4188738b8b1e19a,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 d8b3b7affca6dbcda30e5787,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,BingMaps
 d8b75d5cc84db25c8753c075,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
@@ -33398,6 +33518,7 @@ dc7a6e6a361d150cdc875b5c,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espa
 dc7a9606397b34692947dbbd,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 dc7b1221cbf0a89c6b4b505c,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 dc7dd7450b81383c0033ded9,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+dc7eb94b43ba8d537114f7d8,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,IDEAM_puntos_CLC2022_verificacion_campo_2025
 dc80158be8e983437e6ee309,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 dc80805c5ef93d23b9f5f153,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 dc841d093eca0b90379a2b13,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -33639,6 +33760,7 @@ de0cfd17793c51fc68d26911,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Lands
 de0e45410e242dba55b8aab3,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 de0fbaaa7ed589a7eb7cc72c,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 de0fc4f91c6b6faf9f1ff415,asignado,131,1.3.1. Zonas de extracción minera,1,13,131,,,,SI,Landsat_2024_mediana_28042025,
+de10016e617dc89e86b0b963,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 de112c6490f442172c0f031d,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,<Null>
 de128cca1982bf5d9ec8a3fe,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 de1349b68ac33ad49aa4278a,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
@@ -34544,6 +34666,7 @@ e3df5298bfa85441a9414180,asignado,245,2.4.5. Mosaico de cultivos con espacios na
 e3df594fc3bc584d9b344a96,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 e3e120f934f6d35576a7f5ef,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 e3e8181d3aa951a5d42b0008,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+e3e849c873fc80ef2110436d,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
 e3e8f201c332896f1359cf38,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 e3e8f5f6d84d5f362d81901b,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,L9_457_20240109,Mosaico Sentinel-2_L2A_False_color 2024-01-24-00_00_2024-01-24-23_59_
 e3f03caa133b9bf68f5a4569,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -34773,6 +34896,7 @@ e599f47638c0e892ade1e8ce,asignado,131,1.3.1. Zonas de extracción minera,1,13,13
 e59bbbaaa17cdbba9b6a70f1,asignado,31111,3.1.1.1.1. Bosque denso alto de tierra firme,3,31,311,3111,31111,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
 e59bfa5e9c8d41fd08b7ac9f,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 e59c5de3ce6039d602075d9f,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
+e59d999ac6fa3d018b76a01d,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 e59f3bbdcf02dcd5cd6e5cd8,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 e59fbca0ffbd38ae8fa69353,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 e5a076420927171537d912f4,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
@@ -35057,6 +35181,7 @@ e791d3cdff1657ffb1ed2434,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra 
 e7924f4c4d63bca5d334afb4,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 e79535d7938e143445eb24c8,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 e7959cf064e718297d64b16e,asignado,334,3.3.4. Zonas quemadas,3,33,334,,,,SI,L9_658_20240224,
+e7976fccdb25d3084956de90,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025,L9_657_20240412,  L9_658_20240224","Basemap, Planet Medres Normalized Analytic 2024-01 Mosaic"
 e7977c20c26f81023d2cff53,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,<Null>
 e7990c3103cd1d58d27d24b4,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 e7a08aadbca0f31fa9b8acb7,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -35305,6 +35430,7 @@ e933426da9d44249c3e60afd,asignado,3132,3.1.3.2. Bosque fragmentado con vegetaci�
 e935f80bcb5c3c480ffd7478,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 e938b76fc968f23870f20acd,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,
 e939ca761e9dc84c9f1b1187,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+e93c4275fe8af48a4f5f6e58,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
 e93c5b5a7b89a77b4bb974ae,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 e940fe70e319221f4af055c6,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,"Landsat_2024_mediana_28042025,L9_657_20240412,  L9_658_20240224","Basemap, Planet Medres Normalized Analytic 2024-01 Mosaic"
 e94cc89ff1d67ba981bdcc91,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -35452,6 +35578,7 @@ ea2f440a01ed98afdf961ac3,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Lands
 ea30434506db9e1e5c232815,asignado,1211,1.2.1.1. Zonas industriales,1,12,121,1211,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
 ea305941bc5cadb3b7234489,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 ea3224bd2c2647223724d5b4,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+ea32846a18133869afd2297d,asignado,321113,3.2.1.1.1.3.  Herbazal denso de tierra firme con arbustos,3,32,321,3211,32111,321113,SI,Landsat_2024_mediana_28042025,
 ea334130803141a03e5de50f,asignado,512,"5.1.2. Lagunas, lagos y ciénagas naturales",5,51,512,,,,SI,Landsat_2024_mediana_28042025,
 ea343170541bd4d627dfb4ce,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 ea36773c0cc8ad64ab2e057d,asignado,511,5.1.1. Ríos,5,51,511,,,,SI,Landsat_2024_mediana_28042025,
@@ -35642,7 +35769,9 @@ eb551a08726e6b63c84ffbab,asignado,244,2.4.4. Mosaico de pastos con espacios natu
 eb56bd47830747d3f8913652,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 eb5abb8b7a8f86e210a110f3,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 eb5afe62619ad0101540380b,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
+eb5c50ac7f27ce97c85af5b3,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 eb5f2fc0ed2818523527d506,asignado,321113,3.2.1.1.1.3.  Herbazal denso de tierra firme con arbustos,3,32,321,3211,32111,321113,SI,"Landsat9_853_06/12/2024, Landsat8_852_13/01/2024, Landsat_2024_mediana_28042025",Mosaico_Planet_012024_NICFI
+eb5fe6e539c666a01cec6011,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 eb629409ea7598cca63e3bc9,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 eb64fbdfba1a9dfb489ea176,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,<Null>
 eb677ab89bf5f0d547fa3254,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,
@@ -35965,6 +36094,7 @@ ed92017ea23c0413e2130c72,asignado,244,2.4.4. Mosaico de pastos con espacios natu
 ed92518935ea8dce4cf2ee75,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 ed94c1a6ddab4ad0fe827394,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
 ed975b48863440d774d70ce3,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
+ed985cea1a29205a2e57b4d7,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 ed998a7d5a846a5d781a1104,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 ed99f9bb2ec5627211d44436,asignado,2121,2.1.2.1. Arroz,2,21,212,2121,,,SI,Landsat_2024_mediana_28042025,
 ed9d0b912251a52d530958b9,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
@@ -36844,6 +36974,7 @@ f2e8b87880f9b5725269aed6,asignado,411,4.1.1. Zonas pantanosas,4,41,411,,,,SI,Lan
 f2e91735e212ec915699eb86,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
 f2e9deb9ad52582724296c75,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 f2eb473bd1c21f8bf22fbcc5,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
+f2ed020b1fa81412506c907f,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
 f2ed8a1f84adf252aea8bc23,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 f2f3379922df42a538e1a78b,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,Basemap
 f2f5e3bba809ebd6b51ce7e9,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
@@ -37572,6 +37703,7 @@ f7d83178fcbf1abb8fc1d221,asignado,3222,3.2.2.2. Arbustal abierto,3,32,322,3222,,
 f7d971804cf1cc675a2c753c,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 f7dbaf02e0370561ff37da81,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 f7dd3c9861458fd5e6c3cb31,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
+f7deda2e4be11b773ea13591,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 f7e02b42688c48fa3ed36b08,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,
 f7e3ddfb6c419b4bfc5c0015,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,Landsat_2024_mediana_28042025,
 f7e6aaba6024cfbb3ba9deee,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -37729,6 +37861,7 @@ f8eae007d3777f0fa4fd1432,asignado,244,2.4.4. Mosaico de pastos con espacios natu
 f8ed2a914a5f0d90a8caef72,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
 f8edf244e414f1c9e4977254,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 f8efc44da14f89f9de98391f,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,<Null>
+f8f2e6529482e5dbf5c82e39,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 f8f31cb0c346a452b4ed5877,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,<Null>
 f8f47dac452a3bb9c6cf4d16,asignado,242,2.4.2. Mosaico de pastos y cultivos,2,24,242,,,,SI,Landsat_2024_mediana_28042025,
 f8f536680c2421865ef7effe,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -37906,6 +38039,7 @@ fa091331abc9a4e926e22559,asignado,22121,2.2.1.2.1. Caña de azúcar,2,22,221,221
 fa09e2b13115fec1b3e84fac,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,
 fa0b1cf836a4f8a5521388cd,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 fa0c09f34170487cc2c7936b,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
+fa0cae44285078599a7d7b4d,asignado,315,3.1.5. Plantación forestal,3,31,315,,,,SI,Landsat_2024_mediana_28042025,
 fa110af312c579204e468237,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,
 fa11f01f4c8a5b5b3968e57e,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 fa16627b824a63d423716439,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
@@ -38304,6 +38438,7 @@ fca1a3b29f928662d7f650d8,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Lands
 fca35c8675720f0825db67e6,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
 fca3bfec03cfbf549fe5bfd2,asignado,1313,1.3.1.3. Explotación de carbón,1,13,131,1313,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 fca41e916ccbd6476fee5eec,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,<Null>
+fca4acd1f7d7b2f5410593fb,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,
 fca66579242079a077dd6520,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 fca835e7cb8b0703811e2f95,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 fca86a4d711d3a16374017bf,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -38384,6 +38519,7 @@ fd1dee3a89b174df13f240ee,asignado,244,2.4.4. Mosaico de pastos con espacios natu
 fd20efde625a1a2374596e98,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,GoogleEarth
 fd2252c7f1396849e7908abe,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 fd22bae51757f24969f56518,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
+fd22e16732092a97ce0dd3dd,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 fd25a229ce9a0103fca16c9d,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 fd2a669f0c2be456e85147df,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,GoogleEarth
 fd2bd942e85725832f3669d6,asignado,3221,3.2.2.1. Arbustal denso,3,32,322,3221,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
@@ -38527,6 +38663,7 @@ fe2db3680611380976e4c8ea,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra 
 fe2e17075794eaf7a5ff4b3b,asignado,314,3.1.4. Bosque de galería y ripario,3,31,314,,,,SI,Landsat_2024_mediana_28042025,
 fe2e50af5f53ed60888cfab9,asignado,512,"5.1.2. Lagunas, lagos y ciénagas naturales",5,51,512,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 fe2effc8b85387fbd91c222a,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,GoogleMaps
+fe2f181983ed647782556060,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 fe301b532dc9c7a10611ac37,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 fe30497b43f1bb734331a0c8,asignado,321121,3.2.1.1.2.1. Herbazal denso inundable no arbolado,3,32,321,3211,32112,321121,SI,Landsat_2024_mediana_28042025,IDEAM_puntos_CLC2022_verificacion_campo_2025
 fe3053648cc2ef59cd74aeed,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
@@ -38556,6 +38693,7 @@ fe47e88cfdf35ad068a95afe,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Lands
 fe481a367131aa5041cdee84,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
 fe4821a49d184683dad1655c,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,"Sentinel_2024_mediana_11042025, GoogleEarth, Basemap"
 fe4832c19050f4415f7f75b1,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,<Null>
+fe4a0947c2e47a9e51ab3e07,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 fe4b044393e5f1f666de8e63,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 fe4e5ad9f6410f75479638f8,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 fe4f18904983a0455509ade7,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
@@ -38622,6 +38760,7 @@ fed03346d85a597299ac7b2e,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra 
 fed1cfcb3234f9064489bc48,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 fed1e21ac15ca234739f4a17,asignado,3231,3.2.3.1. Vegetación secundaria alta,3,32,323,3231,,,SI,"Landsat_2024_mediana_28042025, Sentinel_2024_mediana_11042025",
 fed22b6a751278fe2ea51799,asignado,3232,3.2.3.2. Vegetación secundaria baja,3,32,323,3232,,,SI,Landsat_2024_mediana_28042025,
+fed53ce556522706a3fecc2b,asignado,245,2.4.5. Mosaico de cultivos con espacios naturales,2,24,245,,,,SI,Landsat_2024_mediana_28042025,
 fed60472431e7a36771e6ebe,asignado,121,1.2.1. Zonas industriales o comerciales,1,12,121,,,,SI,Landsat_2024_mediana_28042025,Sentinel_2024_mediana_11042025
 fed61fdb4658200a6d33a352,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
 fed89e125a38adf545d727df,asignado,3131,3.1.3.1. Bosque fragmentado con pastos y cultivos,3,31,313,3131,,,SI,Landsat_2024_mediana_28042025,GoogleEarth
@@ -38755,6 +38894,7 @@ ffcc5032b940e0a664bbec14,asignado,245,2.4.5. Mosaico de cultivos con espacios na
 ffcce4a80a9145cd89e77a67,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,"GoogleEarth, BingMaps"
 ffce8d8050afe4b36858c3b9,asignado,231,2.3.1. Pastos limpios,2,23,231,,,,SI,Landsat_2024_mediana_28042025,
 ffcf9b8863186eb604a14f68,asignado,321111,3.2.1.1.1.1.  Herbazal denso de tierra firme no arbolado,3,32,321,3211,32111,321111,SI,Landsat_2024_mediana_28042025,Basemap
+ffd3dd27d47333434d135579,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 ffd5052b143d3c43a00476fd,asignado,233,2.3.3. Pastos enmalezados,2,23,233,,,,SI,Landsat_2024_mediana_28042025,<Null>
 ffd5fd025886c832b60b9139,asignado,244,2.4.4. Mosaico de pastos con espacios naturales,2,24,244,,,,SI,Landsat_2024_mediana_28042025,
 ffd8177e37142a6c71353493,asignado,243,"2.4.3. Mosaico de cultivos, pastos y espacios naturales",2,24,243,,,,SI,Landsat_2024_mediana_28042025,"GoogleEarth, Basemap"
