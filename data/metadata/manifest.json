@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-20T20:53:02Z",
+  "generated_at_utc": "2026-09-20T23:16:17Z",
   "policy": {
     "history_mode": "cumulative",
     "history_start_date": "2026-07-01",
@@ -25,9 +25,9 @@
     {
       "month": "2026-09",
       "path": "processed/hotspots_2026-09.csv",
-      "rows": 9407,
-      "sha256": "a5534bb27de20d7ef437ebcb0fac5d23866cbb25144ec6a1562eee6e86b4e824",
-      "size_bytes": 2182368
+      "rows": 9756,
+      "sha256": "b348723aac6278d022260458347fc6a3494ed6dad5e8a30aca23f050ee10e672",
+      "size_bytes": 2263416
     }
   ],
   "raw_files": [
@@ -1060,7 +1060,7 @@
     },
     {
       "date": "2026-09-18",
-      "downloaded_at_utc": "2026-09-20T20:53:02Z",
+      "downloaded_at_utc": "2026-09-20T23:16:17Z",
       "last_modified": null,
       "path": "raw/2026/09/Puntos_de_calor_Colombia_2026-09-18.csv",
       "read": 785,
@@ -1073,7 +1073,7 @@
     },
     {
       "date": "2026-09-19",
-      "downloaded_at_utc": "2026-09-20T20:53:02Z",
+      "downloaded_at_utc": "2026-09-20T23:16:17Z",
       "last_modified": null,
       "path": "raw/2026/09/Puntos_de_calor_Colombia_2026-09-19.csv",
       "read": 330,
@@ -1086,16 +1086,16 @@
     },
     {
       "date": "2026-09-20",
-      "downloaded_at_utc": "2026-09-20T20:53:02Z",
+      "downloaded_at_utc": "2026-09-20T23:16:17Z",
       "last_modified": null,
       "path": "raw/2026/09/Puntos_de_calor_Colombia_2026-09-20.csv",
-      "read": 227,
+      "read": 576,
       "rejected_cutoff": 0,
       "rejected_invalid": 0,
-      "sha256": "98c0f388512093372bdde08ab7dc8b6d9f7fa5d5705cb884ea90e529d3bc933d",
-      "size_bytes": 19084,
+      "sha256": "c51c186e763f389f9de876a656600cfa7415b52ebb0df5829c8f49ade6f60ed9",
+      "size_bytes": 48320,
       "url": "https://puntosdecalor.ideam.gov.co/archivos-csv/Puntos_de_calor_Colombia_2026-09-20.csv",
-      "valid": 227
+      "valid": 576
     }
   ]
 }
