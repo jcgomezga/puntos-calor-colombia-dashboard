@@ -1,27 +1,27 @@
 {
-  "dashboardRows": 44089,
-  "finishedAtUtc": "2026-09-25T17:22:36Z",
-  "relationRows": 165915,
+  "dashboardRows": 45406,
+  "finishedAtUtc": "2026-09-29T22:32:18Z",
+  "relationRows": 169661,
   "relations": {
-    "con_evaluacion": 639,
-    "con_licenciado": 24267,
-    "dentro": 9750,
-    "entre_1_y_5_km": 9863,
-    "hasta_1_km": 4662,
-    "mas_de_5_km": 19814,
-    "multiples": 17747
+    "con_evaluacion": 682,
+    "con_licenciado": 24839,
+    "dentro": 10092,
+    "entre_1_y_5_km": 10010,
+    "hasta_1_km": 4745,
+    "mas_de_5_km": 20559,
+    "multiples": 18137
   },
   "source": {
     "authority": "Autoridad Nacional de Licencias Ambientales",
-    "downloadedAtUtc": "2026-09-24T17:24:31Z",
-    "featureCount": 9947,
+    "downloadedAtUtc": "2026-09-29T22:31:54Z",
+    "featureCount": 9954,
     "layers": {
       "1": {
         "count": 317,
         "name": "Linea Proyecto Evaluacion"
       },
       "2": {
-        "count": 141,
+        "count": 144,
         "name": "Area Proyecto Evaluacion"
       },
       "4": {
@@ -29,11 +29,11 @@
         "name": "Punto Proyecto Licenciado"
       },
       "5": {
-        "count": 3398,
+        "count": 3400,
         "name": "Linea Proyecto Licenciado"
       },
       "6": {
-        "count": 5196,
+        "count": 5198,
         "name": "Area Proyecto Licenciado"
       }
     },
@@ -42,7 +42,7 @@
     "source": "Proyectos ANLA",
     "spatialReference": 9377,
     "url": "https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer",
-    "usableGeometryCount": 9903
+    "usableGeometryCount": 9910
   },
   "status": "completed"
 }
