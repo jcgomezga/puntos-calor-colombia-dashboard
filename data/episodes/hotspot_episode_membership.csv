@@ -24,6 +24,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 00312238f9d9411d593de8d6,episode,E20260811-4A3816EFCA,,24,false
 0036be8b9c5ce178ee5af979,isolated,,,1,false
 00370c8f7986dbfb0edda287,episode,E20260922-3C7932DFBB,,3,false
+00379b0841789bf736cd6fad,pair,,P20261006-3BE7E7F624,2,false
 0039da18d7a76064949fdd72,episode,E20260917-CE05701CBF,,8,false
 003c9603d173cd78b57cda37,episode,E20260917-CE05701CBF,,8,false
 003cf0809f33d08e5611558f,episode,E20260908-F828C14C58,,9,false
@@ -94,6 +95,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 00c42c6935682754b58892a8,episode,E20260713-A1C7D20CCF,,3,false
 00c5fe6ad11e9c54645bf855,episode,E20260812-363BEBE373,,10,false
 00c7141948410698ac5cf4d7,episode,E20260822-06EF57BC8C,,3,false
+00c940c4d85ee1f8cadda4de,pair,,P20261006-0F1C4B8A4B,2,false
 00cc719b67a003123da35ef6,episode,E20260920-21CB11E91D,,3,false
 00ccac9a911613361b53fd71,episode,E20260801-356061A9CC,,4,false
 00cd9c55adc465f4a4137eff,episode,E20260706-07DCA6CB34,,7,false
@@ -383,6 +385,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 02f236bad47a5da5ea907c13,episode,E20260913-AE450C88C9,,5,false
 02f47de25ebebad574361395,episode,E20260831-63A03F3EE8,,6,false
 02f6c9682bb1493589013a97,pair,,P20260729-8E586AD70F,2,false
+02f6f90a7f214b84b0413783,isolated,,,1,false
 02fb1ea23f77f4fd218f497e,episode,E20260823-46436CBFAB,,4,false
 02fd8d6e8ce97a7b1e5f6a3f,pair,,P20260820-B91F298AD3,2,false
 02fdc6e17ce72bc2a7c677c1,isolated,,,1,false
@@ -400,6 +403,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0325c79c5a97c2ee11f57e8d,episode,E20260909-DB105780EA,,18,false
 032613221869df3801fc2050,episode,E20260908-2F55B6856E,,61,false
 0326cb7f512fd7d000d7b2d3,episode,E20260917-263CC941E1,,13,false
+032864d74c4636f9ed161322,episode,E20261006-2058387F57,,7,false
 0328f0ee06d505af8bdf86c7,isolated,,,1,false
 032de4b7d8388ce38bbef0b2,pair,,P20260810-2A8261EB31,2,false
 032ecb48ed7d724a499cfbed,episode,E20260922-2338EE3BBB,,8,false
@@ -447,6 +451,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0385171db251b51ab8ab7028,isolated,,,1,false
 038620244222220ac30dd809,isolated,,,1,false
 03874674ee42d51ace1128b6,pair,,P20260725-4A6BC226F6,2,false
+038e083bd0003548a296d311,isolated,,,1,false
 038f0fddb314fb4566b8826c,episode,E20260813-F9606E0100,,36,false
 039007c690bb7f0c8fe15e16,pair,,P20260828-27181CD4E5,2,false
 039011d20887dce4455067f5,pair,,P20260909-C480AE3AFE,2,false
@@ -747,6 +752,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 05a8b4f7ff610051cbed32ee,episode,E20260728-BF5528AED4,,4,false
 05aa11ea40aea8461f8ddc29,episode,E20260811-3555F7E86C,,10,false
 05aa724022a65ad36f3f9532,isolated,,,1,false
+05ab9ca015e0709517c867f4,pair,,P20261005-B91ABF7BC5,2,false
 05aec8d1c76c5c79a41abad0,isolated,,,1,false
 05b0448786787b0bace5c54b,episode,E20260810-EF37C3F685,,22,false
 05bcb495a3708e9cd873e8ee,episode,E20260811-D2006010F9,,19,false
@@ -780,7 +786,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 05fd889d80a929d2390b75d4,episode,E20260724-472FFAD97D,,10,false
 05fda92447b8aa256df4572c,episode,E20260814-7D5F2E0A16,,7,false
 05fe22aa57ed05fb6c2f043c,isolated,,,1,false
-060080874616c06c78385f94,isolated,,,1,false
+060080874616c06c78385f94,pair,,P20261005-B91ABF7BC5,2,false
 0601f64402d700419160a11b,episode,E20260820-CC259A7D25,,36,false
 06020da1432915bb1d394b49,chained,E20260810-D254CA7C05,,104,true
 0608afd6d56acb5d5f225958,episode,E20260815-78903DA4BF,,5,false
@@ -807,6 +813,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0630e1971ee65f51886c1c7c,episode,E20260921-47DD0E897C,,12,false
 06328423ea8e2242812cadc8,isolated,,,1,false
 06337b38429ac918e8986f9e,isolated,,,1,false
+0634a3f54e501503089d2ab6,episode,E20261006-226206BED5,,4,false
 0634d2741e1eea1f93701721,isolated,,,1,false
 063789363e5210a9256bb0d3,isolated,,,1,false
 0638b7747a7f4cc1a26996d8,episode,E20260802-F77BD50C5A,,5,false
@@ -985,6 +992,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 079b4e3b8ed798a17de43bc3,episode,E20260918-2E8D3C99A3,,4,false
 07a1bd8d4e8546942cbab9e4,episode,E20260710-C19FC973BC,,13,false
 07a2d7e0b4e48c7cff03de1a,episode,E20260825-970FFF6FD9,,4,false
+07a5511cbde8de3bcd71dce4,pair,,P20261006-538C9B1812,2,false
 07a5fbe52115f22e9fd752eb,pair,,P20260823-61206CF173,2,false
 07a978a718a26e372165c5f1,episode,E20260825-2885765AF2,,5,false
 07aa5dd81ab42b200547cea5,episode,E20260714-59CAB204A1,,9,false
@@ -1061,6 +1069,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 08292ea5a3087a97924311b8,isolated,,,1,false
 08298953f6efb7274676aacd,isolated,,,1,false
 082cf054d211d591e4475fa2,episode,E20260825-58903CC006,,4,false
+082d0bf1c86dcf8a1a353d7f,episode,E20261005-8C8B56F183,,4,false
 08303d6814570e78f5ed0585,episode,E20260917-9378929098,,6,false
 08312a077a95d46c3dffc31e,isolated,,,1,false
 0831cab8655280e154657776,episode,E20260711-3980E8FA64,,5,false
@@ -1141,6 +1150,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 08db44af521dee1ad09fd425,isolated,,,1,false
 08db6449581d8b36df2bb9ac,episode,E20260716-77DA2D5B35,,4,false
 08dc85fe2d275dd3dd04f051,isolated,,,1,false
+08defe4ea625eb55325b56b6,isolated,,,1,false
 08e04c5a01a7cd5531cd3604,episode,E20260811-554BFBBEBA,,16,false
 08e055f80f7b004f1312b595,isolated,,,1,false
 08e09a651a850f1ff25f953a,episode,E20260715-841FEBF461,,20,false
@@ -1244,6 +1254,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 09a47f2c126a6b04af91f2e0,episode,E20260811-BD79070553,,19,false
 09a76aa05dc907d3a6f47cd9,episode,E20260929-4237D0F970,,9,false
 09a89335d6460cb4ca989200,isolated,,,1,false
+09ac67b116b0043034c6c94a,isolated,,,1,false
 09b2411ab08341e98ea3e050,episode,E20260901-EB832F8FCD,,4,false
 09b2bd78d2c9afd90b57fa19,episode,E20260706-45DAC45868,,5,false
 09b31acc53bc295ef9425a06,episode,E20260805-D352EDBB2E,,3,false
@@ -1266,6 +1277,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 09db82397590485c114b45ea,pair,,P20260917-943EBCB49A,2,false
 09dc34c7921eaf5ed4f25611,pair,,P20260914-CAA7D3867B,2,false
 09ddf15be259b802656ab73d,episode,E20260811-0A2A20F22C,,45,false
+09e09d770fd9d1601a4d6144,pair,,P20261006-3CA660ECB8,2,false
 09e198994832a84a3b9f84e9,isolated,,,1,false
 09e225eebbccf85880490bd5,isolated,,,1,false
 09e4d150790d6c6c98974654,isolated,,,1,false
@@ -1317,6 +1329,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0a40ba459920eb401e540531,episode,E20260813-1CCEFB9D7C,,12,false
 0a427e3743041f792c006ad2,episode,E20260910-0D226006AF,,3,false
 0a430bc73c42d1475ff6526b,isolated,,,1,false
+0a474b8bc877b698fb040a42,isolated,,,1,false
 0a4891679905396002a46efb,isolated,,,1,false
 0a489dd54e3f009e2360ea54,pair,,P20260812-D74237C84C,2,false
 0a4c95681388887932cedd27,episode,E20260706-B7AE886C06,,3,false
@@ -1534,6 +1547,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0bcf10815c91834fad1b4783,episode,E20260807-467644376C,,11,false
 0bcf610a3a7ef1ef6d0086bb,isolated,,,1,false
 0bcfc8f314443bf7b9a7df7e,isolated,,,1,false
+0bd18300d5dc14decfcbf857,isolated,,,1,false
 0bd283c91b8a52ff6bdae7f1,episode,E20260715-D2F21446D3,,7,false
 0bd54fc1e65a163d3cb98635,episode,E20260821-DEDF3727E8,,3,false
 0bd70daf20241b7a57406bd4,pair,,P20260717-B11E818F58,2,false
@@ -1561,6 +1575,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0c0748000ebbbfe5276a9a5e,isolated,,,1,false
 0c07d2ecce7a31d7cade1554,isolated,,,1,false
 0c086531353fc893a6491600,pair,,P20261004-5E85C672EE,2,false
+0c087c7240c20a749a8eedf8,isolated,,,1,false
 0c0cbc6dc758c66a24702d8c,episode,E20260820-92DC0CF2CB,,3,false
 0c0d03c63fd3f1fd31ce9377,episode,E20260716-AEDB2416C6,,8,false
 0c0f0008c3662a4efeff6c84,isolated,,,1,false
@@ -1739,6 +1754,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0d9e34d6f339092893f4cc8a,isolated,,,1,false
 0d9ff44d0281105586c423e6,isolated,,,1,false
 0da0a8320ce2d650328a1394,pair,,P20260717-8F3FD868E0,2,false
+0da35f027977e2b82688cd13,isolated,,,1,false
 0da86aa9ae044e5ae5fe8ba0,episode,E20260810-DC5417F6F0,,15,false
 0da9d8d9240085603ccfc51b,isolated,,,1,false
 0daa258035c36326286496c6,episode,E20260921-C47DC0FC13,,32,false
@@ -1755,6 +1771,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0dbaa6bfec50f431f59daea3,isolated,,,1,false
 0dbc2b3d7a55e8a42ca04d77,isolated,,,1,false
 0dc30d96419c54ad4dc7a4fd,episode,E20260821-F6AA90655C,,3,false
+0dc3f35e6798f5ad83e03117,episode,E20261006-B3AB01DFE0,,3,false
 0dc5143bb908e9fb8ce04298,pair,,P20260820-FC75354876,2,false
 0dc6472f90efa79b5b6b259f,isolated,,,1,false
 0dcc386e36315ce8a6fe7b5a,episode,E20260808-B45CAB77D8,,3,false
@@ -1778,6 +1795,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0df30f842ef75eda87b2eca1,episode,E20260718-9DC72FA108,,7,false
 0df5eb17badbdaf53414f368,chained,E20260917-0E11F1777A,,45,true
 0df76f8fb84777a3815102b3,episode,E20260825-67BBBA2F72,,25,false
+0df7aeff9d3d53e3ac2b9a86,pair,,P20261006-F5FF3EB1DF,2,false
 0df9183804040e88a87d148f,isolated,,,1,false
 0dfa9ab9a2abb655dc997c1c,pair,,P20260930-48756C79A2,2,false
 0dfe0e361ad9ec060b4ba175,episode,E20260819-1951F19866,,3,false
@@ -1895,6 +1913,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0ed4a3b9552057d3cc9361ff,episode,E20260727-23CAA55232,,9,false
 0ed50239c2eace66a32b863a,isolated,,,1,false
 0ed893e8e1da67833c6a97f0,episode,E20260831-F147CD75AA,,10,false
+0eda4d5ae4bc8aa98d03aece,episode,E20261006-032E8ACCE9,,19,false
 0eda60183ebd4d03dbab6b25,pair,,P20260815-1BF6CA521F,2,false
 0edbf79f9282224fa5a99142,isolated,,,1,false
 0edbfbb4acf4b3eb2234515b,isolated,,,1,false
@@ -1979,6 +1998,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 0f75b8050f35bcf026631416,episode,E20260724-2FF092C313,,3,false
 0f7625efd8ac9bfd62f4b378,isolated,,,1,false
 0f7741468a04808265957cd4,episode,E20260715-99C11802CF,,4,false
+0f78c528109b9845c39f76b6,episode,E20261006-26158B35BC,,4,false
 0f7be90021d8e66308598d74,isolated,,,1,false
 0f7f7d9d14c0dcdb5dae9335,chained,E20260911-E0CAE75547,,13,true
 0f7fa8ec18f21f1ec6fc16cb,isolated,,,1,false
@@ -2080,6 +2100,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 104363a8d8512a711d3ad204,isolated,,,1,false
 1046c37ae420dc13e2c08e5f,isolated,,,1,false
 1046f52c9b45010a5be77274,isolated,,,1,false
+10480d6c5f132776c7686f88,episode,E20261006-9F38E2792B,,5,false
 104aa52d66481f749774ba4c,isolated,,,1,false
 104be706a364d18441df3a34,pair,,P20260802-40E4C90521,2,false
 104f7d429af05ff84903f7d7,isolated,,,1,false
@@ -2107,6 +2128,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 106ebcdcb4f8c5cebe8f228b,episode,E20260810-959329BC4B,,24,false
 106f3d57e7d663f01c26412f,pair,,P20260808-5DE3D20FE2,2,false
 107100db130a3936deab41bf,pair,,P20260827-AEB762CE10,2,false
+10726c0e3a1437d828ca5053,pair,,P20261006-7C2A798D52,2,false
 10728f197ecca46056285f33,episode,E20260902-572AC14ADC,,3,false
 1075872b97ac3aef58d04fab,isolated,,,1,false
 107763e3fca2ba1153efccb5,episode,E20260923-8EEBC3D6E3,,4,false
@@ -2171,6 +2193,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 10d3eb93c1298696272a5425,episode,E20260717-B282552140,,4,false
 10d4d32333b2acdd538a673e,episode,E20260908-C862BEAB02,,4,false
 10d7950a3bc20ef4eda0df53,episode,E20260809-2026A119D6,,3,false
+10e00a08750987c4ca4e1bef,episode,E20261006-D61B717EEC,,3,false
 10e0722cc77b3c3debd85a87,episode,E20260812-6DE35E39BE,,5,false
 10e079282068b3bc1b58f552,isolated,,,1,false
 10e28db5b91572d29a5be035,chained,E20260809-A107DB613F,,232,true
@@ -2234,6 +2257,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 114a96f8e93838841dc1ec07,pair,,P20260810-D3A209E172,2,false
 114c5faeaf314e80e70c3d02,pair,,P20260713-713593BC8E,2,false
 114cfa4ad8202313cd24288b,episode,E20260812-5A45A66E4E,,9,false
+114d40d74b23f315fd401f31,isolated,,,1,false
 114e6f9c75393f44bd31a69c,isolated,,,1,false
 114f4b958deae4d2233c1f90,episode,E20260812-39ADA6F08F,,22,false
 115254fb0d4f30b8e1002458,isolated,,,1,false
@@ -2340,6 +2364,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1226dd95273d978fc957c78f,episode,E20260922-B0467B7CCF,,6,false
 122eb7281693dbe3d3fdedb7,isolated,,,1,false
 123158d129c57ed0d2ec5ee5,chained,E20260829-86CD79580B,,42,true
+12318a3fda664be13b7a2429,pair,,P20261006-8C31C491F9,2,false
 12326982dd1dd78c84a322ba,episode,E20260808-DABF5FED12,,3,false
 12330d0ddc1948b7426fe5ab,isolated,,,1,false
 12358890578a0bce52f56feb,isolated,,,1,false
@@ -2815,6 +2840,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 15dd0943e872b222faf4f696,isolated,,,1,false
 15dfb2fe0b6d326b6c364d79,isolated,,,1,false
 15e05ab1e4ad20122bb07f76,chained,E20260807-D7FA62952D,,17,true
+15e20f824b57f67c80612a57,episode,E20261006-D597ACB61E,,5,false
 15e38b2782ebd7244c9850d4,isolated,,,1,false
 15e84cfbd9bb7fc8ee00defd,episode,E20260708-2F5DD761C1,,5,false
 15e85afa22f73d9f720fccbe,isolated,,,1,false
@@ -2960,6 +2986,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 16fd6a0ce96d25baa71d9d83,chained,E20260911-1EFEBF4B90,,59,true
 16feaf1387beba0da933ba98,isolated,,,1,false
 16ff5db112513cd09e9dfefd,episode,E20260811-0A2A20F22C,,45,false
+16fff72bd5c273406aa9a022,isolated,,,1,false
 1700b28a7e97cf9a19de8c98,isolated,,,1,false
 1700e2e3834cebc049b53516,isolated,,,1,false
 1702001c307ae0fb2ff3018d,episode,E20260813-E08450CE28,,9,false
@@ -3009,6 +3036,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 174e1127ad88c098ad9c415f,pair,,P20260725-F11F79C1E8,2,false
 17547798e807938a1af40443,isolated,,,1,false
 1754aa4a8e991203f2a0667a,episode,E20260813-41AAF1E921,,13,false
+1756744ff27cb867abfa1a9c,episode,E20261006-612312B581,,5,false
 17588718629fbd4fbc16a78c,pair,,P20260724-2CA53403DD,2,false
 1759614eb8ba5afc1b8eef5e,episode,E20260803-EBFFF540F1,,21,false
 175e9a9db652dca35d3e1e30,pair,,P20260808-53A5B7C36E,2,false
@@ -3362,6 +3390,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1a32df7b26fb71eb3fdb5f8a,episode,E20260714-BB1E41BA13,,4,false
 1a343f1fb9d662cad2e9868d,episode,E20260707-922F790B1E,,6,false
 1a3833af57f99ad675267a09,isolated,,,1,false
+1a38e09f42849b538efcc3cf,pair,,P20261006-F944440D90,2,false
 1a38eb3e81ee033a489a2533,isolated,,,1,false
 1a39aa2dcd373e4bbd2f9a22,episode,E20260826-53D393471B,,14,false
 1a3da5c39448d74c5d781af4,pair,,P20260907-23BEEB01B5,2,false
@@ -3508,6 +3537,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1b2d4811fc08aea6123237e4,episode,E20261005-C7CAC00527,,17,false
 1b2f7ef622baf8317dbeba83,episode,E20260914-E9D3463D12,,13,false
 1b324c44b4f8bf51552fe97d,episode,E20260915-50E1AEF84E,,10,false
+1b342a9a49132f52ef46caba,episode,E20261006-2058387F57,,7,false
 1b39ec48836328cd5d1c70e0,isolated,,,1,false
 1b3b17c6ac9dcb08fb15605c,isolated,,,1,false
 1b3c0d2605c4bd6609cef252,episode,E20260801-356061A9CC,,4,false
@@ -3515,6 +3545,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1b3c6629ff3b57b3820f4133,episode,E20260912-B9E97306AC,,3,false
 1b413745655431128557eb89,episode,E20260801-B1AF6966F2,,14,false
 1b435537eac5d625b3b2ba5f,isolated,,,1,false
+1b4b86c4229604f51618b854,pair,,P20261006-5D614B8A14,2,false
 1b4f47bd5cd5e9aed5883133,isolated,,,1,false
 1b50924ff7eec4d9f289b246,isolated,,,1,false
 1b51eff8590181d98ec59db0,episode,E20260924-E6D72FFDAF,,26,false
@@ -3724,6 +3755,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1d0eb22cea19a07e9458e2a8,isolated,,,1,false
 1d10611dcf0688881a9b7ae5,episode,E20260904-D933889406,,5,false
 1d1131b2deb5eee0bf75d94b,isolated,,,1,false
+1d140485f4087b6e572206b0,episode,E20261006-2058387F57,,7,false
 1d15587f7c9397d201e2edb1,isolated,,,1,false
 1d15a6164a03af739dad1eac,isolated,,,1,false
 1d18674cf9715545af69091e,episode,E20260907-9CED9A92A3,,9,false
@@ -3810,10 +3842,12 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1db36344614855d9363c2887,chained,E20260810-D254CA7C05,,104,true
 1db388abc97a80ca4e517898,isolated,,,1,false
 1db5a47e411f8fd41a1d3f83,episode,E20260827-165E24448A,,7,false
+1db947a1790b851b2a40d557,pair,,P20261006-A65634430C,2,false
 1db9f6a2d845e58384d42906,pair,,P20260811-608DD5FE41,2,false
 1dba97c7551c1cbcc674cd8d,episode,E20260811-BD79070553,,19,false
 1dbd528d72e1481b3b36e719,isolated,,,1,false
 1dc15b32cc0ee57aeb35cc5c,episode,E20260923-5B3CEA55FD,,6,false
+1dc169743117172121742fe0,isolated,,,1,false
 1dc18c43f86d8ed157b8e790,episode,E20260715-0026040A76,,4,false
 1dc528dc02ac2b167651016c,episode,E20260810-091CB8A2AD,,4,false
 1dc679200c3acae149b34023,isolated,,,1,false
@@ -3828,6 +3862,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1dd3415d089d3ab6dee894f0,pair,,P20260728-B91E5411C7,2,false
 1dd529db3234e6b5688d4625,isolated,,,1,false
 1dd730fc07c2aa9112377133,isolated,,,1,false
+1dd746fb570d637a6e67bc16,pair,,P20261006-3CCB777951,2,false
 1dd7da13fa2938e950fcab6c,episode,E20260917-B499A84512,,9,false
 1dda2456b67040a582fbf6ba,isolated,,,1,false
 1dddc4b75439a73477a771e0,isolated,,,1,false
@@ -3856,6 +3891,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1e023288ffc37b6a45581c2f,isolated,,,1,false
 1e02c07878a798c5d2d8f3a3,pair,,P20260804-37A4B22D8F,2,false
 1e035f7f2f72bf9c7f228f26,isolated,,,1,false
+1e03f29aea1cc5c35737e687,isolated,,,1,false
 1e06b7b1f4daae9eeeb6d04c,pair,,P20260922-C642DD049D,2,false
 1e07c2316022f14cf0b0ca1d,episode,E20260905-CC7D6981F9,,9,false
 1e07ff07e25f3ddb30d33317,episode,E20260820-357513F14A,,16,false
@@ -3966,6 +4002,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1ee581824d836b523acabd03,episode,E20260930-853E8042E9,,3,false
 1ee5c249c091953e7720c759,isolated,,,1,false
 1ee6222a1c6a7021cb25d6fc,isolated,,,1,false
+1eea211db8ba43fde78fb9a4,episode,E20261006-2E5D4B815F,,4,false
 1eea50d6a605a434b5607882,isolated,,,1,false
 1eecd22e4e63e58fc139526b,pair,,P20260914-B8AFEAB633,2,false
 1eef532a9c99c54a11414711,episode,E20260919-362344BD0E,,16,false
@@ -4098,6 +4135,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1ff9fcf59c50a5c5d06f2355,episode,E20260829-FC7C3CD755,,4,false
 1ffad89dd72c68389d17e450,pair,,P20260902-A47B677A15,2,false
 1fffbee109d8e8335da6d59f,chained,E20260916-7ACD14E36C,,35,true
+2000e6625bb6b9e9706ca5b7,pair,,P20261006-8C31C491F9,2,false
 20055aaed47ec13d13fe1309,episode,E20260916-C087DADDC2,,14,false
 2009ce48d5c38c7d5cc21715,pair,,P20260716-E62A60BD28,2,false
 2009d878519581be7c35fc83,isolated,,,1,false
@@ -4330,6 +4368,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 219c666765283af720796601,episode,E20260901-5AEA71432A,,5,false
 219cd10d0e8a59c1995e7256,episode,E20260909-1000E2B8A7,,3,false
 219f4ded1b81c3398fc4f95d,isolated,,,1,false
+21a0216cf1b2fd2883fc557d,pair,,P20261006-78B20531F9,2,false
 21a151ca050699b85cef42b7,episode,E20260715-9854E8D0D1,,9,false
 21a349b9e009eeb65e0b47a4,pair,,P20260811-A6BF228A48,2,false
 21a4a23c872b49b1f7832b2d,episode,E20260811-D2006010F9,,19,false
@@ -4394,6 +4433,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 220e116bbc963b2f670d4437,isolated,,,1,false
 2211c5580e840abe9f4dfb6b,isolated,,,1,false
 2213451c5d3aee633ccae72a,chained,E20260809-A107DB613F,,232,true
+221643eb1951e039f7c9fee6,pair,,P20261005-618C3A6DE4,2,false
 221722111229107c0d6cb351,episode,E20260919-E1E56A37AD,,6,false
 2217302816500d1fe655d30e,isolated,,,1,false
 22191221f957ddd3bfa400e3,pair,,P20260808-6381666F49,2,false
@@ -4417,6 +4457,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 22406553f455e8981947a241,episode,E20260910-C795266924,,3,false
 2241b7ddb3e3306b4759be7f,isolated,,,1,false
 224490a5d64cdd0b2893456c,episode,E20260909-7EFFB92D83,,9,false
+2244d7cee442bb4a153be234,isolated,,,1,false
 22464a7e038fffe5ae636950,episode,E20260809-F7EE4197AB,,4,false
 22475f2f09eea3161082a149,episode,E20260729-885DD81C7E,,4,false
 2247fe0d57c791616048e43e,chained,E20260829-86CD79580B,,42,true
@@ -4787,6 +4828,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 256401c2cef2d289bfcfc83e,episode,E20260810-F5228B6E6E,,23,false
 2566c1524b670c084be4366d,isolated,,,1,false
 256a56686effa48d5c746437,pair,,P20260727-95BF089420,2,false
+256ecd7219e0425ff27ac4f4,isolated,,,1,false
 256fa50cb67b5404d515279e,episode,E20260807-820476CE97,,14,false
 2574e3113fbf636eae4396b1,isolated,,,1,false
 257a95f1530dafb1d1dceda6,episode,E20260908-77A3C19AD2,,10,false
@@ -4837,6 +4879,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 25c71281bd2e808030d92705,episode,E20260921-9D617BFFE9,,19,false
 25c7662607f9ab704962ed8c,episode,E20260920-0F00B7EF6B,,3,false
 25ca460fe30d79e297b819d1,episode,E20260827-16A2C1F9B5,,4,false
+25ccf4ffe22e5fbded16165b,isolated,,,1,false
 25cffe367ce3b399932e4541,episode,E20260921-C47DC0FC13,,32,false
 25d01f0451c03e5ccbf261a7,isolated,,,1,false
 25d3c086412749bc64690476,isolated,,,1,false
@@ -4853,6 +4896,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 25ef6de7adc5bce7a55e2f7f,isolated,,,1,false
 25f107525a6fe91086ffdc63,pair,,P20260716-74CBA10C00,2,false
 25f125d3bddd9981d27fd2c9,pair,,P20260804-208CDAB22C,2,false
+25f2f0d6e2d705cf7d2c5765,pair,,P20261006-0F3B18ECC0,2,false
 25f300948b865e1e34685d98,isolated,,,1,false
 25fc471ce48f0a01da500106,isolated,,,1,false
 2600abb1b8d538c671d6f32c,isolated,,,1,false
@@ -5056,6 +5100,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 27559037da84595a1f4bc1b4,episode,E20260823-43BEE4BA94,,3,false
 27562e14a2e8c0a557daa666,episode,E20260815-878268C868,,7,false
 275a91b5da853381e0fd1c1f,isolated,,,1,false
+275c1de7ce8d6563381fe748,isolated,,,1,false
 275d2fb9259f1ddda385ba57,isolated,,,1,false
 275d565334226c9ccebb55c6,episode,E20260731-4C0DDB2465,,3,false
 275f1c0c5ff100bddb69ee7a,episode,E20260725-F677147988,,12,false
@@ -5110,6 +5155,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 27bcf7adab1d28783cb6bc7c,episode,E20260730-A72379B072,,4,false
 27bddda930378d299a7ca388,episode,E20260810-46A7746F5D,,22,false
 27bf19530155342bdb759e59,isolated,,,1,false
+27bf8f1c3980d6abc819dd9e,episode,E20261006-05A90AF858,,3,false
 27bf98e694be3b81cbba1bcc,isolated,,,1,false
 27c0cacd2c2891d0e1c4d87b,isolated,,,1,false
 27c151575981b6b83605c9a4,episode,E20260820-6C54DE531D,,18,false
@@ -5151,6 +5197,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 280adb1f92538f07670cdb08,isolated,,,1,false
 280b696b8a28d371d770812b,pair,,P20260828-C9721E9319,2,false
 280ec5b45cc648d509a25557,pair,,P20260725-89EFC9C6F9,2,false
+2812e73a17b3f174cbcfd1f7,isolated,,,1,false
 2814549c27ceba3bda39a1f3,isolated,,,1,false
 2817eb49f5cdca079cee99f4,pair,,P20261005-BC9BA9F7AB,2,false
 28181a46279618b78a5bd30a,isolated,,,1,false
@@ -5234,6 +5281,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 28c646583da05cc265a2768a,episode,E20260912-3760B62784,,40,false
 28c655faae9c61295c1ca323,pair,,P20260823-6231F04241,2,false
 28c6e9583136f434408b245c,chained,E20260810-D254CA7C05,,104,true
+28ca2a4fcb8d0d6cca9648a6,episode,E20261006-9F38E2792B,,5,false
 28ca7760f9efe16eadb69efc,episode,E20260820-13F18A1471,,9,false
 28ca8d4b5d62975d2aaf1098,isolated,,,1,false
 28ccc583c020d7b263c6857f,episode,E20260708-206E0D6794,,4,false
@@ -5250,6 +5298,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 28dc1568d37f0d7a744a9fbd,isolated,,,1,false
 28ddc2f122362cb76d2b0a76,pair,,P20260923-7510B2D14B,2,false
 28de2dc634413dce94e6865c,pair,,P20260722-F4F09D26F1,2,false
+28e0251bc80c7054ae1bb573,isolated,,,1,false
 28e1e9a8ab92dfaac5aa2401,chained,E20260809-A107DB613F,,232,true
 28e246cd4343274b126ba400,episode,E20260717-99B31FEE82,,4,false
 28e5ea25c895fc65dd3f6265,episode,E20260922-91528A6E58,,3,false
@@ -5332,6 +5381,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 298d29d6d50b65409d43642a,episode,E20260724-25ED2BABB4,,27,false
 298d42e8154e6403169cd541,episode,E20260707-E492226F0D,,11,false
 2990c3a3f16998d7b67fbb1f,episode,E20260715-D98BAF669F,,12,false
+2991d2f055612b75a18d8204,isolated,,,1,false
 299258429f0e20837d2aad5c,episode,E20260902-7F53F569B3,,4,false
 299380d93c47742ce9f3925a,episode,E20260823-590B11B425,,14,false
 29957579d45148e0a1f62daf,pair,,P20260921-0E27F8B3E8,2,false
@@ -5454,6 +5504,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 2a8d1fdb1a041b3dd8831462,isolated,,,1,false
 2a8f78acf3ece1e3279ce434,chained,E20260809-A107DB613F,,232,true
 2a8fa5691d9e3f000540ca88,episode,E20260909-C18E56492C,,5,false
+2a90399a649c7042e4913bc1,isolated,,,1,false
 2a9db204b1299e8f5f81e71f,isolated,,,1,false
 2a9fda8847f5c2f1413ebfe5,episode,E20260813-D223D02E46,,4,false
 2aa38e5d5469628116fd7c0a,isolated,,,1,false
@@ -5485,6 +5536,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 2aeafb21b18a0bcf218cda60,isolated,,,1,false
 2aeb26fb2ab5cca64fe927d6,episode,E20260715-0186986C27,,4,false
 2aeba459d27e2513bf43f7c6,episode,E20260823-B6C7BA9FA9,,16,false
+2af0317d7ae1be1af080a7d4,pair,,P20261005-0EC1A835AA,2,false
 2af23fcd5ed8459a872bc947,isolated,,,1,false
 2af47e322cf0c2326f6681e5,episode,E20260908-2F55B6856E,,61,false
 2af532e6664caa8504367aff,episode,E20260808-2EB2DDA271,,4,false
@@ -5621,6 +5673,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 2be053077f31d75449074725,isolated,,,1,false
 2be1bd3388c707c0ec6dcff0,pair,,P20260918-BA57DEE800,2,false
 2be2f5971966f18f637ab09b,isolated,,,1,false
+2be3b58f88f95c5c5af9542e,isolated,,,1,false
 2be40285f43cec3bcf764243,episode,E20261005-D5241F026C,,3,false
 2be51bb4d0ba92ced150aed7,chained,E20260810-999ED8254F,,44,true
 2be601fb4c9caab53e8dde90,episode,E20260811-0A2A20F22C,,45,false
@@ -5668,6 +5721,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 2c4293093ead6c409cdb749b,isolated,,,1,false
 2c460a4ac8d136f404b79914,pair,,P20260930-9408D3614C,2,false
 2c481da1287c8855f3926d08,chained,E20260918-F928689AF5,,136,true
+2c49889c40393608f5c77bd9,isolated,,,1,false
 2c49b45151248d6b43b86fd6,isolated,,,1,false
 2c4b6114e23b523d694683a7,episode,E20260930-077C51EBA4,,21,false
 2c4b618984f2d59c69b6ea00,episode,E20260920-1B51CB3F49,,3,false
@@ -5823,6 +5877,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 2d5483f80341d029615d8b92,pair,,P20260922-3F1B897A27,2,false
 2d55a14a25cc36664149288e,chained,E20260809-A107DB613F,,232,true
 2d5669d4ea468386d0220243,episode,E20260821-4CA5188895,,4,false
+2d585c0848d5d6341889c93c,episode,E20261006-A5078A17DE,,3,false
 2d5a28c85021f1c9217714e5,isolated,,,1,false
 2d61529afe69bd8e8c496171,episode,E20260724-B93D424DEB,,25,false
 2d61c29ee5cb3eb9e254e691,isolated,,,1,false
@@ -5866,6 +5921,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 2db4f8c1c95af4c1e9258cef,pair,,P20260831-7C78358DC8,2,false
 2db5290c79bae6ce3e37d003,isolated,,,1,false
 2db7e5308da5551ddb6058cb,episode,E20260917-121A7C0329,,5,false
+2db9689b4e67de4ec0d67e78,isolated,,,1,false
 2dbb315f1aa17140819837dc,pair,,P20260811-FDA175F370,2,false
 2dbc4ece7f6827b24df44470,isolated,,,1,false
 2dc0acae57c2a81aeebb1091,isolated,,,1,false
@@ -5979,6 +6035,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 2e78baedc005bea0adf4a783,pair,,P20261005-80E43FAE9B,2,false
 2e7917d6fc311a641806537c,isolated,,,1,false
 2e7cc5bde1958a9b83f4d927,isolated,,,1,false
+2e7e7fc7a121b8b6bfcc0eae,pair,,P20261006-F9B8D8E532,2,false
 2e7e883a92d2a57b21e4595b,episode,E20261003-B05C911BE6,,3,false
 2e81c7ca5295fc79d8393105,isolated,,,1,false
 2e85d96255798f045e05146d,episode,E20260808-470F429AED,,6,false
@@ -5988,6 +6045,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 2e8b93becb0514218da73c2d,episode,E20260809-C2EF60A33D,,8,false
 2e922e56fcfe660cfb394d5b,pair,,P20260716-39227BB26B,2,false
 2e9295629efd48e605d8e15c,isolated,,,1,false
+2e92e4820459a05bafad1cd2,episode,E20261006-032E8ACCE9,,19,false
 2e937303da1e38024e8cb40b,episode,E20260930-8FD5BE1B34,,13,false
 2e95788bdbe16d038bd050ca,isolated,,,1,false
 2e99605ce652c34a1ae2a0f9,isolated,,,1,false
@@ -6499,6 +6557,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 32513effcc1c402b1372c76c,isolated,,,1,false
 3252fc9f4483e1890d9dcf50,episode,E20260715-5705E28844,,5,false
 32562eaa6c0e9bb9ea78d8a8,episode,E20260907-1AD9CD7532,,10,false
+325745fd472ae27f2d970ab5,isolated,,,1,false
 3257a585678a7915d9273cee,isolated,,,1,false
 32583476220804c4d8172a71,episode,E20260724-B93D424DEB,,25,false
 32597babe68ae8f80d59a1c9,episode,E20260810-F0D267E348,,6,false
@@ -6600,6 +6659,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 32fd0f37daf5acd74f63ba62,isolated,,,1,false
 32fd2ae046db8297ec3c080b,isolated,,,1,false
 32fe257d039ad2b86eb0aaa6,pair,,P20260811-062A077F75,2,false
+33004bdece42df76999aad38,isolated,,,1,false
 3301be7213aea5a1844efe06,episode,E20260811-509AE609A5,,40,false
 33040d70a4db7431046f6b4b,isolated,,,1,false
 330507f3c45efaf8330a7db7,pair,,P20260905-B1F2A2EC9C,2,false
@@ -6904,6 +6964,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 3557e9ff4331c5aa23c28da9,isolated,,,1,false
 355c709c113bb0e79eb0fe2d,chained,E20260809-A107DB613F,,232,true
 355e602dfaa15e7808a9134f,episode,E20260923-1D6B98F32D,,3,false
+355ec04a12ce3e29fb0a826d,episode,E20261006-D5457767A6,,3,false
 35640cdf3966498368810fb5,isolated,,,1,false
 3564a19674243b21b0dc516b,isolated,,,1,false
 3566f892e5f20095cc22df49,chained,E20260820-53359FE259,,75,true
@@ -6985,6 +7046,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 360e0f1d4a13b46b231b4328,isolated,,,1,false
 360e8c008358d76f22a76992,episode,E20260810-0985AA6240,,3,false
 36151940974196105f1d10cd,isolated,,,1,false
+36157a79e301e6f7fff6036a,isolated,,,1,false
 3617b086d66224e199ed4898,episode,E20260914-276F489D42,,32,false
 36188c1f240847c19da0ea67,pair,,P20260916-FD693557A9,2,false
 36194c42d51f5401eb619955,episode,E20260714-D85953F9F8,,3,false
@@ -7055,6 +7117,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 368acf626cfdc4123a6649fb,pair,,P20260810-4F50308ABC,2,false
 368b04e355e944031ad9a97e,episode,E20260811-0C107D4508,,4,false
 368d7b235e65f4867c7275c0,episode,E20260912-95741AD67F,,3,false
+368f82190d0fa14e1d61da7c,episode,E20261006-D597ACB61E,,5,false
 3690f73d38c8abb732e01b4f,pair,,P20260921-CA9F939653,2,false
 369245f593421f5443f47a34,isolated,,,1,false
 36939d069c9a41f723702172,pair,,P20260724-52A79E0B40,2,false
@@ -7325,6 +7388,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 38659b30aa7cb339fcc63f83,isolated,,,1,false
 3865a2d90024c9aafd7e7c6c,episode,E20260811-7D2EDC98BD,,5,false
 386675ce6d9f6e8af958d526,episode,E20260809-5211F8D1EE,,3,false
+386704375ef9b3ac39040e15,episode,E20261006-6EDCB2C641,,3,false
 3867a3664b1b307c179c58cf,episode,E20260905-A1C3833EC9,,6,false
 38691e2f01900f2e1cbc1452,pair,,P20260714-86479016D8,2,false
 386942de1c1f510fc2340f7a,episode,E20260809-BD1DEA0DDC,,4,false
@@ -7403,6 +7467,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 38e7806099c4f336c072eca4,pair,,P20260713-F0980BA441,2,false
 38e7d14c4af214c8f7875efa,pair,,P20260825-7DFB0A1940,2,false
 38ea860ed493759cd9c961c5,episode,E20260908-22F0043BA2,,12,false
+38ef4f304d8b970cc965bd46,isolated,,,1,false
 38f00c642b1a2d537c9bf9b6,episode,E20260706-158995005A,,5,false
 38f0bcdde4e7db3a9ca3686d,isolated,,,1,false
 38f20006ac317cba2d78651e,isolated,,,1,false
@@ -7643,6 +7708,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 3af28944e53bd73dc8cc61cd,isolated,,,1,false
 3af33afc73d4b11a58f80858,isolated,,,1,false
 3af3a0d1ef5d612d257bf5c9,isolated,,,1,false
+3af99f7bebab2932fd991c1b,episode,E20261006-3364864559,,4,false
 3afb3f7a1b67afe93dfec4c7,episode,E20260811-81D9605906,,6,false
 3afb4f66758e9caff3348932,episode,E20260823-B80B087A0A,,18,false
 3afe17adf24ed79e64fffe33,isolated,,,1,false
@@ -7705,6 +7771,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 3b8299299819a7115d86b7b1,pair,,P20260825-C93B33D7CD,2,false
 3b838b90084cdbd7af285088,episode,E20260707-C6E275B06D,,3,false
 3b8628045e30015a885f8caf,isolated,,,1,false
+3b8ac7532dad389836f6ce01,episode,E20261006-032E8ACCE9,,19,false
 3b8db4937113752c9e0f2662,isolated,,,1,false
 3b95163aae01fdea6bebe5d3,episode,E20260808-5C4D242B8A,,3,false
 3b954aa49bdfa1cd83573b91,isolated,,,1,false
@@ -7836,12 +7903,14 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 3c7a5c4859186c04878aa3be,isolated,,,1,false
 3c81616c86f1d07ee8109589,pair,,P20260903-3B307A4622,2,false
 3c831b0461e5be129bb72e84,isolated,,,1,false
+3c839ce735f8fd049069eda2,episode,E20261006-612312B581,,5,false
 3c874951540e57027182c57d,episode,E20261005-6FF9DE3A03,,5,false
 3c87d20252937607cfb01421,episode,E20260706-07DCA6CB34,,7,false
 3c889e178722e256cff74773,isolated,,,1,false
 3c89fb1eab0fb6bd859210cf,isolated,,,1,false
 3c8d895f15384f1e939e6f78,isolated,,,1,false
 3c940f54522c62dd06dba2dd,episode,E20260706-A28051643D,,8,false
+3c96226a097ee3ff59a66606,isolated,,,1,false
 3c988b043052815337db3945,isolated,,,1,false
 3c9cb7649906a5fd02551c1d,pair,,P20260807-2DBF4310A6,2,false
 3c9ede5577c7b99c878df724,isolated,,,1,false
@@ -7852,6 +7921,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 3ca8edc0ab115de667e662cc,chained,E20260911-1EFEBF4B90,,59,true
 3cac026c57ce03745ecf0820,episode,E20260821-13A11E05E5,,4,false
 3cacf3ebe134f16642406f0a,isolated,,,1,false
+3cb14c04173e2f5294d26b0a,isolated,,,1,false
 3cb1eb1657df9735192d19f8,pair,,P20260820-107C111613,2,false
 3cb2762856e10442c6c6ce07,episode,E20260928-71D6300F1E,,3,false
 3cb56abe0e1ea2c99e938b79,episode,E20260921-9D617BFFE9,,19,false
@@ -7921,6 +7991,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 3d1f141e50e5a3c221d69453,isolated,,,1,false
 3d22f27498532eea83dc08c5,episode,E20260811-6044761E86,,5,false
 3d2c17ec66ae926911b279d7,isolated,,,1,false
+3d2d64ece0a1614bb269a467,pair,,P20261006-A93D9409D5,2,false
 3d328c29bd0ae204c9fba1df,isolated,,,1,false
 3d32933574d30447edeb8b8b,isolated,,,1,false
 3d37d47e4eb9ec14a769f156,isolated,,,1,false
@@ -8273,6 +8344,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 3fe50e98bf7274873a5c6c85,pair,,P20260717-62DCEDBC11,2,false
 3fe5385593f03204493c58f7,episode,E20260802-8B68FE72E8,,5,false
 3fe651fed5ae90dbf85e3980,isolated,,,1,false
+3fe9fdd80e1c2eca7ceea3fd,episode,E20261006-032E8ACCE9,,19,false
 3feba19dc24ccbf3a2aa10a9,isolated,,,1,false
 3fec2e53ee6e65cddc5673ce,isolated,,,1,false
 3fec9097af0682f1373f44a0,episode,E20260921-D489A3E421,,20,false
@@ -8353,6 +8425,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 409a34e331956cda36c53567,episode,E20260928-A534B8BA46,,8,false
 409d8aa2ca3ec483df2f3b97,episode,E20260809-B35489622F,,5,false
 409fa0f9b0ed870d5090b492,pair,,P20260716-9C179FC4FE,2,false
+40a054e74ef8b13e5bdeb225,pair,,P20261006-949D87A9B3,2,false
 40a690a3f3c9d3d990d3abd5,episode,E20260811-8213A36465,,3,false
 40a6a457d5e0270e73245890,isolated,,,1,false
 40a715f45e350f489ca8d52a,episode,E20260707-136775E66F,,3,false
@@ -8507,6 +8580,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 41d8063e57456ff9d3aeef1c,pair,,P20260906-0B353AB821,2,false
 41db073aa0391dec3939c26a,episode,E20260713-13052C471F,,4,false
 41dcb859b724afb8bb21f0cf,isolated,,,1,false
+41ddbb380facba7849e2128e,pair,,P20261006-6FA30E1B7C,2,false
 41def293a0e4628d292fc4aa,isolated,,,1,false
 41e11af114a603ce1a66e137,episode,E20260714-475FFE559F,,3,false
 41e1d4d942dd884d796a3c0c,chained,E20260803-A13A88BA0F,,60,true
@@ -8632,6 +8706,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 42d7ba9a8db6454f53353c4a,isolated,,,1,false
 42d8f2704bc428c763e7ec02,isolated,,,1,false
 42db4a5b47dae007def228b1,isolated,,,1,false
+42dbb6eaf0f1b5296a47868c,pair,,P20261006-B7C667AD1E,2,false
 42dbf034815ad0ff49d1dcf7,pair,,P20260811-14BA5E89BD,2,false
 42dc26c882df038c546814b8,isolated,,,1,false
 42dc28fbfa3192a9c458adce,isolated,,,1,false
@@ -8717,10 +8792,14 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 43933df80ceecfe3cfba0460,episode,E20260713-93B13E3A51,,3,false
 4393808e49c7a89910eb2b7e,pair,,P20260901-07A1811FEA,2,false
 4393a8f145bfab58747ee019,isolated,,,1,false
+4393a9f00b1d5e3bea8e6ba3,pair,,P20261006-B62675C72D,2,false
+43959bfb786f0e8213104087,episode,E20261006-EDDFF6501E,,4,false
 4395be42ac4022b64d0550fa,episode,E20260922-8739674B31,,6,false
 439645a64abc02c5747a6d5a,isolated,,,1,false
+439893423899e4a327644f71,pair,,P20261006-FA2DCAFACD,2,false
 43a5be6b27d9919c1655909d,episode,E20260810-A74F6FE43B,,8,false
 43a6bb9353c7238a585bbe58,episode,E20260726-6034730F13,,3,false
+43a7651dd75a575c9d0c638a,episode,E20261006-1D65E2CBAC,,3,false
 43a7b05a5ef5c6f3e4c70aa5,pair,,P20260721-AEDA604CFC,2,false
 43a9b7e9a523504dd43aab17,isolated,,,1,false
 43ac746cd9015845abebc8a6,pair,,P20260703-99C8A6FEF3,2,false
@@ -8736,6 +8815,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 43cb47de6f6d763d1aa610b0,episode,E20260908-81CC64BEB7,,21,false
 43cc0316e06cdf8b8541e873,pair,,P20260918-D73BAB4728,2,false
 43ce97db4f229c1e76034013,episode,E20260812-ACA95B3E5A,,5,false
+43cebc5bb4168919eb70f57a,isolated,,,1,false
 43cfc3bb082ccd0d83d8455d,episode,E20260707-FFC046738B,,5,false
 43d159a8b21353e3bb1fe59e,episode,E20260927-861244B676,,5,false
 43d1b7928ed7ebce00102a37,isolated,,,1,false
@@ -8791,6 +8871,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 443371ca4870ed5ac12a5a41,isolated,,,1,false
 443431cf01300fabd48b5be3,episode,E20260903-8C750BC365,,7,false
 4435168ce51e801ffd0b2304,isolated,,,1,false
+443563511a848638feafc832,pair,,P20261006-DD88C9D8A0,2,false
 44370469fb4fc445fb8cbd3a,episode,E20260807-64889EFC2D,,27,false
 443d9152a41aeab065b7aeb2,isolated,,,1,false
 443f4dc73b62fdfedc637c40,pair,,P20260918-8CA012EB0E,2,false
@@ -8815,6 +8896,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 44592c99d5d42c3a35014abf,pair,,P20260918-8AA68E101A,2,false
 445989c98f8f12955a7b9852,pair,,P20260711-DC58C8D418,2,false
 445bd1c6fb56bd888d5fdd43,episode,E20260810-A2E2899619,,18,false
+445db1d3ee8a505789deb38c,episode,E20261006-2E5D4B815F,,4,false
 445dc582fc4d8028df95f488,episode,E20260918-2E8D3C99A3,,4,false
 445f762808ecb70b1ceac138,chained,E20260809-A107DB613F,,232,true
 4462f23966ead3c8da94fb85,episode,E20260730-81F961F1EE,,4,false
@@ -8932,6 +9014,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4531fa7ebf40f976285777e4,episode,E20260825-617F6F3431,,6,false
 45328d14b38145b587f6feb0,episode,E20260724-BB8B7F44EF,,9,false
 4534a9e19e6fc6a48fcc6ba0,isolated,,,1,false
+453cd4ffe6aee43d102f97ea,pair,,P20261006-3BE7E7F624,2,false
 45460c7889160a7652cb840a,episode,E20260818-74E6889127,,8,false
 45468d84c578faf31e209ba3,isolated,,,1,false
 454bd2abae267b3006e5b967,pair,,P20260915-B6368D9B2C,2,false
@@ -8945,6 +9028,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4556ad09490022e8f0f69193,isolated,,,1,false
 4559a9a4f45d3bea7eba3072,episode,E20260917-5E582857FF,,8,false
 455a280ffc21460c47edf8f1,isolated,,,1,false
+4562a1d4f4f1bdc5915b5f98,episode,E20261006-2058387F57,,7,false
 4566157783c6d637c2dd9552,isolated,,,1,false
 4566c4687fd48d24bb49e381,pair,,P20260831-70CCF205F0,2,false
 4566e682623823066de9e8d0,episode,E20260716-ABD87240DA,,8,false
@@ -8964,6 +9048,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 45856941f4e2241f4e01053a,episode,E20260812-8D416E7B76,,7,false
 4586117dded1f38d9cb8ff00,isolated,,,1,false
 45891f063b47fa486e7bc41e,episode,E20260921-C47DC0FC13,,32,false
+458999a6a84d28dc4a561c3b,episode,E20261006-D61B717EEC,,3,false
 458dada660627ecb4d8b7ce9,pair,,P20260907-9F690A12A2,2,false
 45913a69964518d25f427cae,episode,E20260801-E222AFE43D,,11,false
 45929893b54b8992533a8370,isolated,,,1,false
@@ -9056,6 +9141,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 462edc02923164834628b5a0,episode,E20260808-319E26F3E8,,7,false
 4635e1178d766f08dab862e6,episode,E20260923-10E65C55F7,,3,false
 46366bc7f8349260f3e4b139,episode,E20260908-726F8119E7,,5,false
+46381da225a92eae2e7e5d68,isolated,,,1,false
 463a406d1156856cca8a873d,episode,E20260801-F467AF9054,,8,false
 463a6297e7aa0e5a52808606,episode,E20260825-58903CC006,,4,false
 463a7083d373c8ab1b51a0a9,chained,E20260809-A107DB613F,,232,true
@@ -9154,6 +9240,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 46ee3dc228acfa238a9cb9e4,episode,E20260807-5304A9F742,,30,false
 46f0b87e5450e83f4caaf10a,isolated,,,1,false
 46f101be9030550b1a6b3677,isolated,,,1,false
+46f26dbd134e5d9693b4f197,pair,,P20261006-F944440D90,2,false
 46f3c0dbadacbf5b6cc1b18a,episode,E20260808-1C5A1B7894,,5,false
 46f526771f493e33e81ccac4,isolated,,,1,false
 46f869f6f5be094f28c687eb,isolated,,,1,false
@@ -9250,6 +9337,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 47ad2fc5168b4237c76de53a,pair,,P20260920-9CC1D7393A,2,false
 47adc9ddccab8addd33e339e,pair,,P20260730-EDE6C3767D,2,false
 47bb3dcbc6f47410198aaebd,episode,E20260820-85C3C592F3,,8,false
+47bd1efefc4c7b355216ac53,episode,E20261006-612312B581,,5,false
 47bd2917f23d136bc2c37939,episode,E20261005-7A7C9520D6,,5,false
 47c35cec5fce1322959fc58b,episode,E20260701-13259827D3,,3,false
 47caa41747dc7285decf56dd,episode,E20260716-5B4706B5A1,,3,false
@@ -9314,6 +9402,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4835c3b99370ed5d7b12280a,episode,E20260807-1C38D417D4,,5,false
 48361810b2cd93384d40fe68,episode,E20260807-64889EFC2D,,27,false
 48374bede4c47d46cec56907,episode,E20260825-67BBBA2F72,,25,false
+483891d45d20cb5b494c4556,isolated,,,1,false
 483b1ea6a54db873f0f816c6,episode,E20260829-D56C32B7A4,,8,false
 483df6b195d3ddcefc333135,isolated,,,1,false
 483f97ced9aeb9af07876ab0,episode,E20260718-5D13412317,,9,false
@@ -9335,6 +9424,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 485b8bee275835f0e0ac1588,chained,E20260920-87DA3A22EA,,135,true
 485c09ce65ddc86666d629f3,episode,E20260701-AECB8E0AFB,,6,false
 485d420629b8c1a2f4aa815c,pair,,P20260807-0A6D0801A9,2,false
+485e64153d88a1682a4cf232,pair,,P20261006-5BA9629665,2,false
 485eff52adfa4bb1bf83e5c7,episode,E20260824-E2B8E1F968,,7,false
 485f64dcc6c29b4b79cf0afb,isolated,,,1,false
 485fa63cff1757b28e687c60,episode,E20260929-81077AC395,,14,false
@@ -9650,6 +9740,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4accca4a43743dc93d2f9dbe,pair,,P20260827-24B66ECA5B,2,false
 4accfb61e271cdcd9e588651,isolated,,,1,false
 4acec458e6e6747f294f6afb,isolated,,,1,false
+4ad4235d2711f8a8e11d88a1,episode,E20261006-26158B35BC,,4,false
 4ad499ff8c7f8f57575d71ed,chained,E20260820-53359FE259,,75,true
 4ad5398f245b1d19c4ca52f7,episode,E20260922-4F6F33A686,,21,false
 4ad807350e99b32c044291f6,episode,E20260909-242EC1991B,,4,false
@@ -9770,6 +9861,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4ba45f4101905c611b7b981b,isolated,,,1,false
 4ba5697c0b1f2b14c06e792b,chained,E20260911-E0CAE75547,,13,true
 4baa5526e0d321a82c4776ad,chained,E20260810-F33941669D,,186,true
+4baac20e6e293650b7a3a731,isolated,,,1,false
 4baadd9d474a49cee1778beb,isolated,,,1,false
 4babdfbd5273d0837aba2f8c,episode,E20261005-D5241F026C,,3,false
 4bb064931fa7869c37df83b0,chained,E20260809-A107DB613F,,232,true
@@ -9830,6 +9922,9 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4c1e88f9d0f9293213b68d82,episode,E20260815-71186F37EE,,9,false
 4c204dcd0a3f5ebd7b038e26,isolated,,,1,false
 4c2059701c2ed225d78c32ef,episode,E20260814-AB7007E31F,,18,false
+4c255c5508ab2ee12f8cf336,isolated,,,1,false
+4c257f713d65da4af21cc4ba,episode,E20261006-0C1732BB9C,,5,false
+4c272425e2665ac782388cd2,episode,E20261006-26158B35BC,,4,false
 4c2c51429ce79abde9e9cc40,isolated,,,1,false
 4c30d51620e310f7b93c5470,episode,E20260807-64889EFC2D,,27,false
 4c318d50fa08c5065085ed9e,episode,E20260713-84AB603FF1,,7,false
@@ -9856,6 +9951,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4c50cebf0b94fd685f081d3a,episode,E20260922-399F2523A2,,3,false
 4c5184a4d2f59dc8909beeaf,isolated,,,1,false
 4c55371a883283be25a06ecd,pair,,P20260928-5E566C9BB9,2,false
+4c596204773ccee837e6d614,episode,E20261006-032E8ACCE9,,19,false
 4c5a4eb14d1b00f8b6054630,chained,E20260810-999ED8254F,,44,true
 4c5c3550e764653e182b767d,episode,E20260818-9A52929DF1,,13,false
 4c5e24cc1df8e1b602a83e26,isolated,,,1,false
@@ -9865,6 +9961,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4c624da050b6011808f2786f,isolated,,,1,false
 4c630c25a687bc192d65a7a6,episode,E20260802-EA8A02B41F,,3,false
 4c65d62b1970f3a6740877a9,episode,E20260707-8A1B3A442D,,8,false
+4c661383f202621c4d2d579c,isolated,,,1,false
 4c6a3448a7c700a47127cf98,episode,E20260730-C9F5F531AC,,3,false
 4c6dcd0fd154003cf9361d2c,episode,E20260830-4168C7440B,,3,false
 4c6ec424c078eb0b31c9fd16,isolated,,,1,false
@@ -9883,6 +9980,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4c82832f71042772e2413b7c,isolated,,,1,false
 4c8364004b945133a6469fd2,pair,,P20260729-5FA3A9114B,2,false
 4c83ac2eb256d4026f926ffc,episode,E20260728-9B6D1E4E21,,4,false
+4c85f93e838ccabd993caf69,pair,,P20261006-CDC81AAF45,2,false
 4c8616707263125fec961b4d,episode,E20260815-144808B301,,4,false
 4c86b21346a8f38e3794def9,pair,,P20261005-AF4226732A,2,false
 4c876c9c6b2b6ef579789dcc,isolated,,,1,false
@@ -9892,6 +9990,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4c8ddad2ff9623ce39a88121,episode,E20260908-AC734E4C3A,,4,false
 4c90173c48d824b25c59bc4a,episode,E20260823-D7049406F8,,3,false
 4c95568665a319c8c2b27e96,episode,E20260918-50B0D4FD59,,9,false
+4c95cd4a5e0887f68e830e96,isolated,,,1,false
 4c99b0fe526e0fc914a21806,pair,,P20260729-B9AEEC3A99,2,false
 4c99b1b3f7fb866cbda5f67e,isolated,,,1,false
 4c9a159a453d3ea391399baa,pair,,P20260808-A85B3CA340,2,false
@@ -9949,6 +10048,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4cf39fcdfc83bfc845a52db4,pair,,P20260815-B5296B9C59,2,false
 4cf3cf4f2aec04da6de69e75,pair,,P20260713-36A38DF228,2,false
 4cf4f15ed2ad44b2ef01db3a,pair,,P20260829-0BE2B096BC,2,false
+4cf55c0ba0a3f46db7cc46f7,pair,,P20261006-FA2DCAFACD,2,false
 4cfa30555d4d76b59cfd5c39,episode,E20260929-9E324592D6,,6,false
 4cfa74eff1f9ee5448a10754,chained,E20260823-0EA2788958,,21,true
 4cfc7c45a023ce8ca4e87839,episode,E20260724-B93D424DEB,,25,false
@@ -9956,9 +10056,11 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4d083e307af2ce7a5f34ac26,isolated,,,1,false
 4d0850fc70295a8bd50902a7,episode,E20261005-C7CAC00527,,17,false
 4d08df95c93251cc74b0fcfa,isolated,,,1,false
+4d09408d2a7b1e4d1f182802,episode,E20261006-7555B6FDBE,,3,false
 4d0afcb96ea5761abf2a3615,chained,E20260916-7ACD14E36C,,35,true
 4d0c7de2281ada95764d9a5d,episode,E20260904-2A3EE389DB,,5,false
 4d0ec421f9a26c25aa27d23a,episode,E20260716-8B7F001AA6,,5,false
+4d0ef00a8de4c3e68dfff522,episode,E20261006-A5078A17DE,,3,false
 4d1001ecdafd58643c538f63,pair,,P20260708-D9BE366900,2,false
 4d10f05725c6aa807a10cd05,episode,E20260828-B8CC73928F,,4,false
 4d159a80a51d9da99bd733a1,isolated,,,1,false
@@ -9976,6 +10078,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4d2e65791ee313b8cc64fc62,episode,E20260912-5A08219CC0,,5,false
 4d2ec7fd9673c9aade5a691f,chained,E20260916-7ACD14E36C,,35,true
 4d2f4b9bd3acfcaae177f578,episode,E20260929-4237D0F970,,9,false
+4d3337b87cc9706f1cd5958a,episode,E20261006-032E8ACCE9,,19,false
 4d37638168eb4c9d95464b3a,pair,,P20260812-66150F1393,2,false
 4d397fbbce9d05b9fcdf6a71,pair,,P20260731-C99578CE40,2,false
 4d3a11db10a1d5f25dfc7b21,pair,,P20260928-DB3F514C4A,2,false
@@ -10122,6 +10225,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4e6cf600d024a50300be2164,isolated,,,1,false
 4e6d2d5de8e92d52856bbf44,isolated,,,1,false
 4e70f3b9567caf0539e993dd,pair,,P20260728-BB729C8229,2,false
+4e71c6e12584dcb960a8d584,isolated,,,1,false
 4e720778b449ef3629b349b5,isolated,,,1,false
 4e73cb8d74489bbae4637232,pair,,P20261003-E8DAF8859A,2,false
 4e75174129e60fbe118effeb,isolated,,,1,false
@@ -10168,6 +10272,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 4ecee0464e665fa2bca941b8,isolated,,,1,false
 4ed21ea61cc4edc9c6adee66,isolated,,,1,false
 4ed4b2eb6878a1ec95bdf37a,episode,E20260724-19D754B698,,22,false
+4ed54bb0ed040fcc3cc2ac95,pair,,P20261006-B38293FB45,2,false
 4ed808958127bdf9b559dc03,isolated,,,1,false
 4edaef98d7140354483b7b15,isolated,,,1,false
 4ede907f6e8eda5ef2098495,episode,E20260729-EDB8403AA3,,14,false
@@ -10331,6 +10436,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 501b12e5f811a579d665ae14,isolated,,,1,false
 501c5c4eda13eedb3c5599e9,isolated,,,1,false
 501faf4715220d5cc5aebc5b,episode,E20260716-98C49CDC1C,,3,false
+50213b3eaa948ca875b26621,isolated,,,1,false
 5022101255eef05a1f50aa1c,episode,E20260706-F71EE2D3F6,,5,false
 5024b6ed0f92d399ca910d60,isolated,,,1,false
 5024c3f27ef8b4342b280398,episode,E20260913-6606B4A027,,9,false
@@ -10361,6 +10467,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 50548e71b6c987d88f045d1f,episode,E20260905-FBE201EDF9,,6,false
 5056e70b957dbac0d54aa277,isolated,,,1,false
 5057716fd4fb5d36b739a13e,episode,E20260815-78903DA4BF,,5,false
+5057ea5064514b02b87d2e3f,isolated,,,1,false
 505da7505b6e48156124bb6d,chained,E20260829-86CD79580B,,42,true
 505dfa5bba0905195596683e,episode,E20260911-33F0324F98,,9,false
 505fea0bbe3c0744f5372ea4,isolated,,,1,false
@@ -10378,6 +10485,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5074f5b61f43c1a829f6363e,isolated,,,1,false
 50755661f0448045e8d941f2,episode,E20260929-1EDF67071C,,14,false
 507582c3e0ff71a19a585be7,isolated,,,1,false
+5075c8d682b4e5a2d938e88f,pair,,P20261006-B62675C72D,2,false
 507ea1503fc32a2049b0be39,episode,E20260713-D40B05EB2C,,4,false
 507ed74b88e79d4129be4899,chained,E20260811-6D67ACD720,,66,true
 50802c4e3b82bcfc1e6ab434,isolated,,,1,false
@@ -10435,6 +10543,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 51001e374c72cce51f24a39a,pair,,P20260730-324D42C8C3,2,false
 51019c4dc53eba210a5cc480,episode,E20260930-5404B4E7B2,,5,false
 5102820071d58a2a3ca4a848,pair,,P20260808-FF8A5F396C,2,false
+5103dff599f2633334203894,episode,E20261006-CF5FCA71E7,,3,false
 51057ce0391bc616ff1cb62e,isolated,,,1,false
 5106cb333a7237b134308260,episode,E20260808-69ACF12927,,10,false
 5107017399fdd956016f82b8,pair,,P20260810-4CFC520036,2,false
@@ -10449,6 +10558,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 511825d2a78236021e17b372,episode,E20260827-58F1AA0C91,,6,false
 511c14c0783f9b2b0b78ef4c,pair,,P20260825-82C920C823,2,false
 511cf712c0a90bd3108bd054,episode,E20260711-AF92720E9E,,3,false
+511d97d17048ec7b068d71be,isolated,,,1,false
 511dbc34978b668000db7878,episode,E20260831-E8C457CC1F,,3,false
 511ebe73afbee6c84247180e,episode,E20260929-B18DF362D1,,3,false
 511ece6c9f38e1bb42763344,pair,,P20260904-84163A9F77,2,false
@@ -10471,6 +10581,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5136232c6284ced1ebe4c34e,episode,E20260930-D2ECE6A8AE,,5,false
 5136ff8fdb93b162cf7eb6d7,episode,E20260802-8B68FE72E8,,5,false
 5138d32a04beecf2c1c5cd02,isolated,,,1,false
+513968079ea007643ab392ae,isolated,,,1,false
 513cac6629eafc2e9dfe79b1,episode,E20260716-29A5DFF0A2,,4,false
 513db98049025dc6031f79dc,chained,E20260809-A107DB613F,,232,true
 514291bd0a7a6a757568c2bd,episode,E20260715-9B2AC82F68,,3,false
@@ -10492,6 +10603,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 51654201c944defc54ed050b,pair,,P20260919-5977652C52,2,false
 5165d3b33129a18029bc24f2,episode,E20260811-4A3816EFCA,,24,false
 5165e7904f3fed3200a1204b,episode,E20260917-CD9B594F88,,4,false
+5168242d3130dd770f1df23e,isolated,,,1,false
 51687ad26f478eff7e01ce4e,episode,E20260801-FB61EB5363,,10,false
 516a39fca9553bc6e48afa57,episode,E20260905-9E3ED37908,,3,false
 516a9afa9c29e30fccc73a1e,chained,E20260810-F33941669D,,186,true
@@ -10538,6 +10650,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 51ccfadcba42814e7442d3a9,isolated,,,1,false
 51cf35f54d80d240afa851b7,isolated,,,1,false
 51d007a58a1114cc1d9a5d0c,isolated,,,1,false
+51d0c46057b1ebeb39916bcd,pair,,P20261006-978F4C323A,2,false
 51d1a2037af03dfc85b1f1f1,episode,E20260719-32829C04FB,,4,false
 51d23df30de387e34b454596,episode,E20260803-EBFFF540F1,,21,false
 51d4196f44c41a335a0fd0ea,isolated,,,1,false
@@ -10625,6 +10738,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5273a3b67f4f99d7873aa30b,episode,E20260824-5118E35B95,,3,false
 5276d9328589221ae07fbbf4,episode,E20260811-F954EB6A1C,,13,false
 527c32bd53ca61ec2624fd29,isolated,,,1,false
+527c84e7de7343954b17cf00,isolated,,,1,false
 527ceb96dffaedc9da1d94a2,isolated,,,1,false
 527d6dad5d5d65993697acd2,episode,E20260825-9139AE4827,,4,false
 527e8ba28ca62cfc76f0f5cb,isolated,,,1,false
@@ -10668,6 +10782,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 52dcbf1656a2ad33de06a293,isolated,,,1,false
 52de181a6bf950a6a00a93e7,episode,E20260714-011488BDF9,,66,false
 52e127d776d9573adbb3e1e6,isolated,,,1,false
+52e1c57669b915ce2b282c1e,isolated,,,1,false
 52e6365df101df057baec26e,isolated,,,1,false
 52e6aacd44af0d066cf6ccd5,episode,E20260809-B8F64D2CE7,,23,false
 52ed212fd827e3573539786a,pair,,P20260921-FDBB522FF4,2,false
@@ -10700,7 +10815,9 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 532bbaaf97abc157a9e8c2f9,episode,E20260906-C198220074,,43,false
 532cd3b367bd882954f297fd,chained,E20260809-A107DB613F,,232,true
 532f9191dad4d951c80b95a0,pair,,P20260920-8D9D218BE0,2,false
+53308ac8bf8f0917b9fdd954,isolated,,,1,false
 5331824059f9196019dee03d,episode,E20260811-94A97BA0CF,,46,false
+5333ff16a78fde3768133e22,episode,E20261006-032E8ACCE9,,19,false
 5335ebeb3a0c50207eb964de,episode,E20260717-28EFE7B0BD,,3,false
 533ace45cb8d881bb71a63ed,episode,E20261001-1F583E81DC,,6,false
 533b25df46ced4f6fc811f5b,episode,E20260917-9765794421,,13,false
@@ -10734,6 +10851,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5373459a4a394a307e8c62dd,episode,E20260706-57BFCB84C5,,4,false
 53739419aaa47a0b1a22d702,isolated,,,1,false
 537bc657123db565a41aebbc,episode,E20260810-DC5417F6F0,,15,false
+5382b0213d6376a353895a89,isolated,,,1,false
 538329e6807292acdee23d54,isolated,,,1,false
 5385e386cdb9c7096b59e2b9,isolated,,,1,false
 53881068364d16619c7611a8,episode,E20260813-0C0D50D086,,7,false
@@ -10761,6 +10879,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 53add6c65cce21315408d9f2,pair,,P20261001-69936ABA9C,2,false
 53adfb28a538ce43fb14ccac,pair,,P20260828-B16A22783B,2,false
 53af0e40a889cb0c2cabc7ed,isolated,,,1,false
+53af434d53225441ef7e1d14,episode,E20261006-A5078A17DE,,3,false
 53b1321fb848f1788d3ad8eb,pair,,P20260829-36FE3BEC62,2,false
 53b34bf9b02de3685ed2ad91,pair,,P20260902-9CCB1BFDD9,2,false
 53b5dfa6abd8ec2a353e962a,episode,E20260907-18697377A6,,4,false
@@ -10859,6 +10978,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5469a470642ef1e4c1ce514b,episode,E20260807-5304A9F742,,30,false
 5469e058ff7a170b9d76d66a,episode,E20260924-B014CDA27B,,3,false
 546bab6dd2eb1fa66493d9f2,isolated,,,1,false
+546be523654dafbce834fe7e,episode,E20261006-2058387F57,,7,false
 546d5cdd97d5440575c77cc3,episode,E20260707-D9B8906DB9,,9,false
 546e86b1bbaecc148843a541,episode,E20260724-88802AA113,,3,false
 546ee805ba7a0387cafc44d0,isolated,,,1,false
@@ -10941,6 +11061,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 55015bae52e2e90287f627e2,episode,E20260715-AA65135543,,9,false
 55022e20474ec087327f08d1,episode,E20260921-152C09E4B0,,5,false
 5505171756df2e9a161445c6,episode,E20261005-53B4DD505D,,4,false
+550547eb5d89b129f1041823,pair,,P20261006-6B5D792591,2,false
 5505c364d02f8a8d29f24265,pair,,P20260904-4DE4D4BA58,2,false
 55070bf649c38ba7bc7f7ad6,chained,E20260820-F7D135AC06,,42,true
 5508ecf037824d448f7560bf,episode,E20260716-9F72A8D0B4,,3,false
@@ -11161,6 +11282,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 56adc88fd3341c95d4e2fc23,isolated,,,1,false
 56af3589d26f23811597922f,isolated,,,1,false
 56afe7f23427d033c21682a4,pair,,P20260829-A294288DA3,2,false
+56b0e76888ce5f0d3b8658b4,pair,,P20261006-0A52931DD1,2,false
 56b3d00138bfb9ad46bc8c65,isolated,,,1,false
 56b40f2a828035fd669aa168,episode,E20261005-E57580DF5C,,4,false
 56b52e702ddc399af6b60c10,episode,E20260821-984DE56169,,3,false
@@ -11628,6 +11750,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5a1aa481676202905cb599bb,episode,E20260811-94A97BA0CF,,46,false
 5a1c6e6b978b37ea563c8978,episode,E20260908-024330F4C7,,5,false
 5a1faccd0cc16049bea2255d,isolated,,,1,false
+5a20e6c3954eb5a93b804bad,pair,,P20261006-87A978EAFA,2,false
 5a214c9febce08305c8055e5,pair,,P20260929-41110F90C4,2,false
 5a2407b85f7bd840a2d46be3,isolated,,,1,false
 5a25a95142dbae5aae19865b,episode,E20260811-61D5C2BB5E,,9,false
@@ -11660,6 +11783,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5a5902dc393b401558ada998,isolated,,,1,false
 5a599e003ec423009ce2629e,isolated,,,1,false
 5a5e196e9a1d97e9b00247df,episode,E20260819-6134E8DC86,,4,false
+5a5f103315af7ec2f59d4aca,isolated,,,1,false
 5a614cdfc0113d188f8c7388,episode,E20260929-59F203BB14,,4,false
 5a620e803a76e212d74be9f0,episode,E20260913-34ECF76DE7,,5,false
 5a63205e93a725ef36410c01,episode,E20260912-673CA1868E,,5,false
@@ -11746,6 +11870,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5af3d4ff035d26cefa20333e,pair,,P20261005-E49E315BC2,2,false
 5af7ac519ce04e12f725967d,isolated,,,1,false
 5af930e673e9a6f4577ba1b4,pair,,P20260810-52F4D242C3,2,false
+5af96c2bb62b0bb9007eafc2,isolated,,,1,false
 5afb0eecaa11a13d4702ba56,isolated,,,1,false
 5afd9528ee6dfdb8e976b0f4,pair,,P20260930-5DFAD8D694,2,false
 5afeef088b6367caac9a7553,pair,,P20260713-D6BFAFF8C0,2,false
@@ -11895,6 +12020,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5bf9d548b6baceebb7d772c2,chained,E20260810-F33941669D,,186,true
 5bfc6c2abf62678580dd8364,pair,,P20260714-1DA1802AC8,2,false
 5bfd75bce16ba07efc40b082,isolated,,,1,false
+5bfd99071a641abda580c69b,isolated,,,1,false
 5bfde89c59ab4ff0ff2d9c4f,pair,,P20260802-F63533FEFF,2,false
 5bfe56557c55480dbeaac43c,isolated,,,1,false
 5bff04d06a02b41b621ab70e,pair,,P20260810-912F49282A,2,false
@@ -11909,6 +12035,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5c08ffe5677a3fff2ec0357e,isolated,,,1,false
 5c0a57af83c3838303d896cf,chained,E20260920-9194EF7683,,93,true
 5c0c02e338b8f93966ad1c11,episode,E20260811-509AE609A5,,40,false
+5c0d0f2265a988710187f0fb,isolated,,,1,false
 5c0d4dd0b4a34615b99852e1,episode,E20260910-183509E703,,4,false
 5c0e46a3702dc1b523bb72b3,isolated,,,1,false
 5c10c431b28bac4c003af2d5,episode,E20260920-76DFD3741A,,3,false
@@ -12050,6 +12177,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5d2b83ef7b234ba7874bcc84,isolated,,,1,false
 5d2ece1f312bf65a2cd203d6,isolated,,,1,false
 5d30d390a73cab85d67c1c42,episode,E20260905-B5A59D28BA,,14,false
+5d338b477f8dab0a759c3590,isolated,,,1,false
 5d33d0e2d0c82346870d7ea4,episode,E20260825-DF3998C17B,,7,false
 5d37c49689452356164af750,chained,E20260920-87DA3A22EA,,135,true
 5d3824d65c78429a1aaf75b4,isolated,,,1,false
@@ -12096,6 +12224,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5d8acec269cdc811579ca11d,pair,,P20260825-6F7CF63C75,2,false
 5d8e9c1abfe3fa27a3750794,chained,E20260811-6D67ACD720,,66,true
 5d90b4b2229cb5af596bd056,pair,,P20260813-39F85C78E6,2,false
+5d9ab2020fc4efa614f4e3a8,episode,E20261006-36445F0BA2,,3,false
 5d9e6ace483d7b831f48c912,episode,E20260904-2A3EE389DB,,5,false
 5d9f2bdd721f203f136e6fdc,isolated,,,1,false
 5d9f980d566d4ab08c4558e6,pair,,P20260810-C62DE30237,2,false
@@ -12239,6 +12368,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5ea54b44c2a83a4ba21ebdf0,episode,E20260930-040BDCEA2A,,3,false
 5ea81bbafbb2ef66d29e10f5,episode,E20260922-81C5C262A9,,5,false
 5ea9288238ecd7c94a5c356a,episode,E20260820-59CEBF6006,,3,false
+5eae8ce803d0b60f5f5f7a42,episode,E20261006-CF5FCA71E7,,3,false
 5eaf3608c3ceba85a295cdc6,episode,E20260923-8CFC532B6B,,3,false
 5eafb58037a73f0d065f0f5f,isolated,,,1,false
 5eb093913bd51fad33547bf5,isolated,,,1,false
@@ -12267,6 +12397,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5ed9cba8a8f710fccb736b90,episode,E20260922-4F6F33A686,,21,false
 5edbf6c24af10e364f930764,episode,E20260814-6E1B08AC4D,,30,false
 5edc0475b5eb24c48066f2f0,episode,E20260922-F302E5B46B,,4,false
+5edca032a5c35a9204e25bf9,episode,E20261006-05A90AF858,,3,false
 5edd7500504d14990b8ea5dc,episode,E20260813-430EDBB80B,,7,false
 5eddd921c9d29b1e62fffef2,episode,E20260722-343B89BDB9,,3,false
 5ede15065e0b5f7155e8a190,chained,E20260920-9194EF7683,,93,true
@@ -12401,6 +12532,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 5ff18eff1d7267efa323f4b3,episode,E20260922-5E6503A9D3,,16,false
 5ff452367a838421bf784b3f,isolated,,,1,false
 5ff56854bee4ac4c2979b61d,episode,E20260715-D67F11DDE6,,5,false
+5ff7afcd51bb2506ce7fcfc0,episode,E20261006-D5457767A6,,3,false
 5ff842a33c2bde4e0c371a9d,episode,E20260721-7110D92EDC,,19,false
 5ff9e0d06210989530836344,episode,E20260906-7935E09D5F,,3,false
 5ffefca7819702526071c86f,episode,E20260809-1EA9B4AB4C,,4,false
@@ -12473,6 +12605,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 6081c66924d7c831e853aa52,isolated,,,1,false
 6086a2229a8f85ac2dd77cf3,episode,E20260908-2F55B6856E,,61,false
 6088e9809883eb7ad38f0fed,pair,,P20260810-4FDED01E11,2,false
+60891346bbfbbb8e82a88c7c,episode,E20261006-032E8ACCE9,,19,false
 608969b453ef0cada753c516,isolated,,,1,false
 608b010c7a66cd85cf374640,episode,E20260810-257A2FF44E,,57,false
 608bdba9e2481981e8df8d67,pair,,P20260828-77D69B7F38,2,false
@@ -12497,6 +12630,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 60aab35b4e9ff5efd5aeb189,isolated,,,1,false
 60ab7d29ebd572e5ebfa9a37,episode,E20260812-CD17B90E40,,4,false
 60ac3dce7b9e181844185d53,isolated,,,1,false
+60ae9b234fe0196acc38374a,isolated,,,1,false
 60b48e30fc6bf39d3be251a7,pair,,P20261005-3ED0EE696B,2,false
 60b6643f47151e4e7d96ce7b,pair,,P20260915-8C634B0060,2,false
 60b6fe4ca593db0341fa34fe,episode,E20260908-BE2467EE4A,,9,false
@@ -12533,6 +12667,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 6111da16dac1cb38a5df19a0,episode,E20260821-E5848A8F7B,,3,false
 6112653540280268f9a08253,episode,E20260814-7D6AF6B781,,3,false
 611483ce8e0dc583d6963dc1,isolated,,,1,false
+6114f6552b721c24a32bfd4b,isolated,,,1,false
 61166d70725f5bbc57238861,isolated,,,1,false
 6116db23b4de72e0f6ce7d9a,pair,,P20260801-EF33372D71,2,false
 6116e9ee982014701488c3e4,episode,E20260729-99849B6481,,12,false
@@ -12624,6 +12759,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 61caddd431267eaa9d97c6ea,episode,E20260716-3A388E7B16,,7,false
 61ce2e5860f30066efd686a4,episode,E20260810-523884E5C7,,12,false
 61d374582f3c8bf8d01e60cc,pair,,P20260927-EEBC0C7CF6,2,false
+61d57e438803c36404761fcb,isolated,,,1,false
 61d738011c389309a2221f06,isolated,,,1,false
 61ddeb1d0720cb6142c27151,episode,E20260810-925182D620,,6,false
 61de61dd64e84c785cbf6852,episode,E20260721-6D3D71DC6D,,6,false
@@ -12695,6 +12831,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 626c6144c16dab10c3882dfb,pair,,P20260809-4274A13EA7,2,false
 626c8d69f1e8d965c39ed52d,isolated,,,1,false
 626e694e58ca8d420783cbba,episode,E20260728-0F4ECAE2D2,,7,false
+627099ebf48d7c51eaf16e81,isolated,,,1,false
 627212f84ba7f5fe48ffcf0b,pair,,P20260904-948A67BDD1,2,false
 6273539a88efde5eacbd3812,pair,,P20260905-5947127022,2,false
 62749dda189b74c8670995cd,episode,E20260917-1A7E9FA88F,,10,false
@@ -12729,6 +12866,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 62a6cb9c9d057922faefd96d,episode,E20260811-895E5DE90B,,19,false
 62a748571886b6164650fe87,pair,,P20260905-5E93649765,2,false
 62abdc7d3815818420fe2dc7,pair,,P20260828-C9721E9319,2,false
+62ac4fc3e7ba37861b968f06,episode,E20261006-612312B581,,5,false
 62ae61f641a06d24fc2fd681,pair,,P20260810-C32200EF63,2,false
 62b068f7298d54037dcf077b,isolated,,,1,false
 62b0cb9a637c772b1a2d21b3,isolated,,,1,false
@@ -12805,6 +12943,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 633e60e383da402e6e59ed53,episode,E20260809-F7EE4197AB,,4,false
 633e8b3be63da08b9b0aaa5b,isolated,,,1,false
 633eabc95bbba9abf570ff0e,episode,E20261005-192DD0C2FF,,5,false
+633f672ccf4229f6cb6b5b93,pair,,P20261006-978F4C323A,2,false
 63429fc37208ca1332c7ef77,pair,,P20261001-465451E3FC,2,false
 634365328b2d3afe6c2f37ca,episode,E20260826-2E30982721,,25,false
 6347935537950680c959ec44,pair,,P20260811-7D920D684A,2,false
@@ -12856,6 +12995,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 639d969947661da26abe0693,isolated,,,1,false
 639dc35280a30e1bb6062fa5,pair,,P20260815-B56642C14F,2,false
 639f859f3a6ee8059c1b2705,episode,E20260922-4E27F9394F,,16,false
+63a5d8cca8b69d72a1085eab,isolated,,,1,false
 63a5d92bd01ca25fa2c620ac,isolated,,,1,false
 63ab7ec07b8f09c67654ba05,pair,,P20260929-9E58641E6A,2,false
 63aba70450af8c93cc245b5a,pair,,P20260921-D4FE5342EA,2,false
@@ -13164,6 +13304,8 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 65ec091d8c0e7f8dc9e24557,pair,,P20260920-75D2FB164C,2,false
 65ee2be66a1cba444916a56b,episode,E20260925-B6A14D8913,,5,false
 65ef5ab1a6b54c21bf29cf41,isolated,,,1,false
+65f0d73b5a06a053b7bff0e3,isolated,,,1,false
+65f2b5874ee0ff99fbe72ef8,isolated,,,1,false
 65f2da998896962efdc1f125,isolated,,,1,false
 65f436c2fdeff00d9dd51d57,episode,E20260812-D3BF2320FF,,4,false
 65f56d660837bf881e06c5ed,chained,E20260820-F7D135AC06,,42,true
@@ -13222,6 +13364,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 66604dabfaa36ad6a4bcd701,episode,E20260825-95F99C7876,,3,false
 6663dd6b9ee384c920ec4a2c,isolated,,,1,false
 66646d1bc720b5caa1577429,isolated,,,1,false
+6664c1941dfc76bc50238600,episode,E20261006-05A90AF858,,3,false
 6665b73143b6ab8975045a33,isolated,,,1,false
 6667c80785275014c0c66bc0,chained,E20260920-9194EF7683,,93,true
 666aab6c47004e0fa50a0f2a,episode,E20260719-7422B94FA1,,10,false
@@ -13639,6 +13782,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 698357b9ff4683f0fc05c1de,isolated,,,1,false
 69851bb215dee4f0c8f7a9cc,episode,E20260831-97577AE7EA,,3,false
 698735af37e41bdffca520dc,episode,E20260801-0E5B7CFA00,,10,false
+69874d36cf1df5a2e58ae239,isolated,,,1,false
 6988361f5a03c11ef086c3f6,chained,E20260911-1EFEBF4B90,,59,true
 698b823ffeed39e519d474d0,episode,E20260929-A36B29D5FA,,3,false
 698ccad3d4295719fdd1b51e,isolated,,,1,false
@@ -13709,6 +13853,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 6a192c37bd5d869d8e82b346,pair,,P20260724-D185912957,2,false
 6a1b032ba8dae64b829835c3,episode,E20260930-AFEE100F4E,,6,false
 6a1fa5c391a11bce960a0508,isolated,,,1,false
+6a21283827e642e8af23df35,isolated,,,1,false
 6a27dc5f1933f495738fe954,isolated,,,1,false
 6a2ca0fee324fdaf61628af7,pair,,P20260829-660B9274E7,2,false
 6a2d08bb6304610042e14d70,pair,,P20260919-7368B2885A,2,false
@@ -13729,6 +13874,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 6a4f1eca81979b7c1945999e,chained,E20260810-D254CA7C05,,104,true
 6a4f76f6093eed547b371950,pair,,P20260922-F256F6BAF3,2,false
 6a500c4c726fc45fd7f61a05,isolated,,,1,false
+6a526167c4d417f129df9d44,isolated,,,1,false
 6a572dccd4b5cd66eb75d8f9,pair,,P20260911-603CC67F87,2,false
 6a574d19b88dffd6518d0eed,episode,E20260903-9C552B4C88,,5,false
 6a586cb2a07cd6f839ca22dd,episode,E20260716-A2C0E8B173,,24,false
@@ -13925,6 +14071,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 6bbdb11be8a691f0e8e4d940,pair,,P20260720-1B7BE99C3C,2,false
 6bbeee284baa708de325113e,episode,E20261005-C7CAC00527,,17,false
 6bc4f3867605dc5426187e66,isolated,,,1,false
+6bc85b1445d17518d9ace460,isolated,,,1,false
 6bcbd092cfbb91390cffd25b,isolated,,,1,false
 6bccfad508389405e6881115,episode,E20260831-F147CD75AA,,10,false
 6bcdedc368f8fc5fa080a698,isolated,,,1,false
@@ -14264,6 +14411,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 6e711502b8d4118296048360,episode,E20260715-B835009450,,20,false
 6e78aa321c7057dbdbb386fe,pair,,P20260924-6034B1165D,2,false
 6e7c0c504d2d2d05fa366736,pair,,P20260801-9FC85900E2,2,false
+6e7e52a86fe7400413e96c93,isolated,,,1,false
 6e7f150cdbb0d7f5bd3736f8,episode,E20261001-FAFF7DFBF1,,9,false
 6e7fcbb0d7931afe2e8bbc4e,isolated,,,1,false
 6e846710802aae8dcac1f23d,pair,,P20260810-47387A6596,2,false
@@ -14495,6 +14643,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 703519fc133225dc43f97bc3,pair,,P20260812-5C2E271F95,2,false
 7038819ca9ff7d48689c030f,isolated,,,1,false
 70395e1229f66c4ac7825dab,episode,E20260924-E6D72FFDAF,,26,false
+7039dd0bcdb6e69b3890999a,episode,E20261006-D61B717EEC,,3,false
 703b3144efe32fe2e01de660,isolated,,,1,false
 703bd1ff47372704e6b08f15,episode,E20260722-893D61C505,,4,false
 703f17c3b652b608783d5b9b,pair,,P20260922-787B0E4ABD,2,false
@@ -14549,6 +14698,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 70922751f4279572a5e6c786,episode,E20260808-24A7846AF1,,4,false
 709734a9854a675d7bd1eca4,episode,E20260908-B05FC3E1CC,,9,false
 7099232f73cd5962de4732e9,pair,,P20260902-E7F084B0C1,2,false
+709946772f851a821f0a0738,episode,E20261006-032E8ACCE9,,19,false
 70997eff0a7382138a050d47,episode,E20260903-0E3A687020,,3,false
 709a97f6a47c1da31dd4b0a8,isolated,,,1,false
 709e2f2826b5c4a1941bf2ab,isolated,,,1,false
@@ -14584,6 +14734,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 70df2c3a475e2976ebcdf8a7,isolated,,,1,false
 70dfed9039a02817db373fd3,episode,E20260820-85245CA577,,3,false
 70e03312cd4b4e63a448cb3a,isolated,,,1,false
+70e2e1c988861155c5bf31a9,isolated,,,1,false
 70e2f14abfc9894432cc1eec,episode,E20260810-F9B831C908,,30,false
 70e5e2fc8a328f93a0268aca,isolated,,,1,false
 70e79dae907d14056ca87fe7,episode,E20260918-8B225D3D31,,37,false
@@ -14621,6 +14772,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7114e372bbdd46c5acc9e41b,episode,E20260922-90FAA3DC1F,,6,false
 7116001943f21e3c974482ae,isolated,,,1,false
 71174d9312d9d5300302d2cb,isolated,,,1,false
+71184da67540dc51adf2a769,episode,E20261006-D597ACB61E,,5,false
 711a997704c2cd33cae1746c,pair,,P20260920-F9CAD99076,2,false
 7120cb8f94f4f7761cade9f5,chained,E20260920-87DA3A22EA,,135,true
 7125b5deabbaad9725317df7,episode,E20260909-DB105780EA,,18,false
@@ -14638,6 +14790,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7138ce146765f2efa8c9435e,isolated,,,1,false
 713d0db0d06ad2f3899efaba,pair,,P20260922-B0C58AA759,2,false
 713f0e7c7eca24a1ac31bfe3,episode,E20260810-C5C8D391FC,,7,false
+714383ecb5cd549b10ceb629,episode,E20261006-9F38E2792B,,5,false
 714601cc6c56a07818725f49,episode,E20260902-572AC14ADC,,3,false
 71463a7b1df7bb935d122f05,episode,E20260922-4E27F9394F,,16,false
 71474bb9a30bc8ee8b4ec7b2,episode,E20260728-6039FC51ED,,5,false
@@ -14842,6 +14995,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 72e1ab12ceb591bbe40a9feb,episode,E20260713-6E25AD7F57,,14,false
 72e313c804a1ce04a9e3798b,chained,E20260917-0E11F1777A,,45,true
 72e3492d447c1e178e259a7e,episode,E20260802-00B8897D6D,,5,false
+72e69483aa5f0ff7d3ff2bb4,pair,,P20261006-D01BAC13B8,2,false
 72ea72850568560e63c491b6,episode,E20260909-6057458FDA,,3,false
 72eafa31c858fec3f7194bb1,pair,,P20260929-17D0F19643,2,false
 72ee5fe29392d128de47a9d5,episode,E20260814-CFFC2EBE8F,,4,false
@@ -15161,6 +15315,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7529ec4fb53bbed82de25726,isolated,,,1,false
 752a345a93f2e4331d94aa45,isolated,,,1,false
 752f5ee1fc6648a1887f0fd3,isolated,,,1,false
+753048b89aa8bcba51757525,pair,,P20261006-AF5F32AF30,2,false
 75311a6032184a733cbb9b82,chained,E20260715-A472B91935,,42,true
 75315ca0895f0afbe68a6730,isolated,,,1,false
 7535265df036eeaca1e0a894,episode,E20260807-59605013C7,,3,false
@@ -15208,6 +15363,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 758c50443f22d09bed45be87,episode,E20260804-E5EF4A0D5D,,3,false
 758d5dedfbb76fe26dfc0296,isolated,,,1,false
 759419cf3596b644d5df2e65,chained,E20260911-1EFEBF4B90,,59,true
+7594c3d69c8fd48b80918262,episode,E20261006-032E8ACCE9,,19,false
 7594ca0abbb818736d73761c,isolated,,,1,false
 759b22b2a5c5f49eb8964bf5,pair,,P20260812-03F725BC96,2,false
 759b92cef6dedfc9f26df54c,isolated,,,1,false
@@ -15565,6 +15721,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7831a8067c693204e8b97064,episode,E20260825-ED6304F531,,5,false
 78384b6b35ecd474b4d64e82,isolated,,,1,false
 783c2730502ad7fe444c4c71,pair,,P20260930-E896C669A1,2,false
+783d107ca33787a596fe0dba,isolated,,,1,false
 783d78362b3c87e4eeb5c7f0,pair,,P20260728-06CD2AE08B,2,false
 783ec3541bdcacfa4d758236,episode,E20260828-8EAACE0BD3,,7,false
 7842578074c16397855fa5a8,episode,E20260825-960C4A79E2,,5,false
@@ -15807,6 +15964,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 79d0674a348d58a6a9a95b85,episode,E20260724-4521A49CBE,,7,false
 79d0fd9e10d83af10c1348c0,pair,,P20260904-3EF2DFE766,2,false
 79d43425a939029f818579e4,isolated,,,1,false
+79d637af84909a4389eb1585,isolated,,,1,false
 79d7ae684d29ec8263f94b89,pair,,P20260827-5040C96168,2,false
 79d7f898dd859bf75333a1bc,pair,,P20260808-8DCD8A4574,2,false
 79d815bcc7f937b87a5ca35f,episode,E20260804-D35393D4FF,,4,false
@@ -15913,6 +16071,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7aa4cf6b06e9521e11b17064,isolated,,,1,false
 7aa666f8b5215a365d4d5593,isolated,,,1,false
 7aa832e8f5c60b4b88d1028d,pair,,P20260908-C34B6CD7E8,2,false
+7aa987865fd45e9fc4641f12,isolated,,,1,false
 7aab17c77d6da3b0f8c0f4f5,episode,E20260908-432413F608,,3,false
 7aadf9345cf1553df75a84c8,isolated,,,1,false
 7aaeb616802819fee67c40f4,isolated,,,1,false
@@ -15932,6 +16091,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7acd9f6da5371fa53011078c,chained,E20260810-F33941669D,,186,true
 7acfd179791dd197841f5caf,chained,E20260809-A107DB613F,,232,true
 7ad6ec1f4dac190d28a3ce7b,episode,E20260918-A108CED111,,3,false
+7ad99ffbe10a840ed52f92b6,isolated,,,1,false
 7ae15c6ff5ab6f26b534cdfb,isolated,,,1,false
 7ae48bee02685c4a392eecb7,pair,,P20260909-E7FB6268AB,2,false
 7ae64f0d8d77c977e65e956b,episode,E20260918-B365FD298F,,5,false
@@ -15969,6 +16129,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7b2f4a4560dd5309c3bb5b90,pair,,P20260815-ACBC6C8BFC,2,false
 7b30690248562c33ad79622b,episode,E20260812-B9FA9EC7BD,,5,false
 7b32c6df71d2a9eba3777a85,isolated,,,1,false
+7b3300bb3476a5b2bdf79891,isolated,,,1,false
 7b346ef4a2af02782e915aed,episode,E20260810-B9A9B9376C,,6,false
 7b382d56289b777c07b90663,isolated,,,1,false
 7b3aaa425e871d42ff63a526,pair,,P20260812-B8DF994BB9,2,false
@@ -16079,6 +16240,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7c4452a06e5f14a044429e47,isolated,,,1,false
 7c4963c690362c91a39dc5da,isolated,,,1,false
 7c4af9f6df04be0c09829524,episode,E20260721-510B19ABB2,,7,false
+7c4bf236407d75d5d8674cf1,isolated,,,1,false
 7c4d94a10bf5adb31c1ac538,episode,E20260713-5DD63C0401,,3,false
 7c4e3821975fe2102bb08452,isolated,,,1,false
 7c4fc54a9510ecfb7bd92f37,pair,,P20260922-8CDDC7A9AE,2,false
@@ -16297,6 +16459,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7dea4811b977eb67ae28e96a,isolated,,,1,false
 7deb1f7456ad20b729189efb,pair,,P20260807-836E8ADC82,2,false
 7deb4316a5d3b3d975c7b2f9,isolated,,,1,false
+7dee66983c30b8002822fa21,pair,,P20261006-CDC81AAF45,2,false
 7df04481059d939597f00c1a,episode,E20260802-ABC041B5E5,,3,false
 7df07258866a46b9a4736a87,isolated,,,1,false
 7df13d7996c807b1eba4dbf0,episode,E20260810-9A39629C91,,6,false
@@ -16343,6 +16506,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7e3ae676bca150c683d9f71c,episode,E20260823-949FD70612,,15,false
 7e3b9e5116f19922433c8aa2,isolated,,,1,false
 7e3bda6f6e48a590401896b1,episode,E20260722-69BFF9D32F,,3,false
+7e3f495f6859b69d0aba16c0,episode,E20261006-9F38E2792B,,5,false
 7e3f587f0919cf3afe425744,pair,,P20260731-52E9E11E43,2,false
 7e412a2aabd965e65eb8649d,episode,E20260808-D1DC35C00F,,3,false
 7e416602656a33cd1fe8a7ab,isolated,,,1,false
@@ -16359,6 +16523,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7e49fa7e53a88d7bfe1c17bb,isolated,,,1,false
 7e4a2f56b392c5f5ed34805e,episode,E20260729-B13D277097,,4,false
 7e4a6f1852faaeae5f3dd8ec,chained,E20260713-700E636959,,20,true
+7e4aa1bb2876e3e7d9987f84,episode,E20261006-032E8ACCE9,,19,false
 7e4ae92d4a0137de8ebf783e,episode,E20260912-3760B62784,,40,false
 7e4e740eb79fa91b1ce72a50,episode,E20260829-257BBDFFFC,,3,false
 7e4fb9923188a83a69978bd8,isolated,,,1,false
@@ -16456,6 +16621,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7f14b9fedff9d188986d71e5,pair,,P20260713-2800ECC8BA,2,false
 7f1562e1e2cdfa901d91c2c1,isolated,,,1,false
 7f1672ba09a5cd1cb99cb99c,pair,,P20261004-E91A1DFBE9,2,false
+7f16d89e62d9cc4a30505804,pair,,P20261006-949D87A9B3,2,false
 7f16f0800a82e1f5b1458597,episode,E20260820-B8DFC42E41,,3,false
 7f187f85876b61e44162f074,isolated,,,1,false
 7f1fcadd7e3126e4c5ae73bf,episode,E20260810-257A2FF44E,,57,false
@@ -16536,6 +16702,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 7fc7b085860da0c4da59f869,pair,,P20260804-1EE8CA70EE,2,false
 7fc847527b0494908aa814a2,episode,E20260923-0D143F8B7E,,4,false
 7fc9330c3b29557281a66cee,episode,E20260716-171EA62857,,9,false
+7fca1f0fbc344d9251e548de,episode,E20261006-7555B6FDBE,,3,false
 7fcabcd3f6d3da164e9d35cc,isolated,,,1,false
 7fce19daf6e29109589f66e4,pair,,P20260917-A442392DCE,2,false
 7fcf3b8bb8ce5690dea3eaf6,episode,E20260827-EED954B8F6,,5,false
@@ -16817,6 +16984,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 81f1ce6b51807957e49841a6,isolated,,,1,false
 81f1d96bdbb90ea91d229334,isolated,,,1,false
 81f25523d71911c317c91f2b,isolated,,,1,false
+81f50f9b76837b719dc5b81d,isolated,,,1,false
 81f59eef6c3c6b883e9623b6,pair,,P20260819-071DAEDB60,2,false
 81f603e482989b092ca7053f,episode,E20260810-9A8531C64C,,5,false
 81f6170ef6db5e23864f6966,pair,,P20260901-2DEC42541D,2,false
@@ -16857,6 +17025,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 8244a43986b9fa8eb331d7b3,pair,,P20260830-C2897FA5F3,2,false
 824576d9aeb48275e6d47e9b,episode,E20260802-4516108051,,5,false
 82460c9db4b1b537b82f8c6e,isolated,,,1,false
+824849e8d3405f69cb9741bd,isolated,,,1,false
 824b0e3bd0475c8d6e044c24,episode,E20260731-74BF1F0E7F,,5,false
 824fcd9eb1e5c877b9816033,isolated,,,1,false
 82555ad3d22fbd38e290d176,isolated,,,1,false
@@ -16898,6 +17067,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 8295a0275085ec20031ec991,isolated,,,1,false
 829cb1fb94c4d4a348dee4f5,isolated,,,1,false
 829f6aa8e4254570014e5c06,isolated,,,1,false
+829ffeb43ba94b99632b1041,isolated,,,1,false
 82a02d7cb79a917d5a9214b0,episode,E20260812-18E3FF8118,,6,false
 82a0967141d8e738da927373,episode,E20260921-9ACCFA10F1,,4,false
 82a0a2818ed8c3f35334aeb2,episode,E20260827-9F4FBA343F,,4,false
@@ -16930,6 +17100,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 82d6a22a78993dbead178e9f,isolated,,,1,false
 82da47e779b19ae188646129,episode,E20260808-EECD4CB5D4,,5,false
 82daec1a85a6a71a8d701200,pair,,P20260728-1C09C5805A,2,false
+82dcae538fde87f1d88c328a,pair,,P20261006-2C00B2D237,2,false
 82e29dab880a95a719270cb6,episode,E20260918-C613B761C2,,12,false
 82e8fe439b17c1f2ff5dcbae,isolated,,,1,false
 82eabc96a027c152b854db4f,isolated,,,1,false
@@ -17055,6 +17226,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 83b70d148a774a8212fa3591,episode,E20260923-99E63DD410,,4,false
 83b775438195aa4063df9e41,episode,E20260921-D489A3E421,,20,false
 83b7b7d4397783122529b434,isolated,,,1,false
+83bb5d190e5381883281c04b,isolated,,,1,false
 83bbbc96b5ae3e508a2cd744,isolated,,,1,false
 83bc6a4b6c13d7b4cde84d1c,isolated,,,1,false
 83bc9a3654a14c45ef969188,episode,E20260809-B6B3C46D28,,4,false
@@ -17241,6 +17413,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 851a8c8c0b4e6fee763eabaf,isolated,,,1,false
 851c666f830bd8e58d60b519,episode,E20260807-64889EFC2D,,27,false
 851c89085a82d577bed09cc4,episode,E20260811-215608BBEB,,6,false
+851decaedca372bb5c38bd59,pair,,P20261006-3CA660ECB8,2,false
 851f1c2a467912426b727d45,pair,,P20260917-C1A6BA5D3F,2,false
 851f7e78202675a77ba99acc,pair,,P20260808-53A5B7C36E,2,false
 852261d8151eda1bbea20b7c,episode,E20260808-EB2B673240,,6,false
@@ -17473,6 +17646,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 86f95bea73397eb6f55b25a3,isolated,,,1,false
 86fab9d04405cc6987add418,isolated,,,1,false
 870191e105521cbec0a5e52b,episode,E20260830-93241F13E7,,16,false
+870385f9b944c09ae288ba1a,pair,,P20261006-0F1C4B8A4B,2,false
 870913c31ac135d9084ea69b,isolated,,,1,false
 870bb6529ae81971a8192a9c,pair,,P20260930-5DFAD8D694,2,false
 870bdbd16c0df5dfd47d5f67,episode,E20261001-09CE7088E2,,5,false
@@ -17614,6 +17788,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 87f85d4753ce558b3a3c3d29,isolated,,,1,false
 87f9338f9012e91f8324943a,isolated,,,1,false
 87f995e47dce2c73d20812a1,isolated,,,1,false
+87fa3a46762d0ae697830cb9,isolated,,,1,false
 87fb5aadb1b15f96ff605972,episode,E20260710-C19FC973BC,,13,false
 87fc3e7e9580505fe2f775a0,episode,E20260716-38377E8D74,,27,false
 87febcb82d5532b9544fa8aa,isolated,,,1,false
@@ -17717,6 +17892,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 88ddc68f78a0b155681b375f,isolated,,,1,false
 88deddb69243cb35c7bb3a77,isolated,,,1,false
 88df094a07622ca0ead21e51,isolated,,,1,false
+88df5c12bd6efa0e98003c0b,isolated,,,1,false
 88dfbc307076017c735e1c01,chained,E20260809-A107DB613F,,232,true
 88e1845d1c923e9f1ddc5e0e,episode,E20260811-E3427BDDCC,,10,false
 88e19cb903f83ecd1e21ab9b,episode,E20260914-276F489D42,,32,false
@@ -17909,6 +18085,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 8a47354acc4236549321e0db,isolated,,,1,false
 8a4d30253f52bf9ce7ffb5aa,pair,,P20260725-3E16746045,2,false
 8a51023d1ce5e28a89221a9c,chained,E20260809-A107DB613F,,232,true
+8a51fe6f9ea72087f7b87277,isolated,,,1,false
 8a532ae79aa108ab04232638,episode,E20260815-D12D5587C9,,5,false
 8a5756ea4c782cf373597e62,episode,E20260806-4C6B579643,,4,false
 8a5e6309c627eb3a44d66277,isolated,,,1,false
@@ -17964,6 +18141,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 8ab411d0e28b7d9915ee019f,episode,E20260725-DCF333E9B6,,8,false
 8ab43f1683dd01d32391c54e,episode,E20260806-04A1E4752B,,3,false
 8ab53f1e9b2a499ebcbcc733,isolated,,,1,false
+8ab66cdb7e933fe77d82e30a,pair,,P20261005-2E617F36EE,2,false
 8ab7818cc613d961a7dad355,isolated,,,1,false
 8ab8257cee9b23d1060096d2,isolated,,,1,false
 8ab96869232a6a0b84603836,episode,E20260912-DBA2336E03,,8,false
@@ -18047,6 +18225,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 8b6fc5e86aea7d548286fed0,isolated,,,1,false
 8b70023ba4e032f505580f67,isolated,,,1,false
 8b724946a26a9817d19e1f15,isolated,,,1,false
+8b72a99f77be2546e168d13b,pair,,P20261006-5D614B8A14,2,false
 8b72d21d458b9999904ebca1,isolated,,,1,false
 8b72e87dc8c61f03692ef20a,episode,E20260802-7DD4614440,,13,false
 8b790e86a6c7ffb8090e12cb,isolated,,,1,false
@@ -18502,6 +18681,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 8f024d65dddde7685bededc8,isolated,,,1,false
 8f031ea293e4b6fc5fd7a648,episode,E20260801-78F33AA01F,,4,false
 8f03e3607eed8de7fed51804,isolated,,,1,false
+8f042407947e7dffd8c841b9,episode,E20261006-C5A4F5B228,,3,false
 8f065e67ba15f4b8d6748afd,isolated,,,1,false
 8f0a43a5497b2813d9b23e4b,episode,E20260908-C8AF9DDB77,,3,false
 8f0af2352ea38c5389e95254,pair,,P20260810-69F43F3451,2,false
@@ -18543,6 +18723,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 8f4e5d0b10cf8e6f074fa345,pair,,P20260713-60146F6C02,2,false
 8f4e5fad66f49a6cfacd407b,episode,E20260702-468A56C8B7,,3,false
 8f4ef9884bed80d252dbc19d,chained,E20260920-9194EF7683,,93,true
+8f4fe4d96ce30715ae03aab6,episode,E20261006-2058387F57,,7,false
 8f50d3fe2e97ea7da224be61,pair,,P20260811-A6BF228A48,2,false
 8f5595138dadf191207ecd61,pair,,P20261005-775B31937A,2,false
 8f56eb40cbd325ac35f3f714,episode,E20260920-116B20A58B,,4,false
@@ -18808,6 +18989,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 914d6565faa8744802d546b6,isolated,,,1,false
 914d6d6738d560edcef86349,pair,,P20260821-996CE85B5E,2,false
 914e052babdcbf7679a55030,isolated,,,1,false
+914f02b6c3340b94e562041c,pair,,P20261006-42661A9F8E,2,false
 914f084adf080f632e5b1644,episode,E20260922-BE50F7125E,,8,false
 914f7cc882f945d11cbc183f,chained,E20260820-F7D135AC06,,42,true
 9151e76b60a83408fdc2fcbd,pair,,P20260913-1BC0B73ED5,2,false
@@ -18861,6 +19043,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 91b87549086b8877734440a0,episode,E20260810-257A2FF44E,,57,false
 91b8e404d3436e2e40e35bfc,isolated,,,1,false
 91b94dddd6b5429751b2c9f6,pair,,P20260816-8636E460E3,2,false
+91bb47a28a2e879294fb0a22,isolated,,,1,false
 91c1ef8a060d5c6a920896e0,pair,,P20260731-6DC8847BBA,2,false
 91c4c69113e740a8bdb27a9b,isolated,,,1,false
 91c5e7244305e1f4a14a929a,episode,E20260823-EB70E612D5,,3,false
@@ -18896,6 +19079,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 91ef792dfd0d4508c4f12f9c,isolated,,,1,false
 91f0cd796a51f9688a13ca1f,isolated,,,1,false
 91f35123e43d82126bdafbec,episode,E20260826-BCAFD9D0D6,,3,false
+91f5af941750d6c7d638ba4a,pair,,P20261006-D3207D6AB6,2,false
 91f8e3ed966b0ce390a5b2ee,isolated,,,1,false
 91fd5cdc5edff0cc1071833e,episode,E20260922-B62A79FCB1,,3,false
 91ff4acacb9a18e1d387e6bd,chained,E20260920-87DA3A22EA,,135,true
@@ -19742,6 +19926,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 986705ea5c910c635acd2e35,isolated,,,1,false
 9868003aa02a9534f75d541f,episode,E20260820-6C54DE531D,,18,false
 986a5a9ce3e0089e8c2b3814,pair,,P20260814-579A971218,2,false
+986f921f21e30279d93827ad,pair,,P20261006-C553DC140D,2,false
 98701e57022defa1e7e9b3d3,isolated,,,1,false
 9874d48cef655e9b8293702e,pair,,P20260908-0579766450,2,false
 98777c561f1ac828f2fe2e73,episode,E20260812-9B01247BBE,,10,false
@@ -19789,6 +19974,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 98cc4860085651894c49cba4,chained,E20260810-F33941669D,,186,true
 98d0d76e8f52770311789cef,isolated,,,1,false
 98d0ec2385d3932cd9c19dd1,episode,E20260807-B0DB7813FD,,10,false
+98d5c09d729702deff9b524d,episode,E20261006-032E8ACCE9,,19,false
 98d8be7b734d763f6a65cd04,episode,E20260917-BA9767D7B6,,17,false
 98d933d52f0999b52d17b3c8,pair,,P20260904-84163A9F77,2,false
 98dc8da074b6217e15504dcd,pair,,P20260728-DD12E440BD,2,false
@@ -20274,6 +20460,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9caabd0baabbcbf996ae3c7b,isolated,,,1,false
 9cab204a2afac8ce1e589d49,episode,E20260907-6E3E2EE62A,,3,false
 9cabe851326a1e3bb8ff463e,isolated,,,1,false
+9cafa7b10b6bb405a420f582,episode,E20261006-2058387F57,,7,false
 9cb0535c695f07fb0adfcdae,isolated,,,1,false
 9cb13d62762d893990d84e2f,episode,E20260904-D933889406,,5,false
 9cb1db0e0e0c583f32ee5eea,episode,E20260815-15BC446415,,5,false
@@ -20307,6 +20494,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9cf4c2806cdfdefe95cce5a2,episode,E20260721-6C3B9AD9B7,,12,false
 9cf4f66eb750b254368d1f87,episode,E20260810-355E30DFCE,,5,false
 9cf5479ed806e9981f050492,isolated,,,1,false
+9cf7548864d7d593b4289179,pair,,P20261006-87A978EAFA,2,false
 9cf77391d56bdac5bf8c8a78,episode,E20260922-77C0B575B3,,12,false
 9cf7e23cf29b19529af46df2,pair,,P20260811-7F22DE8750,2,false
 9cfc9cfc6810c0ea8cc3317e,isolated,,,1,false
@@ -20333,6 +20521,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9d282fc98422912653724a59,episode,E20260710-BE7502B4B0,,8,false
 9d28d48b5cd0c455b2139194,isolated,,,1,false
 9d2971fdda51f3325c143dd5,episode,E20260807-D1FD61CC08,,35,false
+9d29d7a5c2a4a2a1f405c022,pair,,P20261006-999A9EE589,2,false
 9d2ae18f65133a4b8b3f7b29,episode,E20260714-DBFA106127,,7,false
 9d2b259e8d3ab7aca33ee4ca,pair,,P20260810-69F43F3451,2,false
 9d2c2bcbfab5607800d5e691,episode,E20261005-7C85634595,,5,false
@@ -20353,6 +20542,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9d3f9622cd6dc7766bb79baa,episode,E20260922-5680B8E040,,4,false
 9d40ee61a1835d01754ed876,episode,E20260822-77F1D464AA,,9,false
 9d445a1d146fa3091bb0773f,chained,E20260809-A107DB613F,,232,true
+9d4a831e7a087fb6aff60d83,episode,E20261006-EDDFF6501E,,4,false
 9d4b160aa48898e75fcd6264,episode,E20260918-EBDC7D40E9,,3,false
 9d4c61377cbd2e15794438c3,pair,,P20260824-D91EDEC59A,2,false
 9d5697d083e257987cb8e449,episode,E20260811-895E5DE90B,,19,false
@@ -20387,6 +20577,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9d8a594b34366c1907ef1330,isolated,,,1,false
 9d8bb4f55789f9ad6f4a5a3b,episode,E20260716-5B496CEA41,,7,false
 9d8bda10ef3d625935be53ef,pair,,P20260920-737878C0FC,2,false
+9d8beb79b035b7873faf5478,isolated,,,1,false
 9d8c9e4dea7ecbfc074cbcfb,isolated,,,1,false
 9d8d6dd1a5057ee7a2c7b46f,episode,E20260821-8F9E86F146,,9,false
 9d8f0ed77ba6584cac752fe7,episode,E20260706-BD9EA33C7B,,4,false
@@ -20401,7 +20592,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9d996cf3ea41b4a77f7cb4b6,pair,,P20260705-651D4E35C0,2,false
 9d9a4166f477797b5f2bb441,isolated,,,1,false
 9d9c43b5e7335ff622130853,isolated,,,1,false
-9d9cf93d6c67ec4a16113052,isolated,,,1,false
+9d9cf93d6c67ec4a16113052,pair,,P20261005-0EC1A835AA,2,false
 9d9db76b0d5f44a72202975e,isolated,,,1,false
 9d9ed0d8c4f16dd1fa8c424b,pair,,P20260811-A03BFE9068,2,false
 9d9f57e763638687bf63e19d,isolated,,,1,false
@@ -20434,6 +20625,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9ddb93c3174572a056578afd,episode,E20261003-FBEDBD1FFB,,6,false
 9dde15e624003e870c5465bb,episode,E20260914-38735B3F6E,,4,false
 9dde75441310fff1c05efe4f,episode,E20260714-5E83CF5844,,13,false
+9de0df4beea58667d86d42ab,episode,E20261006-26158B35BC,,4,false
 9de1a5c16fa554d3768485d9,episode,E20260717-76B73EB6F9,,4,false
 9de3425fb8b1dfea450e7aa2,isolated,,,1,false
 9de68fe44192cf5655463ea3,isolated,,,1,false
@@ -20507,10 +20699,12 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9e69b2c50af98afbdae52e5d,pair,,P20260929-482EBEB89D,2,false
 9e6c7a1efb07eb7444a67010,episode,E20260819-4F45EB9E67,,3,false
 9e6cc7a589fa6f36823bbc24,episode,E20260729-99849B6481,,12,false
+9e6e7e0496ad72c58b62572b,episode,E20261006-D597ACB61E,,5,false
 9e6e9579b8cca5b3a6d483d8,episode,E20260715-F759CBEEB0,,15,false
 9e6ebefbd400f29ee8577d4f,pair,,P20260820-3C0EB98ED8,2,false
 9e6fa88bc9f8072efefde094,episode,E20260825-617F6F3431,,6,false
 9e701e619c5367943ef27aa7,episode,E20260707-922F790B1E,,6,false
+9e709c21feb4ecab8cbaaccf,isolated,,,1,false
 9e70c05bf5c7106cc85dce2a,isolated,,,1,false
 9e74133d0ca4bc33f1e07ede,isolated,,,1,false
 9e7852dc1e14d0b6065853db,episode,E20260921-47DD0E897C,,12,false
@@ -20520,6 +20714,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9e82e124fe0db168ae5f3486,isolated,,,1,false
 9e82fd30a92e85434d363618,episode,E20260802-EA8A02B41F,,3,false
 9e88649fc17ff1fc524383ad,episode,E20260816-632F486BDF,,3,false
+9e8b4d48adecb5cce5293870,pair,,P20261006-1D31FF155A,2,false
 9e8ba6a9a3f4d8e31c0964ee,episode,E20260827-165E24448A,,7,false
 9e8cd3e19d9406c23e75dcea,episode,E20260818-7582AB4917,,3,false
 9e914ceea81a9e19d415a85d,episode,E20260801-792C462D10,,14,false
@@ -20661,6 +20856,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9f8b170973e0bd2494de01cf,isolated,,,1,false
 9f8cb83350b956db50ae3d7b,episode,E20260819-B7DE08E8DB,,10,false
 9f8cce1caf0f83869730306f,episode,E20260802-0522A25425,,5,false
+9f8e6663dc21bd1992895a69,isolated,,,1,false
 9f911fe8e7436de229ae64e8,episode,E20260921-D489A3E421,,20,false
 9f96c30cb70f656ec876976a,episode,E20260928-2D5B821B94,,7,false
 9f9720bc1e62ff9493b65088,episode,E20260713-5674E12739,,4,false
@@ -20693,6 +20889,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9fd7bef54e1b881033c34909,isolated,,,1,false
 9fdb6eb153f9ef695d10721d,isolated,,,1,false
 9fdcad668631cc874a7afda9,chained,E20260809-A107DB613F,,232,true
+9fde0a8d47eebfb610bb4acb,episode,E20261006-36445F0BA2,,3,false
 9fdf4a2899704ea96c999eef,episode,E20260812-517F1C1E7E,,5,false
 9fe156e1c3f920ec6b67c22a,isolated,,,1,false
 9fe16a42764b07390e5a5394,isolated,,,1,false
@@ -20785,6 +20982,7 @@ a099e6c6b16064abfc021550,episode,E20260716-B2F4AB06E2,,3,false
 a099f26ebe771e9369e3516a,episode,E20260718-F13A75C07E,,4,false
 a09e8366a42451406cc06a9a,pair,,P20260722-1C6E331847,2,false
 a0a1494404871c44383e7e18,episode,E20260801-2124F7F5C5,,4,false
+a0a43018872a6674ec75a8af,pair,,P20261006-3CCB777951,2,false
 a0a6e1d59f11baeaf8fffe05,episode,E20260708-19F6E0A425,,3,false
 a0a6f46b31ac7c6037360e68,pair,,P20260725-E16B2D0A48,2,false
 a0ade855fb5099d5290a722b,pair,,P20260716-3919E3CC06,2,false
@@ -20889,6 +21087,7 @@ a1900bb3f2da20f373a968e3,isolated,,,1,false
 a1904cc1898979c572b3f3cd,episode,E20260822-0347D1498C,,6,false
 a1934b81fddbe7ceb5e2e803,episode,E20260929-ECC919F480,,8,false
 a1936ac2587bf1e79b1f39ec,isolated,,,1,false
+a196b4dfc5e6698a6970a2dd,pair,,P20261006-538A915650,2,false
 a19b658c9a6b34abb7a32fb3,isolated,,,1,false
 a19b90cdbc953c21c3ac6aa9,episode,E20260725-7484F2DABB,,3,false
 a19cc7405b25dee29cf6b5f8,isolated,,,1,false
@@ -20926,9 +21125,11 @@ a1e38a05d42cd4c99f637f22,pair,,P20260802-2A906BA2D3,2,false
 a1e7c4bf5b4baa8333b60e84,episode,E20260716-4FBE9BB2B9,,3,false
 a1ec236ed67f406df2a7fd17,isolated,,,1,false
 a1ee6e0681a90a1e29dc1e07,isolated,,,1,false
+a1f1198fedd80959605bd477,isolated,,,1,false
 a1f15887a48e8e8469fe00d1,isolated,,,1,false
 a1f1a2fb9f04a1e67dcd69bb,pair,,P20260929-4134DC32C5,2,false
 a1f25a74995d53f5255a5ee3,episode,E20260922-D65B23D24A,,7,false
+a1f25f332fa7660b83942737,isolated,,,1,false
 a1f38efb32580456ee4a4b51,pair,,P20260821-25DCD0C5AD,2,false
 a1f4ce89a9fb679769e45b82,isolated,,,1,false
 a1f8d12c3f00530b46ec8636,episode,E20260909-69DDDB89DE,,3,false
@@ -20986,6 +21187,7 @@ a25bc08bc128a0ae632f058e,episode,E20260811-0A2A20F22C,,45,false
 a25bc8600ff2d7363307e670,isolated,,,1,false
 a260387505c7b2a84a58f852,episode,E20260809-B35489622F,,5,false
 a2614a563c51a6a35701057b,episode,E20260711-F427B108D4,,13,false
+a261965eebcb7c5661538339,isolated,,,1,false
 a26251c6dd3392b91e0c5ab3,pair,,P20260807-7D4EBAFAE3,2,false
 a263dfec5283e841cacc7fcb,isolated,,,1,false
 a26adf922150fd332d0858e2,isolated,,,1,false
@@ -20994,6 +21196,7 @@ a270adb547ce769b550bfd69,chained,E20260918-F928689AF5,,136,true
 a271c77b24fada03873b9838,pair,,P20260903-8AB3872B65,2,false
 a27af2d65f13b7d193ba577f,episode,E20260909-8B0ACB67A6,,4,false
 a27f1cfd65d105c15c9fc9a1,isolated,,,1,false
+a27ffdcc638fbbada0fc06d8,episode,E20261006-CF5FCA71E7,,3,false
 a280a44e00dedba64e8583b6,isolated,,,1,false
 a2819e88cd1e1ecba1ba6e40,episode,E20260917-F6E423269F,,4,false
 a281b6eb3ccf5f64e1fc7766,isolated,,,1,false
@@ -21029,6 +21232,7 @@ a2aba7dbc03ab9283df10878,episode,E20260822-707A7D0411,,15,false
 a2ac8ad814b4690e4ff7f480,isolated,,,1,false
 a2b091f78a57242723cb63d5,episode,E20260930-53D65205B3,,5,false
 a2b0c1cbcab19dece634aa27,episode,E20260918-67D168106B,,8,false
+a2b0c234b4bb6bfd6e0be928,episode,E20261006-226206BED5,,4,false
 a2b0d0b51bba25404535a133,episode,E20260812-6DE35E39BE,,5,false
 a2b3828b85014659ce6b91d4,episode,E20261003-0CB1FA76D3,,4,false
 a2b3e19f6309427b1bd000fc,isolated,,,1,false
@@ -21102,8 +21306,10 @@ a336fdb29971dae31d9e70a7,episode,E20260811-94A97BA0CF,,46,false
 a3382dd6cce9311cf2aa4d43,pair,,P20260820-7166E650E7,2,false
 a3387c3e5c642ddd4cd73e25,episode,E20260811-304F0BA684,,14,false
 a33ad495cbd8f51da202fab0,episode,E20260802-10640EAFF2,,7,false
+a33babc6caf4f736076ae431,episode,E20261006-612312B581,,5,false
 a33ddf67cc2e287fa3cd3f38,episode,E20260922-27723D9CF9,,6,false
 a33eda720dc76cd8b7e392e9,isolated,,,1,false
+a340181b4916d33fd1e3f1a4,pair,,P20261006-CC1E4E4283,2,false
 a341b35cfed8586ce1e6327a,episode,E20260801-DD219D9B28,,4,false
 a3429a54f07a8c54f838109a,episode,E20260729-CBF9030825,,6,false
 a342b3db314d535516fc5a96,pair,,P20260806-90037E873C,2,false
@@ -21223,6 +21429,7 @@ a3fd368ef9babc7cbee6236c,pair,,P20260803-9010EF8AA9,2,false
 a3fe54cf66a52a2ce8c0696d,episode,E20260920-EC199B0B03,,7,false
 a4004451458f8853c4440be5,isolated,,,1,false
 a406eaf8030469dafc0ad889,pair,,P20260831-A939928649,2,false
+a407e535400bf7328501d91f,pair,,P20261006-18680416B0,2,false
 a407ea5718255fe791fa3095,episode,E20260801-D4F6218CB6,,5,false
 a40f2bc6846cd92098e7151d,chained,E20260820-53359FE259,,75,true
 a40fa63c51fad75415ca1be4,pair,,P20260916-1F3BB4AC25,2,false
@@ -21270,6 +21477,7 @@ a45ebd2144ea94270d0cded5,chained,E20260918-F928689AF5,,136,true
 a45f23db7125675337a97720,pair,,P20260716-AEFFB2009F,2,false
 a45f812000d9aa7f929d67e0,pair,,P20260826-F1AF7C03A1,2,false
 a463c401a6c4e3819570d24e,episode,E20260929-5113B2C05E,,3,false
+a465aedbf5c5b46b5cf28c2e,isolated,,,1,false
 a466379f0bc8f92c087e06af,episode,E20260820-D51063FE65,,4,false
 a46705149cda950b765cc497,pair,,P20260930-1F4EDB98F5,2,false
 a46d35409ed9af6d6e1559f0,episode,E20260929-F0BCD4430B,,3,false
@@ -21531,9 +21739,11 @@ a66f038b2147214534813f28,episode,E20260915-C756FC2B70,,3,false
 a67389b7d14fa059b172b633,chained,E20260920-87DA3A22EA,,135,true
 a673a0bbc3209702014609a5,isolated,,,1,false
 a6751c79baf0b1190677f1e5,isolated,,,1,false
+a6751f838cababcd1930ae58,isolated,,,1,false
 a676b46e41a0dc17cda8b672,pair,,P20260728-A67B5E12B5,2,false
 a6790b6183a981c4bb81a018,chained,E20260810-D254CA7C05,,104,true
 a67c03461875ad78c7c1317d,chained,E20260911-1EFEBF4B90,,59,true
+a67cd7181300660cd980f63c,episode,E20261006-032E8ACCE9,,19,false
 a67d7e47847112b9079cc60c,episode,E20260814-2F53B72434,,4,false
 a67e36aeeb8e05cb33a8e3e1,episode,E20260812-0B30190763,,6,false
 a67e6257aa80b5c93dd22af3,isolated,,,1,false
@@ -21562,6 +21772,7 @@ a6a9493ef2b5eaa5e38b1ff4,episode,E20260807-E7F061BBDF,,5,false
 a6ac75fd4aaa0d033720ea7c,episode,E20260912-EB5C4CBBA8,,8,false
 a6ae54cdbaf49c0a5517d96d,isolated,,,1,false
 a6af6b3c48c1eaaa09fefcb3,chained,E20260918-F928689AF5,,136,true
+a6b0640f98035a255eca5a92,episode,E20261006-032E8ACCE9,,19,false
 a6b442860c232f34d5e95db6,pair,,P20260922-CF1CEE1D9B,2,false
 a6b4cc34768a8810af199803,isolated,,,1,false
 a6b609aa92aee288ffdd2f80,isolated,,,1,false
@@ -21648,6 +21859,7 @@ a758444065c40346c4b552b0,isolated,,,1,false
 a7585b427d10eaecd3d307bb,episode,E20260922-C37176CBAA,,8,false
 a759d6a527eac95b47c64569,episode,E20260909-8B0ACB67A6,,4,false
 a75a5056e834339ba2086fe2,isolated,,,1,false
+a75c53b7dc71fde0443bdcc7,pair,,P20261006-42661A9F8E,2,false
 a75c6d06ab4ee63208676ac0,isolated,,,1,false
 a763122367eb2dc9e094f5bd,episode,E20260909-C18E56492C,,5,false
 a767f2139267e9b7af14ae94,isolated,,,1,false
@@ -21707,6 +21919,7 @@ a7cb4f32e70e0276fe7e8a98,isolated,,,1,false
 a7cd9ec946c8039929be2751,episode,E20260811-895E5DE90B,,19,false
 a7ce06b615e59d0a85134db1,episode,E20260706-C09DF6B91A,,12,false
 a7cefd95aae0cca077228e3c,pair,,P20260713-7E3B772900,2,false
+a7d62c435a8996910d6b9edf,episode,E20261006-0C1732BB9C,,5,false
 a7d65c1a44d9ebcc257a45b2,episode,E20260810-C5C8D391FC,,7,false
 a7d96c6b4b288e87e95278bc,episode,E20260810-CDD29A6A40,,3,false
 a7db403a3993b328ebad9361,isolated,,,1,false
@@ -21815,6 +22028,7 @@ a8aa051a172f3265a7aab931,isolated,,,1,false
 a8ab1e2102a3e54713704334,episode,E20260824-08D91C23B9,,3,false
 a8ac8a56c0a16da35182bd14,isolated,,,1,false
 a8afa21e30211ba512e73f66,isolated,,,1,false
+a8b01694d0884cac50504087,pair,,P20261006-C553DC140D,2,false
 a8b2369a107d436e301a320f,episode,E20260819-88A6E556DB,,6,false
 a8b2eb81ee78f17617b18901,isolated,,,1,false
 a8b408c1cc532555f0f01179,episode,E20260823-4A95F40D3F,,10,false
@@ -21945,6 +22159,7 @@ a9728a213eade1f136c031d0,isolated,,,1,false
 a978d3d776d5b585f255dd1f,isolated,,,1,false
 a97a470f129d2cddf39b0868,episode,E20260917-5E582857FF,,8,false
 a97ba972d52fc7b3ba676e99,episode,E20260909-C18E56492C,,5,false
+a97e5f2cb0113ff05864b918,pair,,P20261006-94C3D1EFCF,2,false
 a980585f2f9a463e64e55111,pair,,P20260812-5C2E271F95,2,false
 a980d4f9d9170e9767983bce,episode,E20260921-F7CB547186,,3,false
 a9812b4305d3e98e45febb97,episode,E20260921-FBE3C25215,,3,false
@@ -22125,6 +22340,7 @@ aadd043c1a0cdb6604bce53b,pair,,P20260801-8650618589,2,false
 aadd64cd8e3c0592c197fa13,isolated,,,1,false
 aaddf120b4d02bbf35c1b79a,isolated,,,1,false
 aadff0b1cdaf1f6df68ec3c8,pair,,P20260719-48CDF8641C,2,false
+aae019288f21fdf0c471bb72,isolated,,,1,false
 aae02aa7ce831fc6cd3d64a9,pair,,P20260715-3425E3013B,2,false
 aae18d251e91d61c8513fbc5,chained,E20260809-A107DB613F,,232,true
 aae37699450e3def40192408,pair,,P20260917-434130ED12,2,false
@@ -22412,6 +22628,7 @@ ad26b86598b521cb864dfb4c,isolated,,,1,false
 ad274dd75a7d39114dff1a55,isolated,,,1,false
 ad27dbf7450dc64e304b40da,chained,E20260920-9194EF7683,,93,true
 ad28967f14fd0a949f4a0e5f,isolated,,,1,false
+ad2985e30b3fda5497b4ca71,pair,,P20261006-538C9B1812,2,false
 ad2bbdc5294ebc3888e6a9c6,episode,E20260812-6B515BA513,,5,false
 ad2cdc782401f8f515cf34e6,isolated,,,1,false
 ad2cf6f2f8923b8a7784ab28,isolated,,,1,false
@@ -22431,6 +22648,7 @@ ad5b76dba1785109a34f6f64,isolated,,,1,false
 ad623759c132197bfd5350d0,episode,E20260906-AF332199BA,,15,false
 ad65325e73d23c74d5e14586,chained,E20260807-DD3C1F2A94,,14,true
 ad65b11fc2b2a54a3259f183,episode,E20260909-C911442005,,49,false
+ad68f065a4357a73840e947b,pair,,P20261006-6B5D792591,2,false
 ad696bd9aa713c8412e941c8,isolated,,,1,false
 ad69d42a6bb143ab74741637,episode,E20260903-82223AF525,,7,false
 ad6d1b311d5929df21dde64f,pair,,P20260705-FFA7320B66,2,false
@@ -22570,6 +22788,7 @@ ae727b023b8e0e3c4993fecf,episode,E20260703-EE6DAAE892,,4,false
 ae72c1e726b001f44d5b91e2,isolated,,,1,false
 ae73661525a200bfbc7e40f2,chained,E20260916-7ACD14E36C,,35,true
 ae78409f18352a011da9ac52,episode,E20260810-7FF252D6F9,,3,false
+ae78871896a2130e387cfb48,episode,E20261005-8C8B56F183,,4,false
 ae78d398276a5cb8cc248aa2,episode,E20260929-C413B66B9A,,3,false
 ae79ddb92888d677384709c0,isolated,,,1,false
 ae7a29c05844a2cf4f284179,pair,,P20260805-4FAD2B406E,2,false
@@ -22945,6 +23164,7 @@ b122c2d64ba43184295d4027,episode,E20260807-64889EFC2D,,27,false
 b125367cc644cb6e2a00f770,episode,E20260917-263CC941E1,,13,false
 b1296f9e2b96c01ae82c704c,pair,,P20260801-9FC85900E2,2,false
 b12ccb0c781a35d1c762650b,pair,,P20260914-3B0BB8492F,2,false
+b12d664e3865c8bfc94fdc0c,pair,,P20261006-A65634430C,2,false
 b12d6d06c17a1021e0333ecf,episode,E20260814-7D5F2E0A16,,7,false
 b12ee5a5743371a107dcaeb1,isolated,,,1,false
 b12efdceea519f7f744dfbed,episode,E20260828-7D0ED39892,,6,false
@@ -23120,6 +23340,7 @@ b27936cc25fee24d770f9241,episode,E20260909-F4F5896015,,6,false
 b2795a12890c230fed842d5a,episode,E20260826-2E30982721,,25,false
 b27a5a9646b6b07912a9ba47,pair,,P20260905-85BB094A24,2,false
 b27ab2dae71f509a1ac9eca3,pair,,P20260908-B00E44B24B,2,false
+b27b08e0aadb07870cb0daa6,pair,,P20261006-B38293FB45,2,false
 b27b95b75e25722c60b981dd,isolated,,,1,false
 b27babe91b59507a92260ab8,pair,,P20260818-A19AF8D198,2,false
 b27e664b6e13ac395ca38ab6,episode,E20260717-63F01C3913,,5,false
@@ -23135,6 +23356,7 @@ b28c6cb2176cd63abe8edcaf,isolated,,,1,false
 b28f40d51ca29ff0f29614ac,pair,,P20260825-6F7CF63C75,2,false
 b28fb97255a6f7a1a667fbd2,pair,,P20260807-D95BAAE2DF,2,false
 b291d86b2eef8070e6718aeb,episode,E20260818-B525DDAC4E,,6,false
+b292f86d121c0d55a573639b,pair,,P20261006-0F3B18ECC0,2,false
 b2935074567428a9153ac40a,episode,E20260821-984DE56169,,3,false
 b2957f2b1b59874951636b46,chained,E20260920-87DA3A22EA,,135,true
 b2967db8c7e7f019a599e1cd,isolated,,,1,false
@@ -23165,6 +23387,7 @@ b2c35a41179ade407621817e,episode,E20260808-2D1F076C93,,14,false
 b2c414a9eed1206f51dd736c,episode,E20260728-6AA6D65FA5,,6,false
 b2ccd269237d23e2cf8e0522,episode,E20260908-50C383F7FF,,3,false
 b2cef03e6911353ea3168f28,isolated,,,1,false
+b2cf86b824bee8bff61a8c03,pair,,P20261006-78B20531F9,2,false
 b2d07a27e47c882c9b113cd6,episode,E20260930-22C3EA7C80,,8,false
 b2d0f0d2a10672e919690539,isolated,,,1,false
 b2d42cce68f08b521d8bb956,episode,E20260801-B2A8DB82A8,,9,false
@@ -23424,6 +23647,7 @@ b493c6be8d5cdda3ee4971f8,pair,,P20260826-F6D5320856,2,false
 b4967a4defc29c93f4f67883,isolated,,,1,false
 b49e22ef676c00cb2ff68dd1,pair,,P20260908-4DAFF83B9C,2,false
 b4a50a9390c5f7276e6a7e56,isolated,,,1,false
+b4a5c5244d995204570c7bfd,isolated,,,1,false
 b4a67973c31ebebd62bd5fc8,pair,,P20260922-DC043DF459,2,false
 b4a715b9de4493e42696f22d,episode,E20260810-EF37C3F685,,22,false
 b4a9917f579ef5699ff01c97,episode,E20260706-C9427EC071,,5,false
@@ -23646,6 +23870,7 @@ b65a004c029704e719783fd6,episode,E20260827-B135805191,,5,false
 b65d605a92a4c8be7378390d,episode,E20260811-7E8DC738FE,,4,false
 b65e9fd79d2de5b928fbd30a,isolated,,,1,false
 b662e8cc5e2c7ec65de31d2a,isolated,,,1,false
+b6642779827c71555a84416d,episode,E20261006-0C1732BB9C,,5,false
 b6657b30a48fd97e97da8e4e,episode,E20260921-B5EAACDE0E,,15,false
 b665ed4f687960f03cbe84aa,isolated,,,1,false
 b6665aebf1e0bdc4526a405a,episode,E20260802-A9FC458E42,,3,false
@@ -23721,11 +23946,12 @@ b6f2e571912dea6bcc6a5437,pair,,P20260825-53BA8503D6,2,false
 b6f38af1c5ff8352890796e4,pair,,P20260902-A47B677A15,2,false
 b6f3f1f9972f8756acbb0163,isolated,,,1,false
 b6f49c8370b283db8c1f5bb3,episode,E20260908-2F55B6856E,,61,false
+b6f677b0e86eb89c33240cff,episode,E20261006-3364864559,,4,false
 b6f680a168dd27795d314f13,episode,E20260930-8D5702C87F,,3,false
 b6fa6d43a2265cd48e89bd2a,pair,,P20260707-6188872139,2,false
 b6fb464463a46b778dc9956c,episode,E20260716-29A5DFF0A2,,4,false
 b6fb6a2e4936927520d9f168,episode,E20260810-257A2FF44E,,57,false
-b6fba9cacbfc74bfe7d0c2f8,pair,,P20261006-93BACFF84A,2,false
+b6fba9cacbfc74bfe7d0c2f8,episode,E20261006-93BACFF84A,,3,false
 b6fbd054c39c7287c8e62d8d,isolated,,,1,false
 b6fc29015833de290a375720,isolated,,,1,false
 b6fc6a4961d1dd9792fa2f9a,episode,E20260716-6FA8087122,,6,false
@@ -23911,6 +24137,7 @@ b84f3110da8ddb44a36581a4,episode,E20260831-F147CD75AA,,10,false
 b85179c895fd01e3d17ca1ee,isolated,,,1,false
 b85b392f8be885e5b6d700dd,pair,,P20260802-A7CDF31718,2,false
 b85d166767f35a667bb9d733,pair,,P20260809-BB01D47A86,2,false
+b85f05bdaed23bc157571177,isolated,,,1,false
 b85f19114478614e29af6e62,episode,E20260802-4A021D1BEB,,6,false
 b860152ec6cf8daf2b7624c7,pair,,P20260811-B0D0FD5AEC,2,false
 b86069e0eade85c9ff0b42e7,episode,E20260722-92A78C4914,,3,false
@@ -24008,6 +24235,7 @@ b91ceaa9841933d5dc56449f,isolated,,,1,false
 b91f3dcc202fc1984b6ebfa2,isolated,,,1,false
 b9204297c80decec1638590e,pair,,P20260814-605D951806,2,false
 b920796b69f648529adf739f,pair,,P20260701-8B0373367E,2,false
+b920afe38a5dccd5cf70da55,pair,,P20261006-6FA30E1B7C,2,false
 b92442490f3ee394bd2ec213,pair,,P20260807-DCD7CD0643,2,false
 b92606ddb7acfcf597fd0548,episode,E20260918-9244166350,,4,false
 b9260e167cec2db1aafddd85,pair,,P20260804-D394CBE127,2,false
@@ -24196,6 +24424,7 @@ baaa6574c057380163fbf2b9,pair,,P20260828-4C31C79C0F,2,false
 bab0ee93f1ffa7df759b9cba,pair,,P20260821-768665D442,2,false
 bab1011c48997b40460481bf,isolated,,,1,false
 bab4711f05b4ae04690149a0,pair,,P20260812-A73DC0EF77,2,false
+bab5a67c9eb6edf13b3c85d5,isolated,,,1,false
 bab625568c83303b692847f0,isolated,,,1,false
 bab64e6c3d836a867e352785,episode,E20260920-B7500B98F1,,4,false
 bab660b1d3363a3135b85e5c,pair,,P20260904-CBF5289FD7,2,false
@@ -24209,6 +24438,7 @@ babe042a43ae3762e0a89a79,episode,E20260810-2E761409D1,,20,false
 babe3731e408ea01322618da,episode,E20260912-82A3DC0995,,3,false
 bac5caeada23506ab8c63d5c,pair,,P20260812-2215EFDE3A,2,false
 bac63fef26b898333cb3680f,isolated,,,1,false
+bac65178b2ab6d33475ca82e,isolated,,,1,false
 bac767495caca579e21f8c87,pair,,P20260713-D7F89FDCF4,2,false
 bacb49d064d77f4adde9bbf8,episode,E20260728-25EAC62010,,3,false
 baceea35869d93d2ffd7c5b3,episode,E20260717-48472F77ED,,4,false
@@ -24219,6 +24449,7 @@ bad991e73d812b3eff841597,isolated,,,1,false
 bada39029583c3ac4192a11a,isolated,,,1,false
 badcafcaa61a26779bc3b2fb,episode,E20260812-CD17B90E40,,4,false
 badda701b2ce96b1793dec09,episode,E20260907-44F46711EE,,3,false
+badfba37dd30fc67fca2e9f3,isolated,,,1,false
 bae1f1fa6bd8a8b31b81f6ae,episode,E20260813-4351693696,,5,false
 bae2adac82a5d6f11c036862,episode,E20260823-B6C7BA9FA9,,16,false
 bae396da780b9889b7dbb48a,episode,E20260809-1D9F2D9C83,,4,false
@@ -24280,6 +24511,7 @@ bb53ae5c4c7c19b863c7b724,pair,,P20260724-E2C29C9AF1,2,false
 bb5c08d0affcba8bb0c733b6,episode,E20260823-B80B087A0A,,18,false
 bb5d5644e5a0031f7f61a7fa,episode,E20260929-0A673079C8,,7,false
 bb5e5bdcfbefb23f9ebf47be,episode,E20260907-8F3910BE83,,23,false
+bb5f5cdb7270ac26e2e56ab8,episode,E20261006-3364864559,,4,false
 bb6155a98d30a5f6e0d09010,chained,E20260807-DD3C1F2A94,,14,true
 bb625ad80ce5c5be5c59ac78,episode,E20260717-2DEB911532,,4,false
 bb63e1430aa1380e29373847,episode,E20260801-FBF60BD7BC,,8,false
@@ -24429,6 +24661,7 @@ bcaa8a1116ae29ed1026934d,episode,E20260920-8585EFA672,,36,false
 bcabdc0d7bd326210dfb2d45,episode,E20260810-46A7746F5D,,22,false
 bcaf14d69d371445489f78b1,episode,E20260930-B67EA7C79D,,4,false
 bcb004461dd988565a3b785d,isolated,,,1,false
+bcb148d287533b9989c378f8,isolated,,,1,false
 bcb370219aee37fdff09fec5,episode,E20260714-CA3EFA960A,,3,false
 bcb3b92a22f1bcee28774d47,pair,,P20260725-8D6E4880BE,2,false
 bcb7e1f2cb32256932f62aa6,episode,E20260716-52133536E6,,5,false
@@ -24444,6 +24677,7 @@ bcc5ed9da683bed2e6a7e93e,isolated,,,1,false
 bcc828dc6868ef32e91557ba,episode,E20260814-3618F1438A,,8,false
 bcd00d5fa5c70bae347936e4,isolated,,,1,false
 bcd1cacee37989d24ecb975b,isolated,,,1,false
+bcd3b03673a0acc18661f680,episode,E20261006-C5A4F5B228,,3,false
 bcd73c237a8b0e900c694552,episode,E20260919-1185F613D9,,3,false
 bcd75ea5ec31ba8de0a56224,episode,E20260718-F13A75C07E,,4,false
 bcd76e95f80a498f0210fcc7,isolated,,,1,false
@@ -24481,6 +24715,7 @@ bd1257544cf8c14b38b91a99,episode,E20260811-0A2A20F22C,,45,false
 bd137ff1e68bb63721df7b9e,episode,E20260906-C198220074,,43,false
 bd15743d86cbc0317e88cbc3,episode,E20260810-4E57BA93AF,,28,false
 bd15a1f9a3e96f1d730a92d6,episode,E20260907-44F46711EE,,3,false
+bd173dc28762e2626df760ea,episode,E20261006-D5457767A6,,3,false
 bd17c66a5270b48a1d4188ed,isolated,,,1,false
 bd17e773c6593d4cabca41f4,episode,E20260717-D8E89BB19C,,3,false
 bd18f0f736ee71b3d73feee9,episode,E20260715-C5DBEE66BD,,4,false
@@ -24606,6 +24841,7 @@ be21b6fcbee8735f68b63e20,isolated,,,1,false
 be21bb70d9513c337d173d08,isolated,,,1,false
 be242a1133d92691c880cf1a,isolated,,,1,false
 be2a3fa1bed8492987017bf3,pair,,P20260826-CC29319412,2,false
+be2bf3f831ce8131f53178a3,pair,,P20261006-F5FF3EB1DF,2,false
 be2f9562732748bd33733bc5,isolated,,,1,false
 be321e9d69165050cc133068,isolated,,,1,false
 be3351c5050e9efac4fa0280,episode,E20260710-EE2F06E34A,,7,false
@@ -25130,6 +25366,7 @@ c2303e77348bb6ba24e428bd,isolated,,,1,false
 c23261d4e2cb9b0880b1e22f,pair,,P20260831-AC424AD916,2,false
 c234087e780e832a7aa9f166,isolated,,,1,false
 c2356068ef774ec3f54f1178,episode,E20260721-64B04C18BB,,3,false
+c235adea6b7f30d4ab9e36d3,isolated,,,1,false
 c237801132e8f2c44ed76db2,episode,E20260908-1E22A30D38,,3,false
 c2383797c8431f75badbb4f9,episode,E20260912-14DA075CD3,,6,false
 c2385f5ec7583a8c3305aea7,isolated,,,1,false
@@ -25205,6 +25442,7 @@ c2bf9d35be67e94ddc3de88d,episode,E20260728-2AF30AE176,,3,false
 c2c429d77468a0765903cbdc,episode,E20260919-362344BD0E,,16,false
 c2c5d058caa86b1104ebf373,episode,E20260922-4F6F33A686,,21,false
 c2c5ee8b45486768107d60ce,episode,E20260717-045BC51B89,,4,false
+c2ca33468cd5dc668544daf8,isolated,,,1,false
 c2cd65903f3123d70faeba8b,episode,E20260729-EDB8403AA3,,14,false
 c2d03ff4614efd6b0b2c4e3e,episode,E20260811-61EC9C9DEB,,6,false
 c2d089cc8e293ffc7db3bb06,isolated,,,1,false
@@ -25271,7 +25509,7 @@ c33b5871872f1c83af041f5f,isolated,,,1,false
 c33d3b3a927be9fee85984aa,episode,E20260922-D4816B7EEB,,4,false
 c34951d77e7f1f61026f49d5,episode,E20260825-377D3899C9,,5,false
 c34c1b95108e95f67bea857f,episode,E20260820-CC259A7D25,,36,false
-c35232fffe524c73ba8a9cf0,isolated,,,1,false
+c35232fffe524c73ba8a9cf0,episode,E20261005-8C8B56F183,,4,false
 c35260b4bb31969acc886bff,pair,,P20260910-28D1E429AC,2,false
 c35501d11fae5874405c18cf,episode,E20260826-16FFC3FA02,,12,false
 c356226f0bb28fa4208510fe,episode,E20260929-083CBD6A3D,,6,false
@@ -25426,6 +25664,7 @@ c45b468e7c9273265862d884,pair,,P20260914-FAF9302A79,2,false
 c45bdc2b1455452d38ba32c0,episode,E20260912-FD6E35BAF5,,7,false
 c4617abc2f9f01ccbba9d37e,isolated,,,1,false
 c464c93406842c5a2d6ead89,episode,E20260822-0347D1498C,,6,false
+c46755254199df2d5e8bbea3,isolated,,,1,false
 c4680e70c24739bd6a65f04d,isolated,,,1,false
 c46ac9320d480e36ceeae69e,pair,,P20260831-F825F02250,2,false
 c472328f34f72f2ef4c2370b,isolated,,,1,false
@@ -25623,6 +25862,7 @@ c5d86f295a3abf7ea50e23a3,pair,,P20260906-D070A443F2,2,false
 c5daadf4216f488939a865c8,episode,E20260823-3D5D0A90A9,,9,false
 c5de038b2d33bc3e336d3901,isolated,,,1,false
 c5df8fe4c6f23fc885355e9e,isolated,,,1,false
+c5e18bff111ef03df58ebfcd,episode,E20261006-1D65E2CBAC,,3,false
 c5e2340cfcf8de40e5811ee3,episode,E20260921-35E8AA8DB7,,20,false
 c5e95e12c3985e962b4e1f96,episode,E20260813-B84354AF43,,14,false
 c5e9f5c8680804e370dacb57,isolated,,,1,false
@@ -25786,6 +26026,7 @@ c7171ceecf82729e5208b162,isolated,,,1,false
 c718adf41dcfadb8e046a79c,isolated,,,1,false
 c71a5bdf25951be97d10ae37,isolated,,,1,false
 c71d30dc265185d3dcca6a6d,episode,E20260724-06BA9FA28C,,7,false
+c71f314f84fc1b1988af7936,episode,E20261006-EDDFF6501E,,4,false
 c7227c19219046b290577742,pair,,P20260922-0A1C8A595F,2,false
 c72309e42a09234ee0f24ebd,isolated,,,1,false
 c7252a43df7a8d60b0dd0d05,pair,,P20260814-DD42E2DAA3,2,false
@@ -25827,6 +26068,7 @@ c7747d472d6cf4346cde80d6,isolated,,,1,false
 c7770b76bf8222cb48ba0185,episode,E20260810-919DA722B8,,8,false
 c77804c0226a20e8f4875c10,chained,E20260809-A107DB613F,,232,true
 c7788c1afc5585742bfb82b2,episode,E20261005-8BB33F97D7,,8,false
+c779e30b1d4dd5b0226a6ec4,pair,,P20261006-DD88C9D8A0,2,false
 c77ad426b6fdc0b7d806f2bc,episode,E20260826-2E30982721,,25,false
 c77b8050e7d5aeefe3a7e02e,episode,E20260930-B67EA7C79D,,4,false
 c77fd6d5b0b4f23f55ce5154,episode,E20260913-4FECE69B4B,,3,false
@@ -25924,6 +26166,7 @@ c82b37769d0d7ce5683c5ee4,episode,E20260811-47EEA537E1,,3,false
 c82e81b6221a38d71d452d5d,isolated,,,1,false
 c8338c27c410e2264ee3003d,episode,E20260802-7DD4614440,,13,false
 c833f849de5d9fcf70389ebc,episode,E20260827-9E84B2AA56,,5,false
+c835a2c8aa914b5552571d60,isolated,,,1,false
 c8360d85c3a1087f2c0abb70,isolated,,,1,false
 c8367fc9da99df5b074d4f63,episode,E20260815-15BC446415,,5,false
 c8376ee887d806edd0832b17,episode,E20260710-1396B56177,,5,false
@@ -26033,6 +26276,7 @@ c9016261b654fe3f18858eeb,isolated,,,1,false
 c9025a4da6df3e0ada1a2f7d,isolated,,,1,false
 c90527411d33524a94dc76a0,isolated,,,1,false
 c9087ede970ceebcd944687f,episode,E20260830-C0563AF3EE,,3,false
+c908d2dfee0016e881d006da,episode,E20261006-0C1732BB9C,,5,false
 c9091f0e083d14d67d65b5cb,isolated,,,1,false
 c90933a14713e21c270b1cd6,episode,E20260825-DE17D7F529,,3,false
 c909e451f0f4af4c0958b4af,episode,E20260716-2306B10DC9,,4,false
@@ -26050,6 +26294,7 @@ c917cbe00d24710527aef6ec,isolated,,,1,false
 c91bfdbb090fa74845f971d4,pair,,P20260901-608AB7ECCD,2,false
 c922d836b51db62cf4f47182,isolated,,,1,false
 c923b14f2f083c31ecda1211,pair,,P20260906-90447D267F,2,false
+c925280bd955772860b2c43a,pair,,P20261006-999A9EE589,2,false
 c92bfb67826fc5623f06e89f,episode,E20260912-3F37F02F15,,4,false
 c92df3e398329bd5eacc2408,episode,E20260801-F467AF9054,,8,false
 c930ca0ff9d2940938eb70c0,pair,,P20260729-DBCF0423E9,2,false
@@ -26064,6 +26309,7 @@ c9398cf132b4433167641091,episode,E20260904-A466B242B2,,8,false
 c93c25c4caf6c619b90d1b31,isolated,,,1,false
 c941ffd5bc9c5dd05f8776af,isolated,,,1,false
 c9426d5a2567577734ae7a54,episode,E20260715-8259E7916D,,4,false
+c94283e9286fa047b2bacbed,episode,E20261006-0C1732BB9C,,5,false
 c942ef7b1d5e88fd5ce3f149,pair,,P20260907-0DA9420C38,2,false
 c945478bc12a3969206179c5,isolated,,,1,false
 c945860c8ed7757541581eac,episode,E20260902-18DDDFEBCC,,6,false
@@ -26092,6 +26338,7 @@ c96a9af53908efa8ee00f794,pair,,P20260708-8A9AAB8641,2,false
 c96b40b5ab4f8ecf2a674ba5,episode,E20260715-99C11802CF,,4,false
 c96c242b16640240ee8eab6b,episode,E20260807-5304A9F742,,30,false
 c97055e886cff87c114fc873,isolated,,,1,false
+c971242a571e14a06d85a362,episode,E20261006-B3AB01DFE0,,3,false
 c977f33809a8741aca6ec1f5,episode,E20260802-8DD8C688B2,,32,false
 c9782a7a9671bbe7412880c5,episode,E20260717-5A8A06DA2F,,4,false
 c9784e50f79b46c8d4c4ba25,episode,E20260828-7D0ED39892,,6,false
@@ -26106,6 +26353,7 @@ c98fe6ac457a82dc385ce6d4,isolated,,,1,false
 c99262c427d25eec6027aff5,episode,E20260802-A120DA51FE,,3,false
 c99681dc18cdbd7325ebc789,isolated,,,1,false
 c99747727506ab253d7a7ff2,episode,E20260909-C911442005,,49,false
+c9982a91d156e44e6a4617b7,episode,E20261006-032E8ACCE9,,19,false
 c9987f8f3496bff2708be3b3,episode,E20260902-F04F1A35D8,,3,false
 c999482549c3ee445d77d56c,isolated,,,1,false
 c999597cb4ed82d6d2c082a7,episode,E20260811-22CA2B8E5C,,3,false
@@ -26114,6 +26362,7 @@ c99f332c584acb00c42626d6,pair,,P20260804-E9B81428CD,2,false
 c99f4b54babfb0cb9ebb5ae7,pair,,P20260724-ABEBC9B698,2,false
 c9a23555568e628953dcd494,episode,E20260819-936374A796,,7,false
 c9a35005c722be1e929d16ca,episode,E20260716-167EF3A664,,13,false
+c9a7ca1bc527b3235f484dc9,pair,,P20261006-AF5F32AF30,2,false
 c9a7cb19b96dec4022e689e1,pair,,P20260811-245EEC9D7F,2,false
 c9a99bb5e63b2ee36f90325e,episode,E20260716-AFBC3AB65A,,10,false
 c9ab5f8dfa8b98e1e1a6c5e8,episode,E20260917-ED4326A356,,8,false
@@ -26134,6 +26383,7 @@ c9cd7af5e9cba0ab4f92c7ce,episode,E20260811-2F886D0634,,4,false
 c9ce0c1b4f043e19b5ef4f3b,isolated,,,1,false
 c9d1360de0ff6b05383054a9,episode,E20260904-D49AB57092,,10,false
 c9d66f5772f67858780039da,isolated,,,1,false
+c9d7d5b35ab62f545463a7da,isolated,,,1,false
 c9dabcad29451087a91e7806,isolated,,,1,false
 c9dc931f10ba9d0da613de47,episode,E20260810-A74F6FE43B,,8,false
 c9dd39bf2dcdb9ccb25b7c9a,pair,,P20260813-5FF3A9A9CB,2,false
@@ -26239,6 +26489,7 @@ ca8b2ecbdb4486720aa75d96,episode,E20260811-4A3816EFCA,,24,false
 ca8bdf2bb2ab870ef0f4eb58,episode,E20260721-062E64C16F,,3,false
 ca8c3ebff8d75504b44675df,episode,E20260826-2F215E2E92,,13,false
 ca8d5c70645b43bf082c6a2f,pair,,P20260725-2114598F12,2,false
+ca90171ba6ec52b8139059cf,episode,E20261006-93BACFF84A,,3,false
 ca97ad411abf562875ee2b76,isolated,,,1,false
 ca99aae44346ced7007d8e2f,episode,E20260928-C6D406386B,,8,false
 ca9b48173e2afd21436be708,pair,,P20260716-9EE955C53D,2,false
@@ -26419,6 +26670,7 @@ cbd64eed7f54b2f86983eca5,episode,E20261005-662182C6A2,,7,false
 cbdf6c023a4f70e7cf03d46f,episode,E20260917-E1FC4ED94B,,17,false
 cbe1c9c1eca34d4e5c62b3b2,isolated,,,1,false
 cbe2c4d062cc99ba057299ac,episode,E20260903-DA702ED619,,6,false
+cbe37e256669a755111f3b3d,pair,,P20261006-94C3D1EFCF,2,false
 cbe3da2506dca359e98a638c,isolated,,,1,false
 cbe4fc64966e48a294cbb031,episode,E20260929-B18DF362D1,,3,false
 cbe50047de3b1f953e48d04f,isolated,,,1,false
@@ -26460,6 +26712,7 @@ cc1cc17abb88bf6abe6e6507,episode,E20260901-7EBEBA39D4,,7,false
 cc1ef50fd800922b12e5f9f5,episode,E20260921-7296096DA2,,3,false
 cc21bcbf9be8962d75425e0d,isolated,,,1,false
 cc25f1acefbe4143fe8910db,isolated,,,1,false
+cc27d4960821bc826c501e7b,episode,E20261006-EDDFF6501E,,4,false
 cc29d7ca02781648a87b3c1b,episode,E20260829-EAE97EFE52,,4,false
 cc2b349ac4ec4ba5b1a379a0,episode,E20260716-52133536E6,,5,false
 cc2bec6a033e3081c69fd74b,isolated,,,1,false
@@ -26494,6 +26747,7 @@ cc5e25d8029f7a9248454254,episode,E20260918-B55C3B2AFA,,3,false
 cc5fffc4fefbc5af725c9e88,episode,E20260724-459433CB83,,8,false
 cc61c6bf0af289277581b3ae,episode,E20260815-DFBA74ADF3,,3,false
 cc630ce3e3281822a93af1f2,episode,E20260710-D98713EA54,,3,false
+cc65a087029d0420a18a65a7,episode,E20261006-C5A4F5B228,,3,false
 cc67c8ef416214788098576c,pair,,P20260825-EE063B0C42,2,false
 cc6817d8ba5dc87c524e8f84,pair,,P20260718-278AFD772B,2,false
 cc69b2b6bf07f8fb70154e5d,isolated,,,1,false
@@ -26625,6 +26879,7 @@ cd5d65e29f26f915b12a0d25,episode,E20260811-6FE2E542FE,,3,false
 cd62085a0fd5cd544da7c7de,episode,E20260908-81CC64BEB7,,21,false
 cd62d75ef09f5c8c730d3212,isolated,,,1,false
 cd639cd6106796109fdf586f,pair,,P20260730-88125E5017,2,false
+cd67d31dffa80b2636baa142,episode,E20261006-36445F0BA2,,3,false
 cd682ef4c8f8ac07c7293f75,isolated,,,1,false
 cd68cb0fe06f74cc0b15a92b,isolated,,,1,false
 cd6ba647b5f51fe8fd95a55a,isolated,,,1,false
@@ -26698,6 +26953,7 @@ cdf19d8f9f25d17f6c1ae3b0,episode,E20260810-CD32B7D60C,,5,false
 cdf23a00311506933d286fa1,isolated,,,1,false
 cdf2909de02082c6de34057b,pair,,P20260920-8D9D218BE0,2,false
 cdf92410e9d121e5929aa8aa,isolated,,,1,false
+cdfc22384ff3c184f2df5059,isolated,,,1,false
 cdfd72e2236bee71209faf43,pair,,P20260717-53E5A2E631,2,false
 ce013d4208a2a6a215aa97c9,episode,E20260810-257A2FF44E,,57,false
 ce01e30d6f80a140fe1edbbe,episode,E20261005-662182C6A2,,7,false
@@ -26733,6 +26989,7 @@ ce308761832f224b89e8a846,episode,E20260921-FFF681B145,,3,false
 ce32ba073679dd48c2c55727,isolated,,,1,false
 ce3386025299b933dda20cee,pair,,P20260702-94E1199791,2,false
 ce33a3a0f4e1c13394fdcb6d,isolated,,,1,false
+ce381176f015d59791f9b73d,isolated,,,1,false
 ce3870bcb4892d969208d64d,episode,E20260812-F57805A180,,3,false
 ce39174940dfae971a911468,isolated,,,1,false
 ce3a570539f142e2b057b05d,pair,,P20260730-192EE1A392,2,false
@@ -26778,6 +27035,7 @@ ce922922f7b6c87321a23744,episode,E20260929-D4273E32DF,,4,false
 ce939dae83e182137b7a01a0,episode,E20260729-63130A78EF,,9,false
 ce96208ab734afb715a880a0,isolated,,,1,false
 ce9622298dc3c4107eff1051,episode,E20260922-DAFFF85823,,3,false
+ce9997ff7da74e197e040bea,pair,,P20261006-D01BAC13B8,2,false
 ce99b8be2d2feddb3bfad409,pair,,P20261005-C55FFD78CE,2,false
 ce9b8f1a1d3ba2918633688d,isolated,,,1,false
 ce9dc3fda3a4510053beeae7,isolated,,,1,false
@@ -26847,6 +27105,7 @@ cf224d34fbafd95453882347,pair,,P20260820-0CAC132745,2,false
 cf22cb80353d47b1fd0d491f,chained,E20260911-1EFEBF4B90,,59,true
 cf2319d63fba15fcc9bc5c1c,pair,,P20260911-CEE1865895,2,false
 cf239b9a68d4f973d99708c5,episode,E20260913-86FAD3023D,,25,false
+cf25cb0bc5a4b77dc2ddeb1d,pair,,P20261006-D3207D6AB6,2,false
 cf2afa926e1557d9b696acde,episode,E20260921-0AB1FA59C2,,11,false
 cf2b2e8601b3240540a2eee4,isolated,,,1,false
 cf2ba91f6f7023c4626978aa,episode,E20260730-BCBD2CE397,,3,false
@@ -26917,6 +27176,7 @@ cfb5f8e2e0e31179f3ec49a3,episode,E20260810-89B943F009,,6,false
 cfb5fde04b873813b6d92100,isolated,,,1,false
 cfbb728c0c3c5cb667984682,episode,E20260701-7370E5FD85,,3,false
 cfbe427be522d81923c8e30f,episode,E20260801-3FDAEB7AF0,,4,false
+cfc3ca0caa9d65d60e36936d,isolated,,,1,false
 cfc7433c60e4873dafc72d08,episode,E20260731-9A606708FC,,5,false
 cfc817bfbd88d492d4c929ca,isolated,,,1,false
 cfc95846d225ed0d4ea721c3,pair,,P20260812-3787BDB7DC,2,false
@@ -27081,6 +27341,7 @@ d11b1a181b8891aa1084734b,episode,E20260828-3DA12C4A5C,,4,false
 d11e1ede3a1c3db9608b6bd2,episode,E20260706-C09DF6B91A,,12,false
 d11e833672bada9e7032597a,episode,E20260922-4E27F9394F,,16,false
 d121a132de788e9e5b76e4f3,episode,E20260727-23CAA55232,,9,false
+d1223f298d6c53deac02f52b,episode,E20261006-226206BED5,,4,false
 d123bab2703e165f5ddcc019,pair,,P20260706-E044740A06,2,false
 d123cb95b5ba1432085b63e2,chained,E20260920-9194EF7683,,93,true
 d125e7376a5b346a51880c60,episode,E20260813-0FA860B6AE,,5,false
@@ -27352,6 +27613,7 @@ d355e15563885c4c7bc3d842,episode,E20260908-17D160787D,,4,false
 d3564ba5f9bba876646f7c8a,isolated,,,1,false
 d35676ac077f12101544eb65,isolated,,,1,false
 d35b0ebd1447060e2710e9ea,episode,E20260922-4F6F33A686,,21,false
+d35b22024b7813a843614568,isolated,,,1,false
 d35c2af89c4f0eccfe42f615,isolated,,,1,false
 d35c4fe3d3e587f94bf41a25,chained,E20260810-F33941669D,,186,true
 d35d1c3f56f7fb93ad28e954,episode,E20260824-66164C9C1F,,13,false
@@ -27409,6 +27671,7 @@ d3b7b325df59482d91123c76,episode,E20260725-59BD76A3CC,,3,false
 d3bcdf22f2f62ebc53438de5,episode,E20260812-AA6F8253D5,,6,false
 d3c14c257ff32d20ace742aa,episode,E20260813-F9606E0100,,36,false
 d3c19cc164482f4e17bb78fd,episode,E20260922-339D80EA78,,8,false
+d3c5cad0dd81634ea397afac,pair,,P20261006-538A915650,2,false
 d3c611defe0c3f3344a448bb,episode,E20260823-B6C7BA9FA9,,16,false
 d3c70dff8c038f884f398815,pair,,P20260812-2B66C65D42,2,false
 d3c89ec9fda2168718a42c20,episode,E20260929-79A078810D,,3,false
@@ -27504,6 +27767,7 @@ d488792713e7f8f75f4632a0,pair,,P20260918-1E78807481,2,false
 d48a2f892f4c922f0cdc9cdc,isolated,,,1,false
 d48aa92ee26419f7b3273b6a,isolated,,,1,false
 d48da8a2ba128dbf370d0c4c,pair,,P20260810-32C15F1FB1,2,false
+d49080412df4b1327cfaa575,episode,E20261006-226206BED5,,4,false
 d499dc41e59dfb843c4e4fc0,chained,E20260918-F928689AF5,,136,true
 d49b566491cb5ef19801df4c,isolated,,,1,false
 d49c87385479ed6e42e5019b,chained,E20260911-1EFEBF4B90,,59,true
@@ -27883,6 +28147,7 @@ d77feddd488fca729300c479,isolated,,,1,false
 d781fd4571a941728c0efe03,isolated,,,1,false
 d785c68d6409ad2cac3f28cf,isolated,,,1,false
 d786931218aff9f5958fb4f6,episode,E20260911-A0A8C843D7,,6,false
+d78950fffabfed3d2fd4ac35,isolated,,,1,false
 d7895b4db79a03d9ec642469,pair,,P20260809-96E34546AD,2,false
 d78e6be536774a786b79bf95,isolated,,,1,false
 d793163e24ec7f44fd4bcf31,isolated,,,1,false
@@ -28222,10 +28487,12 @@ da5d5368bfffe52e213ec739,episode,E20260810-3F75EC807E,,14,false
 da5ea3bb0ae6ae704a598159,isolated,,,1,false
 da60eb7d755a1fa80e3349d8,episode,E20260810-14DB9BB39D,,10,false
 da61a5799133f5772068d261,pair,,P20260820-0BB9AD6210,2,false
+da626c236e71c89d0250a42b,episode,E20261006-1D65E2CBAC,,3,false
 da6274dc81511716a5182233,pair,,P20260706-32F21CFF1F,2,false
 da630c24a0b27952578116c5,chained,E20260809-A107DB613F,,232,true
 da67664e78071952821e97d3,episode,E20261005-18506BEE93,,11,false
 da687964a2f779d9320fe7f6,pair,,P20260811-61E4F3DF0E,2,false
+da6970c238e53290c19fd358,pair,,P20261006-A93D9409D5,2,false
 da6d153fd3f7f85ac0580907,episode,E20260819-6F6ADE940F,,3,false
 da6ea9ffe6f5fc0e45591ce4,episode,E20260811-02645C77A8,,5,false
 da738803ecff359d3275ab28,episode,E20260920-8585EFA672,,36,false
@@ -28305,6 +28572,7 @@ daf7259ea1c51650ba4d75b3,episode,E20260729-CBF9030825,,6,false
 dafee7816b5e96316a3f3485,episode,E20260908-2F55B6856E,,61,false
 db023aa055ed2566f519f963,isolated,,,1,false
 db05c445abda3ad9959a8d23,isolated,,,1,false
+db06c5c92d780551e8f60ae8,pair,,P20261006-0A52931DD1,2,false
 db0a485c97a533567681a466,episode,E20260810-57AE9B2A05,,3,false
 db0b6a0dfc666386387fa4a8,episode,E20260810-C9EB08C7D9,,5,false
 db111b842c329dc59bfe9e67,chained,E20260908-965D6C1678,,30,true
@@ -28342,6 +28610,7 @@ db49c5fc80358d2dde60a4c0,isolated,,,1,false
 db4ae8c189b567a4105b2520,isolated,,,1,false
 db4b5ff574c6141613e6ab87,isolated,,,1,false
 db4b785afa472b715e380858,isolated,,,1,false
+db4c34456fc44d7b2c749c64,isolated,,,1,false
 db5026a3fff9c499d8fa6338,episode,E20260701-AECB8E0AFB,,6,false
 db52f875cdf4e823963c48dc,episode,E20260720-75D0A8095F,,4,false
 db53d80a40d308d012cf219c,isolated,,,1,false
@@ -28608,6 +28877,7 @@ dd3349f2c270913e513c155a,pair,,P20260708-72FD57AB99,2,false
 dd36df74e0df7ce2a430d98e,episode,E20260802-BC6072AFA0,,5,false
 dd3e6f05476655d3cfddceb4,pair,,P20260728-94801CB808,2,false
 dd4006f1f91d70387b890ca2,chained,E20260808-39346BDFAC,,21,true
+dd4150ff3202f7a2ecd3aa3e,isolated,,,1,false
 dd42409271b344ede043da5f,episode,E20261001-09CE7088E2,,5,false
 dd42be8672689da5baf822f2,isolated,,,1,false
 dd42e1ae987b59b6c7ce55fb,isolated,,,1,false
@@ -28668,6 +28938,7 @@ ddb2366a0a1cb8ef53853217,pair,,P20260810-4F86525177,2,false
 ddb31c675748101dae4b5ed5,isolated,,,1,false
 ddb686d3a4d7c7fe951f92dc,episode,E20260820-D906B3562F,,4,false
 ddbb85d7405c33c18525d783,episode,E20260716-162CE93B95,,4,false
+ddbd1678b720e24997dfe721,isolated,,,1,false
 ddc6000fa81d981162a72779,episode,E20260810-257A2FF44E,,57,false
 ddcb934bee641aa5fb2c58b9,episode,E20260901-9F0151580A,,5,false
 ddcbc835a27a0f52f66c5885,isolated,,,1,false
@@ -28771,6 +29042,7 @@ de8c7516b305b90f0f9614c1,chained,E20260810-F33941669D,,186,true
 de92aca54b8afaab7ac674b6,chained,E20260820-53359FE259,,75,true
 de944e2c8d47f93e55012377,isolated,,,1,false
 de94db1051ebf58381db5f15,episode,E20260714-011488BDF9,,66,false
+de9815d5b4f66cf60e105c67,isolated,,,1,false
 de998b3e1fade9b6ace276bf,pair,,P20260714-C9422EE959,2,false
 de9d14c68ee7ef7314552252,isolated,,,1,false
 de9d2f83fd04f1a4989e85cf,episode,E20260815-DCD9E0A574,,3,false
@@ -28797,10 +29069,11 @@ debb2becf9fd47944c831461,episode,E20260718-8918A546B2,,3,false
 debb48a06b7f7646795f8b55,isolated,,,1,false
 dec1805a41ff93c3cc086e37,episode,E20260802-4264360E22,,9,false
 dec5b9408e8eff733a1a278a,pair,,P20260716-5E376BD94F,2,false
+decb8480d7534ec7b0a43495,pair,,P20261006-326266B703,2,false
 decb871ea992efd4a8044a8b,episode,E20260801-35EF30C21E,,4,false
 deccef3c66376dd843296cdb,episode,E20260810-4E57BA93AF,,28,false
 dece10ef9298a60f578ec333,isolated,,,1,false
-decf5057bcabd2b9c9b3cf05,isolated,,,1,false
+decf5057bcabd2b9c9b3cf05,pair,,P20261005-2E617F36EE,2,false
 decf7b276720d1bda75d7704,isolated,,,1,false
 decfd3c49bfcefb9913c9ca3,pair,,P20260823-C991C58FF3,2,false
 decfd4e0a2de4c061a03d117,isolated,,,1,false
@@ -28986,6 +29259,7 @@ e02ee600467c962c390cc4b7,episode,E20260808-868C9582AE,,4,false
 e03321b3c6612a3053df8742,episode,E20260717-60B0D90426,,3,false
 e03395da115ff343a381aa0e,episode,E20260716-C4CB4602BD,,4,false
 e034b727d08389ece2b7688f,episode,E20260818-B5A024FFCC,,3,false
+e0360d2aa56529b9ebea4098,isolated,,,1,false
 e03be789b6458a2207ba9f1f,pair,,P20260714-26FAAE9E19,2,false
 e03cfa7bb2e8a51c864b5df8,chained,E20260908-965D6C1678,,30,true
 e03dbfaac96b9d052062af14,episode,E20260812-363BEBE373,,10,false
@@ -29130,6 +29404,7 @@ e14509d07119f81540ec85df,episode,E20260714-F75E55FF1C,,7,false
 e145244573ee4c8651053bcb,isolated,,,1,false
 e14a0ca019d73e2fa35d44c2,isolated,,,1,false
 e14d17f57c6df948aa80bf51,episode,E20260823-4A95F40D3F,,10,false
+e1516a82ac3538f285605325,isolated,,,1,false
 e1534553d57b2cc14499a891,episode,E20260912-3760B62784,,40,false
 e1537bc3066aaa343c1f99bb,episode,E20261004-CD7A82A1D8,,3,false
 e15502dfbd4d2e98b0259080,episode,E20260812-F3AAEC6B57,,3,false
@@ -29137,6 +29412,7 @@ e1594be39a80b7e9098f9677,episode,E20260909-C911442005,,49,false
 e15a119efa33af60fc780050,isolated,,,1,false
 e15b24293ff59317c3dbded7,isolated,,,1,false
 e15b26f62ff27f0a3a448615,pair,,P20260808-B3B40776BE,2,false
+e15bad077ea66c574140fc63,episode,E20261006-2E5D4B815F,,4,false
 e15c39fe584585c19ac9b8a4,chained,E20260908-965D6C1678,,30,true
 e15ffcc5a0df2e3eb6e8e44b,episode,E20260901-BD6DD3439C,,5,false
 e160ae1eac07bd83f30c2d4c,episode,E20260716-C44BE499DA,,3,false
@@ -29226,6 +29502,7 @@ e1fb4f9c009c061957cdbac9,chained,E20260920-87DA3A22EA,,135,true
 e1fb87b2eb3603f9a14ec3e2,episode,E20260801-FB61EB5363,,10,false
 e1fcca7fb2769b9a3c4773cf,episode,E20260923-AD29E792A5,,6,false
 e2011b4504decad6250c0c4a,isolated,,,1,false
+e20293937e584d705b37dd20,isolated,,,1,false
 e203c4d80a6847724f7b4160,isolated,,,1,false
 e203ef9d056ed35a695d4c1e,pair,,P20260824-EE04EFE281,2,false
 e206461330d119bb790a7b37,pair,,P20260801-D8647E54D7,2,false
@@ -29550,6 +29827,7 @@ e481fd0ab16ca857735b5862,isolated,,,1,false
 e4828dc510eaf55f771ad968,isolated,,,1,false
 e485c85a3cd9aeb9af541784,chained,E20260918-F928689AF5,,136,true
 e485e804303827c41439a984,episode,E20260721-6C3B9AD9B7,,12,false
+e486d5e2597bc8818f0fb3ca,episode,E20261006-7555B6FDBE,,3,false
 e48d20224c5e9e0ad9351b03,isolated,,,1,false
 e48edb38352624fcc3ba09bc,episode,E20260717-0170D71692,,7,false
 e491ab53b59693a5f5618bd8,isolated,,,1,false
@@ -29596,6 +29874,7 @@ e4e6520b172c9830213fa385,isolated,,,1,false
 e4e898125c93a2c9edaa12c3,isolated,,,1,false
 e4efb75e987045197ecd37cd,episode,E20260825-504ED8BFE1,,3,false
 e4f0e775b97902f95c419f1a,episode,E20260922-E88FC326BD,,15,false
+e4f43aef7b48a458e08f3d61,pair,,P20261006-0BFE135481,2,false
 e4f586478a04e916e0722e51,episode,E20260808-9D687E64D7,,3,false
 e4f5d3071c1b3b88fa1cac3b,episode,E20260705-78BDAEDA94,,3,false
 e4f7863a07d74d5c7ad089bb,chained,E20260810-D254CA7C05,,104,true
@@ -29789,6 +30068,7 @@ e66f2cd52f08e2d32dba1f9a,isolated,,,1,false
 e670bdb812cfe88757894f9e,isolated,,,1,false
 e679dc301441f2cf1f1b926c,isolated,,,1,false
 e67c323d450cb4a7b387ec87,isolated,,,1,false
+e6818180edca01efb6ccda6d,pair,,P20261006-1D31FF155A,2,false
 e683ab42a68a7fad81875623,pair,,P20260820-AE0F803711,2,false
 e6868814c33e24b0c3a9f99f,isolated,,,1,false
 e687950a5d5b3dc4603ac57e,isolated,,,1,false
@@ -29925,6 +30205,7 @@ e788bba90be9158f485b76ef,episode,E20260930-831FE92314,,4,false
 e78a6a7dbfad215828f11a5a,pair,,P20260714-0E7203391A,2,false
 e78aea14f09c4d66b9c47915,isolated,,,1,false
 e78c0f54df3df19f297f43bb,pair,,P20260821-996CE85B5E,2,false
+e78dc31b15b9f07bf883dba4,pair,,P20261006-8A0E5F78A2,2,false
 e790bb551082c895c1b41add,chained,E20260920-87DA3A22EA,,135,true
 e790dd7ec92a7d4ade331867,episode,E20260808-79803B8409,,5,false
 e79535d7938e143445eb24c8,episode,E20260908-1655979CF1,,3,false
@@ -30353,6 +30634,8 @@ eac9bdf4f13898dceab10b4c,episode,E20260812-5A481DE259,,15,false
 eaca04bdde16b03ddea558ba,episode,E20260811-FDB67F5E19,,15,false
 eacad8dd2d6af769683f1156,episode,E20260808-ED64BEEA5E,,4,false
 eacb2537abb2743a977986dc,pair,,P20260810-05E1CB77F7,2,false
+eacd18843a802487ba11b789,isolated,,,1,false
+eacda2d80861d00baed78163,episode,E20261006-6EDCB2C641,,3,false
 eacec4f2c2c150305495ab6f,isolated,,,1,false
 eacfcd06d3ff0cbd546132c7,episode,E20260721-510B19ABB2,,7,false
 ead103709a968218bfc3f1d2,pair,,P20260809-E735CEF4B3,2,false
@@ -30523,6 +30806,8 @@ ec18fd036b42e62268c9aa9f,episode,E20260801-ECD20652B9,,3,false
 ec190922f86bde17b04dece1,isolated,,,1,false
 ec1f768329ebc0b84d5d1610,pair,,P20260729-149D6D89FC,2,false
 ec211d81731ecc2988f2d261,episode,E20260715-1ADE9C49F0,,5,false
+ec215d98d475158690408b27,isolated,,,1,false
+ec217fa60d89e5e2647e2279,episode,E20261006-032E8ACCE9,,19,false
 ec240adaeb865bd438f4ab7a,episode,E20260929-0D0A68FE1D,,4,false
 ec2bc407a6e8c9b9a65cd34e,pair,,P20260811-FC1409F643,2,false
 ec2d9c090ba847cc2a6ff5e9,chained,E20260803-A13A88BA0F,,60,true
@@ -30559,6 +30844,7 @@ ec6267b1736b29acd5ea4bda,isolated,,,1,false
 ec628c02b0047a922d814eff,isolated,,,1,false
 ec62d57b5c9888acd1071cb9,isolated,,,1,false
 ec6629a9da21ae77c6713d19,pair,,P20260813-1EEA51487C,2,false
+ec6643493dddb4e3828203ef,pair,,P20261006-0BFE135481,2,false
 ec669fc9b7a4db2374768e1c,isolated,,,1,false
 ec6cb1a4355b1a49f60426f7,episode,E20260825-9A259A6C72,,10,false
 ec6e63f3b77b36c0e8fe9bd4,episode,E20260810-883EF373C6,,4,false
@@ -30581,10 +30867,12 @@ ec845fe61c80f10418665550,pair,,P20260718-B2506990CD,2,false
 ec865004f14eb4ce8ec5705c,episode,E20260907-44F46711EE,,3,false
 ec88a0f718b396434ce3c4f0,episode,E20260813-303D0F0404,,17,false
 ec8bb03ed082b128223ce52d,pair,,P20260907-3AF709BCE4,2,false
+ec8bece6db7c2887b2cb2419,isolated,,,1,false
 ec8fe689ad2dcb6f6faf2f05,episode,E20260721-7110D92EDC,,19,false
 ec93b51a57e3f046d620a23e,episode,E20260820-8CEB2AB397,,9,false
 ec9420be57d6e875372a4f7d,episode,E20260701-AECB8E0AFB,,6,false
 ec95fdc67ed017696708f1c9,pair,,P20260725-E1CC1965DE,2,false
+ec9858bd06dd9a5896dba90b,episode,E20261006-032E8ACCE9,,19,false
 ec997fa3b4c113d6ec2b90e0,isolated,,,1,false
 ec9d485f881f21a02a5f650b,isolated,,,1,false
 ec9e15ab1c6be044f16d350a,episode,E20260715-C4E0286A42,,5,false
@@ -30593,6 +30881,7 @@ eca1b531168aadb87ea94dd3,episode,E20260820-357513F14A,,16,false
 eca3fe4970d52b03e58e5fda,episode,E20260717-2619F5165F,,6,false
 eca4cf254d25d4a214434f06,episode,E20260821-9BBA299957,,3,false
 eca5683d852845ebbb001e80,episode,E20260912-52E441452D,,4,false
+eca6f946d978b33486caff2c,pair,,P20261006-B7C667AD1E,2,false
 ecab263a5752fb956cb4bada,pair,,P20260729-1E005B1328,2,false
 ecacd2294ba25b0c312de737,episode,E20260825-0D85086AB4,,19,false
 ecad0b23c63c74c527659c5a,isolated,,,1,false
@@ -30669,6 +30958,7 @@ ed3e50016b0c5238a27e1795,episode,E20260818-F845400784,,3,false
 ed3f7105ce25601477707568,episode,E20260920-8AB82BDDCA,,11,false
 ed40a9f96b2e30131f4f86f3,episode,E20260924-E6D72FFDAF,,26,false
 ed43df490330c3318c57f6d7,isolated,,,1,false
+ed44de0c1ac113a6f36af1cf,isolated,,,1,false
 ed46c6a9e414f323887106e9,pair,,P20260812-B8DF994BB9,2,false
 ed4963109194b9204c8c952f,episode,E20260711-9553A37640,,11,false
 ed4c9815f90e8fddf7c11f2a,episode,E20260906-C198220074,,43,false
@@ -30701,6 +30991,7 @@ ed824081ef8e25ad0625aa27,pair,,P20260812-D74237C84C,2,false
 ed82a086c866022cf64026a9,isolated,,,1,false
 ed84617ffb8f530ff660e064,pair,,P20260821-F52B3BF58D,2,false
 ed857ed31307c056ec436d5c,pair,,P20260815-B56642C14F,2,false
+ed85bb0c7135918214eff74f,episode,E20261006-3364864559,,4,false
 ed88a6610273adff4076cbf1,episode,E20260809-C2EF60A33D,,8,false
 ed88f4a53748339a72624fa4,pair,,P20260724-5B4A34D50F,2,false
 ed89d723099fbfb87ccb2d6a,episode,E20260902-BCFF7E595C,,5,false
@@ -30765,6 +31056,7 @@ edf84fd88469f2c7a04f3c90,episode,E20260801-9C9F7CBA20,,3,false
 edf86314d07f087e5a64e9a7,isolated,,,1,false
 edfd1e1001e549c192e69949,isolated,,,1,false
 ee000a08e71eb00d66925289,isolated,,,1,false
+ee009a5f7331132547db61e3,pair,,P20261006-326266B703,2,false
 ee025db7f517affacb5cd1e8,episode,E20260923-ED83E18877,,4,false
 ee0733ddd22d97731e3bcc03,episode,E20260930-4623930E28,,5,false
 ee07d25019badb81ba4ce347,isolated,,,1,false
@@ -30952,6 +31244,7 @@ ef72924b6d69a3c1429f90fc,isolated,,,1,false
 ef759cee186baa6e6bd237df,isolated,,,1,false
 ef7669aef799d7f24ef00f20,episode,E20260807-154D571062,,3,false
 ef76d29109186a6c52b1ada8,episode,E20260906-AF332199BA,,15,false
+ef7b28af6b56e8c296014fce,isolated,,,1,false
 ef7dafe90016750afbf17546,isolated,,,1,false
 ef804f73fcce83af3f114925,episode,E20260905-5453D36BDF,,6,false
 ef81ef0c21b9edbe4f86b1fb,episode,E20260713-78BABCF823,,7,false
@@ -31189,7 +31482,7 @@ f11af15353b7a78fd59c54c9,episode,E20260809-EE9D5088B3,,5,false
 f11b1610c61e3094f9fdbdd9,episode,E20260721-9BBE50C254,,4,false
 f11d165a4b0266ef80928e05,pair,,P20261005-52C544C9FB,2,false
 f11e5d8856f73a97eadb9a4c,isolated,,,1,false
-f1219446ca0fe200d8956bee,isolated,,,1,false
+f1219446ca0fe200d8956bee,pair,,P20261005-618C3A6DE4,2,false
 f1220b34e7a252d990db68aa,isolated,,,1,false
 f124222b95e231a6810bd9ae,isolated,,,1,false
 f12473bf33f0b7d286054c70,episode,E20260827-EED954B8F6,,5,false
@@ -31249,6 +31542,7 @@ f19590b8405f63016371ee40,pair,,P20260812-9361CAC96F,2,false
 f19bafff65d29c3e599d0fcf,pair,,P20260709-00A2BEFF8E,2,false
 f19f992d2a96a31cdfcc796d,pair,,P20260821-EBA2513C38,2,false
 f1a04dea1cdb9c379443082f,chained,E20260810-F33941669D,,186,true
+f1a1826154027650c221298a,isolated,,,1,false
 f1a1f8f2dd5112b1f883374e,isolated,,,1,false
 f1a21965e1a2ff251eb5752c,episode,E20260810-41A4DF004E,,6,false
 f1a7756c6c6277d02833e4fe,episode,E20260909-C911442005,,49,false
@@ -31256,6 +31550,7 @@ f1a8fcdc8806fa7e8e3fa98b,episode,E20260904-AE88BD766D,,7,false
 f1aa14f6dcdcaf5e2c6ddca0,episode,E20260715-841FEBF461,,20,false
 f1aa2e615d1b932fecb5a34c,episode,E20260813-01312744D4,,6,false
 f1aa6d6f421ee12f4b40238a,episode,E20260718-D4C4C19D3E,,4,false
+f1adc66147722b762b6fc14c,isolated,,,1,false
 f1aecf23a31a4c2eb0bcfba6,pair,,P20260916-F7FCACF536,2,false
 f1b043d2a8881bc158e4d774,episode,E20260801-9C9F7CBA20,,3,false
 f1b5569cd17d740ff85b3f52,pair,,P20261004-E91A1DFBE9,2,false
@@ -31342,6 +31637,7 @@ f24fc5966e5b677ca0a1c826,episode,E20260811-61D5C2BB5E,,9,false
 f24fe4d1d3ca52bced2fae8c,isolated,,,1,false
 f25187feed10178c216d3b6a,episode,E20260914-6EB3EBCEBF,,4,false
 f2524911c431943a0f39b352,pair,,P20260701-1E5B0A49FB,2,false
+f256fddcdcbac1b3710c66fc,episode,E20261005-8C8B56F183,,4,false
 f25893e65d3503af4bfd0950,episode,E20260814-075F00F619,,3,false
 f25c9774b1201e52ace050de,pair,,P20260910-B990BC4793,2,false
 f25d1d725054abb113521da4,episode,E20260921-35E8AA8DB7,,20,false
@@ -31437,6 +31733,7 @@ f31158191e1deeca74ddeec2,chained,E20260918-F928689AF5,,136,true
 f315a5719f29ad12c2137522,episode,E20260921-76DE275771,,31,false
 f315dacba5122e0e2559e37c,episode,E20260831-0FDA9E4785,,6,false
 f3165b5b8d8aa4f73cb0d903,pair,,P20260901-0C7A19EFAB,2,false
+f3177f0fb56be885ea5f0f31,pair,,P20261006-18680416B0,2,false
 f31bd9399c2f1b8fd171c4e4,chained,E20260810-D254CA7C05,,104,true
 f31fa02cd373f888db6dd06b,isolated,,,1,false
 f321422e4f1ab34d03902a46,chained,E20260810-D254CA7C05,,104,true
@@ -31520,6 +31817,7 @@ f3a01e59c51dae1dc5532d74,episode,E20260716-3BD6DD5FAD,,16,false
 f3a0610940d9ed2a61c5bba7,chained,E20260810-F33941669D,,186,true
 f3a2e13b4fcdc88ed069651f,chained,E20260823-0EA2788958,,21,true
 f3a2ed2ddfa7fb48787dd863,episode,E20260716-171EA62857,,9,false
+f3a35404501560f807caa362,pair,,P20261006-5BA9629665,2,false
 f3a445bf9e143a512b6e5a6b,isolated,,,1,false
 f3a54fe8f53b9070abf1466a,chained,E20260920-9194EF7683,,93,true
 f3a582ae80bc0b2dddbaff08,chained,E20260920-9194EF7683,,93,true
@@ -31527,6 +31825,7 @@ f3a669962e1ad0e0880eeeb9,episode,E20260913-6606B4A027,,9,false
 f3a8b79930a542b72145fd2a,episode,E20261005-8307953A4B,,3,false
 f3abb8ecfcac84248f5eb756,isolated,,,1,false
 f3addc87d7fb566dba15bfc0,episode,E20260820-A2B08D501A,,4,false
+f3ae5443285675fdd25865f7,isolated,,,1,false
 f3afb6ea14497e9662b3c06f,episode,E20260825-03CC68A158,,7,false
 f3b7abdf96eb00de95586e9f,isolated,,,1,false
 f3ba941926521395f7f6769b,pair,,P20260908-7F0BE2CCBB,2,false
@@ -31610,6 +31909,7 @@ f44498c41b016def556da8b9,episode,E20260908-6CA7D487FE,,3,false
 f4452ef822b5d3ce2a22e656,episode,E20260706-158995005A,,5,false
 f447987db3fdc26ca1e4c366,pair,,P20260728-830A795E23,2,false
 f447b30dfbf2bc9f092f8572,episode,E20260812-1976B52BF2,,3,false
+f4489bf35d45d00c2b902a43,episode,E20261006-032E8ACCE9,,19,false
 f44fb4e2e0432e16da409969,chained,E20260808-39346BDFAC,,21,true
 f4524872423a5cedce00fb13,episode,E20260801-9C9F7CBA20,,3,false
 f4524db9200217afd3138f13,isolated,,,1,false
@@ -31624,6 +31924,7 @@ f46054f419d6435ceb105110,episode,E20260808-ADD3309C9B,,7,false
 f46440176dd398dbf3ce2021,episode,E20260827-06D88719CC,,3,false
 f46929f34ab6c0d4d7dd5a7b,isolated,,,1,false
 f46ce6068b4d4bc5456a9105,isolated,,,1,false
+f46e6f6a1d1f0cc46bda3ffe,episode,E20261006-D597ACB61E,,5,false
 f470de8d9a31ae0756350484,isolated,,,1,false
 f47228980b851f3eb740bb12,episode,E20260911-33F0324F98,,9,false
 f473bb583e4027c8c3797978,isolated,,,1,false
@@ -31634,7 +31935,8 @@ f47607c78c86b87b090f870e,pair,,P20260717-C2710F324D,2,false
 f477a38ee9715ac5e6cc3aa9,isolated,,,1,false
 f47922771c3d78a68897e9bf,episode,E20260810-E4E5D1034C,,8,false
 f47a10d67debe5384e595945,isolated,,,1,false
-f47d7e09643ae99f0db64e38,pair,,P20261006-93BACFF84A,2,false
+f47d7e09643ae99f0db64e38,episode,E20261006-93BACFF84A,,3,false
+f47e2d428307b6b37667034f,isolated,,,1,false
 f47fe9ad15e118646cd3e1ca,pair,,P20260902-CE23574F86,2,false
 f480013cae26d982744d5096,episode,E20260810-2671E429E4,,3,false
 f482158449b62c02cafb7004,isolated,,,1,false
@@ -31644,6 +31946,7 @@ f485cbf610a7e2a035428932,isolated,,,1,false
 f48bb50611c04843d5ffb20b,isolated,,,1,false
 f48c3bc46c7f2958afe67ed4,pair,,P20260824-26D5E955F0,2,false
 f490c2836d2a6d6b9d0f5082,episode,E20260810-8A1893D848,,18,false
+f498951bbae406981eba4a1c,episode,E20261006-032E8ACCE9,,19,false
 f49ada97d635d71553c16e9e,isolated,,,1,false
 f49df9141128e519292c5ebb,episode,E20260714-9372A08341,,4,false
 f4a0180d5df5566b4325138f,isolated,,,1,false
@@ -31693,6 +31996,7 @@ f4f7c4954e1b421c087bccf4,pair,,P20260717-BF7A7D7123,2,false
 f4fb4722198a7a094cc6e993,episode,E20260811-03040CD9C1,,4,false
 f4fc32bbf288759864d73564,episode,E20260909-94BC586271,,4,false
 f4fe5a87cd073f700541cbba,isolated,,,1,false
+f4fe852725d130a62cd4affc,isolated,,,1,false
 f4ff11ba7855a52948035352,isolated,,,1,false
 f50043c55405476f6891cf27,isolated,,,1,false
 f501b3dda88ca5815498b573,episode,E20260824-6C4EE042B2,,4,false
@@ -31725,6 +32029,7 @@ f539b31c4b945966119f9797,isolated,,,1,false
 f53cd2bb82a3ce114329df44,episode,E20260714-011488BDF9,,66,false
 f53de618545bc0b531e21812,episode,E20260911-3E7BF991CA,,9,false
 f542f47f55194713cd7791e8,episode,E20260831-7466408E85,,6,false
+f5430f20f5330a370c685dbf,episode,E20261006-6EDCB2C641,,3,false
 f5432ca7305781aca84611f3,episode,E20260925-39ECC6E2C4,,5,false
 f543e7a0dda6e364bd5b1ed2,isolated,,,1,false
 f54442afe840e292dc13a669,episode,E20260923-7D1D0D21AC,,3,false
@@ -31748,6 +32053,7 @@ f56c2c26d4be7d31f2c9147f,episode,E20260921-9FBF6B959D,,3,false
 f56d2ee1b28932bcd811ac2b,episode,E20260905-A1C3833EC9,,6,false
 f56d7d5f138bc1350d0c95a7,isolated,,,1,false
 f56e9330943c90ae578a3c2b,isolated,,,1,false
+f56f6afefd01af8daf3e2339,pair,,P20261006-CC1E4E4283,2,false
 f56fb9acc3ee062690f931ce,episode,E20260728-637CD0DB43,,6,false
 f570ff960e617368b3c4897d,episode,E20260917-E1FC4ED94B,,17,false
 f5763cbf24cca17edba7147a,pair,,P20260811-41E4CA952B,2,false
@@ -31774,6 +32080,7 @@ f58f5485e9c99c0787cabbb3,episode,E20260716-B2B00E27FF,,4,false
 f58f6798b936f031669f55ec,episode,E20261005-53B4DD505D,,4,false
 f591cba1b1755a2591af1441,isolated,,,1,false
 f592e0fe754ba7822567abc7,isolated,,,1,false
+f593c32e8abe2e94a8df5683,pair,,P20261006-8A0E5F78A2,2,false
 f593f179daca6e8bcfe6208c,episode,E20260717-5F1949A7CC,,4,false
 f5964b4df04fd5f5a74172b3,episode,E20260810-1044897661,,3,false
 f596ffb9c2b81c6e3b8573bf,isolated,,,1,false
@@ -31875,6 +32182,7 @@ f64f5250d07cae942c720c3a,isolated,,,1,false
 f6535deb64d0b778e601a974,pair,,P20260705-ED1CEB007A,2,false
 f655eb4fcc3efd4928335897,episode,E20260824-27B3793B2E,,4,false
 f65c74bb87e431e5fac8c53a,pair,,P20260809-51668E2FB6,2,false
+f65d4ecf6da4e7bee250cc4c,isolated,,,1,false
 f65d7d505d689ef9cc998baa,pair,,P20260703-57D5F15A85,2,false
 f65f976bb7a92e386d155bfe,episode,E20260912-FA66A79BA1,,4,false
 f66547f1e07e3261fc917bcc,pair,,P20260820-DE4C6AFDDE,2,false
@@ -31891,6 +32199,7 @@ f67e181245ea009e3b41cd9d,episode,E20260730-C9B4AF61B1,,3,false
 f6808cc7f8b29e321a255fb1,chained,E20260810-F33941669D,,186,true
 f6832447834b513b1f131e73,isolated,,,1,false
 f684fefc83d4197f0a5bacd3,isolated,,,1,false
+f68541b02a52283e25abf5e6,pair,,P20261006-2C00B2D237,2,false
 f687602e8caee5a3f7e2d652,isolated,,,1,false
 f68879c249dc058b25a7800a,isolated,,,1,false
 f6895113cb8b873ba7eb3e11,pair,,P20260812-9F21489ED7,2,false
@@ -31934,6 +32243,7 @@ f6d2de1a4cb336f4e5d71cca,episode,E20260823-949FD70612,,15,false
 f6d325ca4722cf7d21a8b9ab,isolated,,,1,false
 f6d58f16c626cf984ab1a515,isolated,,,1,false
 f6d60de6506401bba6283b90,episode,E20260918-8B225D3D31,,37,false
+f6d76471476b1b9d6ccbc209,isolated,,,1,false
 f6d77b75ac8c598c55f1de3b,pair,,P20260711-FF369A1527,2,false
 f6db2718114b09b122df368a,episode,E20260706-C09DF6B91A,,12,false
 f6dcd4348a8a6b95abcaa2df,chained,E20260920-87DA3A22EA,,135,true
@@ -32127,6 +32437,7 @@ f8666c9710046ba4b2864ad2,episode,E20260811-BD79070553,,19,false
 f8667ec4e6dbb941f103e2f4,episode,E20260725-941F87BCAD,,3,false
 f86b8ed7c00605eb7a31385e,chained,E20260809-A107DB613F,,232,true
 f86ff1a053a7725a3bd37f95,isolated,,,1,false
+f87063e714436f8af2a24fbb,pair,,P20261006-F9B8D8E532,2,false
 f872d424dad459be7420c057,isolated,,,1,false
 f87ab6b77643c1ac2bc2de31,episode,E20260922-D9690E4282,,18,false
 f87bebe1f20f68b289df1ed3,isolated,,,1,false
@@ -32181,6 +32492,7 @@ f8d4506193d77c3b71a55b21,pair,,P20260802-C42E8C8654,2,false
 f8d7a053af12c1edb767154f,episode,E20260730-6B5F94A149,,4,false
 f8d8ed9fbef22dcb60398b7f,isolated,,,1,false
 f8da55a59dfcf4db0e8bfbe6,isolated,,,1,false
+f8db077e9668167b7cc4138d,episode,E20261006-2E5D4B815F,,4,false
 f8de6b2575daf392326c5d44,pair,,P20260831-3CC43E218F,2,false
 f8df8dcb2a97ddc4c90da240,pair,,P20261005-D35B579FAB,2,false
 f8e2dd783b321872c12e35ee,pair,,P20260807-84131F2FE2,2,false
@@ -32468,6 +32780,7 @@ fb060af56b7fc97c5a0e148b,pair,,P20260810-42AFF9A42D,2,false
 fb079fe26e232a906f2108d2,isolated,,,1,false
 fb09152a8412153f23e41e5e,pair,,P20260814-7279B9865E,2,false
 fb0959426d0bd7d3e2ed42d2,isolated,,,1,false
+fb0b0b24b2d562d23616fd15,isolated,,,1,false
 fb0e951e241daa46682c741c,episode,E20260814-6E1B08AC4D,,30,false
 fb102afd5b26571e4f91bd45,pair,,P20260901-F5FF088828,2,false
 fb120bdba9054ef09f08034d,pair,,P20260901-8B9628AA68,2,false
@@ -32653,6 +32966,7 @@ fc67a4882fb83445dd5687db,pair,,P20260717-475A9523BD,2,false
 fc6a329551e89a5b9b584167,isolated,,,1,false
 fc6b5fdd13c18f9493843ff1,pair,,P20260814-DC6DE491D6,2,false
 fc6c7e3722e37d74d52612f3,episode,E20260710-EE2F06E34A,,7,false
+fc6d074a1a1a89db4a4e2acf,episode,E20261006-9F38E2792B,,5,false
 fc6e168a09b63fa0a6676db8,episode,E20260804-5006556470,,3,false
 fc700ce16aadba9aa3377cd2,episode,E20260808-20E73DF204,,5,false
 fc715caed01277adeb89fe49,isolated,,,1,false
@@ -32735,6 +33049,7 @@ fcf240bf3bf71f8275f9abfb,chained,E20260917-0E11F1777A,,45,true
 fcf39ff60ed0eeb4f50d5e39,isolated,,,1,false
 fcf4329319a92a9882931e40,isolated,,,1,false
 fcf7ea03b4da26a750dccd99,pair,,P20260809-161830BC49,2,false
+fcf8d0dbdbedf12ee2dc237e,isolated,,,1,false
 fcfb1ac3356b4e0db5670926,isolated,,,1,false
 fcfba804d8e1fa61666a7467,episode,E20260914-B05F40BDE4,,4,false
 fcfbdcc68e63bf89d69c0d07,pair,,P20260716-39227BB26B,2,false
@@ -32826,6 +33141,7 @@ fdb29be0416f9a36b17abc8d,pair,,P20260923-8664CEDA4A,2,false
 fdb4580e271c61cd07fc6c58,episode,E20260717-EA230684B0,,7,false
 fdb71e47b9e17c3e035ddb8c,pair,,P20260827-2185B63A05,2,false
 fdbc051d21b8293da106af03,pair,,P20260927-74EEE15E76,2,false
+fdc10ec141d05668bad462d4,pair,,P20261006-7C2A798D52,2,false
 fdc17a75ed8e78aeb7dcdfa6,pair,,P20260929-2A298FE01F,2,false
 fdc1ab7bea8f0334b5275701,isolated,,,1,false
 fdc26d9822036f20f90da206,pair,,P20260807-08F7328015,2,false
@@ -32862,6 +33178,7 @@ fe04aec14b8b8e2016d4982c,pair,,P20260923-057306A6FD,2,false
 fe058979037d27fcfbce3e25,episode,E20260930-8FD5BE1B34,,13,false
 fe067de5f9eeb8dca342e835,isolated,,,1,false
 fe0a6e5da7e6f0bfc6e9580c,episode,E20260922-3FB1773953,,3,false
+fe0b901c3f493cd21c2a4b40,isolated,,,1,false
 fe0f5e8ccf4687beb3721f15,isolated,,,1,false
 fe116cd96f249ecfed1e36ce,isolated,,,1,false
 fe11fd52e596a59e1ebc8649,pair,,P20260716-AE968CFB73,2,false
@@ -32872,6 +33189,7 @@ fe1afa97e3ed957d32486a93,isolated,,,1,false
 fe1d8ba96fc1ed64a177f718,episode,E20260811-6F5FBFA07C,,4,false
 fe1e8759329ce9fecea78feb,isolated,,,1,false
 fe26187c7a510b91f63790bf,episode,E20260901-BD6DD3439C,,5,false
+fe2697ac03e60e9f9c9144b5,episode,E20261006-B3AB01DFE0,,3,false
 fe2b5d0b395795b9a6d7c3c6,pair,,P20260717-D747615515,2,false
 fe2c4b936b17ec5d32a09f0d,isolated,,,1,false
 fe2db3680611380976e4c8ea,isolated,,,1,false
@@ -33006,6 +33324,7 @@ ff4644de312a2646f4eeaadf,episode,E20260820-44C0C5B747,,4,false
 ff497ab709e6338f82a16c1d,episode,E20260812-22388E598B,,3,false
 ff4a394c51558f8ef88be76f,episode,E20260911-BE5B5D49D0,,6,false
 ff4ab93f5f5b69df3684fb6d,episode,E20260919-1185F613D9,,3,false
+ff4b3c2afd107ba06560511e,isolated,,,1,false
 ff4bc6b816434e80417de4a0,isolated,,,1,false
 ff4cc2165313ba3ab010166a,episode,E20260811-6C7D015B8C,,3,false
 ff4cdadea6c6e8fe1888a75f,chained,E20260809-A107DB613F,,232,true
