@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-22T11:59:43Z",
+  "generated_at_utc": "2026-10-22T17:15:34Z",
   "policy": {
     "history_mode": "cumulative",
     "history_start_date": "2026-07-01",
@@ -33,7 +33,7 @@
       "month": "2026-10",
       "path": "processed/hotspots_2026-10.csv",
       "rows": 5900,
-      "sha256": "2331bea2ab04960b7dffbb115ceefd2485d3064080edc9cdd9653ce502bd48a9",
+      "sha256": "b0897a0ef2375ec52bd28e8f688e52d1488103640fc223ff5dd73e1b8fd61e11",
       "size_bytes": 1368341
     }
   ],
@@ -1470,7 +1470,7 @@
     },
     {
       "date": "2026-10-20",
-      "downloaded_at_utc": "2026-10-22T11:59:43Z",
+      "downloaded_at_utc": "2026-10-22T17:15:34Z",
       "last_modified": null,
       "path": "raw/2026/10/Puntos_de_calor_Colombia_2026-10-20.csv",
       "read": 177,
@@ -1483,7 +1483,7 @@
     },
     {
       "date": "2026-10-21",
-      "downloaded_at_utc": "2026-10-22T11:59:43Z",
+      "downloaded_at_utc": "2026-10-22T17:15:34Z",
       "last_modified": null,
       "path": "raw/2026/10/Puntos_de_calor_Colombia_2026-10-21.csv",
       "read": 78,
@@ -1496,7 +1496,7 @@
     },
     {
       "date": "2026-10-22",
-      "downloaded_at_utc": "2026-10-22T11:59:43Z",
+      "downloaded_at_utc": "2026-10-22T17:15:34Z",
       "last_modified": null,
       "path": "raw/2026/10/Puntos_de_calor_Colombia_2026-10-22.csv",
       "read": 8,
