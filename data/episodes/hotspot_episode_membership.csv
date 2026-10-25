@@ -214,7 +214,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 01807e4a7772a4fe485b764e,pair,,P20261013-DF6328A6DC,2,false
 0181742f6d910d9bcdb62cdc,episode,E20260819-3C05D5A0A5,,3,false
 0181a8d165f53ef4f1fb212b,pair,,P20260906-80C162CB80,2,false
-0183284faf51415b9b306ad1,pair,,P20261025-BAB2C12797,2,false
+0183284faf51415b9b306ad1,episode,E20261025-BAB2C12797,,3,false
 018a066b09483921ba045964,pair,,P20260901-1D811C1B9F,2,false
 018c6a4a0b75959699ef7e46,isolated,,,1,false
 018ecdd38015bb69b0845e70,isolated,,,1,false
@@ -4129,6 +4129,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 1d05df0a938e603ed639bb37,isolated,,,1,false
 1d0a295c6927541d20d233b5,episode,E20260809-288F48D474,,5,false
 1d0b8827e49ad727732a93aa,episode,E20260912-562ADD4AF5,,3,false
+1d0c0e18368448b8350032e2,episode,E20261025-BAB2C12797,,3,false
 1d0c8ed59ad65b646261e6d7,episode,E20260715-84028EEA5B,,8,false
 1d0d4769859ec6fba95ba450,episode,E20261004-0667485274,,5,false
 1d0d556057c21588c27b0599,episode,E20260922-77C0B575B3,,12,false
@@ -20811,7 +20812,7 @@ hotspot_id,episode_class,episode_id,candidate_id,group_size,chained
 9098721757d4a7d236f78f2e,episode,E20260716-7A046FC3EF,,4,false
 90994fcd654f70f2e9c1b459,isolated,,,1,false
 909984584281b5646c093371,episode,E20260930-03A22C3E98,,6,false
-909aedac42ae06edfcc2265e,pair,,P20261025-BAB2C12797,2,false
+909aedac42ae06edfcc2265e,episode,E20261025-BAB2C12797,,3,false
 909b64bf7ff44b73132ef737,pair,,P20260807-4E794799CC,2,false
 909b9fcdfd6275bef99ff479,episode,E20260906-C198220074,,43,false
 909bd153964822748fd54f5a,pair,,P20260903-6F54D432BC,2,false
@@ -26431,6 +26432,7 @@ b72d63c39d17e480c69dc9c6,episode,E20260810-5262908277,,3,false
 b72f15bf5fc2e0380525d980,isolated,,,1,false
 b72f663129a33181d0c6d164,episode,E20260922-11AD5FB0A9,,15,false
 b731bc575f7becd69e8c65a6,isolated,,,1,false
+b7381dcaac03edc1b195e834,isolated,,,1,false
 b73827853f1f30a8dc133584,episode,E20260802-8DD8C688B2,,32,false
 b739e93dbc6bbaf2b6d8d996,isolated,,,1,false
 b73a58369271ab7fe9ad82c1,episode,E20260912-3760B62784,,40,false
