@@ -1,20 +1,20 @@
 {
-  "dashboardRows": 53344,
-  "finishedAtUtc": "2026-10-26T13:21:34Z",
-  "relationRows": 189612,
+  "dashboardRows": 53432,
+  "finishedAtUtc": "2026-10-26T20:43:27Z",
+  "relationRows": 189975,
   "relations": {
     "con_evaluacion": 1562,
-    "con_licenciado": 28397,
-    "dentro": 12169,
-    "entre_1_y_5_km": 11066,
-    "hasta_1_km": 5175,
-    "mas_de_5_km": 24934,
-    "multiples": 20546
+    "con_licenciado": 28452,
+    "dentro": 12202,
+    "entre_1_y_5_km": 11082,
+    "hasta_1_km": 5181,
+    "mas_de_5_km": 24967,
+    "multiples": 20598
   },
   "source": {
     "authority": "Autoridad Nacional de Licencias Ambientales",
-    "downloadedAtUtc": "2026-10-25T16:38:50Z",
-    "featureCount": 9936,
+    "downloadedAtUtc": "2026-10-26T20:43:05Z",
+    "featureCount": 9946,
     "layers": {
       "1": {
         "count": 312,
@@ -29,11 +29,11 @@
         "name": "Punto Proyecto Licenciado"
       },
       "5": {
-        "count": 3400,
+        "count": 3406,
         "name": "Linea Proyecto Licenciado"
       },
       "6": {
-        "count": 5198,
+        "count": 5202,
         "name": "Area Proyecto Licenciado"
       }
     },
@@ -42,7 +42,7 @@
     "source": "Proyectos ANLA",
     "spatialReference": 9377,
     "url": "https://portalsig.anla.gov.co/publico/rest/services/PROYECTOS_ANLA/ProyectosANLA/FeatureServer",
-    "usableGeometryCount": 9894
+    "usableGeometryCount": 9904
   },
   "status": "completed"
 }
